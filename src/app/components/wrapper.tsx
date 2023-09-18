@@ -5,5 +5,5 @@ type Props = {
 };
 
 export default function RootWrapper({ children }: Props) {
-  return <div>{children}</div>;
+  return <div className="flex flex-col h-screen">{children}</div>;
 }
