@@ -2,12 +2,10 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="py-6 text-xl bg-slate-100">
-      <nav className="px-4 md:px-60 md:container md:mx-auto flex justify-between items-center">
-        <div className="text-3xl">
-          <Image src="/logo.png" width="120" height="120" alt="brand logo" />
-        </div>
-        <ul className="flex space-x-4">
+    <header className="py-10 bg-c-light-grey overflow-x-hidden">
+      <nav className="px-4 flex justify-between items-center md:container md:mx-auto lg:px-60">
+        <Image src="/logo.png" width="150" height="150" alt="brand logo" />
+        <ul className="flex space-x-4 uppercase">
           <li>About</li>
           <li>Contact</li>
         </ul>

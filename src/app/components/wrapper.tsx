@@ -1,9 +1,5 @@
-import { ReactNode } from "react";
+import { ChildrenProps } from "@/util/types";
 
-type Props = {
-  children: ReactNode;
-};
-
-export default function RootWrapper({ children }: Props) {
+export default function RootWrapper({ children }: ChildrenProps) {
   return <div className="flex flex-col h-screen">{children}</div>;
 }
