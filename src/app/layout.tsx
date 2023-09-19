@@ -1,22 +1,19 @@
+import type { Metadata } from "next";
+import { ChildrenProps } from "@/util/types";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import RootWrapper from "./components/wrapper";
 import "./globals.css";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Asad Ullah Khalid - Portfolio",
   description: "This is Asad Ullah Khalid portfolio landing page",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: ChildrenProps) {
   return (
     <html lang="en">
-      <body>
+      <body className="antialiased">
         <RootWrapper>
           <Header />
           {children}
