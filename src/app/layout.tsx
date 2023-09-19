@@ -6,7 +6,7 @@ import RootWrapper from "./components/wrapper";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Asad Ullah Khalid - Portfolio",
   description: "This is Asad Ullah Khalid portfolio landing page",
 };
 
