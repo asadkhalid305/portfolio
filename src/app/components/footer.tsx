@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="py-10 bg-black text-white text-center">
-      <div className="px-4 flex flex-col justify-between items-center md:flex-row md:container md:mx-auto lg:px-60">
+    <footer className="bg-black text-white text-center py-10">
+      <div className="flex flex-col justify-between items-center px-4 md:flex-row md:container md:mx-auto lg:px-60">
         <div className="space-x-1">
           <span>&#169;</span>
           <span>2023 Asad Ullah Khalid. All rights reserved.</span>
@@ -13,9 +13,10 @@ export default function Footer() {
           <li>
             <Link href="https://www.linkedin.com/in/asadkhalid305">
               <Image
-                src="/icons/linkedin.min.svg"
                 alt="LinkedIn URI"
+                className="fill-white"
                 draggable="false"
+                src="/icons/linkedin.min.svg"
                 width={20}
                 height={20}
               />
@@ -24,10 +25,10 @@ export default function Footer() {
           <li>
             <Link href="https://github.com/asadkhalid305/">
               <Image
-                className="fill-white"
-                src="/icons/github.min.svg"
                 alt="GitHub URI"
+                className="fill-white"
                 draggable="false"
+                src="/icons/github.min.svg"
                 width={20}
                 height={20}
               />

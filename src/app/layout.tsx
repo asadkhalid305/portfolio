@@ -16,8 +16,8 @@ export default function RootLayout({ children }: ChildrenProps) {
       <body className="antialiased">
         <Header />
         {children}
-        <Analytics />
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
