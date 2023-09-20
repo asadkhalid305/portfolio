@@ -1,5 +1,5 @@
-import About from "./about/page";
+import { redirect } from "next/navigation";
 
 export default function RootPage() {
-  return <About />;
+  return redirect("/about");
 }
