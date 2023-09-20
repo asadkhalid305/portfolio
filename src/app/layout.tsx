@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { ChildrenProps } from "@/util/types";
 import Footer from "./components/footer";
 import Header from "./components/header";
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: ChildrenProps) {
       <body className="antialiased">
         <Header />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
