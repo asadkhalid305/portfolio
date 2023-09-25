@@ -9,7 +9,7 @@ export default function Header() {
           draggable="false"
           src="/logo.png"
           width="150"
-          height="150"
+          height="30"
         />
         <ul className="flex space-x-4 uppercase font-medium">
           <li>About</li>

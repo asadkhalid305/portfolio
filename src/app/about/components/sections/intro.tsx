@@ -24,6 +24,7 @@ export default function Intro() {
           src="/about-me.jpeg"
           width="550"
           height="550"
+          priority
         />
       </div>
     </div>
