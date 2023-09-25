@@ -1,17 +1,23 @@
-import Contact from "./components/contact";
-import Intro from "./components/intro";
+import Contact from "./components/sections/contact";
+import Intro from "./components/sections/intro";
+import Journey from "./components/sections/journey";
 
 export default function About() {
   return (
     <main>
-      <div className="bg-c-light-grey">
-        <div className="px-4 md:container md:mx-auto lg:px-60 ">
+      <section className="bg-c-gray">
+        <div className="px-4 md:container md:mx-auto lg:px-36">
           <Intro />
         </div>
-      </div>
-      <div className="px-4 md:container md:mx-auto lg:px-60">
-        <Contact />
-      </div>
+      </section>
+      <section className="px-4 md:container md:mx-auto lg:px-36">
+        <Journey />
+      </section>
+      <section className="bg-c-gray">
+        <div className="px-4 md:container md:mx-auto lg:px-36">
+          <Contact />
+        </div>
+      </section>
     </main>
   );
 }
