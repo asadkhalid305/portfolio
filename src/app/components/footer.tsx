@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-black text-white text-center py-10">
-      <div className="flex flex-col justify-between items-center px-4 md:flex-row lg:max-w-5xl lg:mx-auto">
-        <div className="space-x-1">
+      <div className="flex flex-col justify-between items-center px-4 md:flex-row lg:max-w-7xl lg:mx-auto">
+        <div className="space-x-1 text-xl">
           <span>&#169;</span>
           <span>2023 Asad Ullah Khalid. All rights reserved.</span>
         </div>
@@ -17,8 +17,8 @@ export default function Footer() {
                 className="fill-white"
                 draggable="false"
                 src="/icons/linkedin.min.svg"
-                width={20}
-                height={20}
+                width={24}
+                height={24}
               />
             </Link>
           </li>
@@ -29,8 +29,8 @@ export default function Footer() {
                 className="fill-white"
                 draggable="false"
                 src="/icons/github.min.svg"
-                width={20}
-                height={20}
+                width={24}
+                height={24}
               />
             </Link>
           </li>

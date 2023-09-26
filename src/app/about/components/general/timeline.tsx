@@ -19,13 +19,13 @@ const experience = [
     location: "Karachi, Pakistan",
     position: "Software Development Engineer",
   },
-  {
-    company: "Jr. WebApp Develop",
-    date: "Sep 2019 - Feb 2020",
-    location: "Karachi, Pakistan",
-    position: "Salsoft Technologies",
-  },
   // ! to be decide whether to show this or not
+  // {
+  //   company: "Jr. WebApp Develop",
+  //   date: "Sep 2019 - Feb 2020",
+  //   location: "Karachi, Pakistan",
+  //   position: "Salsoft Technologies",
+  // },
   // {
   //   company: "InjazSystems",
   //   date: "May 2019 - Jun 2019",
@@ -63,7 +63,7 @@ export default function Timeline() {
           href="https://www.linkedin.com/in/asadkhalid305/details/experience/"
           className="inline-flex rounded-lg bg-black text-white px-5 py-3 font-medium shadow-lg items-center text-sm"
         >
-          <span className="md:hidden 2xl:block">Learn more </span>
+          <span>Learn more </span>
           <svg
             className="w-3 h-3 ml-2 md:m-0 2xl:m-2"
             aria-hidden="true"

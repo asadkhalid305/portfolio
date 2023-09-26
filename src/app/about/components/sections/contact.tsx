@@ -3,8 +3,8 @@ import DisplayInfo from "../general/display-info";
 import ContactForm from "../general/contact-form";
 
 const description =
-  "If you want to connect with me for any purpose, write me a message and I will get back to you.";
-const heading = "Contact Me 😊";
+  "Your thoughts and questions are always welcome here so do not hesitate to drop me a message if you need assistance or have something to talk about.";
+const heading = "Let's Connect";
 
 export default function Contact() {
   return (
