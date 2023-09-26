@@ -8,7 +8,7 @@ const heading = "Contact Me 😊";
 
 export default function Contact() {
   return (
-    <div className="flex flex-col items-center py-20 lg:flex-row lg:py-36">
+    <div className="flex flex-col py-20 lg:flex-row lg:py-36 lg:items-center">
       <div className="flex-1">
         <DisplayInfo
           description={description}

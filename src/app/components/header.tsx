@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="bg-c-gray overflow-x-hidden pb-10 pt-5">
-      <nav className="flex justify-between items-center px-4 md:container md:mx-auto lg:px-36">
+    <header className="bg-c-gray overflow-x-hidden py-5">
+      <nav className="flex justify-between items-center px-4 lg:max-w-5xl lg:mx-auto">
         <Image
           alt="brand logo"
           draggable="false"
