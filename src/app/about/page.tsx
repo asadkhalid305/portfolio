@@ -6,15 +6,15 @@ export default function About() {
   return (
     <main>
       <section className="bg-c-gray">
-        <div className="px-4 md:container md:mx-auto lg:px-36">
+        <div className="px-4 lg:max-w-5xl lg:mx-auto">
           <Intro />
         </div>
       </section>
-      <section className="px-4 md:container md:mx-auto lg:px-36">
+      <section className="px-4 lg:max-w-5xl lg:mx-auto">
         <Journey />
       </section>
       <section className="bg-c-gray">
-        <div className="px-4 md:container md:mx-auto lg:px-36">
+        <div className="px-4 lg:max-w-5xl lg:mx-auto">
           <Contact />
         </div>
       </section>

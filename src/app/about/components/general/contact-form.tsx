@@ -1,4 +1,7 @@
 import Image from "next/image";
+import IconName from "public/icons/name.png";
+import IconEmail from "public/icons/email.png";
+import IconMessage from "public/icons/message.png";
 
 export default function ContactForm() {
   return (
@@ -16,7 +19,7 @@ export default function ContactForm() {
               alt="name icon"
               className="w-full rounded-xl"
               draggable="false"
-              src="/icons/name.png"
+              src={IconName}
               width="32"
               height="32"
             />
@@ -36,7 +39,7 @@ export default function ContactForm() {
               alt="email icon"
               className="w-full rounded-xl"
               draggable="false"
-              src="/icons/email.png"
+              src={IconEmail}
               width="32"
               height="32"
             />
@@ -56,7 +59,7 @@ export default function ContactForm() {
               alt="message icon"
               className="w-full rounded-xl"
               draggable="false"
-              src="/icons/message.png"
+              src={IconMessage}
               width="32"
               height="32"
             />
