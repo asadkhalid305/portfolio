@@ -1,10 +1,10 @@
 import Image from "next/image";
 import DisplayInfo from "../general/display-info";
-import IntroPhoto from "public/about-me.jpeg";
+import IntroPhoto from "public/myself.png";
 
 const description =
-  "Hi! My name is Asad Ullah Khalid. I am a senior software engineer and content creator.";
-const heading = "About Me 👋";
+  "Hey! My name is Asad Ullah Khalid, I am a Senior Software Engineer who is enthusiastic about JavaScript. Also, I am passionate about creating content to help people navigate their career effectively.";
+const heading = "About Me";
 
 export default function Intro() {
   return (
@@ -17,14 +17,13 @@ export default function Intro() {
           paddingTop
         />
       </div>
-      <div className="flex-1 w-full">
+      <div className="flex-1 flex justify-center">
         <Image
           alt="personal photo"
-          className="w-full rounded-xl"
           draggable="false"
           src={IntroPhoto}
-          width="550"
-          height="550"
+          width="450"
+          height="450"
           priority
         />
       </div>

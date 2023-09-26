@@ -7,6 +7,7 @@ type Props = {
   centerHeading?: boolean;
   paddingRight?: boolean;
   paddingTop?: boolean;
+  whitespacePreWrap?: boolean;
 };
 
 export default function DisplayInfo({
@@ -15,6 +16,7 @@ export default function DisplayInfo({
   centerHeading = false,
   paddingRight = false,
   paddingTop = false,
+  whitespacePreWrap = false,
 }: Props) {
   return (
     <div
@@ -24,13 +26,19 @@ export default function DisplayInfo({
       })}
     >
       <h1
-        className={clsx("text-4xl font-extrabold pb-6", {
+        className={clsx("text-6xl font-extrabold pb-6", {
           "text-center": centerHeading,
         })}
       >
         {heading}
       </h1>
-      <p className="text-xl">{description}</p>
+      <p
+        className={clsx("text-2xl", {
+          "whitespace-pre-wrap": whitespacePreWrap,
+        })}
+      >
+        {description}
+      </p>
     </div>
   );
 }

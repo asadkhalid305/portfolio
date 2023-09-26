@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className="antialiased scroll-smooth">
         <Header />
         {children}
         <Footer />

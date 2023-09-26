@@ -9,7 +9,7 @@ export default function ContactForm() {
       <div className="pb-4">
         <div className="relative">
           <input
-            className="w-full rounded-lg p-4 pe-16 shadow-lg focus:outline-black"
+            className="w-full rounded-lg p-4 pe-16 shadow-lg outline-black caret-black"
             type="text"
             name="fullName"
             placeholder="Full Name"
@@ -29,7 +29,7 @@ export default function ContactForm() {
       <div className="pb-4">
         <div className="relative">
           <input
-            className="w-full rounded-lg p-4 pe-16 shadow-lg focus:outline-black"
+            className="w-full rounded-lg p-4 pe-16 shadow-lg outline-black caret-black"
             type="text"
             name="email"
             placeholder="Email"
