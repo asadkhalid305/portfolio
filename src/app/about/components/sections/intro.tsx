@@ -18,13 +18,14 @@ export default function Intro() {
           paddingTop
         />
       </div>
-      <div className="flex-1 flex justify-center">
+      <div className="flex-1 flex justify-center lg:justify-end">
         <Image
           alt="personal photo"
+          className="bg-black rounded-full"
           draggable="false"
           src={IntroPhoto}
-          width="450"
-          height="450"
+          width="400"
+          height="400"
           priority
         />
       </div>
