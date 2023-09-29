@@ -15,6 +15,7 @@ export default function Intro() {
           heading={heading}
           paddingRight
           paddingTop
+          paddingBottom
         />
       </div>
       <div className="flex-1 flex justify-center lg:justify-end">

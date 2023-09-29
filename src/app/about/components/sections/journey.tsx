@@ -1,5 +1,4 @@
 import DisplayInfo from "../general/display-info";
-import Timeline from "../general/timeline";
 
 const description = `Born in 1997 in Pakistan, my journey began with a focus on Islamic studies. It wasn't until I was 11 years old, starting in class 2 while my classmates were much younger, that I entered formal schooling. Progressing through only odd-numbered classes, I eventually secured admission to a reputable university for a BSCS degree, despite struggling with English and confidence.
 
@@ -12,17 +11,12 @@ const heading = "My Journey";
 
 export default function Journey() {
   return (
-    <div className="flex flex-col py-20 lg:py-36 lg:items-center">
-      <div className="flex-1">
-        <DisplayInfo
-          whitespacePreWrap
-          description={description}
-          heading={heading}
-        />
-      </div>
-      <div className="flex-1 w-full">
-        <Timeline />
-      </div>
+    <div className="pt-20 lg:pt-36 lg:items-center">
+      <DisplayInfo
+        whitespacePreWrap
+        description={description}
+        heading={heading}
+      />
     </div>
   );
 }

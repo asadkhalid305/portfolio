@@ -7,6 +7,7 @@ type Props = {
   centerHeading?: boolean;
   paddingRight?: boolean;
   paddingTop?: boolean;
+  paddingBottom?: boolean;
   whitespacePreWrap?: boolean;
 };
 
@@ -16,12 +17,14 @@ export default function DisplayInfo({
   centerHeading = false,
   paddingRight = false,
   paddingTop = false,
+  paddingBottom = false,
   whitespacePreWrap = false,
 }: Props) {
   return (
     <div
-      className={clsx("pb-16", {
+      className={clsx({
         "lg:pr-10": paddingRight,
+        "pb-16": paddingBottom,
         "pt-16": paddingTop,
       })}
     >
