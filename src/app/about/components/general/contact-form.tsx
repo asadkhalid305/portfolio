@@ -17,11 +17,11 @@ export default function ContactForm() {
           <span className="absolute inset-y-0 end-0 grid place-content-center pr-4">
             <Image
               alt="name icon"
-              className="w-full rounded-xl"
+              className="rounded-xl"
               draggable="false"
               src={IconName}
-              width="32"
-              height="32"
+              width="24"
+              height="24"
             />
           </span>
         </div>
@@ -37,11 +37,11 @@ export default function ContactForm() {
           <span className="absolute inset-y-0 end-0 grid place-content-center pr-4">
             <Image
               alt="email icon"
-              className="w-full rounded-xl"
+              className="rounded-xl"
               draggable="false"
               src={IconEmail}
-              width="32"
-              height="32"
+              width="24"
+              height="24"
             />
           </span>
         </div>
@@ -57,11 +57,11 @@ export default function ContactForm() {
           <span className="absolute inset-y-0 end-0 grid place-content-center pr-4">
             <Image
               alt="message icon"
-              className="w-full rounded-xl"
+              className="rounded-xl"
               draggable="false"
               src={IconMessage}
-              width="32"
-              height="32"
+              width="24"
+              height="24"
             />
           </span>
         </div>

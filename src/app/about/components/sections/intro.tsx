@@ -2,7 +2,6 @@ import Image from "next/image";
 import DisplayInfo from "../general/display-info";
 import IntroPhoto from "public/myself.png";
 
-
 const description =
   "Hey! My name is Asad Ullah Khalid, I am a Senior Software Engineer who is enthusiastic about JavaScript. Also, I am passionate about creating content to help people navigate their career effectively.";
 const heading = "About Me";
@@ -16,6 +15,7 @@ export default function Intro() {
           heading={heading}
           paddingRight
           paddingTop
+          paddingBottom
         />
       </div>
       <div className="flex-1 flex justify-center lg:justify-end">
