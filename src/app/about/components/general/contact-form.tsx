@@ -2,6 +2,7 @@ import Image from "next/image";
 import IconName from "public/icons/name.png";
 import IconEmail from "public/icons/email.png";
 import IconMessage from "public/icons/message.png";
+import Button from "./button";
 
 export default function ContactForm() {
   return (
@@ -9,7 +10,7 @@ export default function ContactForm() {
       <div className="pb-4">
         <div className="relative">
           <input
-            className="w-full rounded-lg p-4 pe-16 shadow-lg outline-black caret-black"
+            className="w-full rounded-lg p-4 pe-16 shadow-lg outline-c-dark caret-c-dark"
             type="text"
             name="fullName"
             placeholder="Full Name"
@@ -29,7 +30,7 @@ export default function ContactForm() {
       <div className="pb-4">
         <div className="relative">
           <input
-            className="w-full rounded-lg p-4 pe-16 shadow-lg outline-black caret-black"
+            className="w-full rounded-lg p-4 pe-16 shadow-lg outline-c-dark caret-c-dark"
             type="text"
             name="email"
             placeholder="Email"
@@ -49,7 +50,7 @@ export default function ContactForm() {
       <div className="pb-4">
         <div className="relative">
           <textarea
-            className="w-full rounded-lg p-4 pe-16 shadow-lg focus:outline-black"
+            className="w-full rounded-lg p-4 pe-16 shadow-lg focus:outline-c-dark"
             name="message"
             placeholder="Message"
             rows={5}
@@ -66,9 +67,7 @@ export default function ContactForm() {
           </span>
         </div>
       </div>
-      <button className="w-full inline-block rounded-lg bg-black text-white px-5 py-3 font-medium shadow-lg">
-        Submit
-      </button>
+      <Button>Submit</Button>
     </form>
   );
 }

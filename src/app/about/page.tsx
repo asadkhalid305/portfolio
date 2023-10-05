@@ -7,7 +7,7 @@ import Journey from "./components/sections/journey";
 export default function About() {
   return (
     <main>
-      <section className="bg-c-gray">
+      <section className="bg-c-semiDark">
         <div className="px-4 lg:max-w-7xl lg:mx-auto">
           <Intro />
         </div>
@@ -21,7 +21,7 @@ export default function About() {
       <section className="px-4 lg:max-w-7xl lg:mx-auto">
         <ContentCreation />
       </section>
-      <section className="bg-c-gray">
+      <section className="bg-c-semiDark">
         <div className="px-4 lg:max-w-7xl lg:mx-auto">
           <Contact />
         </div>

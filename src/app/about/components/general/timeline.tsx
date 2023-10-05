@@ -1,3 +1,4 @@
+import LinkButton from "./link-button";
 import TimelineItem from "./timeline-item";
 
 const experience = [
@@ -48,7 +49,7 @@ const experience = [
 
 export default function Timeline() {
   return (
-    <ol className="relative border-black max-md:border-l md:flex md:flex-row md:justify-between md:border-t">
+    <ol className="relative border-c-dark max-md:border-l md:flex md:flex-row md:justify-between md:border-t">
       {experience.map((item, index) => (
         <TimelineItem
           key={index}
@@ -59,27 +60,7 @@ export default function Timeline() {
         />
       ))}
       <li className="max-md:mb-10 max-md:ml-4 md:self-center">
-        <a
-          href="https://www.linkedin.com/in/asadkhalid305/details/experience/"
-          className="inline-flex rounded-lg bg-black text-white px-5 py-3 font-medium shadow-lg items-center text-sm"
-        >
-          <span>Learn more </span>
-          <svg
-            className="w-3 h-3 ml-2 md:m-0 2xl:m-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
-        </a>
+        <LinkButton>Learn more</LinkButton>;
       </li>
     </ol>
   );
