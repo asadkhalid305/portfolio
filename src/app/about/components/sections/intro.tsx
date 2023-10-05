@@ -21,7 +21,7 @@ export default function Intro() {
       <div className="flex-1 flex justify-center lg:justify-end">
         <Image
           alt="personal photo"
-          className="bg-black rounded-full"
+          className="bg-c-dark rounded-full"
           draggable="false"
           src={IntroPhoto}
           width="400"

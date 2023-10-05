@@ -1,0 +1,29 @@
+type Props = {
+  children: string;
+};
+
+export default function LinkButton({ children }: Props) {
+  return (
+    <a
+      href="https://www.linkedin.com/in/asadkhalid305/details/experience/"
+      className="inline-flex rounded-lg bg-c-dark text-c-light px-5 py-3 font-medium shadow-lg items-center text-sm"
+    >
+      {children}
+      <svg
+        className="w-3 h-3 ml-2 md:m-0 2xl:m-2"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 14 10"
+      >
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M1 5h12m0 0L9 1m4 4L9 9"
+        />
+      </svg>
+    </a>
+  );
+}
