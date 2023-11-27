@@ -60,7 +60,7 @@ export default function Timeline() {
         />
       ))}
       <li className="max-md:mb-10 max-md:ml-4 md:self-center">
-        <LinkButton>Learn more</LinkButton>;
+        <LinkButton>Learn more</LinkButton>
       </li>
     </ol>
   );
