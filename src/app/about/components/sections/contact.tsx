@@ -1,9 +1,8 @@
 import DisplayInfo from "../general/display-info";
 import ContactForm from "../general/contact-form";
 
-const description =
-  "Your thoughts and questions are always welcome here so do not hesitate to drop me a message if you need assistance or have something to talk about.";
-const heading = "Let's Connect";
+const description = `Your thoughts and questions are always welcome here so do not hesitate to drop me a message if you need assistance or have something to talk about.`;
+const heading = `Let's Connect`;
 
 export default function Contact() {
   return (
