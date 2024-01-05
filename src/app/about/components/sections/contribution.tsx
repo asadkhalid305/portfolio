@@ -45,7 +45,7 @@ export default function Contribution() {
           paddingBottom
         />
       </div>
-      <div className="grid gap-4 grid-cols-3">
+      <div className="grid gap-6 justify-center sm:grid-cols-2 md:grid-cols-3">
         {contributions.map((item, index) => (
           <Card
             key={index}
