@@ -38,6 +38,7 @@ export default function DisplayInfo({
       <p
         className={clsx("text-2xl", {
           "whitespace-pre-wrap": whitespacePreWrap,
+          "leading-normal": true,
         })}
       >
         {description}

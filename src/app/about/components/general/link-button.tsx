@@ -1,16 +1,18 @@
 type Props = {
-  children: string;
+  href: string;
+  text: string;
 };
 
-export default function LinkButton({ children }: Props) {
+export default function LinkButton({ href, text }: Props) {
   return (
     <a
-      href="https://www.linkedin.com/in/asadkhalid305/details/experience/"
+      href={href}
+      target="_blank"
       className="inline-flex rounded-lg bg-c-dark text-c-light px-5 py-3 font-medium shadow-lg items-center text-sm"
     >
-      {children}
+      <p>{text}</p>
       <svg
-        className="w-3 h-3 ml-2 md:m-0 2xl:m-2"
+        className="w-3 h-3 ml-2 2xl:m-2"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

@@ -7,7 +7,7 @@ Determined to improve, I devoted myself, working up to 18 hours a day. In my thi
 Post-graduation, I expanded into giving workshops, mentoring, and writing to help others grow in their careers. In 2022, I embarked on a new chapter in Germany, where I worked for one year before joining one of the world's largest automobile companies as a Senior Developer.
 
 Today, I stand at the intersection of experience and ambition, actively writing content to guide fellow tech enthusiasts on their career journeys. With passion, persistence, and a commitment to growth, I am excited about what lies ahead and look forward to making an even greater impact in the world of technology and lives of many.`;
-const heading = `My Journey`;
+const heading = `Journey`;
 
 export default function Journey() {
   return (

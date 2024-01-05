@@ -2,8 +2,8 @@ import Image from "next/image";
 import DisplayInfo from "../general/display-info";
 import IntroPhoto from "public/myself.png";
 
-const description = `Hey there! My name is Asad Ullah Khalid, I am a Senior Software Engineer who is enthusiastic about JavaScript. Also, I am passionate about helping people navigate their career effectively.`;
-const heading = `About Me`;
+const description = `Hey there! My name is Asad Ullah Khalid, I am a Senior Software Engineer and enthusiast about JavaScript. Also, I am passionate about helping people navigate their career effectively.`;
+const heading = `Introduction`;
 
 export default function Intro() {
   return (
@@ -20,11 +20,11 @@ export default function Intro() {
       <div className="flex-1 flex justify-center lg:justify-end">
         <Image
           alt="personal photo"
-          className="bg-c-dark rounded-full"
+          className="bg-c-dark rounded-full pt-2"
           draggable="false"
           src={IntroPhoto}
-          width="400"
-          height="400"
+          width="394"
+          height="399"
           priority
         />
       </div>
