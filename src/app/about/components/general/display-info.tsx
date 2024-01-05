@@ -29,14 +29,14 @@ export default function DisplayInfo({
       })}
     >
       <h1
-        className={clsx("text-6xl font-extrabold pb-6", {
+        className={clsx("text-5xl font-extrabold pb-6 lg:text-6xl", {
           "text-center": centerHeading,
         })}
       >
         {heading}
       </h1>
       <p
-        className={clsx("text-2xl", {
+        className={clsx("text-xl lg:text-2xl", {
           "whitespace-pre-wrap": whitespacePreWrap,
           "leading-normal": true,
         })}

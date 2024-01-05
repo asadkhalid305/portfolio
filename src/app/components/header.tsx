@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="bg-c-semiDark overflow-x-hidden py-5">
+    <header className="bg-c-semiDark py-5">
       <nav className="flex justify-between items-center px-4 lg:max-w-7xl lg:mx-auto">
         <Image
           alt="brand logo"
@@ -11,7 +11,7 @@ export default function Header() {
           width="144"
           height="28"
         />
-        <ul className="flex space-x-4 uppercase font-medium text-xl">
+        <ul className="hidden space-x-4 uppercase font-medium text-xl md:show md:flex">
           <li>About</li>
           <li>Contact</li>
         </ul>
