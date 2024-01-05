@@ -1,5 +1,5 @@
 import Contact from "./components/sections/contact";
-import ContentCreation from "./components/sections/content-creation";
+import Contribution from "./components/sections/contribution";
 import Experience from "./components/sections/experience";
 import Intro from "./components/sections/intro";
 import Journey from "./components/sections/journey";
@@ -19,7 +19,7 @@ export default function About() {
         <Experience />
       </section>
       <section className="px-4 lg:max-w-7xl lg:mx-auto">
-        <ContentCreation />
+        <Contribution />
       </section>
       <section className="bg-c-semiDark">
         <div className="px-4 lg:max-w-7xl lg:mx-auto">

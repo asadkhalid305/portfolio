@@ -8,14 +8,12 @@ export default function Header() {
           alt="brand logo"
           draggable="false"
           src="/logo.png"
-          width="120"
-          height="120"
+          width="144"
+          height="28"
         />
         <ul className="flex space-x-4 uppercase font-medium text-xl">
-          <li className="transition ease-in hover:border-b-4 border-c-dark">
-            About
-          </li>
-          <li className="hover:border-b-4 border-c-dark">Contact</li>
+          <li>About</li>
+          <li>Contact</li>
         </ul>
       </nav>
     </header>
