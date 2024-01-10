@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import "./globals.css";
-
-type Props = {
-  children: ReactNode;
-};
+import { LayoutProps } from "./utils/types";
 
 export const metadata: Metadata = {
   title: "Asad Ullah Khalid - Portfolio",
   description: "This is Asad Ullah Khalid portfolio landing page",
 };
 
-export default function RootLayout({ children }: Props) {
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body className="antialiased scroll-smooth text-c-dark">
