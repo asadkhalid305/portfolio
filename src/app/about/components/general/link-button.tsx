@@ -1,14 +1,11 @@
-type Props = {
-  href: string;
-  text: string;
-};
+import { LinkButtonProps } from "@/app/utils/types";
 
-export default function LinkButton({ href, text }: Props) {
+export default function LinkButton({ href, text }: LinkButtonProps) {
   return (
     <a
       href={href}
       target="_blank"
-      className="inline-flex rounded-lg bg-c-dark text-c-light px-5 py-3 font-medium shadow-lg items-center text-sm"
+      className="inline-flex rounded-lg bg-c-dark text-c-light px-5 py-3 font-medium shadow-lg items-center text-sm w-fit"
     >
       <p>{text}</p>
       <svg

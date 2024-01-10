@@ -1,9 +1,10 @@
 import Image from "next/image";
 import DisplayInfo from "../general/display-info";
 import IntroPhoto from "public/myself.png";
-
-const description = `Hey there! My name is Asad Ullah Khalid, I am a Senior Software Engineer and enthusiast about JavaScript. Also, I am passionate about helping people navigate their career effectively.`;
-const heading = `Introduction`;
+import {
+  introHeading as heading,
+  introDescription as description,
+} from "@/app/utils/constants";
 
 export default function Intro() {
   return (

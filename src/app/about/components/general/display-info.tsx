@@ -1,15 +1,5 @@
+import { DisplayInfoProps } from "@/app/utils/types";
 import clsx from "clsx";
-import { ReactNode } from "react";
-
-type Props = {
-  description: ReactNode;
-  heading: string;
-  centerHeading?: boolean;
-  paddingRight?: boolean;
-  paddingTop?: boolean;
-  paddingBottom?: boolean;
-  whitespacePreWrap?: boolean;
-};
 
 export default function DisplayInfo({
   description = "",
@@ -19,7 +9,7 @@ export default function DisplayInfo({
   paddingTop = false,
   paddingBottom = false,
   whitespacePreWrap = false,
-}: Props) {
+}: DisplayInfoProps) {
   return (
     <div
       className={clsx({
