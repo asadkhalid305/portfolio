@@ -1,9 +1,10 @@
 import DisplayInfo from "../general/display-info";
-import ContactForm from "../general/contact-form";
+
 import {
   contactHeading as heading,
   contactDescription as description,
 } from "@/app/utils/constants";
+import LinkedInBadge from "../general/linkedin-badge";
 
 export default function Contact() {
   return (
@@ -17,8 +18,10 @@ export default function Contact() {
           paddingBottom
         />
       </div>
-      <div className="flex-1 w-full">
-        <ContactForm />
+      <div className="flex-1 flex justify-center">
+        {/* Todo: Enable ContactForm once email integration is complete */}
+        {/* <ContactForm /> */}
+        <LinkedInBadge />
       </div>
     </div>
   );

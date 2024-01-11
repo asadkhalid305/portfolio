@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import DisplayInfo from "../general/display-info";
 import VCardSystem from "../general/v-card-system";
 import {
@@ -9,7 +8,7 @@ import {
 
 export default function Contribution() {
   return (
-    <Fragment>
+    <>
       <div className="pt-20 lg:pt-36">
         <DisplayInfo
           whitespacePreWrap
@@ -23,6 +22,6 @@ export default function Contribution() {
       {Object.entries(contributions).map(([key, value], index) => (
         <VCardSystem key={index} heading={key} records={value} />
       ))}
-    </Fragment>
+    </>
   );
 }

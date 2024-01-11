@@ -1,4 +1,3 @@
-import React from "react";
 import DisplayInfo from "../general/display-info";
 import {
   testimonialHeading as heading,
