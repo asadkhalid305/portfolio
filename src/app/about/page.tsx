@@ -1,8 +1,9 @@
-import Contact from "./components/sections/contact";
-import Contribution from "./components/sections/contribution";
-import Experience from "./components/sections/experience";
 import Intro from "./components/sections/intro";
 import Journey from "./components/sections/journey";
+import Experience from "./components/sections/experience";
+import Contribution from "./components/sections/contribution";
+import Testimonial from "./components/sections/testimonial";
+import Contact from "./components/sections/contact";
 
 export default function About() {
   return (
@@ -20,6 +21,9 @@ export default function About() {
       </section>
       <section className="px-4 lg:max-w-7xl lg:mx-auto">
         <Contribution />
+      </section>
+      <section className="px-4 lg:max-w-7xl lg:mx-auto">
+        <Testimonial />
       </section>
       <section className="bg-c-semiDark">
         <div className="px-4 lg:max-w-7xl lg:mx-auto">

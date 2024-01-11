@@ -6,7 +6,7 @@ import DisplayInfo from "../general/display-info";
 
 export default function Journey() {
   return (
-    <div className="pt-20 lg:pt-36 lg:items-center">
+    <div className="pt-20 lg:pt-36">
       <DisplayInfo
         whitespacePreWrap
         description={description}

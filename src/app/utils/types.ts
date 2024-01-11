@@ -1,5 +1,5 @@
-import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
+import { StaticImageData } from "next/image";
 
 export type LayoutProps = {
   children: ReactNode;
@@ -10,7 +10,7 @@ export type ButtonProps = {
 };
 
 export type DisplayInfoProps = {
-  description: ReactNode;
+  description?: ReactNode;
   heading: string;
   centerHeading?: boolean;
   paddingRight?: boolean;
@@ -21,10 +21,10 @@ export type DisplayInfoProps = {
 
 export type CardSystemProps = {
   heading: string;
-  records: CardProps[];
+  records: VCardProps[];
 };
 
-export type CardProps = {
+export type VCardProps = {
   title: string;
   description?: string;
   image: {
@@ -49,4 +49,17 @@ export type TimelineItemProps = {
   date: string;
   location: string;
   position: string;
+};
+
+export type TCardProps = {
+  text: string;
+  author: {
+    name: string;
+    image: {
+      src: StaticImageData;
+      alt: string;
+    };
+    job: string;
+    link: string;
+  };
 };
