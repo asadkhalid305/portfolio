@@ -1,4 +1,3 @@
-import React, { Fragment } from "react";
 import VCard from "./v-card";
 import { CardSystemProps } from "@/app/utils/types";
 
