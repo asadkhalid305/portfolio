@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import VCard from "./v-card";
 import { CardSystemProps } from "@/app/utils/types";
 
-export default function CardSystem({ heading, records }: CardSystemProps) {
+export default function TCardSystem({ heading, records }: CardSystemProps) {
   return (
     <div className="pb-16">
       <h1

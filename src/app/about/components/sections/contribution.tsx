@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import DisplayInfo from "../general/display-info";
-import CardSystem from "../general/card-system";
+import VCardSystem from "../general/v-card-system";
 import {
   contributions,
   contributionHeading as heading,
@@ -10,7 +10,7 @@ import {
 export default function Contribution() {
   return (
     <Fragment>
-      <div className="pt-20 lg:pt-36 lg:items-center">
+      <div className="pt-20 lg:pt-36">
         <DisplayInfo
           whitespacePreWrap
           description={description}
@@ -21,7 +21,7 @@ export default function Contribution() {
 
       {/* Events & Blogs */}
       {Object.entries(contributions).map(([key, value], index) => (
-        <CardSystem key={index} heading={key} records={value} />
+        <VCardSystem key={index} heading={key} records={value} />
       ))}
     </Fragment>
   );
