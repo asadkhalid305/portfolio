@@ -3,7 +3,7 @@ import { CardSystemProps } from "@/app/utils/types";
 
 export default function VCardSystem({ heading, records }: CardSystemProps) {
   return (
-    <div className="pb-16">
+    <div className="pt-16">
       <h1
         className={
           "text-3xl font-extrabold capitalize text-center pb-6 lg:text-4xl lg:text-start"

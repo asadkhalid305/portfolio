@@ -11,7 +11,7 @@ export default function Testimonial() {
   return (
     <div className="flex flex-col pt-20 lg:pt-36">
       <div className="flex-1">
-        <DisplayInfo heading={heading} paddingRight paddingTop paddingBottom />
+        <DisplayInfo whitespacePreWrap heading={heading} paddingBottom />
       </div>
       <div className="flex-1">
         <div
