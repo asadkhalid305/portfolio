@@ -1,14 +1,14 @@
-import Event1 from "public/event-1.jpeg";
-import Event2 from "public/event-2.jpeg";
-import Event3 from "public/event-3.jpeg";
-import Blog1 from "public/blog-1.webp";
-import Blog2 from "public/blog-2.webp";
-import Testimonial1 from "public/testimonial-1.jpeg";
-import Testimonial2 from "public/testimonial-2.jpeg";
-import Testimonial3 from "public/testimonial-3.jpeg";
-import Testimonial4 from "public/testimonial-4.jpeg";
-import Testimonial5 from "public/testimonial-5.jpeg";
-import Testimonial6 from "public/testimonial-6.jpeg";
+import Event1 from "public/images/event-1.jpeg";
+import Event2 from "public/images/event-2.jpeg";
+import Event3 from "public/images/event-3.jpeg";
+import Blog1 from "public/images/blog-1.webp";
+import Blog2 from "public/images/blog-2.webp";
+import Testimonial1 from "public/images/testimonial-1.jpeg";
+import Testimonial2 from "public/images/testimonial-2.jpeg";
+import Testimonial3 from "public/images/testimonial-3.jpeg";
+import Testimonial4 from "public/images/testimonial-4.jpeg";
+import Testimonial5 from "public/images/testimonial-5.jpeg";
+import Testimonial6 from "public/images/testimonial-6.jpeg";
 import { TCardProps } from "./types";
 
 // Contacts
