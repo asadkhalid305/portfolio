@@ -4,7 +4,7 @@ import Logo from "public/images/logo.png";
 export default function Header() {
   return (
     <header className="bg-c-semiDark py-5">
-      <nav className="flex justify-between items-center px-4 lg:max-w-7xl lg:mx-auto">
+      <nav className="flex justify-between px-4 lg:max-w-7xl lg:mx-auto">
         <Image
           alt="brand logo"
           draggable="false"
