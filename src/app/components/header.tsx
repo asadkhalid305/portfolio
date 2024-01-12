@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Logo from "public/images/logo.png";
 
 export default function Header() {
   return (
@@ -7,7 +8,7 @@ export default function Header() {
         <Image
           alt="brand logo"
           draggable="false"
-          src="/logo.png"
+          src={Logo}
           width="144"
           height="28"
         />

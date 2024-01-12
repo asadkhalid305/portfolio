@@ -1,6 +1,6 @@
 import Image from "next/image";
 import DisplayInfo from "../general/display-info";
-import IntroPhoto from "public/myself.png";
+import IntroImage from "public/images/myself.png";
 import {
   introHeading as heading,
   introDescription as description,
@@ -23,7 +23,7 @@ export default function Intro() {
           alt="personal photo"
           className="bg-c-dark rounded-full pt-2"
           draggable="false"
-          src={IntroPhoto}
+          src={IntroImage}
           width="394"
           height="399"
           priority
