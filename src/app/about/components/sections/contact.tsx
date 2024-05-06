@@ -1,10 +1,9 @@
 import DisplayInfo from "../general/display-info";
 
-import {
-  contactHeading as heading,
-  contactDescription as description,
-} from "@/app/utils/constants";
+import { contact } from "@/app/utils/constants";
 import LinkedInBadge from "../general/linkedin-badge";
+
+const { heading, description } = contact;
 
 export default function Contact() {
   return (

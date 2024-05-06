@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import "./globals.css";
 import { LayoutProps } from "./utils/types";
+import Chatbot from "./components/chatbot";
 
 export const metadata: Metadata = {
   title: "Asad Ullah Khalid - Portfolio",
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: LayoutProps) {
         <Header />
         {children}
         <Footer />
+        <Chatbot />
         <Analytics />
         <SpeedInsights />
       </body>

@@ -1,8 +1,7 @@
-import {
-  journeyHeading as heading,
-  journeyDescription as description,
-} from "@/app/utils/constants";
+import { journey } from "@/app/utils/constants";
 import DisplayInfo from "../general/display-info";
+
+const { heading, description } = journey;
 
 export default function Journey() {
   return (
