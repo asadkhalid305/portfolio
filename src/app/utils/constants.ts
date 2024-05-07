@@ -18,6 +18,36 @@ import {
   Testimonial,
 } from "./types";
 
+//Header
+export const header = {
+  links: [
+    {
+      name: "Intro",
+      href: "#intro",
+    },
+    {
+      name: "Journey",
+      href: "#journey",
+    },
+    {
+      name: "Experience",
+      href: "#experience",
+    },
+    {
+      name: "Contribution",
+      href: "#contribution",
+    },
+    {
+      name: "Testimonial",
+      href: "#testimonial",
+    },
+    {
+      name: "Contact",
+      href: "#contact",
+    },
+  ],
+};
+
 // Intro
 export const intro: Intro = {
   heading: "Introduction",

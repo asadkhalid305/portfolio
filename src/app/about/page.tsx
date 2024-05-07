@@ -5,13 +5,6 @@ import Contribution from "./components/sections/contribution";
 import Testimonial from "./components/sections/testimonial";
 import Contact from "./components/sections/contact";
 
-const similarSections = {
-  journey: <Journey />,
-  experience: <Experience />,
-  contribution: <Contribution />,
-  testimonial: <Testimonial />,
-};
-
 export default function About() {
   return (
     <main>
@@ -20,12 +13,19 @@ export default function About() {
           <Intro />
         </div>
       </section>
-      {Object.values(similarSections).map((section, index) => (
-        <section key={index} className="px-4 lg:max-w-7xl lg:mx-auto">
-          {section}
-        </section>
-      ))}
-      <section className="bg-c-semiDark">
+      <section id="journey" className="px-4 lg:max-w-7xl lg:mx-auto">
+        <Journey />
+      </section>
+      <section id="experience" className="px-4 lg:max-w-7xl lg:mx-auto">
+        <Experience />
+      </section>
+      <section id="contribution" className="px-4 lg:max-w-7xl lg:mx-auto">
+        <Contribution />
+      </section>
+      <section id="testimonial" className="px-4 lg:max-w-7xl lg:mx-auto">
+        <Testimonial />
+      </section>
+      <section id="contact" className="bg-c-semiDark">
         <div className="px-4 lg:max-w-7xl lg:mx-auto">
           <Contact />
         </div>
