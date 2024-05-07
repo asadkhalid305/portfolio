@@ -15,7 +15,7 @@ export default function Chatbot() {
   return (
     <div
       className={clsx(
-        "fixed bottom-0 right-0 m-4 mb-6 w-96 bg-gray-100 shadow-inner overflow-hidden flex flex-col transition-all duration-500 ease-in-out",
+        "flex-col w-96 fixed bottom-0 right-0 m-4 mb-6 bg-gray-100 shadow-inner overflow-hidden transition-all duration-700 ease-in-out hidden xl:flex",
         {
           "h-2/5": showChatbot,
           "h-[3.75rem]": !showChatbot,

@@ -17,7 +17,7 @@ export default function Contact() {
           paddingBottom
         />
       </div>
-      <div className="flex-1 flex justify-end">
+      <div className="flex-1 flex justify-center lg:justify-end">
         {/* Todo: Enable ContactForm once email integration is complete */}
         {/* <ContactForm /> */}
         <LinkedInBadge />

@@ -15,7 +15,7 @@ const similarSections = {
 export default function About() {
   return (
     <main>
-      <section className="bg-c-semiDark">
+      <section id="intro" className="bg-c-semiDark">
         <div className="px-4 lg:max-w-7xl lg:mx-auto">
           <Intro />
         </div>

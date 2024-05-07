@@ -10,7 +10,7 @@ export default function ChatbotHeader({
 }: ChatbotHeaderProps) {
   return (
     <button onClick={() => setShowChatbot(!showChatbot)}>
-      <div className="flex justify-center bg-c-dark border-2 text-white p-4 max-h-16">
+      <div className="flex justify-center bg-c-dark border-2 text-white p-4 h-[3.75rem]">
         <p className="mr-2">AI Assistant</p>
         <Image
           alt="ai icon"
