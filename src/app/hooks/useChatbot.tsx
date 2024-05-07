@@ -5,6 +5,7 @@ import { ChatbotMessage } from "../utils/types";
 export default function useChatbot() {
   const [userInput, setUserInput] = useState("");
   const [messages, setMessages] = useState<ChatbotMessage[]>([]);
+  const [loading, setLoading] = useState(false);
 
   // Load messages from local storage when the component mounts
   useEffect(() => {
@@ -30,12 +31,16 @@ export default function useChatbot() {
     const inputValue = userInput.trim();
 
     setUserInput("");
+    setLoading(true);
     setMessages((prev) => [...prev, { role: "user", content: inputValue }]);
 
-    const { response } = await getReplyFromChatbot(inputValue);
+    setTimeout(async () => {
+      const { response } = await getReplyFromChatbot(inputValue);
 
-    setMessages((prev) => [...prev, response.message]);
+      setLoading(false);
+      setMessages((prev) => [...prev, response.message]);
+    }, 1000);
   };
 
-  return { messages, userInput, setUserInput, handleSend };
+  return { loading, messages, userInput, setUserInput, handleSend };
 }

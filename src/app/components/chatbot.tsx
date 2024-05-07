@@ -8,7 +8,8 @@ import { useState } from "react";
 import clsx from "clsx";
 
 export default function Chatbot() {
-  const { messages, userInput, setUserInput, handleSend } = useChatbot();
+  const { loading, messages, userInput, setUserInput, handleSend } =
+    useChatbot();
   const [showChatbot, setShowChatbot] = useState(true);
 
   return (
@@ -17,7 +18,7 @@ export default function Chatbot() {
         "fixed bottom-0 right-0 m-4 mb-6 w-96 bg-gray-100 shadow-inner overflow-hidden flex flex-col transition-all duration-500 ease-in-out",
         {
           "h-2/5": showChatbot,
-          "h-14": !showChatbot,
+          "h-[3.75rem]": !showChatbot,
         }
       )}
     >
@@ -25,7 +26,7 @@ export default function Chatbot() {
         showChatbot={showChatbot}
         setShowChatbot={setShowChatbot}
       />
-      <ChatbotMessages messages={messages} />
+      <ChatbotMessages loading={loading} messages={messages} />
       <ChatbotForm
         userInput={userInput}
         setUserInput={setUserInput}

@@ -1,24 +1,18 @@
 // ChatMessage.tsx
-import clsx from "clsx";
 import { ChatbotMessagesProps } from "../utils/types";
+import ChatbotLoading from "./chatbotLoading";
+import ChatbotMessage from "./chatbotMessage";
 
-export default function ChatbotMessages({ messages }: ChatbotMessagesProps) {
+export default function ChatbotMessages({
+  messages,
+  loading,
+}: ChatbotMessagesProps) {
   return (
-    <div className="overflow-y-auto p-4 h-full flex flex-col">
+    <div className="flex flex-col overflow-y-auto p-4 h-full">
       {messages.map((message, index) => (
-        <div
-          key={index}
-          className={clsx(
-            "mb-4 p-2 rounded bg-gray-200 text-gray-800 flex flex-col",
-            {
-              "self-end": message.role === "user",
-              "max-w-[5/6]": message.role === "user",
-            }
-          )}
-        >
-          <p className="justify-self-end">{message.content}</p>
-        </div>
+        <ChatbotMessage key={index} message={message} />
       ))}
+      {loading && <ChatbotLoading />}
     </div>
   );
 }
