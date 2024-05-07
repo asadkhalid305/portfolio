@@ -107,22 +107,28 @@ export type Testimonial = Pick<SectionDefault, "heading"> & {
 
 export type Contact = SectionDefault;
 
+export type ChatbotHeaderProps = {
+  showChatbot: boolean;
+  setShowChatbot: (value: boolean) => void;
+};
+
 export type ChatbotMessage = {
   role: string;
   content: string;
 };
 
+export interface ChatbotMessageProps {
+  message: ChatbotMessage;
+  key: number;
+}
+
 export type ChatbotMessagesProps = {
   messages: ChatbotMessage[];
+  loading: boolean;
 };
 
 export type ChatbotFormProps = {
   userInput: string;
   setUserInput: (value: string) => void;
   handleSend: (event: React.FormEvent<HTMLFormElement>) => void;
-};
-
-export type ChatbotHeaderProps = {
-  showChatbot: boolean;
-  setShowChatbot: (value: boolean) => void;
 };
