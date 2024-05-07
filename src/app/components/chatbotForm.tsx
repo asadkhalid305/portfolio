@@ -19,7 +19,7 @@ export default function ChatbotForm({
       <button
         disabled={!userInput}
         type="submit"
-        className="py-2 px-4 bg-c-dark text-white rounded focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+        className="py-2 px-4 bg-c-dark text-white rounded transition-opacity duration-300 ease-in-out focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Ask
       </button>
