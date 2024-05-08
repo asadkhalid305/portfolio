@@ -1,12 +1,12 @@
 export async function getReplyFromChatbot(message: string) {
-  const res = await fetch("/api/chatbot", {
+  const response = await fetch("/api/chatbot", {
     method: "POST",
     body: JSON.stringify({ message }),
   });
 
-  if (!res.ok) {
+  if (!response.ok) {
     throw new Error("Failed to fetch data");
   }
 
-  return res.json();
+  return response.json();
 }

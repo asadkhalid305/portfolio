@@ -2,10 +2,10 @@
 
 import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
 import LogoDark from "public/images/logo-dark.png";
 import LogoLight from "public/images/logo-light.png";
 import useHeader from "../hooks/useHeader";
-import Link from "next/link";
 import { header } from "../utils/constants";
 
 const { links } = header;
@@ -35,7 +35,7 @@ export default function Header() {
           {links.map((link) => (
             <li
               key={link.href}
-              className="transition-colors duration-300 ease-in-out hover:text-blue-500"
+              className="transition-colors duration-75 ease-in-out hover:text-blue-500"
             >
               <Link href={link.href}>{link.name}</Link>
             </li>

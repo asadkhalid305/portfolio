@@ -4,6 +4,7 @@ import { ChatbotFormProps } from "../utils/types";
 export default function ChatbotForm({
   userInput,
   setUserInput,
+  isMessageLimitReached,
   handleSend,
 }: ChatbotFormProps) {
   return (
@@ -17,7 +18,7 @@ export default function ChatbotForm({
         className="flex-grow mr-2 py-2 px-4 rounded border-2 focus:outline-none focus:border-c-dark"
       />
       <button
-        disabled={!userInput}
+        disabled={!userInput || isMessageLimitReached}
         type="submit"
         className="py-2 px-4 bg-c-dark text-white rounded transition-opacity duration-300 ease-in-out focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
       >

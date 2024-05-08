@@ -1,7 +1,7 @@
 import Image from "next/image";
+import { intro } from "@/app/utils/constants";
 import DisplayInfo from "../general/display-info";
 import IntroImage from "public/images/myself.png";
-import { intro } from "@/app/utils/constants";
 
 const { heading, description } = intro;
 

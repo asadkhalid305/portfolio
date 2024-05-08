@@ -1,5 +1,5 @@
-import { chatbot } from "@/app/utils/constants";
 import OpenAI from "openai";
+import { chatbot } from "@/app/utils/constants";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -18,18 +18,16 @@ const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
 ];
 
 export async function POST(request: Request) {
-  if (request.body) {
-    const text = await request.text();
-    const body = JSON.parse(text);
+  const body = await request.json();
 
-    if (body.message) {
-      messages.push({
-        role: "user",
-        content: body.message,
-      });
-    }
+  if (body.message) {
+    messages.push({
+      role: "user",
+      content: body.message,
+    });
   }
-  const response = await openai.chat.completions.create({
+
+  const res = await openai.chat.completions.create({
     messages: [...messages],
     model: "gpt-3.5-turbo",
     temperature: 1,
@@ -38,10 +36,8 @@ export async function POST(request: Request) {
 
   messages.push({
     role: "assistant",
-    content: response.choices[0].message.content,
+    content: res.choices[0].message.content,
   });
 
-  return Response.json({
-    response: { message: response.choices[0].message },
-  });
+  return Response.json({ message: res.choices[0].message });
 }

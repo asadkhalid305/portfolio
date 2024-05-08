@@ -1,5 +1,5 @@
-import VCard from "./v-card";
 import { CardSystemProps } from "@/app/utils/types";
+import VCard from "./v-card";
 
 export default function TCardSystem({ heading, records }: CardSystemProps) {
   return (

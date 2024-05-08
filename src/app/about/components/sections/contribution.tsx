@@ -1,6 +1,6 @@
+import { contribution } from "@/app/utils/constants";
 import DisplayInfo from "../general/display-info";
 import VCardSystem from "../general/v-card-system";
-import { contribution } from "@/app/utils/constants";
 
 const { heading, description, items } = contribution;
 

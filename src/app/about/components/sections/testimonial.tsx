@@ -1,5 +1,5 @@
-import DisplayInfo from "../general/display-info";
 import { testimonial } from "@/app/utils/constants";
+import DisplayInfo from "../general/display-info";
 import TCard from "../general/t-card";
 
 const { heading, items } = testimonial;

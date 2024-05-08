@@ -80,6 +80,13 @@ export type TCardProps = {
   };
 };
 
+export type Header = {
+  links: {
+    name: string;
+    href: string;
+  }[];
+};
+
 export type Intro = SectionDefault;
 
 export type Journey = SectionDefault;
@@ -107,6 +114,12 @@ export type Testimonial = Pick<SectionDefault, "heading"> & {
 
 export type Contact = SectionDefault;
 
+export type Chatbot = {
+  prompt: string;
+  dataset: string;
+  limit: number;
+};
+
 export type ChatbotHeaderProps = {
   showChatbot: boolean;
   setShowChatbot: (value: boolean) => void;
@@ -130,5 +143,13 @@ export type ChatbotMessagesProps = {
 export type ChatbotFormProps = {
   userInput: string;
   setUserInput: (value: string) => void;
+  isMessageLimitReached: boolean;
   handleSend: (event: React.FormEvent<HTMLFormElement>) => void;
+};
+
+export type APIErrorResponse = {
+  message: string;
+  type: string;
+  param: null | string;
+  code: string;
 };
