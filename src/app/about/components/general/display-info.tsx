@@ -1,5 +1,5 @@
-import { DisplayInfoProps } from "@/app/utils/types";
 import clsx from "clsx";
+import { DisplayInfoProps } from "@/app/utils/types";
 
 export default function DisplayInfo({
   description = "",

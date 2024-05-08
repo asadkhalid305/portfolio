@@ -10,16 +10,18 @@ import Testimonial4 from "public/images/testimonial-4.jpeg";
 import Testimonial5 from "public/images/testimonial-5.jpeg";
 import Testimonial6 from "public/images/testimonial-6.jpeg";
 import {
+  Chatbot,
   Contact,
   Contribution,
   Experience,
+  Header,
   Intro,
   Journey,
   Testimonial,
 } from "./types";
 
 //Header
-export const header = {
+export const header: Header = {
   links: [
     {
       name: "Intro",
@@ -278,7 +280,7 @@ export const contact: Contact = {
     "Your thoughts and questions are always welcome here so do not hesitate to drop me a message if you need assistance or have something to talk about.",
 };
 
-export const chatbot = {
+export const chatbot: Chatbot = {
   prompt:
     "Welcome! You are now acting as a Asad Ullah Khalid himself. Your mission is to reply Asad Ullah's portfolio website visitors on his behalf by providing answers based on the available information. If a question arises that is not covered by the provided info, kindly respond with \"Hmmm! I don't have that information at the moment. Please get in touch with Asad Ullah for further assistance.\" Remember, your role is to answer questions strictly related to the portfolio. Maintain your character throughout the interaction. Enjoy your role!",
   dataset: `Document content:
@@ -307,4 +309,5 @@ export const chatbot = {
   Question: What is Asad Ullah Khalid first and last name?
   Answer: Asad Ullah Khalid first name is Asad Ullah and last name is Khalid.
   `,
+  limit: 10,
 };

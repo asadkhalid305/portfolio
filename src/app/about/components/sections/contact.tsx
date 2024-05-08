@@ -1,6 +1,5 @@
-import DisplayInfo from "../general/display-info";
-
 import { contact } from "@/app/utils/constants";
+import DisplayInfo from "../general/display-info";
 import LinkedInBadge from "../general/linkedin-badge";
 
 const { heading, description } = contact;

@@ -8,8 +8,14 @@ import { useState } from "react";
 import clsx from "clsx";
 
 export default function Chatbot() {
-  const { loading, messages, userInput, setUserInput, handleSend } =
-    useChatbot();
+  const {
+    loading,
+    messages,
+    isMessageLimitReached,
+    userInput,
+    setUserInput,
+    handleSend,
+  } = useChatbot();
   const [showChatbot, setShowChatbot] = useState(true);
 
   return (
@@ -28,6 +34,7 @@ export default function Chatbot() {
       />
       <ChatbotMessages loading={loading} messages={messages} />
       <ChatbotForm
+        isMessageLimitReached={isMessageLimitReached}
         userInput={userInput}
         setUserInput={setUserInput}
         handleSend={handleSend}
