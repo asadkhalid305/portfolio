@@ -17,7 +17,7 @@ export default function ChatbotMessages({
   return (
     <div className="flex flex-col overflow-y-auto p-4 h-full">
       {messages.map((message, index) => (
-        <ChatbotMessage key={index} message={message} />
+        <ChatbotMessage key={index} index={index} message={message} />
       ))}
       {loading && <ChatbotLoading />}
       <div ref={messagesEndRef} />

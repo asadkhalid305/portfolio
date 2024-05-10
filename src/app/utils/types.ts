@@ -133,7 +133,7 @@ export type ChatbotMessage = {
 
 export interface ChatbotMessageProps {
   message: ChatbotMessage;
-  key: number;
+  index: number;
 }
 
 export type ChatbotMessagesProps = {
