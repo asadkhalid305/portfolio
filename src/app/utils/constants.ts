@@ -310,4 +310,12 @@ export const chatbot: Chatbot = {
   Answer: Asad Ullah Khalid first name is Asad Ullah and last name is Khalid.
   `,
   limit: 10,
+  info: `Hello and welcome! I'm Asad Ullah, the creator of this AI Assistant which is powered by the cutting-edge GPT-3 technology. I want to assure you that your privacy is important to me. I don't store your data anywhere except in your local browser storage.
+
+  To maintain a balance between user experience and operational costs, I've set a limit of 10 messages per session. While it's possible to bypass this limit by clearing your local storage, I kindly ask you to respect this limit. Each query incurs a cost, and exceeding the limit could lead to unnecessary expenses.
+  
+  Feel free to use this AI Assistant to inquire about anything related to me from the details available on the website. It's here to help you get the information you need.
+  
+  I trust you understand and will cooperate. Enjoy your conversation with AI Assistant! Thank you for visiting.
+  `,
 };

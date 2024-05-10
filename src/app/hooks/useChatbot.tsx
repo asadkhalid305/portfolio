@@ -1,7 +1,7 @@
 import { FormEvent, useState, useEffect } from "react";
 import { chatbot } from "@/app/utils/constants";
-import { getReplyFromChatbot } from "../utils/api";
-import { ChatbotMessage } from "../utils/types";
+import { getReplyFromChatbot } from "@/app/utils/api";
+import { ChatbotMessage } from "@/app/utils/types";
 
 const { limit } = chatbot;
 

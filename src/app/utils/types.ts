@@ -118,6 +118,7 @@ export type Chatbot = {
   prompt: string;
   dataset: string;
   limit: number;
+  info: string;
 };
 
 export type ChatbotHeaderProps = {
