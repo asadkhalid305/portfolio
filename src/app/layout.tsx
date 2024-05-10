@@ -5,7 +5,7 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import "./globals.css";
 import { LayoutProps } from "./utils/types";
-import Chatbot from "./components/chatbot";
+import Chatbot from "./components/chatbot/chatbot";
 
 export const metadata: Metadata = {
   title: "Asad Ullah Khalid - Portfolio",

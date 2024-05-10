@@ -1,6 +1,5 @@
 import clsx from "clsx";
-import React from "react";
-import { ChatbotMessageProps } from "../utils/types";
+import { ChatbotMessageProps } from "@/app/utils/types";
 
 export default function ChatbotMessage({ message, key }: ChatbotMessageProps) {
   return (

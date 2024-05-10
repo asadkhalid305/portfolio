@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import LogoDark from "public/images/logo-dark.png";
 import LogoLight from "public/images/logo-light.png";
+import { header } from "@/app/utils/constants";
 import useHeader from "../hooks/useHeader";
-import { header } from "../utils/constants";
 
 const { links } = header;
 
