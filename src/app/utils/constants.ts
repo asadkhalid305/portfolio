@@ -1,9 +1,3 @@
-import Testimonial1 from "public/images/testimonial-1.jpeg";
-import Testimonial2 from "public/images/testimonial-2.jpeg";
-import Testimonial3 from "public/images/testimonial-3.jpeg";
-import Testimonial4 from "public/images/testimonial-4.jpeg";
-import Testimonial5 from "public/images/testimonial-5.jpeg";
-import Testimonial6 from "public/images/testimonial-6.jpeg";
 import {
   Chatbot,
   Contact,
@@ -309,10 +303,10 @@ export const chatbot: Chatbot = {
   limit: 10,
   info: `Hello and welcome! I'm Asad Ullah, the creator of this AI Assistant which is powered by the cutting-edge GPT-3 technology. I want to assure you that your privacy is important to me. I don't store your data anywhere except in your local browser storage.
 
-  To maintain a balance between user experience and operational costs, I've set a limit of 10 messages per session. While it's possible to bypass this limit by clearing your local storage, I kindly ask you to respect this limit. Each query incurs a cost, and exceeding the limit could lead to unnecessary expenses.
+To maintain a balance between user experience and operational costs, I've set a limit of 10 messages per session. While it's possible to bypass this limit by clearing your local storage, I kindly ask you to respect this limit. Each query incurs a cost, and exceeding the limit could lead to unnecessary expenses.
   
-  Feel free to use this AI Assistant to inquire about anything related to me from the details available on the website. It's here to help you get the information you need.
+Feel free to use this AI Assistant to inquire about anything related to me from the details available on the website. It's here to help you get the information you need.
   
-  I trust you understand and will cooperate. Enjoy your conversation with AI Assistant! Thank you for visiting.
+I trust you understand and will cooperate. Enjoy your conversation with AI Assistant! Thank you for visiting.
   `,
 };
