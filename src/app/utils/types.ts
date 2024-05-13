@@ -1,12 +1,11 @@
 import { ReactNode } from "react";
-import { StaticImageData } from "next/image";
 
 //Common
 type Item = {
   title: string;
   description: string;
   image: {
-    src: StaticImageData;
+    src: string;
     alt: string;
   };
   link: string;
@@ -44,7 +43,7 @@ export type VCardProps = {
   title: string;
   description?: string;
   image: {
-    src: StaticImageData;
+    src: string;
     alt: string;
   };
   link: string;
@@ -72,7 +71,7 @@ export type TCardProps = {
   author: {
     name: string;
     image: {
-      src: StaticImageData;
+      src: string;
       alt: string;
     };
     job: string;

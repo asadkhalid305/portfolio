@@ -1,11 +1,10 @@
 import Image from "next/image";
-import ImageDefault from "public/images/default.jpeg";
 import { TCardProps } from "@/app/utils/types";
 
 export default function TCard({ text, author }: TCardProps) {
   const {
     name,
-    image: { src = ImageDefault, alt = "" } = {},
+    image: { src = "/images/default.jpeg", alt = "" } = {},
     job,
     link,
   } = author || {};
@@ -16,7 +15,13 @@ export default function TCard({ text, author }: TCardProps) {
       </blockquote>
       <a href={link} target="_blank">
         <figcaption className="flex items-center justify-center ">
-          <Image className="rounded-full w-9 h-9" src={src} alt={alt} />
+          <Image
+            className="rounded-full w-9 h-9"
+            width={200}
+            height={200}
+            src={src}
+            alt={alt}
+          />
           <div className="space-y-0.5 font-medium text-left rtl:text-right ms-3">
             <div>{name}</div>
             <div className="text-sm text-gray-500">{job}</div>

@@ -1,7 +1,4 @@
 import Image from "next/image";
-import IconName from "public/icons/name.png";
-import IconEmail from "public/icons/email.png";
-import IconMessage from "public/icons/message.png";
 import Button from "./button";
 
 export default function ContactForm() {
@@ -20,7 +17,7 @@ export default function ContactForm() {
               alt="name icon"
               className="rounded-xl"
               draggable="false"
-              src={IconName}
+              src="icons/name.png"
               width="24"
               height="24"
             />
@@ -40,7 +37,7 @@ export default function ContactForm() {
               alt="email icon"
               className="rounded-xl"
               draggable="false"
-              src={IconEmail}
+              src="icons/email.png"
               width="24"
               height="24"
             />
@@ -60,7 +57,7 @@ export default function ContactForm() {
               alt="message icon"
               className="rounded-xl"
               draggable="false"
-              src={IconMessage}
+              src="icons/message.png"
               width="24"
               height="24"
             />

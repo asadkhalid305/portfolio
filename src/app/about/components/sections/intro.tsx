@@ -1,5 +1,4 @@
 import Image from "next/image";
-import IntroImage from "public/images/myself.png";
 import { intro } from "@/app/utils/constants";
 import DisplayInfo from "../general/display-info";
 
@@ -22,7 +21,7 @@ export default function Intro() {
           alt="personal photo"
           className="bg-c-dark rounded-full pt-2"
           draggable="false"
-          src={IntroImage}
+          src="/images/myself.png"
           width="394"
           height="399"
           priority
