@@ -1,8 +1,3 @@
-import Event1 from "public/images/event-1.jpeg";
-import Event2 from "public/images/event-2.jpeg";
-import Event3 from "public/images/event-3.jpeg";
-import Blog1 from "public/images/blog-1.webp";
-import Blog2 from "public/images/blog-2.webp";
 import Testimonial1 from "public/images/testimonial-1.jpeg";
 import Testimonial2 from "public/images/testimonial-2.jpeg";
 import Testimonial3 from "public/images/testimonial-3.jpeg";
@@ -131,7 +126,7 @@ export const contribution: Contribution = {
         title: "Code Movement Pakistan",
         description: `I gave a tech talk on topic of "Data Driven UI Components".`,
         image: {
-          src: Event1,
+          src: "/images/event-1.jpeg",
           alt: "poster-1",
         },
         link: "https://www.linkedin.com/feed/update/urn:li:activity:6883406697751207936/",
@@ -140,7 +135,7 @@ export const contribution: Contribution = {
         title: "Google Developers Group",
         description: "I mentored participitants on subject of web technologies",
         image: {
-          src: Event2,
+          src: "/images/event-2.jpeg",
           alt: "poster-2",
         },
         link: "https://www.linkedin.com/feed/update/urn:li:activity:6822123556755791872/",
@@ -150,7 +145,7 @@ export const contribution: Contribution = {
         description:
           "I started a mentorship program for computer science students at Univerity of Karachi. I along with industry professionals guided them to create industry-standard final year projects and assited throughout their journey.",
         image: {
-          src: Event3,
+          src: "/images/event-3.jpeg",
           alt: "poster-3",
         },
         link: "https://www.linkedin.com/posts/asadkhalid305_dcs-activity-6903682935338131456-jEYp?utm_source=share&utm_medium=member_desktop",
@@ -161,7 +156,7 @@ export const contribution: Contribution = {
         title: "Tech Jobs in Europe",
         description: `In this blog post I have given tips and insights to get tnterview calls from European companies.`,
         image: {
-          src: Blog1,
+          src: "/images/blog-1.webp",
           alt: "poster-1",
         },
         link: "https://asadkhalid305.medium.com/tech-jobs-in-europe-insights-and-tips-to-get-interview-calls-a202622cbc99",
@@ -170,7 +165,7 @@ export const contribution: Contribution = {
         title: "Making the Most of Company Events",
         description: `In this blog post I have talked about how to make the most of company events.`,
         image: {
-          src: Blog2,
+          src: "/images/blog-2.webp",
           alt: "poster-2",
         },
         link: "https://asadkhalid305.medium.com/career-growth-making-the-most-of-company-events-cc8ec5149bb8",
@@ -188,7 +183,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Carlos Cunha",
         image: {
-          src: Testimonial1,
+          src: "/images/testimonial-1.jpeg",
           alt: "Carlos Cunha",
         },
         job: "Senior Software Engineer at at GetSafe",
@@ -202,7 +197,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Abdul Wahab",
         image: {
-          src: Testimonial2,
+          src: "/images/testimonial-2.jpeg",
           alt: "Abdul Wahab",
         },
         job: "Techinical Lead at Securiti.ai",
@@ -225,7 +220,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Shahnawaz A K",
         image: {
-          src: Testimonial3,
+          src: "/images/testimonial-3.jpeg",
           alt: "Shahnawaz A K",
         },
         job: "Senior Full Stack Engineer at Rapyd",
@@ -240,7 +235,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Hassan Ahmed",
         image: {
-          src: Testimonial4,
+          src: "/images/testimonial-4.jpeg",
           alt: "Hassan Ahmed",
         },
         job: "Senior Software Engineer at Phrase",
@@ -252,7 +247,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Rehmat Murad Ali",
         image: {
-          src: Testimonial5,
+          src: "/images/testimonial-5.jpeg",
           alt: "Rehmat Murad Ali",
         },
         job: "Senior Software Engineer at Bayzat",
@@ -264,7 +259,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Syed M Suhaib",
         image: {
-          src: Testimonial6,
+          src: "/images/testimonial-6.jpeg",
           alt: "Syed M Suhaib",
         },
         job: "Senior Software Engineer at Nisum",

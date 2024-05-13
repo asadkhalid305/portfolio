@@ -3,8 +3,6 @@
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import LogoDark from "public/images/logo-dark.png";
-import LogoLight from "public/images/logo-light.png";
 import { header } from "@/app/utils/constants";
 import useHeader from "../hooks/useHeader";
 
@@ -27,7 +25,7 @@ export default function Header() {
         <Image
           alt="brand logo"
           draggable="false"
-          src={isDark ? LogoLight : LogoDark}
+          src={isDark ? "/images/logo-light.png" : "/images/logo-dark.png"}
           width="144"
           height="30"
         />

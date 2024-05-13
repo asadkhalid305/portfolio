@@ -1,6 +1,4 @@
 import Image from "next/image";
-import IconMagic from "public/icons/magic.png";
-import IconInfo from "public/icons/info.png";
 import { ChatbotHeaderProps } from "@/app/utils/types";
 import { chatbot } from "@/app/utils/constants";
 
@@ -30,7 +28,7 @@ export default function ChatbotHeader({
             <Image
               alt="ai icon"
               draggable="false"
-              src={IconMagic}
+              src="/icons/ai.png"
               width="24"
               height="24"
             />
@@ -43,7 +41,7 @@ export default function ChatbotHeader({
             <Image
               alt="info icon"
               draggable="false"
-              src={IconInfo}
+              src="/icons/info.png"
               width="24"
               height="24"
             />
