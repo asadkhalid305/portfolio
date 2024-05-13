@@ -37,9 +37,7 @@ export default function Header() {
               key={link.href}
               className="rounded-lg p-1 px-3 transition-colors duration-300 ease-in-out hover:bg-gray-200"
             >
-              <Link href={link.href} scroll={false}>
-                {link.name}
-              </Link>
+              <Link href={link.href}>{link.name}</Link>
             </li>
           ))}
         </ul>
