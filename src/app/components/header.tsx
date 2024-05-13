@@ -31,11 +31,11 @@ export default function Header() {
           width="144"
           height="30"
         />
-        <ul className="hidden space-x-4 uppercase font-medium text-lg md:show md:flex">
+        <ul className="hidden text-lg font-medium md:show md:flex">
           {links.map((link) => (
             <li
               key={link.href}
-              className="transition-colors duration-75 ease-in-out hover:text-blue-500"
+              className="rounded-lg p-1 px-3 transition-colors duration-300 ease-in-out hover:bg-gray-200"
             >
               <Link href={link.href}>{link.name}</Link>
             </li>
