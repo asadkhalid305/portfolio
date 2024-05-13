@@ -25,27 +25,27 @@ export const header: Header = {
   links: [
     {
       name: "Intro",
-      href: "/#intro",
+      href: "#intro",
     },
     {
       name: "Journey",
-      href: "/#journey",
+      href: "#journey",
     },
     {
       name: "Experience",
-      href: "/#experience",
+      href: "#experience",
     },
     {
       name: "Contribution",
-      href: "/#contribution",
+      href: "#contribution",
     },
     {
       name: "Testimonial",
-      href: "/#testimonial",
+      href: "#testimonial",
     },
     {
       name: "Contact",
-      href: "/#contact",
+      href: "#contact",
     },
   ],
 };
