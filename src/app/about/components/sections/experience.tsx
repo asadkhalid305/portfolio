@@ -1,11 +1,8 @@
-import {
-  experienceHeading as heading,
-  experienceDescription as description,
-  experiences,
-  linkedInExperienceLink,
-} from "@/app/utils/constants";
+import { experience } from "@/app/utils/constants";
 import DisplayInfo from "../general/display-info";
 import Timeline from "../general/timeline";
+
+const { heading, description, items, linkedInLink } = experience;
 
 export default function Experience() {
   return (
@@ -19,7 +16,7 @@ export default function Experience() {
         />
       </div>
       <div className="flex-1 w-full">
-        <Timeline record={experiences} link={linkedInExperienceLink} />
+        <Timeline record={items} link={linkedInLink} />
       </div>
     </div>
   );

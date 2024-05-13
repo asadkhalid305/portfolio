@@ -1,6 +1,22 @@
 import { ReactNode } from "react";
 import { StaticImageData } from "next/image";
 
+//Common
+type Item = {
+  title: string;
+  description: string;
+  image: {
+    src: StaticImageData;
+    alt: string;
+  };
+  link: string;
+};
+
+type SectionDefault = {
+  heading: string;
+  description: string;
+};
+
 export type LayoutProps = {
   children: ReactNode;
 };
@@ -10,7 +26,7 @@ export type ButtonProps = {
 };
 
 export type DisplayInfoProps = {
-  description?: ReactNode;
+  description?: string;
   heading: string;
   centerHeading?: boolean;
   paddingRight?: boolean;
@@ -62,4 +78,79 @@ export type TCardProps = {
     job: string;
     link: string;
   };
+};
+
+export type Header = {
+  links: {
+    name: string;
+    href: string;
+  }[];
+};
+
+export type Intro = SectionDefault;
+
+export type Journey = SectionDefault;
+
+export type Experience = SectionDefault & {
+  items: {
+    company: string;
+    date: string;
+    location: string;
+    position: string;
+  }[];
+  linkedInLink: string;
+};
+
+export type Contribution = SectionDefault & {
+  items: {
+    events: Item[];
+    blogs: Item[];
+  };
+};
+
+export type Testimonial = Pick<SectionDefault, "heading"> & {
+  items: TCardProps[];
+};
+
+export type Contact = SectionDefault;
+
+export type Chatbot = {
+  prompt: string;
+  dataset: string;
+  limit: number;
+  info: string;
+};
+
+export type ChatbotHeaderProps = {
+  showChatbot: boolean;
+  setShowChatbot: (value: boolean) => void;
+};
+
+export type ChatbotMessage = {
+  role: string;
+  content: string;
+};
+
+export interface ChatbotMessageProps {
+  message: ChatbotMessage;
+  index: number;
+}
+
+export type ChatbotMessagesProps = {
+  messages: ChatbotMessage[];
+  loading: boolean;
+};
+
+export type ChatbotFormProps = {
+  userInput: string;
+  setUserInput: (value: string) => void;
+  isMessageLimitReached: boolean;
+  handleSend: (event: React.FormEvent<HTMLFormElement>) => void;
+};
+
+export type APIErrorResponse = {
+  message: string;
+  type: string;
+  param: null | string;
+  code: string;
 };

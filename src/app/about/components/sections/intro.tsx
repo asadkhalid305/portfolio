@@ -1,10 +1,9 @@
 import Image from "next/image";
-import DisplayInfo from "../general/display-info";
 import IntroImage from "public/images/myself.png";
-import {
-  introHeading as heading,
-  introDescription as description,
-} from "@/app/utils/constants";
+import { intro } from "@/app/utils/constants";
+import DisplayInfo from "../general/display-info";
+
+const { heading, description } = intro;
 
 export default function Intro() {
   return (

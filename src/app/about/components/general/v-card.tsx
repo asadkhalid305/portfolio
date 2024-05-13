@@ -1,7 +1,7 @@
 import Image from "next/image";
-import LinkButton from "./link-button";
 import ImageDefault from "public/images/default.jpeg";
 import { VCardProps } from "@/app/utils/types";
+import LinkButton from "./link-button";
 
 export default function VCard({
   title,

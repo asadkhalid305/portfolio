@@ -1,10 +1,8 @@
+import { contribution } from "@/app/utils/constants";
 import DisplayInfo from "../general/display-info";
 import VCardSystem from "../general/v-card-system";
-import {
-  contributions,
-  contributionHeading as heading,
-  contributionDescription as description,
-} from "@/app/utils/constants";
+
+const { heading, description, items } = contribution;
 
 export default function Contribution() {
   return (
@@ -19,7 +17,7 @@ export default function Contribution() {
       </div>
 
       {/* Events & Blogs */}
-      {Object.entries(contributions).map(([key, value], index) => (
+      {Object.entries(items).map(([key, value], index) => (
         <VCardSystem key={index} heading={key} records={value} />
       ))}
     </>

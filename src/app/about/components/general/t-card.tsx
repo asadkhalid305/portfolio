@@ -1,6 +1,6 @@
-import { TCardProps } from "@/app/utils/types";
 import Image from "next/image";
 import ImageDefault from "public/images/default.jpeg";
+import { TCardProps } from "@/app/utils/types";
 
 export default function TCard({ text, author }: TCardProps) {
   const {
