@@ -27,7 +27,7 @@ export default function Header() {
           draggable="false"
           src={isDark ? "/images/logo-light.png" : "/images/logo-dark.png"}
           width="144"
-          height="30"
+          height="144"
         />
         <ul className="hidden text-lg font-medium md:show md:flex">
           {links.map((link) => (

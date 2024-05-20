@@ -1,8 +1,8 @@
 "use client";
 
-import ChatbotHeader from "./chatbotHeader";
-import ChatbotForm from "./chatbotForm";
-import ChatbotMessages from "./chatbotMessages";
+import ChatbotHeader from "./chatbot-header";
+import ChatbotForm from "./chatbot-form";
+import ChatbotMessages from "./chatbot-messages";
 import useChatbot from "../../hooks/useChatbot";
 import { useState } from "react";
 import clsx from "clsx";
