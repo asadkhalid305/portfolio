@@ -1,8 +1,7 @@
-// ChatMessage.tsx
 import { useEffect, useRef } from "react";
 import { ChatbotMessagesProps } from "@/app/utils/types";
-import ChatbotLoading from "./chatbotLoading";
-import ChatbotMessage from "./chatbotMessage";
+import ChatbotLoading from "./chatbot-loading";
+import ChatbotMessage from "./chatbot-message";
 
 export default function ChatbotMessages({
   messages,

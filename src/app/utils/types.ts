@@ -27,7 +27,6 @@ export type ButtonProps = {
 export type DisplayInfoProps = {
   description?: string;
   heading: string;
-  centerHeading?: boolean;
   paddingRight?: boolean;
   paddingTop?: boolean;
   paddingBottom?: boolean;

@@ -4,7 +4,6 @@ import { DisplayInfoProps } from "@/app/utils/types";
 export default function DisplayInfo({
   description = "",
   heading = "",
-  centerHeading = false,
   paddingRight = false,
   paddingTop = false,
   paddingBottom = false,
@@ -19,9 +18,9 @@ export default function DisplayInfo({
       })}
     >
       <h1
-        className={clsx("text-5xl font-extrabold pb-6 lg:text-6xl", {
-          "text-center": centerHeading,
-        })}
+        className={clsx(
+          "text-center text-5xl font-extrabold pb-6 lg:text-6xl lg:text-left"
+        )}
       >
         {heading}
       </h1>
