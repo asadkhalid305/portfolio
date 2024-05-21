@@ -116,6 +116,17 @@ export type Testimonial = Pick<SectionDefault, "heading"> & {
 
 export type Contact = SectionDefault;
 
+type SocialLink = Link & {
+  icon: string;
+};
+
+export type Socials = {
+  linkedIn: SocialLink;
+  github: SocialLink;
+  topmateIO: SocialLink;
+  mercedesBenzIO: SocialLink;
+};
+
 export type Chatbot = {
   prompt: string;
   dataset: string;
@@ -148,11 +159,4 @@ export type ChatbotFormProps = {
   setUserInput: (value: string) => void;
   isMessageLimitReached: boolean;
   handleSend: (event: React.FormEvent<HTMLFormElement>) => void;
-};
-
-export type APIErrorResponse = {
-  message: string;
-  type: string;
-  param: null | string;
-  code: string;
 };

@@ -6,6 +6,7 @@ import {
   Header,
   Intro,
   Journey,
+  Socials,
   Testimonial,
 } from "./types";
 
@@ -312,7 +313,7 @@ I trust you understand and will cooperate. Enjoy your conversation with AI Assis
   `,
 };
 
-export const socials = {
+export const socials: Socials = {
   linkedIn: {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/asadkhalid305",
@@ -323,12 +324,12 @@ export const socials = {
     href: "https://github.com/asadkhalid305/",
     icon: "/icons/github.min.svg",
   },
-  topmateio: {
+  topmateIO: {
     name: "Topmate.io",
     href: "https://topmate.io/asadullahkhalid",
     icon: "",
   },
-  mercedesbenzio: {
+  mercedesBenzIO: {
     name: "Mrcedes-Benz.io",
     href: "https://www.mercedes-benz.io/",
     icon: "",
