@@ -1,4 +1,3 @@
-import React from "react";
 import { ChatbotFormProps } from "@/app/utils/types";
 
 export default function ChatbotForm({

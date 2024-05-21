@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { socials } from "../utils/constants";
+
+const {
+  linkedIn: { name: linkedInName, icon: linkedInIcon, href: linkedInHref },
+  github: { name: githubNamem, icon: githubIcon, href: githubHref },
+} = socials;
 
 export default function Footer() {
   return (
@@ -11,24 +17,24 @@ export default function Footer() {
         </div>
         <ul className="flex space-x-4 max-md:pt-2">
           <li>
-            <Link href="https://www.linkedin.com/in/asadkhalid305">
+            <Link href={linkedInHref}>
               <Image
-                alt="LinkedIn URI"
+                alt={linkedInName}
                 className="fill-c-light"
                 draggable="false"
-                src="/icons/linkedin.min.svg"
+                src={linkedInIcon}
                 width={24}
                 height={24}
               />
             </Link>
           </li>
           <li>
-            <Link href="https://github.com/asadkhalid305/">
+            <Link href={githubHref}>
               <Image
-                alt="GitHub URI"
+                alt={githubNamem}
                 className="fill-c-light"
                 draggable="false"
-                src="/icons/github.min.svg"
+                src={githubIcon}
                 width={24}
                 height={24}
               />
