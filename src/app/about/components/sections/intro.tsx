@@ -3,7 +3,7 @@ import { intro, socials } from "@/app/utils/constants";
 
 const { heading } = intro;
 const {
-  mercedesbenzio: { href },
+  mercedesBenzIO: { href },
 } = socials;
 
 export default function Intro() {

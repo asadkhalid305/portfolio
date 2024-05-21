@@ -7,13 +7,15 @@ const {
   github: { name: githubNamem, icon: githubIcon, href: githubHref },
 } = socials;
 
+const year = new Date().getFullYear();
+
 export default function Footer() {
   return (
     <footer className="bg-c-dark text-c-light text-center py-10">
-      <div className="flex flex-col justify-between items-center px-4 lg:flex-row lg:max-w-7xl lg:mx-auto">
+      <div className="flex flex-col justify-between items-center px-4  lg:max-w-7xl lg:mx-auto">
         <div className="space-x-1 text-xl">
           <span>&#169;</span>
-          <span>2023 Asad Ullah Khalid. All rights reserved.</span>
+          <span>{year} Asad Ullah Khalid. All rights reserved.</span>
         </div>
         <ul className="flex space-x-4 max-md:pt-2">
           <li>
