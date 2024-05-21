@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { TCardProps } from "@/app/utils/types";
+import Tooltip from "./tooltip";
 
 export default function TCard({ text, author }: TCardProps) {
   const {
@@ -11,7 +12,9 @@ export default function TCard({ text, author }: TCardProps) {
   return (
     <figure className="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e">
       <blockquote className="max-w-xl mx-auto mb-4 text-gray-500 lg:mb-8">
-        <p className="my-4 line-clamp-3">{text}</p>
+        <Tooltip text={text}>
+          <p className="my-4 line-clamp-3">{text}</p>
+        </Tooltip>
       </blockquote>
       <a href={link} target="_blank">
         <figcaption className="flex items-center justify-center ">
