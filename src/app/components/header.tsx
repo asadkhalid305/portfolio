@@ -2,9 +2,9 @@
 
 import clsx from "clsx";
 import Image from "next/image";
-import Link from "next/link";
 import { header } from "@/app/utils/constants";
 import useHeader from "../hooks/useHeader";
+import HeaderLinks from "./header-links";
 
 const { links } = header;
 
@@ -22,23 +22,17 @@ export default function Header() {
       )}
     >
       <nav className="flex justify-between px-4 lg:max-w-7xl lg:mx-auto">
-        <Image
-          alt="brand logo"
-          draggable="false"
-          src={isDark ? "/images/logo-light.png" : "/images/logo-dark.png"}
-          width="144"
-          height="144"
-        />
-        <ul className="hidden text-lg font-medium md:show md:flex">
-          {links.map((link) => (
-            <li
-              key={link.href}
-              className="transition-colors duration-300 ease-in-out hover:bg-gray-200 rounded-lg p-1 px-3"
-            >
-              <Link href={`/${link.href}`}>{link.name}</Link>
-            </li>
-          ))}
-        </ul>
+        <div className="flex items-center justify-center">
+          <div className="relative w-36 h-8">
+            <Image
+              alt="brand logo"
+              draggable="false"
+              fill={true}
+              src={isDark ? "/images/logo-light.png" : "/images/logo-dark.png"}
+            />
+          </div>
+        </div>
+        <HeaderLinks links={links} />
       </nav>
     </header>
   );

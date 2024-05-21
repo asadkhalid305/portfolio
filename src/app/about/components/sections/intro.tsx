@@ -17,15 +17,16 @@ export default function Intro() {
         />
       </div>
       <div className="flex-1 flex justify-center lg:justify-end">
-        <Image
-          alt="personal photo"
-          className="bg-c-dark rounded-full pt-2"
-          draggable="false"
-          src="/images/myself.png"
-          width="394"
-          height="399"
-          priority
-        />
+        <div className="relative h-96 w-96">
+          <Image
+            alt="personal photo"
+            className="bg-c-dark rounded-full pt-2"
+            draggable="false"
+            fill={true}
+            priority
+            src="/images/myself.png"
+          />
+        </div>
       </div>
     </div>
   );

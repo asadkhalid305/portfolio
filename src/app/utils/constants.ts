@@ -310,3 +310,21 @@ Feel free to use this AI Assistant to inquire about anything related to me from 
 I trust you understand and will cooperate. Enjoy your conversation with AI Assistant! Thank you for visiting.
   `,
 };
+
+export const socials = {
+  linkedIn: {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/asadkhalid305",
+    icon: "/icons/linkedin.min.svg",
+  },
+  github: {
+    name: "GitHub",
+    href: "https://github.com/asadkhalid305/",
+    icon: "/icons/github.min.svg",
+  },
+  topmateio: {
+    name: "Topmate.io",
+    href: "https://topmate.io/asadullahkhalid",
+    icon: "",
+  },
+};

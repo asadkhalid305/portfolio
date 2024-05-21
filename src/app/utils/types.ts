@@ -78,12 +78,16 @@ export type TCardProps = {
   };
 };
 
-export type Header = {
-  links: {
-    name: string;
-    href: string;
-  }[];
+type Link = {
+  name: string;
+  href: string;
 };
+
+export type Header = {
+  links: Link[];
+};
+
+export type HeaderLinksProps = Header;
 
 export type Intro = SectionDefault;
 
