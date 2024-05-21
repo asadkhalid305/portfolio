@@ -42,8 +42,9 @@ export const header: Header = {
 // Intro
 export const intro: Intro = {
   heading: "Introduction",
-  description:
-    "Hey there! My name is Asad Ullah Khalid, I am a Senior Software Engineer and enthusiast about JavaScript. Also, I am passionate about helping people navigate their career effectively.",
+  description: `Hey, I am Asad Ullah, a Senior Software Engineer at Mercedes-Benz.io in Germany. With 6+ years in the field, I have come a long way, learning, networking, and giving back to the community. As a mentor and public speaker, I have helped numerous students and professionals in their career journeys. 
+
+If you are seeking guidance or interested in collaborating, Let's connect!`,
 };
 
 // Journey
@@ -325,6 +326,11 @@ export const socials = {
   topmateio: {
     name: "Topmate.io",
     href: "https://topmate.io/asadullahkhalid",
+    icon: "",
+  },
+  mercedesbenzio: {
+    name: "Mrcedes-Benz.io",
+    href: "https://www.mercedes-benz.io/",
     icon: "",
   },
 };
