@@ -146,6 +146,17 @@ export type Socials = {
   mercedesBenzIO: SocialLink;
 };
 
+type SocialLink = Link & {
+  icon: string;
+};
+
+export type Socials = {
+  linkedIn: SocialLink;
+  github: SocialLink;
+  topmateIO: SocialLink;
+  mercedesBenzIO: SocialLink;
+};
+
 export type Chatbot = {
   config: {
     model: string;
