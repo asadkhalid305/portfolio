@@ -1,4 +1,4 @@
-import Link from "next/link";
+import clsx from "clsx";
 import { HeaderLinksProps } from "../utils/types";
 import { socials } from "../utils/constants";
 
@@ -22,7 +22,9 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
       <a href={href} target="_blank" rel="noopener noreferrer">
         <button
           type="button"
-          className="p-1.5 px-3 rounded-lg bg-gray-300 transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-gray-300 hover:to-gray-400"
+          className={clsx(
+            "p-1.5 px-3 font-bold outline outline-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-gray-300"
+          )}
         >
           Book 1:1 Session
         </button>
