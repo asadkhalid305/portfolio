@@ -7,7 +7,7 @@ export default function ChatbotLoading() {
           .map((_, i) => (
             <div
               key={i}
-              className="h-1.5 w-1.5 bg-black rounded-full animate-pulse"
+              className="h-1.5 w-1.5 bg-c-dark rounded-full animate-pulse"
             ></div>
           ))}
       </div>

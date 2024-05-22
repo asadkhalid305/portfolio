@@ -17,7 +17,7 @@ export default function Tooltip({ text, children }: TooltipProps) {
       className="relative inline-block"
     >
       {showTooltip && (
-        <div className="absolute w-96 mb-2 p-4 text-left bottom-full left-1/2 bg-c-dark text-white rounded-md z-10transform -translate-x-1/2">
+        <div className="absolute w-96 mb-2 p-4 text-left bottom-full left-1/2 bg-c-dark text-c-light rounded-md z-10transform -translate-x-1/2">
           {text}
         </div>
       )}

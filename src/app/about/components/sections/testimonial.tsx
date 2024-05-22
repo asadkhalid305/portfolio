@@ -8,7 +8,7 @@ export default function Testimonial() {
   return (
     <div className="flex flex-col pt-20 lg:pt-36">
       <div className="flex-1">
-        <DisplayInfo whitespacePreWrap heading={heading} paddingBottom />
+        <DisplayInfo heading={heading} paddingBottom />
       </div>
       <div className="flex-1">
         <div

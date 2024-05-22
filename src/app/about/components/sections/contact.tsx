@@ -11,9 +11,9 @@ export default function Contact() {
         <DisplayInfo
           description={description}
           heading={heading}
+          paddingBottom
           paddingRight
           paddingTop
-          paddingBottom
         />
       </div>
       <div className="flex-1 flex justify-center lg:justify-end">

@@ -7,14 +7,13 @@ export default function DisplayInfo({
   paddingRight = false,
   paddingTop = false,
   paddingBottom = false,
-  whitespacePreWrap = false,
 }: DisplayInfoProps) {
   return (
     <div
       className={clsx({
-        "lg:pr-10": paddingRight,
         "pb-16": paddingBottom,
         "pt-16": paddingTop,
+        "lg:pr-10": paddingRight,
       })}
     >
       <h1
@@ -24,12 +23,7 @@ export default function DisplayInfo({
       >
         {heading}
       </h1>
-      <p
-        className={clsx("text-xl lg:text-2xl", {
-          "whitespace-pre-wrap": whitespacePreWrap,
-          "leading-normal": true,
-        })}
-      >
+      <p className="whitespace-pre-wrap text-xl lg:text-2xl lg:leading-9">
         {description}
       </p>
     </div>

@@ -9,7 +9,6 @@ export default function Experience() {
     <div className="flex flex-col pt-20 lg:pt-36">
       <div className="flex-1">
         <DisplayInfo
-          whitespacePreWrap
           description={description}
           heading={heading}
           paddingBottom

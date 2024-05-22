@@ -16,7 +16,7 @@ export default function Header() {
       className={clsx(
         "transition-colors duration-300 ease-in-out sticky top-0 z-50 py-5",
         {
-          "bg-c-dark text-white": isDark,
+          "bg-c-dark text-c-light": isDark,
           "bg-c-semiDark": !isDark,
         }
       )}

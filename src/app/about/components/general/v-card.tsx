@@ -10,7 +10,7 @@ export default function VCard({
 }: VCardProps) {
   const { src = "/images/default.jpeg", alt = "" } = image || {};
   return (
-    <div className="max-w-sm border border-gray-200 rounded-lg shadow flex flex-col">
+    <div className="max-w-sm border border-gray-200 rounded-lg shadow flex flex-col hover:bg-c-semiDark hover:shadow-2xl">
       <div className="relative h-96 w-96">
         <Image
           alt={alt}

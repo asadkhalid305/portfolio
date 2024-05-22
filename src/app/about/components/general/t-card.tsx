@@ -10,8 +10,8 @@ export default function TCard({ text, author }: TCardProps) {
     link,
   } = author || {};
   return (
-    <figure className="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e">
-      <blockquote className="max-w-xl mx-auto mb-4 text-gray-500 lg:mb-8">
+    <figure className="flex flex-col items-center justify-center p-8 text-center bg-c-light border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e hover:bg-c-semiDark hover:shadow-2xl">
+      <blockquote className="max-w-xl mx-auto mb-4 text-c-dark cursor-pointer lg:mb-8">
         <Tooltip text={text}>
           <p className="my-4 line-clamp-3">{text}</p>
         </Tooltip>
@@ -27,7 +27,7 @@ export default function TCard({ text, author }: TCardProps) {
           />
           <div className="space-y-0.5 font-medium text-left rtl:text-right ms-3">
             <div>{name}</div>
-            <div className="text-sm text-gray-500">{job}</div>
+            <div className="text-sm text-c-dark">{job}</div>
           </div>
         </figcaption>
       </a>
