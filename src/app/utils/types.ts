@@ -30,7 +30,6 @@ export type DisplayInfoProps = {
   paddingRight?: boolean;
   paddingTop?: boolean;
   paddingBottom?: boolean;
-  whitespacePreWrap?: boolean;
 };
 
 export type CardSystemProps = {

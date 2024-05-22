@@ -9,7 +9,6 @@ export default function Contribution() {
     <>
       <div className="pt-20 lg:pt-36">
         <DisplayInfo
-          whitespacePreWrap
           description={description}
           heading={heading}
           paddingBottom

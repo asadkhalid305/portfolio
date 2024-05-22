@@ -9,7 +9,7 @@ export default function ChatbotMessage({
     <div className="flex justify-end">
       <div
         key={index}
-        className={clsx("mb-4 p-2 rounded-md bg-gray-200", {
+        className={clsx("mb-4 p-2 rounded-md bg-gray-200 shadow-md", {
           "self-end": message.role === "user",
         })}
       >

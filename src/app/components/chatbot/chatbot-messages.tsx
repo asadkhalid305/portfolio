@@ -14,7 +14,7 @@ export default function ChatbotMessages({
   }, [messages]);
 
   return (
-    <div className="flex flex-col overflow-y-auto p-4 h-full">
+    <div className="flex flex-col overflow-y-auto p-4 h-full shadow-inner">
       {messages.map((message, index) => (
         <ChatbotMessage key={index} index={index} message={message} />
       ))}
