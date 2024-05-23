@@ -14,10 +14,10 @@ export default function Tooltip({ text, children }: TooltipProps) {
     <div
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
-      className="relative inline-block"
+      className="relative"
     >
       {showTooltip && (
-        <div className="absolute w-96 mb-2 p-4 text-left bottom-full left-1/2 bg-c-dark text-c-light rounded-md z-10transform -translate-x-1/2">
+        <div className="absolute w-96 mb-2 p-4 text-left bottom-full left-1/2 bg-c-dark text-c-light text-md text-normal rounded-md z-10transform -translate-x-1/2">
           {text}
         </div>
       )}
