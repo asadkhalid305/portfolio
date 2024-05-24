@@ -1,6 +1,6 @@
 import { contact } from "@/app/utils/constants";
 import DisplayInfo from "../general/display-info";
-import PCard from "../general/p-card";
+import PCard from "../general/profile-card";
 
 const { heading, description } = contact;
 
