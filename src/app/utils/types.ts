@@ -50,6 +50,8 @@ export type VCardProps = {
 export type LinkButtonProps = {
   href: string;
   text: string;
+  showIcon: boolean;
+  className?: string;
 };
 
 export type TimelineProps = {

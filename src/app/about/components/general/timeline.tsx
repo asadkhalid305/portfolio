@@ -15,7 +15,12 @@ export default function Timeline({ record, link }: TimelineProps) {
         />
       ))}
       <li className="max-md:mb-10 max-md:ml-4 md:self-center">
-        <LinkButton href={link} text="Learn more" />
+        <LinkButton
+          className="hover:bg-gray-800"
+          href={link}
+          showIcon
+          text="Learn more"
+        />
       </li>
     </ol>
   );

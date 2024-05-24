@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Button from "./button";
 
 export default function ContactForm() {
   return (
@@ -64,7 +63,9 @@ export default function ContactForm() {
           </span>
         </div>
       </div>
-      <Button>Submit</Button>
+      <button className="w-full inline-block rounded-lg bg-c-dark text-c-light px-5 py-3 font-medium shadow-lg focus:ring-4 focus:outline-none">
+        Submit
+      </button>
     </form>
   );
 }

@@ -42,8 +42,9 @@ export default function Intro() {
             alt="personal photo"
             className="bg-c-dark rounded-full pt-2"
             draggable="false"
-            fill={true}
+            fill
             priority
+            sizes="100%"
             src="/images/myself.png"
           />
         </div>

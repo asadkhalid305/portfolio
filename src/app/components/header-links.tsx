@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { HeaderLinksProps } from "../utils/types";
 import { socials } from "../utils/constants";
+import LinkButton from "../about/components/general/link-button";
 
 const {
   topmateIO: { href },
@@ -19,16 +20,12 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
           </li>
         ))}
       </div> */}
-      <a href={href} target="_blank" rel="noopener noreferrer">
-        <button
-          type="button"
-          className={clsx(
-            "p-1.5 px-3 font-semibold outline outline-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-gray-300"
-          )}
-        >
-          Book 1:1 Session
-        </button>
-      </a>
+      <LinkButton
+        href={href}
+        text="Book 1:1 Session"
+        showIcon={false}
+        className="outline outline-2 transition-all duration-300 ease-in-out hover:bg-c-light hover:text-c-dark focus:outline-none"
+      />
     </ul>
   );
 }
