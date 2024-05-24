@@ -1,6 +1,6 @@
 import { contribution } from "@/app/utils/constants";
 import DisplayInfo from "../general/display-info";
-import VCardSystem from "../general/v-card-system";
+import VCardGrid from "../general/v-card-grid";
 
 const { heading, description, items } = contribution;
 
@@ -17,7 +17,7 @@ export default function Contribution() {
 
       {/* Events & Blogs */}
       {Object.entries(items).map(([key, value], index) => (
-        <VCardSystem key={index} heading={key} records={value} />
+        <VCardGrid key={index} heading={key} records={value} />
       ))}
     </>
   );
