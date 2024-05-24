@@ -1,6 +1,7 @@
 import { contact } from "@/app/utils/constants";
 import LinkedInBadge from "../general/linkedin-badge";
 import DisplayInfo from "../general/display-info";
+import PCard from "../general/p-card";
 
 const { heading, description } = contact;
 
@@ -19,7 +20,8 @@ export default function Contact() {
       <div className="flex-1 flex justify-center lg:justify-end">
         {/* Todo: Enable ContactForm once email integration is complete */}
         {/* <ContactForm /> */}
-        <LinkedInBadge />
+        {/* <LinkedInBadge /> */}
+        <PCard />
       </div>
     </div>
   );

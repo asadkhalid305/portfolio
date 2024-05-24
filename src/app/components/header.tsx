@@ -27,7 +27,8 @@ export default function Header() {
             <Image
               alt="brand logo"
               draggable="false"
-              fill={true}
+              fill
+              sizes="100%"
               src={isDark ? "/images/logo-light.png" : "/images/logo-dark.png"}
             />
           </div>

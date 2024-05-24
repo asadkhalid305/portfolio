@@ -16,7 +16,7 @@ export default function TCard({ text, author }: TCardProps) {
           <p className="my-4 line-clamp-3 text-md font-normal">{text}</p>
         </Tooltip>
       </blockquote>
-      <a href={link} target="_blank">
+      <a href={link} target="_blank" rel="noopener noreferrer">
         <figcaption className="flex items-center justify-center ">
           <Image
             className="rounded-full w-9 h-9"
