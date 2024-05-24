@@ -24,7 +24,7 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
         href={href}
         text="Book 1:1 Session"
         showIcon={false}
-        className="outline outline-2 transition-all duration-300 ease-in-out hover:bg-c-light hover:text-c-dark focus:outline-none"
+        className="outline outline-2 transition-all duration-300 ease-in-out bg-c-dark hover:bg-c-light hover:text-c-dark focus:outline-none"
       />
     </ul>
   );

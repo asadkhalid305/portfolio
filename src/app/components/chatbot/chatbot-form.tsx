@@ -14,7 +14,7 @@ export default function ChatbotForm({
         placeholder="Write a question..."
         value={userInput}
         onInput={(e) => setUserInput(e.currentTarget.value)}
-        className="flex-grow mr-2 py-2 px-4 border rounded border-2 hover:shadow-inner focus:outline-none focus:border-c-dark focus:shadow-inner"
+        className="flex-grow mr-2 py-2 px-4 border rounded border-2 transition-all duration-300 ease-in-out hover:shadow-inner focus:outline-none focus:border-c-dark focus:shadow-inner"
       />
       <button
         disabled={!userInput || isMessageLimitReached}

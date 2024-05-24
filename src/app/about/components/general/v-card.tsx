@@ -10,7 +10,7 @@ export default function VCard({
 }: VCardProps) {
   const { src = "/images/default.jpeg", alt = "" } = image || {};
   return (
-    <div className="w-full max-w-sm border border-gray-200 rounded-lg shadow flex flex-col hover:bg-c-semiDark hover:shadow-2xl">
+    <div className="w-full max-w-sm border border-gray-200 rounded-lg shadow flex flex-col transition-all duration-300 ease-in-out hover:bg-c-semiDark hover:shadow-2xl">
       <div className="relative h-96 w-full">
         <Image
           alt={alt}
@@ -27,7 +27,7 @@ export default function VCard({
           <p className="mb-3 font-normal ">{description}</p>
         </div>
         <LinkButton
-          className="hover:bg-gray-800"
+          className="bg-c-dark hover:bg-gray-700"
           href={link}
           showIcon
           text="Read more"

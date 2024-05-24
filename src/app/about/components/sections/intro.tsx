@@ -37,7 +37,7 @@ export default function Intro() {
         </div>
       </div>
       <div className="flex-1 flex justify-center lg:justify-end">
-        <div className="relative h-96 w-96">
+        <div className="relative w-96 h-96">
           <Image
             alt="personal photo"
             className="bg-c-dark rounded-full pt-2"
