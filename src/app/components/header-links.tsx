@@ -21,10 +21,10 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
         ))}
       </div> */}
       <LinkButton
+        className="outline outline-2 transition-all duration-300 ease-in-out bg-c-dark text-c-light hover:bg-c-light hover:text-c-dark focus:outline-none"
         href={href}
-        text="Book 1:1 Session"
         showIcon={false}
-        className="outline outline-2 transition-all duration-300 ease-in-out bg-c-dark hover:bg-c-light hover:text-c-dark focus:outline-none"
+        text="Book 1:1 Session"
       />
     </ul>
   );
