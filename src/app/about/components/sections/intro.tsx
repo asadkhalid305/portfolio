@@ -32,7 +32,7 @@ export default function Intro() {
             <br />
             <br />
             If you are seeking guidance or interested in collaborating,{" "}
-            <span className="font-bold">let&apos;s connect!</span>
+            <span className="font-bold">reach out to me!</span>
           </p>
         </div>
       </div>

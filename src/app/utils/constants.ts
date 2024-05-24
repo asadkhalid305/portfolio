@@ -150,7 +150,7 @@ export const contribution: Contribution = {
     blogs: [
       {
         title: "Tech Jobs in Europe",
-        description: `In this blog post I have given tips and insights to get tnterview calls from European companies.`,
+        description: `In this blog post I have given tips and insights to get interview calls from European companies.`,
         image: {
           src: "/images/blog-1.webp",
           alt: "poster-1",
@@ -268,7 +268,7 @@ export const testimonial: Testimonial = {
 export const contact: Contact = {
   heading: `Let's Connect`,
   description:
-    "Your thoughts and questions are always welcome here so do not hesitate to drop me a message if you need assistance or have something to talk about.",
+    "Your thoughts and questions are always welcome so do not hesitate to drop me a message if you need assistance or have something to talk about. I would love to hear from you!",
 };
 
 export const chatbot: Chatbot = {
