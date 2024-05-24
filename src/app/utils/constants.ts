@@ -119,22 +119,34 @@ export const contribution: Contribution = {
   items: {
     events: [
       {
+        title: "Frontend Nation",
+        description: `I will deliver a talk on topic of "How to Revamp Your Frontend Development with BFF".`,
+        image: {
+          src: "/images/event-4.jpg",
+          alt: "event-1",
+        },
+        link: "https://frontendnation.com/",
+        date: "June, 2024",
+      },
+      {
         title: "Code Movement Pakistan",
         description: `I gave a tech talk on topic of "Data Driven UI Components".`,
         image: {
           src: "/images/event-1.jpeg",
-          alt: "poster-1",
+          alt: "event-2",
         },
         link: "https://www.linkedin.com/feed/update/urn:li:activity:6883406697751207936/",
+        date: "Jan, 2022",
       },
       {
         title: "Google Developers Group",
         description: "I mentored participitants on subject of web technologies",
         image: {
           src: "/images/event-2.jpeg",
-          alt: "poster-2",
+          alt: "event-3",
         },
         link: "https://www.linkedin.com/feed/update/urn:li:activity:6822123556755791872/",
+        date: "July, 2022",
       },
       {
         title: "Univeristy of Karachi",
@@ -142,9 +154,10 @@ export const contribution: Contribution = {
           "I started a mentorship program for computer science students at Univerity of Karachi. I along with industry professionals guided them to create industry-standard final year projects and assited throughout their journey.",
         image: {
           src: "/images/event-3.jpeg",
-          alt: "poster-3",
+          alt: "event-4",
         },
         link: "https://www.linkedin.com/posts/asadkhalid305_dcs-activity-6903682935338131456-jEYp?utm_source=share&utm_medium=member_desktop",
+        date: "2022-2023",
       },
     ],
     blogs: [
@@ -153,18 +166,20 @@ export const contribution: Contribution = {
         description: `In this blog post I have given tips and insights to get interview calls from European companies.`,
         image: {
           src: "/images/blog-1.webp",
-          alt: "poster-1",
+          alt: "blog-1",
         },
         link: "https://asadkhalid305.medium.com/tech-jobs-in-europe-insights-and-tips-to-get-interview-calls-a202622cbc99",
+        date: "Dec, 2023",
       },
       {
         title: "Making the Most of Company Events",
         description: `In this blog post I have talked about how to make the most of company events.`,
         image: {
           src: "/images/blog-2.webp",
-          alt: "poster-2",
+          alt: "blog-2",
         },
         link: "https://asadkhalid305.medium.com/career-growth-making-the-most-of-company-events-cc8ec5149bb8",
+        date: "Dec, 2023",
       },
     ],
   },
