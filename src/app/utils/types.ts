@@ -9,6 +9,7 @@ type Item = {
     alt: string;
   };
   link: string;
+  date: string;
 };
 
 type SectionDefault = {
@@ -45,6 +46,7 @@ export type VCardProps = {
     alt: string;
   };
   link: string;
+  date: string;
 };
 
 export type LinkButtonProps = {

@@ -19,6 +19,7 @@ export default function VCardSystem({ heading, records }: CardSystemProps) {
             description={item.description}
             image={item.image}
             link={item.link}
+            date={item.date}
           />
         ))}
       </div>

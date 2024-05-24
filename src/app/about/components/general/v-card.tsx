@@ -7,6 +7,7 @@ export default function VCard({
   description = "",
   image,
   link,
+  date,
 }: VCardProps) {
   const { src = "/images/default.jpeg", alt = "" } = image || {};
   return (
@@ -14,7 +15,7 @@ export default function VCard({
       <div className="relative h-96 w-full">
         <Image
           alt={alt}
-          className="rounded-t-lg h-96"
+          className="rounded-t-lg object-cover object-top bg-c-light"
           draggable="false"
           fill
           sizes="100%"
@@ -23,8 +24,9 @@ export default function VCard({
       </div>
       <div className="p-5 flex-1 flex flex-col justify-between">
         <div>
+          <p className="mb-2 text-sm font-light italic">{date}</p>
           <h5 className="mb-2 text-2xl font-bold tracking-tight">{title}</h5>
-          <p className="mb-3 font-normal ">{description}</p>
+          <p className="mb-3 font-normal">{description}</p>
         </div>
         <LinkButton
           className="bg-c-dark hover:bg-gray-700"
