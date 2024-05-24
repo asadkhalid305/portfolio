@@ -4,7 +4,7 @@ import LinkButton from "./link-button";
 
 export default function PCard() {
   return (
-    <div className="w-full max-w-sm bg-white py-10 border border-gray-200 rounded-lg shadow hover:bg-c-semiDark hover:shadow-2xl">
+    <div className="w-full max-w-sm bg-white py-10 border border-gray-200 rounded-lg shadow transition-all duration-300 ease-in-out hover:bg-c-semiDark hover:shadow-2xl">
       <div className="flex flex-col items-center">
         <div className="relative w-28 h-12">
           <Image
@@ -15,7 +15,7 @@ export default function PCard() {
             src="icons/linkedin-wide.min.svg"
           />
         </div>
-        <h5 className="mt-4 mb-1 text-2xl font-medium">Asad Ullah Khalid</h5>
+        <h5 className="mt-4 mb-1 text-xl font-medium">Asad Ullah Khalid</h5>
         <span className="mb-4 text-md font-light">
           Senior Software Engineer
         </span>
