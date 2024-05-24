@@ -29,7 +29,7 @@ export default function VCard({
           <p className="mb-3 font-normal">{description}</p>
         </div>
         <LinkButton
-          className="bg-c-dark hover:bg-gray-700"
+          className="text-c-light bg-c-dark hover:bg-gray-800"
           href={link}
           showIcon
           text="Read more"
