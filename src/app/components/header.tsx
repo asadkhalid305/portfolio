@@ -29,7 +29,9 @@ export default function Header() {
               draggable="false"
               fill
               sizes="100%"
-              src={isDark ? "/images/logo-light.png" : "/images/logo-dark.png"}
+              src={
+                isDark ? "/images/logo-light.webp" : "/images/logo-dark.webp"
+              }
             />
           </div>
         </div>

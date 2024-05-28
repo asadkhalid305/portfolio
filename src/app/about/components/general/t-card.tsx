@@ -5,7 +5,7 @@ import Tooltip from "./tooltip";
 export default function TCard({ text, author }: TCardProps) {
   const {
     name,
-    image: { src = "/images/default.jpeg", alt = "" } = {},
+    image: { src = "/images/default.webp", alt = "" } = {},
     job,
     link,
   } = author || {};

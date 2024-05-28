@@ -122,7 +122,7 @@ export const contribution: Contribution = {
         title: "Frontend Nation",
         description: `I will deliver a talk on topic of "How to Revamp Your Frontend Development with BFF".`,
         image: {
-          src: "/images/event-4.jpg",
+          src: "/images/event-4.webp",
           alt: "event-1",
         },
         link: "https://frontendnation.com/",
@@ -132,7 +132,7 @@ export const contribution: Contribution = {
         title: "Code Movement Pakistan",
         description: `I gave a tech talk on topic of "Data Driven UI Components".`,
         image: {
-          src: "/images/event-1.jpeg",
+          src: "/images/event-1.webp",
           alt: "event-2",
         },
         link: "https://www.linkedin.com/feed/update/urn:li:activity:6883406697751207936/",
@@ -142,7 +142,7 @@ export const contribution: Contribution = {
         title: "Google Developers Group",
         description: "I mentored participitants on subject of web technologies",
         image: {
-          src: "/images/event-2.jpeg",
+          src: "/images/event-2.webp",
           alt: "event-3",
         },
         link: "https://www.linkedin.com/feed/update/urn:li:activity:6822123556755791872/",
@@ -153,7 +153,7 @@ export const contribution: Contribution = {
         description:
           "I started a mentorship program for computer science students at Univerity of Karachi. I along with industry professionals guided them to create industry-standard final year projects and assited throughout their journey.",
         image: {
-          src: "/images/event-3.jpeg",
+          src: "/images/event-3.webp",
           alt: "event-4",
         },
         link: "https://www.linkedin.com/posts/asadkhalid305_dcs-activity-6903682935338131456-jEYp?utm_source=share&utm_medium=member_desktop",
@@ -194,7 +194,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Carlos Cunha",
         image: {
-          src: "/images/testimonial-1.jpeg",
+          src: "/images/testimonial-1.webp",
           alt: "Carlos Cunha",
         },
         job: "Senior Software Engineer at at GetSafe",
@@ -208,7 +208,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Abdul Wahab",
         image: {
-          src: "/images/testimonial-2.jpeg",
+          src: "/images/testimonial-2.webp",
           alt: "Abdul Wahab",
         },
         job: "Techinical Lead at Securiti.ai",
@@ -231,7 +231,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Shahnawaz A K",
         image: {
-          src: "/images/testimonial-3.jpeg",
+          src: "/images/testimonial-3.webp",
           alt: "Shahnawaz A K",
         },
         job: "Senior Full Stack Engineer at Rapyd",
@@ -246,7 +246,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Hassan Ahmed",
         image: {
-          src: "/images/testimonial-4.jpeg",
+          src: "/images/testimonial-4.webp",
           alt: "Hassan Ahmed",
         },
         job: "Senior Software Engineer at Phrase",
@@ -258,7 +258,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Rehmat Murad Ali",
         image: {
-          src: "/images/testimonial-5.jpeg",
+          src: "/images/testimonial-5.webp",
           alt: "Rehmat Murad Ali",
         },
         job: "Senior Software Engineer at Bayzat",
@@ -270,7 +270,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Syed M Suhaib",
         image: {
-          src: "/images/testimonial-6.jpeg",
+          src: "/images/testimonial-6.webp",
           alt: "Syed M Suhaib",
         },
         job: "Senior Software Engineer at Nisum",

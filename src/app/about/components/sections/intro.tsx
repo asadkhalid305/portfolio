@@ -45,7 +45,7 @@ export default function Intro() {
             fill
             priority
             sizes="100%"
-            src="/images/myself.png"
+            src="/images/myself.webp"
           />
         </div>
       </div>

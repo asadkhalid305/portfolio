@@ -27,7 +27,7 @@ export default function PCard() {
             className="bg-blue-700 rounded-full pt-2"
             fill
             sizes="100px"
-            src="/images/myself.png"
+            src="/images/myself.webp"
           />
         </div>
         <h5 className="text-lg font-medium">Asad Ullah Khalid</h5>
