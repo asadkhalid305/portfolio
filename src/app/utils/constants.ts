@@ -10,6 +10,8 @@ import {
   Testimonial,
 } from "./types";
 
+const year = new Date().getFullYear();
+
 //Header
 export const header: Header = {
   links: [
@@ -282,6 +284,16 @@ export const contact: Contact = {
   heading: `Let's Connect`,
   description:
     "Your thoughts and questions are always welcome so do not hesitate to drop me a message if you need assistance or have something to talk about. I would love to hear from you!",
+  profile: {
+    company: "Mercedes-Benz.io",
+    name: "Asad Ullah Khalid",
+    position: "Frontend Expertice with Focus on JavaScript",
+    role: "Senior Software Engineer",
+  },
+};
+
+export const footer = {
+  copyright: `${year} Asad Ullah Khalid. All rights reserved`,
 };
 
 export const chatbot: Chatbot = {
@@ -329,6 +341,9 @@ Feel free to use this AI Assistant to inquire about anything related to me from 
   
 I trust you understand and will cooperate. Enjoy your conversation with AI Assistant! Thank you for visiting.
   `,
+  header: {
+    heading: "AI Assistant",
+  },
 };
 
 export const socials: Socials = {

@@ -26,6 +26,13 @@ type SocialLink = Link & {
   icon: string;
 };
 
+type Profile = {
+  name: string;
+  role: string;
+  position: string;
+  company: string;
+};
+
 export type LayoutProps = {
   children: ReactNode;
 };
@@ -121,7 +128,11 @@ export type Testimonial = Pick<SectionDefault, "heading"> & {
   items: TCardProps[];
 };
 
-export type Contact = SectionDefault;
+export type Contact = SectionDefault & {
+  profile: Profile;
+};
+
+export type ProfileCardProps = Profile;
 
 export type Socials = {
   linkedIn: SocialLink;
@@ -131,14 +142,17 @@ export type Socials = {
 };
 
 export type Chatbot = {
-  prompt: string;
-  dataset: string;
-  limit: number;
-  info: string;
   config: {
     model: string;
     temperature: number;
     maxTokens: number;
+  };
+  prompt: string;
+  dataset: string;
+  limit: number;
+  info: string;
+  header: {
+    heading: string;
   };
 };
 

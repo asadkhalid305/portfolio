@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "./components/footer";
 import Header from "./components/header";
-import Chatbot from "./components/chatbot/chatbot";
+import Chatbot from "./components/chatbot";
 import { LayoutProps } from "./utils/types";
 import "./globals.css";
 

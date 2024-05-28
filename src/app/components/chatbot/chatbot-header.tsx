@@ -2,7 +2,10 @@ import Image from "next/image";
 import { ChatbotHeaderProps } from "@/app/utils/types";
 import { chatbot } from "@/app/utils/constants";
 
-const { info } = chatbot;
+const {
+  info,
+  header: { heading },
+} = chatbot;
 
 export default function ChatbotHeader({
   toggleChatbot,
@@ -22,7 +25,7 @@ export default function ChatbotHeader({
     >
       <div className="flex justify-between bg-c-dark rounded-t-lg border-2 text-c-light p-4 h-[3.75rem]">
         <div className="flex flex-1 justify-center ml-6">
-          <p className="mr-2">AI Assistant</p>
+          <p className="mr-2">{heading}</p>
           <Image
             alt="ai icon"
             draggable="false"
