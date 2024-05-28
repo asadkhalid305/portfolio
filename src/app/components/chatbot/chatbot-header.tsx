@@ -5,8 +5,8 @@ import { chatbot } from "@/app/utils/constants";
 const { info } = chatbot;
 
 export default function ChatbotHeader({
-  showChatbot,
-  setShowChatbot,
+  toggleChatbot,
+  setToggleChatbot,
 }: ChatbotHeaderProps) {
   const openInfoModal = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation(); // Prevents the event from bubbling up the DOM tree.
@@ -16,7 +16,7 @@ export default function ChatbotHeader({
 
   return (
     <div
-      onClick={() => setShowChatbot(!showChatbot)}
+      onClick={() => setToggleChatbot(!toggleChatbot)}
       role="button"
       tabIndex={0}
     >

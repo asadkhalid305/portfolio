@@ -23,9 +23,10 @@ export default function DisplayInfo({
       >
         {heading}
       </h1>
-      <p className="whitespace-pre-wrap text-xl lg:text-2xl lg:leading-9">
-        {description}
-      </p>
+      <p
+        className="whitespace-pre-wrap leading-relaxed text-xl lg:text-2xl lg:leading-9"
+        dangerouslySetInnerHTML={{ __html: description }}
+      ></p>
     </div>
   );
 }

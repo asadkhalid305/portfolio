@@ -17,6 +17,15 @@ type SectionDefault = {
   description: string;
 };
 
+type Link = {
+  name: string;
+  href: string;
+};
+
+type SocialLink = Link & {
+  icon: string;
+};
+
 export type LayoutProps = {
   children: ReactNode;
 };
@@ -81,11 +90,6 @@ export type TCardProps = {
   };
 };
 
-type Link = {
-  name: string;
-  href: string;
-};
-
 export type Header = {
   links: Link[];
 };
@@ -119,10 +123,6 @@ export type Testimonial = Pick<SectionDefault, "heading"> & {
 
 export type Contact = SectionDefault;
 
-type SocialLink = Link & {
-  icon: string;
-};
-
 export type Socials = {
   linkedIn: SocialLink;
   github: SocialLink;
@@ -135,11 +135,16 @@ export type Chatbot = {
   dataset: string;
   limit: number;
   info: string;
+  config: {
+    model: string;
+    temperature: number;
+    maxTokens: number;
+  };
 };
 
 export type ChatbotHeaderProps = {
-  showChatbot: boolean;
-  setShowChatbot: (value: boolean) => void;
+  toggleChatbot: boolean;
+  setToggleChatbot: (value: boolean) => void;
 };
 
 export type ChatbotMessage = {

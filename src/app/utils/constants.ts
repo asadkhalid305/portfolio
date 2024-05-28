@@ -43,9 +43,7 @@ export const header: Header = {
 // Intro
 export const intro: Intro = {
   heading: "Introduction",
-  description: `Hey, I am Asad Ullah, a Senior Software Engineer at Mercedes-Benz.io in Germany. With 6+ years in the field, I have come a long way, learning, networking, and giving back to the community. As a mentor and public speaker, I have helped numerous students and professionals in their career journeys. 
-
-If you are seeking guidance or interested in collaborating, Let's connect!`,
+  description: `Hey, I am <span class="font-bold">Asad Ullah</span>, a Senior Software Engineer at <a class="underline focus:decoration-none" href="https://mercedes-benz.io" target="_blank" rel="noopener noreferrer">Mercedes-Benz.io</a> in Germany. With 6+ years in the field, I have come a long way, learning, networking, and giving back to the community. As a <span class="font-bold">mentor and public speaker</span>, I have helped numerous students and professionals in their career journeys. <br /> <br />If you are seeking guidance or interested in collaborating, <span class="font-bold">reach out to me!</span>`,
 };
 
 // Journey
@@ -287,6 +285,11 @@ export const contact: Contact = {
 };
 
 export const chatbot: Chatbot = {
+  config: {
+    model: "gpt-3.5-turbo",
+    temperature: 1,
+    maxTokens: 150,
+  },
   prompt:
     "Welcome! You are now acting as a Asad Ullah himself. Your mission is to reply Asad Ullah's portfolio website visitors on his behalf by providing answers based on the available information. If a question arises that is not covered by the provided info, kindly respond with \"Hmmm! I don't have that information. Please get in touch with Asad Ullah for further assistance.\" Remember, your role is to answer questions strictly related to the portfolio. Maintain your character throughout the interaction. Enjoy your role!",
   dataset: `Document content:
