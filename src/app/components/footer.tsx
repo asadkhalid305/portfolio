@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { socials } from "../utils/constants";
+import { footer, socials } from "../utils/constants";
 
 const {
   linkedIn: { name: linkedInName, icon: linkedInIcon, href: linkedInHref },
   github: { name: githubNamem, icon: githubIcon, href: githubHref },
 } = socials;
 
-const year = new Date().getFullYear();
+const { copyright } = footer;
 
 export default function Footer() {
   return (
@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="flex flex-col justify-between items-center px-4 lg:max-w-7xl lg:mx-auto">
         <div className="space-x-1 text-xl">
           <span>&#169;</span>
-          <span>{year} Asad Ullah Khalid. All rights reserved.</span>
+          <span>{copyright}</span>
         </div>
         <ul className="flex space-x-4 pt-2">
           <li>

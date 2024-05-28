@@ -16,16 +16,13 @@ export default function DisplayInfo({
         "lg:pr-10": paddingRight,
       })}
     >
-      <h1
-        className={clsx(
-          "text-center text-5xl font-extrabold pb-6 lg:text-6xl lg:text-left"
-        )}
-      >
+      <h1 className="text-center text-5xl font-extrabold pb-6 lg:text-6xl lg:text-left">
         {heading}
       </h1>
-      <p className="whitespace-pre-wrap text-xl lg:text-2xl lg:leading-9">
-        {description}
-      </p>
+      <p
+        className="whitespace-pre-wrap leading-relaxed text-xl lg:text-2xl lg:leading-9"
+        dangerouslySetInnerHTML={{ __html: description }}
+      ></p>
     </div>
   );
 }

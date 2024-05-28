@@ -10,6 +10,8 @@ import {
   Testimonial,
 } from "./types";
 
+const year = new Date().getFullYear();
+
 //Header
 export const header: Header = {
   links: [
@@ -43,9 +45,7 @@ export const header: Header = {
 // Intro
 export const intro: Intro = {
   heading: "Introduction",
-  description: `Hey, I am Asad Ullah, a Senior Software Engineer at Mercedes-Benz.io in Germany. With 6+ years in the field, I have come a long way, learning, networking, and giving back to the community. As a mentor and public speaker, I have helped numerous students and professionals in their career journeys. 
-
-If you are seeking guidance or interested in collaborating, Let's connect!`,
+  description: `Hey, I am <span class="font-bold">Asad Ullah</span>, a Senior Software Engineer at <a class="underline focus:decoration-none" href="https://mercedes-benz.io" target="_blank" rel="noopener noreferrer">Mercedes-Benz.io</a> in Germany. With 6+ years in the field, I have come a long way, learning, networking, and giving back to the community. As a <span class="font-bold">mentor and public speaker</span>, I have helped numerous students and professionals in their career journeys. <br /> <br />If you are seeking guidance or interested in collaborating, <span class="font-bold">reach out to me!</span>`,
 };
 
 // Journey
@@ -122,7 +122,7 @@ export const contribution: Contribution = {
         title: "Frontend Nation",
         description: `I will deliver a talk on topic of "How to Revamp Your Frontend Development with BFF".`,
         image: {
-          src: "/images/event-4.jpg",
+          src: "/images/event-4.webp",
           alt: "event-1",
         },
         link: "https://frontendnation.com/",
@@ -132,7 +132,7 @@ export const contribution: Contribution = {
         title: "Code Movement Pakistan",
         description: `I gave a tech talk on topic of "Data Driven UI Components".`,
         image: {
-          src: "/images/event-1.jpeg",
+          src: "/images/event-1.webp",
           alt: "event-2",
         },
         link: "https://www.linkedin.com/feed/update/urn:li:activity:6883406697751207936/",
@@ -142,7 +142,7 @@ export const contribution: Contribution = {
         title: "Google Developers Group",
         description: "I mentored participitants on subject of web technologies",
         image: {
-          src: "/images/event-2.jpeg",
+          src: "/images/event-2.webp",
           alt: "event-3",
         },
         link: "https://www.linkedin.com/feed/update/urn:li:activity:6822123556755791872/",
@@ -153,7 +153,7 @@ export const contribution: Contribution = {
         description:
           "I started a mentorship program for computer science students at Univerity of Karachi. I along with industry professionals guided them to create industry-standard final year projects and assited throughout their journey.",
         image: {
-          src: "/images/event-3.jpeg",
+          src: "/images/event-3.webp",
           alt: "event-4",
         },
         link: "https://www.linkedin.com/posts/asadkhalid305_dcs-activity-6903682935338131456-jEYp?utm_source=share&utm_medium=member_desktop",
@@ -194,7 +194,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Carlos Cunha",
         image: {
-          src: "/images/testimonial-1.jpeg",
+          src: "/images/testimonial-1.webp",
           alt: "Carlos Cunha",
         },
         job: "Senior Software Engineer at at GetSafe",
@@ -208,7 +208,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Abdul Wahab",
         image: {
-          src: "/images/testimonial-2.jpeg",
+          src: "/images/testimonial-2.webp",
           alt: "Abdul Wahab",
         },
         job: "Techinical Lead at Securiti.ai",
@@ -231,7 +231,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Shahnawaz A K",
         image: {
-          src: "/images/testimonial-3.jpeg",
+          src: "/images/testimonial-3.webp",
           alt: "Shahnawaz A K",
         },
         job: "Senior Full Stack Engineer at Rapyd",
@@ -246,7 +246,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Hassan Ahmed",
         image: {
-          src: "/images/testimonial-4.jpeg",
+          src: "/images/testimonial-4.webp",
           alt: "Hassan Ahmed",
         },
         job: "Senior Software Engineer at Phrase",
@@ -258,7 +258,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Rehmat Murad Ali",
         image: {
-          src: "/images/testimonial-5.jpeg",
+          src: "/images/testimonial-5.webp",
           alt: "Rehmat Murad Ali",
         },
         job: "Senior Software Engineer at Bayzat",
@@ -270,7 +270,7 @@ export const testimonial: Testimonial = {
       author: {
         name: "Syed M Suhaib",
         image: {
-          src: "/images/testimonial-6.jpeg",
+          src: "/images/testimonial-6.webp",
           alt: "Syed M Suhaib",
         },
         job: "Senior Software Engineer at Nisum",
@@ -284,9 +284,24 @@ export const contact: Contact = {
   heading: `Let's Connect`,
   description:
     "Your thoughts and questions are always welcome so do not hesitate to drop me a message if you need assistance or have something to talk about. I would love to hear from you!",
+  profile: {
+    company: "Mercedes-Benz.io",
+    name: "Asad Ullah Khalid",
+    position: "Frontend Expertice with Focus on JavaScript",
+    role: "Senior Software Engineer",
+  },
+};
+
+export const footer = {
+  copyright: `${year} Asad Ullah Khalid. All rights reserved`,
 };
 
 export const chatbot: Chatbot = {
+  config: {
+    model: "gpt-3.5-turbo",
+    temperature: 1,
+    maxTokens: 150,
+  },
   prompt:
     "Welcome! You are now acting as a Asad Ullah himself. Your mission is to reply Asad Ullah's portfolio website visitors on his behalf by providing answers based on the available information. If a question arises that is not covered by the provided info, kindly respond with \"Hmmm! I don't have that information. Please get in touch with Asad Ullah for further assistance.\" Remember, your role is to answer questions strictly related to the portfolio. Maintain your character throughout the interaction. Enjoy your role!",
   dataset: `Document content:
@@ -326,6 +341,9 @@ Feel free to use this AI Assistant to inquire about anything related to me from 
   
 I trust you understand and will cooperate. Enjoy your conversation with AI Assistant! Thank you for visiting.
   `,
+  header: {
+    heading: "AI Assistant",
+  },
 };
 
 export const socials: Socials = {

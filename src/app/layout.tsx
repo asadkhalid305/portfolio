@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import "./globals.css";
 import Footer from "./components/footer";
 import Header from "./components/header";
-import Chatbot from "./components/chatbot/chatbot";
+import Chatbot from "./components/chatbot";
 import { LayoutProps } from "./utils/types";
-import { Poppins } from "next/font/google";
+import "./globals.css";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
@@ -16,8 +16,10 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Asad Ullah Khalid - Portfolio",
-  description: "This is Asad Ullah Khalid portfolio landing page",
+  description: "This is Asad Ullah Khalid portfolio website",
 };
+
+const showChatbot = !!process.env.OPENAI_API_KEY;
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
@@ -26,7 +28,7 @@ export default function RootLayout({ children }: LayoutProps) {
         <Header />
         {children}
         <Footer />
-        <Chatbot />
+        {showChatbot && <Chatbot />}
         <Analytics />
         <SpeedInsights />
       </body>

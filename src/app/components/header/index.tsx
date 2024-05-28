@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { header } from "@/app/utils/constants";
-import useHeader from "../hooks/useHeader";
+import useHeader from "../../hooks/useHeader";
 import HeaderLinks from "./header-links";
 
 const { links } = header;
@@ -17,7 +17,7 @@ export default function Header() {
         "transition-colors duration-300 ease-in-out sticky top-0 z-50 py-5",
         {
           "bg-c-dark text-c-light": isDark,
-          "bg-c-semiDark": !isDark,
+          "bg-c-semidark": !isDark,
         }
       )}
     >
@@ -29,7 +29,9 @@ export default function Header() {
               draggable="false"
               fill
               sizes="100%"
-              src={isDark ? "/images/logo-light.png" : "/images/logo-dark.png"}
+              src={
+                isDark ? "/images/logo-light.webp" : "/images/logo-dark.webp"
+              }
             />
           </div>
         </div>

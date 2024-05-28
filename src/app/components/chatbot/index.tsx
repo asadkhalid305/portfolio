@@ -16,21 +16,21 @@ export default function Chatbot() {
     setUserInput,
     handleSend,
   } = useChatbot();
-  const [showChatbot, setShowChatbot] = useState(true);
+  const [toggleChatbot, setToggleChatbot] = useState(true);
 
   return (
     <div
       className={clsx(
         "flex-col w-96 fixed bottom-0 right-0 m-4 mb-6 bg-gray-100 rounded-t-lg shadow-inner overflow-hidden shadow-xl transition-all duration-700 ease-in-out hidden xl:flex",
         {
-          "h-2/5": showChatbot,
-          "h-[3.75rem]": !showChatbot,
+          "h-2/5": toggleChatbot,
+          "h-[3.75rem]": !toggleChatbot,
         }
       )}
     >
       <ChatbotHeader
-        showChatbot={showChatbot}
-        setShowChatbot={setShowChatbot}
+        toggleChatbot={toggleChatbot}
+        setToggleChatbot={setToggleChatbot}
       />
       <ChatbotMessages loading={loading} messages={messages} />
       <ChatbotForm

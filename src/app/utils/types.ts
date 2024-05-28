@@ -17,6 +17,22 @@ type SectionDefault = {
   description: string;
 };
 
+type Link = {
+  name: string;
+  href: string;
+};
+
+type SocialLink = Link & {
+  icon: string;
+};
+
+type Profile = {
+  name: string;
+  role: string;
+  position: string;
+  company: string;
+};
+
 export type LayoutProps = {
   children: ReactNode;
 };
@@ -81,11 +97,6 @@ export type TCardProps = {
   };
 };
 
-type Link = {
-  name: string;
-  href: string;
-};
-
 export type Header = {
   links: Link[];
 };
@@ -117,11 +128,11 @@ export type Testimonial = Pick<SectionDefault, "heading"> & {
   items: TCardProps[];
 };
 
-export type Contact = SectionDefault;
-
-type SocialLink = Link & {
-  icon: string;
+export type Contact = SectionDefault & {
+  profile: Profile;
 };
+
+export type ProfileCardProps = Profile;
 
 export type Socials = {
   linkedIn: SocialLink;
@@ -131,15 +142,23 @@ export type Socials = {
 };
 
 export type Chatbot = {
+  config: {
+    model: string;
+    temperature: number;
+    maxTokens: number;
+  };
   prompt: string;
   dataset: string;
   limit: number;
   info: string;
+  header: {
+    heading: string;
+  };
 };
 
 export type ChatbotHeaderProps = {
-  showChatbot: boolean;
-  setShowChatbot: (value: boolean) => void;
+  toggleChatbot: boolean;
+  setToggleChatbot: (value: boolean) => void;
 };
 
 export type ChatbotMessage = {

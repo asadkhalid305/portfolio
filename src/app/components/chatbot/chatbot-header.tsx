@@ -2,11 +2,14 @@ import Image from "next/image";
 import { ChatbotHeaderProps } from "@/app/utils/types";
 import { chatbot } from "@/app/utils/constants";
 
-const { info } = chatbot;
+const {
+  info,
+  header: { heading },
+} = chatbot;
 
 export default function ChatbotHeader({
-  showChatbot,
-  setShowChatbot,
+  toggleChatbot,
+  setToggleChatbot,
 }: ChatbotHeaderProps) {
   const openInfoModal = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation(); // Prevents the event from bubbling up the DOM tree.
@@ -16,13 +19,13 @@ export default function ChatbotHeader({
 
   return (
     <div
-      onClick={() => setShowChatbot(!showChatbot)}
+      onClick={() => setToggleChatbot(!toggleChatbot)}
       role="button"
       tabIndex={0}
     >
       <div className="flex justify-between bg-c-dark rounded-t-lg border-2 text-c-light p-4 h-[3.75rem]">
         <div className="flex flex-1 justify-center ml-6">
-          <p className="mr-2">AI Assistant</p>
+          <p className="mr-2">{heading}</p>
           <Image
             alt="ai icon"
             draggable="false"

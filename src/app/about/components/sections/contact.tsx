@@ -1,8 +1,12 @@
 import { contact } from "@/app/utils/constants";
 import DisplayInfo from "../general/display-info";
-import PCard from "../general/profile-card";
+import ProfileCard from "../general/profile-card";
 
-const { heading, description } = contact;
+const {
+  heading,
+  description,
+  profile: { company, name, role, position },
+} = contact;
 
 export default function Contact() {
   return (
@@ -16,11 +20,12 @@ export default function Contact() {
           paddingTop
         />
       </div>
-      <div className="flex-1 flex justify-center lg:justify-end">
-        {/* Todo: Enable ContactForm once email integration is complete */}
-        {/* <ContactForm /> */}
-        <PCard />
-      </div>
+      <ProfileCard
+        company={company}
+        name={name}
+        role={role}
+        position={position}
+      />
     </div>
   );
 }

@@ -1,7 +1,6 @@
-import clsx from "clsx";
-import { HeaderLinksProps } from "../utils/types";
-import { socials } from "../utils/constants";
-import LinkButton from "../about/components/general/link-button";
+import { HeaderLinksProps } from "../../utils/types";
+import { socials } from "../../utils/constants";
+import LinkButton from "../../about/components/general/link-button";
 
 const {
   topmateIO: { href },
@@ -10,6 +9,9 @@ const {
 export default function HeaderLinks({ links }: HeaderLinksProps) {
   return (
     <ul className="space-x-2 text-md font-medium md:flex lg:text-lg">
+      {/* BugFix: There's an issue with Link that when you click an item, it doesn't navigate UI to the corresponding anchor element. 
+      This problem only occurs in the Production environment, while it works as expected in the Development environment. 
+      Hence, links can be used again once the issue is resolved */}
       {/* <div className="hidden md:show md:flex">
         {links.map((link) => (
           <li
