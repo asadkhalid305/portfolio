@@ -8,7 +8,7 @@ import Contact from "./components/sections/contact";
 export default function About() {
   return (
     <main>
-      <section id="intro" className="bg-c-semiDark">
+      <section id="intro" className="bg-c-semidark">
         <div className="px-4 lg:max-w-7xl lg:mx-auto">
           <Intro />
         </div>
@@ -25,7 +25,7 @@ export default function About() {
       <section id="testimonial" className="px-4 lg:max-w-7xl lg:mx-auto">
         <Testimonial />
       </section>
-      <section id="contact" className="bg-c-semiDark">
+      <section id="contact" className="bg-c-semidark">
         <div className="px-4 lg:max-w-7xl lg:mx-auto">
           <Contact />
         </div>
