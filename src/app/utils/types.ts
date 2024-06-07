@@ -33,6 +33,11 @@ type Profile = {
   company: string;
 };
 
+export type Metadata = {
+  title: string;
+  description: string;
+};
+
 export type LayoutProps = {
   children: ReactNode;
 };

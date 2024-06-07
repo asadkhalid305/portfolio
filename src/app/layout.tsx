@@ -6,6 +6,7 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import Chatbot from "./components/chatbot";
 import { LayoutProps } from "./utils/types";
+import { metadata as metadataContent } from "./utils/constants";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -14,10 +15,7 @@ const poppins = Poppins({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Asad Ullah Khalid - Portfolio",
-  description: "This is Asad Ullah Khalid portfolio website",
-};
+export const metadata: Metadata = { ...metadataContent };
 
 const showChatbot = !!process.env.OPENAI_API_KEY;
 
