@@ -19,6 +19,8 @@ export const metadata: Metadata = { ...metadataContent };
 
 const showChatbot = !!process.env.OPENAI_API_KEY;
 
+const showChatbot = !!process.env.OPENAI_API_KEY;
+
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en" className={poppins.className}>
