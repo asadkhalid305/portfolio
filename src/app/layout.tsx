@@ -7,6 +7,7 @@ import Header from "./components/header";
 import Chatbot from "./components/chatbot";
 import { LayoutProps } from "./utils/types";
 import { metadata as metadataContent } from "./utils/constants";
+
 import "./globals.css";
 
 const poppins = Poppins({
