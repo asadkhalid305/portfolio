@@ -6,11 +6,18 @@ import {
   Header,
   Intro,
   Journey,
+  Metadata,
   Socials,
   Testimonial,
 } from "./types";
 
 const year = new Date().getFullYear();
+
+//Metadata
+export const metadata: Metadata = {
+  title: "Asad Ullah Khalid - Portfolio",
+  description: "This is Asad Ullah Khalid portfolio website",
+};
 
 //Header
 export const header: Header = {
@@ -120,7 +127,7 @@ export const contribution: Contribution = {
     events: [
       {
         title: "Frontend Nation",
-        description: `I will deliver a talk on topic of "How to Revamp Your Frontend Development with BFF".`,
+        description: `I delivered a talk on topic of "How to Revamp Your Frontend Development with BFF".`,
         image: {
           src: "/images/event-4.webp",
           alt: "event-1",

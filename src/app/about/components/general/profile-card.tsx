@@ -31,7 +31,7 @@ export default function ProfileCard({
           <div className="relative w-14 h-14 mb-2">
             <Image
               alt="personal photo"
-              className="bg-blue-700 rounded-full pt-2"
+              className="bg-[#0A66C2] rounded-full pt-2"
               fill
               sizes="100px"
               src="/images/myself.webp"
@@ -45,7 +45,7 @@ export default function ProfileCard({
             <p className="font-light">{position}</p>
           </div>
           <LinkButton
-            className="bg-c-light text-blue-700 border border-2 border-blue-700 rounded-full hover:bg-blue-700 hover:text-c-light"
+            className="bg-c-light text-[#0A66C2] border border-2 border-blue-700 rounded-full hover:bg-[#0A66C2] hover:text-c-light"
             href={href}
             showIcon={false}
             text="View Profile"

@@ -13,7 +13,7 @@ export default function LinkButton({
       target="_blank"
       rel="noopener noreferrer"
       className={clsx(
-        "inline-flex text-sm rounded-lg px-5 py-2.5 font-medium shadow items-center w-fit transition-all duration-300 ease-in-out lg:text-md hover:shadow-lg",
+        "inline-flex text-sm rounded-lg px-5 py-3 font-medium shadow items-center w-fit transition-all duration-300 ease-in-out lg:text-md hover:shadow-lg",
         {
           [className || ""]: !!className,
         }
