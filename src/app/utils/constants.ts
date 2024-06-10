@@ -375,21 +375,3 @@ export const socials: Socials = {
     icon: "",
   },
 };
-
-export const socials = {
-  linkedIn: {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/asadkhalid305",
-    icon: "/icons/linkedin.min.svg",
-  },
-  github: {
-    name: "GitHub",
-    href: "https://github.com/asadkhalid305/",
-    icon: "/icons/github.min.svg",
-  },
-  topmateio: {
-    name: "Topmate.io",
-    href: "https://topmate.io/asadullahkhalid",
-    icon: "",
-  },
-};
