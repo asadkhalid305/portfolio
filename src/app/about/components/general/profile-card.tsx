@@ -28,13 +28,13 @@ export default function ProfileCard({
           </div>
         </div>
         <div className="flex flex-col p-4">
-          <div className="relative w-14 h-14 mb-2">
+          <div className="relative w-16 h-16 mb-2">
             <Image
               alt="personal photo"
-              className="bg-[#0A66C2] rounded-full pt-2"
+              className="rounded-full"
               fill
               sizes="100px"
-              src="/images/myself.webp"
+              src="/images/linkedin-profile.webp"
             />
           </div>
           <h5 className="text-lg font-medium">{name}</h5>
