@@ -16,9 +16,10 @@ export default function Contribution() {
       </div>
 
       {/* Events & Blogs */}
-      {Object.entries(items).map(([key, value], index) => (
-        <VCardGrid key={index} heading={key} records={value} />
-      ))}
+      {Object.entries(items).map(([key, value], index) => {
+        const reversedValue = [...value].reverse(); // Create a new array and reverse it
+        return <VCardGrid key={index} heading={key} records={reversedValue} />;
+      })}
     </>
   );
 }
