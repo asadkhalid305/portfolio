@@ -9,7 +9,7 @@ export default function About() {
   return (
     <main>
       <section id="intro" className="bg-c-semidark">
-        <div className="px-4 lg:max-w-7xl lg:mx-auto">
+        <div className="px-4 h-[93.1vh] lg:max-w-7xl lg:mx-auto">
           <Intro />
         </div>
       </section>

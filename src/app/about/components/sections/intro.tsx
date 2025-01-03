@@ -9,17 +9,17 @@ const {
 
 export default function Intro() {
   return (
-    <div className="flex flex-col py-20 lg:flex-row lg:py-36 lg:items-center">
+    <div className="flex flex-col h-full py-20 lg:flex-row lg:py-36 lg:items-center">
       <div className="flex-1">
-        <div className="lg:pr-10 pb-16 pt-16">
+        <div className="lg:pr-10">
           <DisplayInfo description={description} heading={heading} />
         </div>
       </div>
       <div className="flex-1 flex justify-center lg:justify-end">
-        <div className="relative w-96 h-96">
+        <div className="relative h-[400px] w-[400px] lg:h-[500px] lg:w-[500px]">
           <Image
             alt="personal photo"
-            className="bg-c-dark rounded-full pt-2"
+            className="object-cover rounded-full"
             draggable="false"
             fill
             priority
