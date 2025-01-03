@@ -126,76 +126,66 @@ export const contribution: Contribution = {
   items: {
     events: [
       {
-        title: "Univeristy of Karachi",
-        description:
-          "I started a mentorship program for computer science students at Univerity of Karachi. I along with industry professionals guided them to create industry-standard final year projects and assited throughout their journey.",
+        title: "Frontend Nation",
+        description: `I delivered a talk on topic of "How to Revamp Your Frontend Development with BFF".`,
         image: {
-          src: "/images/event-1.webp",
+          src: "/images/event-4.webp",
           alt: "event-1",
         },
-        link: "https://www.linkedin.com/posts/asadkhalid305_dcs-activity-6903682935338131456-jEYp?utm_source=share&utm_medium=member_desktop",
-        date: "2022-2023",
-      },
-      {
-        title: "Google Developers Group",
-        description: "I mentored participitants on subject of web technologies",
-        image: {
-          src: "/images/event-2.webp",
-          alt: "event-2",
-        },
-        link: "https://www.linkedin.com/feed/update/urn:li:activity:6822123556755791872/",
-        date: "July, 2022",
+        link: "https://frontendnation.com/",
+        date: "June, 2024",
       },
       {
         title: "Code Movement Pakistan",
         description: `I gave a tech talk on topic of "Data Driven UI Components".`,
         image: {
           src: "/images/event-1.webp",
-          alt: "event-3",
+          alt: "event-2",
         },
         link: "https://www.linkedin.com/feed/update/urn:li:activity:6883406697751207936/",
         date: "Jan, 2022",
       },
       {
-        title: "Frontend Nation",
-        description: `I delivered a talk on topic of "How to Revamp Your Frontend Development with BFF".`,
+        title: "Google Developers Group",
+        description: "I mentored participitants on subject of web technologies",
         image: {
-          src: "/images/event-4.webp",
-          alt: "event-4",
+          src: "/images/event-2.webp",
+          alt: "event-3",
         },
-        link: "https://frontendnation.com/",
-        date: "June, 2024",
+        link: "https://www.linkedin.com/feed/update/urn:li:activity:6822123556755791872/",
+        date: "July, 2022",
       },
       {
-        title: "GDG DevFest Karachi",
-        description: `I shared my experience and expertice on topic of "Importance Soft Skills for Career Growth" as a panelist.`,
+        title: "Univeristy of Karachi",
+        description:
+          "I started a mentorship program for computer science students at Univerity of Karachi. I along with industry professionals guided them to create industry-standard final year projects and assited throughout their journey.",
         image: {
-          src: "/images/event-5.webp",
-          alt: "event-5",
+          src: "/images/event-3.webp",
+          alt: "event-4",
         },
-        link: "https://frontendnation.com/",
-        date: "June, 2024",
+        link: "https://www.linkedin.com/posts/asadkhalid305_dcs-activity-6903682935338131456-jEYp?utm_source=share&utm_medium=member_desktop",
+        date: "2022-2023",
       },
     ],
     blogs: [
       {
-        title: "Making the Most of Company Events",
-        description: `In this blog post I have talked about how to make the most of company events.`,
+        title: "Tech Jobs in Europe",
+        description: `In this blog post I have given tips and insights to get interview calls from European companies.`,
         image: {
           src: "/images/blog-1.webp",
           alt: "blog-1",
         },
-        link: "https://asadkhalid305.medium.com/career-growth-making-the-most-of-company-events-cc8ec5149bb8",
+        link: "https://asadkhalid305.medium.com/tech-jobs-in-europe-insights-and-tips-to-get-interview-calls-a202622cbc99",
         date: "Dec, 2023",
       },
       {
-        title: "Tech Jobs in Europe",
-        description: `In this blog post I have given tips and insights to get interview calls from European companies.`,
+        title: "Making the Most of Company Events",
+        description: `In this blog post I have talked about how to make the most of company events.`,
         image: {
           src: "/images/blog-2.webp",
           alt: "blog-2",
         },
-        link: "https://asadkhalid305.medium.com/tech-jobs-in-europe-insights-and-tips-to-get-interview-calls-a202622cbc99",
+        link: "https://asadkhalid305.medium.com/career-growth-making-the-most-of-company-events-cc8ec5149bb8",
         date: "Dec, 2023",
       },
     ],
