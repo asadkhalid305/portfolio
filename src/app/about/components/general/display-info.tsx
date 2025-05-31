@@ -7,7 +7,7 @@ export default function DisplayInfo({
   paddingRight = false,
   paddingTop = false,
   paddingBottom = false,
-}: DisplayInfoProps) {
+}: Readonly<DisplayInfoProps>) {
   return (
     <div
       className={clsx({

@@ -19,9 +19,9 @@ export const metadata: Metadata = { ...metadataContent };
 
 const showChatbot = !!process.env.OPENAI_API_KEY;
 
-export default function RootLayout({ children }: LayoutProps) {
+export default function RootLayout({ children }: Readonly<LayoutProps>) {
   return (
-    <html lang="en" className={poppins.className}>
+    <html lang="en" className={poppins.className + " scroll-smooth"}>
       <body className="antialiased text-c-dark scroll-smooth lg:subpixel-antialiased ">
         <Header />
         {children}

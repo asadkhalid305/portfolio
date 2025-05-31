@@ -8,7 +8,7 @@ export default function VCard({
   image,
   link,
   date,
-}: VCardProps) {
+}: Readonly<VCardProps>) {
   const { src = "/images/default.webp", alt = "" } = image || {};
   return (
     <div className="w-full max-w-sm border border-gray-200 rounded-lg shadow flex flex-col transition-all duration-300 ease-in-out hover:bg-c-semidark hover:shadow-2xl">
