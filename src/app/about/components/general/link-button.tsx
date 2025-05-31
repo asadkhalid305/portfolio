@@ -6,17 +6,15 @@ export default function LinkButton({
   text,
   showIcon,
   className,
-}: LinkButtonProps) {
+}: Readonly<LinkButtonProps>) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={clsx(
-        "inline-flex text-sm rounded-lg px-5 py-3 font-medium shadow items-center w-fit transition-all duration-300 ease-in-out lg:text-md hover:shadow-lg",
-        {
-          [className || ""]: !!className,
-        }
+        "inline-flex items-center w-fit text-sm font-medium rounded-lg px-5 py-3 shadow transition-all duration-300 ease-in-out lg:text-md hover:shadow-lg",
+        className
       )}
     >
       <p>{text}</p>

@@ -126,9 +126,9 @@ export const contribution: Contribution = {
   items: {
     events: [
       {
-        title: "Univeristy of Karachi",
+        title: "University of Karachi",
         description:
-          "I started a mentorship program for computer science students at Univerity of Karachi. I along with industry professionals guided them to create industry-standard final year projects and assited throughout their journey.",
+          "I started a mentorship program for computer science students at University of Karachi. I, along with industry professionals, guided them to create industry-standard final year projects and assisted throughout their journey.",
         image: {
           src: "/images/event-1.webp",
           alt: "event-1",
@@ -138,7 +138,7 @@ export const contribution: Contribution = {
       },
       {
         title: "Google Developers Group",
-        description: "I mentored participitants on subject of web technologies",
+        description: "I mentored participants on the subject of web technologies.",
         image: {
           src: "/images/event-2.webp",
           alt: "event-2",
@@ -148,7 +148,7 @@ export const contribution: Contribution = {
       },
       {
         title: "Code Movement Pakistan",
-        description: `I gave a tech talk on topic of "Data Driven UI Components".`,
+        description: `I gave a tech talk on the topic of "Data Driven UI Components".`,
         image: {
           src: "/images/event-1.webp",
           alt: "event-3",
@@ -158,7 +158,7 @@ export const contribution: Contribution = {
       },
       {
         title: "Frontend Nation",
-        description: `I delivered a talk on topic of "How to Revamp Your Frontend Development with BFF".`,
+        description: `I delivered a talk on the topic of "How to Revamp Your Frontend Development with BFF".`,
         image: {
           src: "/images/event-4.webp",
           alt: "event-4",
@@ -168,7 +168,7 @@ export const contribution: Contribution = {
       },
       {
         title: "GDG DevFest Karachi",
-        description: `I shared my experience and expertice on topic of "Importance Soft Skills for Career Growth" as a panelist.`,
+        description: `I shared my experience and expertise on the topic of "Importance of Soft Skills for Career Growth" as a panelist.`,
         image: {
           src: "/images/event-5.webp",
           alt: "event-5",
@@ -214,21 +214,19 @@ export const testimonial: Testimonial = {
           src: "/images/testimonial-1.webp",
           alt: "Carlos Cunha",
         },
-        job: "Senior Software Engineer at at GetSafe",
+        job: "Senior Software Engineer at GetSafe",
         link: "https://www.linkedin.com/in/carl0scunha/",
       },
     },
     {
-      text: `Met with Asad in 2020s at securiti.ai and now its around two years experience of working with him. 
-      He started his career at the ascociate level but soon raised himself to work among senior developers.
-      He is the backbone of our front end team now as he always delivers his work on time with full responsibility.`,
+      text: `Met with Asad in 2020 at Securiti.ai and now it's around two years of experience working with him.\nHe started his career at the associate level but soon raised himself to work among senior developers.\nHe is the backbone of our front end team now as he always delivers his work on time with full responsibility.`,
       author: {
         name: "Abdul Wahab",
         image: {
           src: "/images/testimonial-2.webp",
           alt: "Abdul Wahab",
         },
-        job: "Techinical Lead at Securiti.ai",
+        job: "Technical Lead at Securiti.ai",
         link: "https://www.linkedin.com/in/abdul-wahab-155a7421/",
       },
     },
@@ -300,11 +298,11 @@ export const testimonial: Testimonial = {
 export const contact: Contact = {
   heading: `Let's Connect`,
   description:
-    "Your thoughts and questions are always welcome so do not hesitate to drop me a message if you need assistance or have something to talk about. I would love to hear from you!",
+    "Your thoughts and questions are always welcome, so do not hesitate to drop me a message if you need assistance or have something to talk about. I would love to hear from you!",
   profile: {
     company: "Mercedes-Benz.io",
     name: "Asad Ullah Khalid",
-    position: "Frontend Expertice with Focus on JavaScript",
+    position: "Frontend Expertise with Focus on JavaScript",
     role: "Senior Software Engineer",
   },
 };
@@ -380,7 +378,7 @@ export const socials: Socials = {
     icon: "",
   },
   mercedesBenzIO: {
-    name: "Mrcedes-Benz.io",
+    name: "Mercedes-Benz.io",
     href: "https://www.mercedes-benz.io/",
     icon: "",
   },

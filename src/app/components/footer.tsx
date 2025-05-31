@@ -4,7 +4,7 @@ import { footer, socials } from "../utils/constants";
 
 const {
   linkedIn: { name: linkedInName, icon: linkedInIcon, href: linkedInHref },
-  github: { name: githubNamem, icon: githubIcon, href: githubHref },
+  github: { name: githubName, icon: githubIcon, href: githubHref },
 } = socials;
 
 const { copyright } = footer;
@@ -33,7 +33,7 @@ export default function Footer() {
           <li>
             <Link href={githubHref}>
               <Image
-                alt={githubNamem}
+                alt={githubName}
                 className="fill-c-light"
                 draggable="false"
                 src={githubIcon}
