@@ -10,6 +10,7 @@ import {
   Socials,
   Testimonial,
 } from "./types";
+import { v4 as uuidv4 } from "uuid";
 
 const year = new Date().getFullYear();
 
@@ -73,18 +74,21 @@ export const experience: Experience = {
   description: `I have always been fascinated by web technologies and how they can transform the way we communicate, learn, and work. My journey as a web developer began in 2016, when I started building pet projects with HTML and CSS as an undergraduate student. This sparked my interest and passion for web development, and helped me land my first internship.`,
   items: [
     {
+      id: uuidv4(),
       company: "Mercedes-Benz.io",
       date: "Aug 2023 - Present",
       location: "Berlin, Germany",
       position: "Senior Frontend Developer",
     },
     {
+      id: uuidv4(),
       company: "Labforward",
       date: "Aug 2022 - Aug 2023",
       location: "Berlin, Germany",
       position: "Frontend Engineer",
     },
     {
+      id: uuidv4(),
       company: "Securiti",
       date: "Feb 2020 - Jul 2022",
       location: "Karachi, Pakistan",
@@ -126,6 +130,7 @@ export const contribution: Contribution = {
   items: {
     events: [
       {
+        id: uuidv4(),
         title: "University of Karachi",
         description:
           "I started a mentorship program for computer science students at University of Karachi. I, along with industry professionals, guided them to create industry-standard final year projects and assisted throughout their journey.",
@@ -137,8 +142,10 @@ export const contribution: Contribution = {
         date: "2022-2023",
       },
       {
+        id: uuidv4(),
         title: "Google Developers Group",
-        description: "I mentored participants on the subject of web technologies.",
+        description:
+          "I mentored participants on the subject of web technologies.",
         image: {
           src: "/images/event-2.webp",
           alt: "event-2",
@@ -147,6 +154,7 @@ export const contribution: Contribution = {
         date: "July, 2022",
       },
       {
+        id: uuidv4(),
         title: "Code Movement Pakistan",
         description: `I gave a tech talk on the topic of "Data Driven UI Components".`,
         image: {
@@ -157,6 +165,7 @@ export const contribution: Contribution = {
         date: "Jan, 2022",
       },
       {
+        id: uuidv4(),
         title: "Frontend Nation",
         description: `I delivered a talk on the topic of "How to Revamp Your Frontend Development with BFF".`,
         image: {
@@ -167,6 +176,7 @@ export const contribution: Contribution = {
         date: "June, 2024",
       },
       {
+        id: uuidv4(),
         title: "GDG DevFest Karachi",
         description: `I shared my experience and expertise on the topic of "Importance of Soft Skills for Career Growth" as a panelist.`,
         image: {
@@ -179,6 +189,7 @@ export const contribution: Contribution = {
     ],
     blogs: [
       {
+        id: uuidv4(),
         title: "Making the Most of Company Events",
         description: `In this blog post I have talked about how to make the most of company events.`,
         image: {
@@ -189,6 +200,7 @@ export const contribution: Contribution = {
         date: "Dec, 2023",
       },
       {
+        id: uuidv4(),
         title: "Tech Jobs in Europe",
         description: `In this blog post I have given tips and insights to get interview calls from European companies.`,
         image: {

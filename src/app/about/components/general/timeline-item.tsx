@@ -5,7 +5,7 @@ export default function TimelineItem({
   date,
   location,
   position,
-}: TimelineItemProps) {
+}: Readonly<TimelineItemProps>) {
   return (
     <li className="max-md:mb-10 max-md:ml-4 md:flex-1 md:pr-4">
       <div className="absolute w-5 h-5 bg-c-dark rounded-full border border-c-dark max-md:-ml-[1.6rem] md:-mt-[0.6rem]"></div>

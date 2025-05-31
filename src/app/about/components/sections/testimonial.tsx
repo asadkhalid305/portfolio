@@ -14,8 +14,12 @@ export default function Testimonial() {
         <div
           className={`grid grid-cols-1 mb-8 border border-gray-200 rounded-lg shadow-sm md:mb-12 lg:grid-cols-3`}
         >
-          {items.map((item, index) => (
-            <TCard key={index} text={item.text} author={item.author} />
+          {items.map((item) => (
+            <TCard
+              key={item.author.name + "-" + item.text.length}
+              text={item.text}
+              author={item.author}
+            />
           ))}
         </div>
       </div>

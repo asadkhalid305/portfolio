@@ -11,9 +11,10 @@ export default function VCardSystem({
         {heading}
       </h1>
       <div className="grid gap-6 justify-center lg:grid-cols-3">
-        {records.map((item, index) => (
+        {records.map((item) => (
           <VCard
-            key={index}
+            key={item.id}
+            id={item.id}
             title={item.title}
             description={item.description}
             image={item.image}

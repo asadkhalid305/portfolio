@@ -5,9 +5,10 @@ import TimelineItem from "./timeline-item";
 export default function Timeline({ record, link }: Readonly<TimelineProps>) {
   return (
     <ol className="relative max-md:border-l border-c-dark md:flex md:flex-row md:justify-between md:border-t">
-      {record.map((item, index) => (
+      {record.map((item) => (
         <TimelineItem
-          key={index}
+          key={item.id}
+          id={item.id}
           company={item.company}
           date={item.date}
           location={item.location}

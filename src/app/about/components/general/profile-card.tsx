@@ -13,7 +13,7 @@ export default function ProfileCard({
   name,
   role,
   position,
-}: ProfileCardProps) {
+}: Readonly<ProfileCardProps>) {
   return (
     <div className="flex-1 flex justify-center lg:justify-end">
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow transition-all duration-300 ease-in-out hover:shadow-2xl">
@@ -45,7 +45,7 @@ export default function ProfileCard({
             <p className="font-light">{position}</p>
           </div>
           <LinkButton
-            className="bg-c-light text-[#0A66C2] border border-2 border-blue-700 rounded-full hover:bg-[#0A66C2] hover:text-c-light"
+            className="bg-c-light text-[#0A66C2] border-2 border-blue-700 rounded-full hover:bg-[#0A66C2] hover:text-c-light"
             href={href}
             showIcon={false}
             text="View Profile"
