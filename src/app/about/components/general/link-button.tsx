@@ -6,20 +6,19 @@ export default function LinkButton({
   text,
   showIcon,
   className,
-}: LinkButtonProps) {
+}: Readonly<LinkButtonProps>) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={text}
       className={clsx(
-        "inline-flex text-sm rounded-lg px-5 py-3 font-medium shadow items-center w-fit transition-all duration-300 ease-in-out lg:text-md hover:shadow-lg",
-        {
-          [className || ""]: !!className,
-        }
+        "inline-flex items-center w-fit text-sm font-medium rounded-lg px-5 py-3 shadow transition-all duration-300 ease-in-out lg:text-md hover:shadow-lg focus-visible:outline-2 focus-visible:outline-c-dark focus-visible:outline",
+        className
       )}
     >
-      <p>{text}</p>
+      <span>{text}</span>
       {showIcon && (
         <svg
           className="w-3 h-3 ml-2 2xl:m-2"

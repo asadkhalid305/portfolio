@@ -9,7 +9,8 @@ import {
   Metadata,
   Socials,
   Testimonial,
-} from "./types";
+} from "@/app/utils/types";
+import { v4 as uuidv4 } from "uuid";
 
 const year = new Date().getFullYear();
 
@@ -73,18 +74,21 @@ export const experience: Experience = {
   description: `I have always been fascinated by web technologies and how they can transform the way we communicate, learn, and work. My journey as a web developer began in 2016, when I started building pet projects with HTML and CSS as an undergraduate student. This sparked my interest and passion for web development, and helped me land my first internship.`,
   items: [
     {
+      id: uuidv4(),
       company: "Mercedes-Benz.io",
       date: "Aug 2023 - Present",
       location: "Berlin, Germany",
       position: "Senior Frontend Developer",
     },
     {
+      id: uuidv4(),
       company: "Labforward",
       date: "Aug 2022 - Aug 2023",
       location: "Berlin, Germany",
       position: "Frontend Engineer",
     },
     {
+      id: uuidv4(),
       company: "Securiti",
       date: "Feb 2020 - Jul 2022",
       location: "Karachi, Pakistan",
@@ -126,9 +130,10 @@ export const contribution: Contribution = {
   items: {
     events: [
       {
-        title: "Univeristy of Karachi",
+        id: uuidv4(),
+        title: "University of Karachi",
         description:
-          "I started a mentorship program for computer science students at Univerity of Karachi. I along with industry professionals guided them to create industry-standard final year projects and assited throughout their journey.",
+          "I started a mentorship program for computer science students at University of Karachi. I, along with industry professionals, guided them to create industry-standard final year projects and assisted throughout their journey.",
         image: {
           src: "/images/event-1.webp",
           alt: "event-1",
@@ -137,8 +142,10 @@ export const contribution: Contribution = {
         date: "2022-2023",
       },
       {
+        id: uuidv4(),
         title: "Google Developers Group",
-        description: "I mentored participitants on subject of web technologies",
+        description:
+          "I mentored participants on the subject of web technologies.",
         image: {
           src: "/images/event-2.webp",
           alt: "event-2",
@@ -147,8 +154,9 @@ export const contribution: Contribution = {
         date: "July, 2022",
       },
       {
+        id: uuidv4(),
         title: "Code Movement Pakistan",
-        description: `I gave a tech talk on topic of "Data Driven UI Components".`,
+        description: `I gave a tech talk on the topic of "Data Driven UI Components".`,
         image: {
           src: "/images/event-1.webp",
           alt: "event-3",
@@ -157,8 +165,9 @@ export const contribution: Contribution = {
         date: "Jan, 2022",
       },
       {
+        id: uuidv4(),
         title: "Frontend Nation",
-        description: `I delivered a talk on topic of "How to Revamp Your Frontend Development with BFF".`,
+        description: `I delivered a talk on the topic of "How to Revamp Your Frontend Development with BFF".`,
         image: {
           src: "/images/event-4.webp",
           alt: "event-4",
@@ -167,8 +176,9 @@ export const contribution: Contribution = {
         date: "June, 2024",
       },
       {
+        id: uuidv4(),
         title: "GDG DevFest Karachi",
-        description: `I shared my experience and expertice on topic of "Importance Soft Skills for Career Growth" as a panelist.`,
+        description: `I shared my experience and expertise on the topic of "Importance of Soft Skills for Career Growth" as a panelist.`,
         image: {
           src: "/images/event-5.webp",
           alt: "event-5",
@@ -179,6 +189,7 @@ export const contribution: Contribution = {
     ],
     blogs: [
       {
+        id: uuidv4(),
         title: "Making the Most of Company Events",
         description: `In this blog post I have talked about how to make the most of company events.`,
         image: {
@@ -189,6 +200,7 @@ export const contribution: Contribution = {
         date: "Dec, 2023",
       },
       {
+        id: uuidv4(),
         title: "Tech Jobs in Europe",
         description: `In this blog post I have given tips and insights to get interview calls from European companies.`,
         image: {
@@ -214,21 +226,19 @@ export const testimonial: Testimonial = {
           src: "/images/testimonial-1.webp",
           alt: "Carlos Cunha",
         },
-        job: "Senior Software Engineer at at GetSafe",
+        job: "Senior Software Engineer at GetSafe",
         link: "https://www.linkedin.com/in/carl0scunha/",
       },
     },
     {
-      text: `Met with Asad in 2020s at securiti.ai and now its around two years experience of working with him. 
-      He started his career at the ascociate level but soon raised himself to work among senior developers.
-      He is the backbone of our front end team now as he always delivers his work on time with full responsibility.`,
+      text: `Met with Asad in 2020 at Securiti.ai and now it's around two years of experience working with him.\nHe started his career at the associate level but soon raised himself to work among senior developers.\nHe is the backbone of our front end team now as he always delivers his work on time with full responsibility.`,
       author: {
         name: "Abdul Wahab",
         image: {
           src: "/images/testimonial-2.webp",
           alt: "Abdul Wahab",
         },
-        job: "Techinical Lead at Securiti.ai",
+        job: "Technical Lead at Securiti.ai",
         link: "https://www.linkedin.com/in/abdul-wahab-155a7421/",
       },
     },
@@ -300,11 +310,11 @@ export const testimonial: Testimonial = {
 export const contact: Contact = {
   heading: `Let's Connect`,
   description:
-    "Your thoughts and questions are always welcome so do not hesitate to drop me a message if you need assistance or have something to talk about. I would love to hear from you!",
+    "Your thoughts and questions are always welcome, so do not hesitate to drop me a message if you need assistance or have something to talk about. I would love to hear from you!",
   profile: {
     company: "Mercedes-Benz.io",
     name: "Asad Ullah Khalid",
-    position: "Frontend Expertice with Focus on JavaScript",
+    position: "Frontend Expertise with Focus on JavaScript",
     role: "Senior Software Engineer",
   },
 };
@@ -380,7 +390,7 @@ export const socials: Socials = {
     icon: "",
   },
   mercedesBenzIO: {
-    name: "Mrcedes-Benz.io",
+    name: "Mercedes-Benz.io",
     href: "https://www.mercedes-benz.io/",
     icon: "",
   },

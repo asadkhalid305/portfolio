@@ -3,8 +3,8 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { header } from "@/app/utils/constants";
-import useHeader from "../../hooks/useHeader";
-import HeaderLinks from "./header-links";
+import useHeader from "@/app/hooks/useHeader";
+import HeaderLinks from "@/app/components/header/header-links";
 
 const { links } = header;
 
@@ -20,12 +20,17 @@ export default function Header() {
           "bg-c-semidark": !isDark,
         }
       )}
+      role="banner"
+      aria-label="Site header"
     >
-      <nav className="flex justify-between px-4 lg:max-w-7xl lg:mx-auto">
+      <nav
+        className="flex justify-between px-4 lg:max-w-7xl lg:mx-auto"
+        aria-label="Primary navigation"
+      >
         <div className="flex items-center justify-center">
           <div className="relative w-36 h-8">
             <Image
-              alt="brand logo"
+              alt="Asad Ullah Khalid brand logo"
               draggable="false"
               fill
               sizes="100%"

@@ -1,20 +1,20 @@
 import { CardSystemProps } from "@/app/utils/types";
-import VCard from "./v-card";
+import VCard from "@/app/about/components/general/v-card";
 
-export default function VCardSystem({ heading, records }: CardSystemProps) {
+export default function VCardSystem({
+  heading,
+  records,
+}: Readonly<CardSystemProps>) {
   return (
     <div className="pt-16">
-      <h1
-        className={
-          "text-3xl font-extrabold capitalize text-center pb-6 lg:text-4xl lg:text-start"
-        }
-      >
+      <h2 className="text-3xl font-extrabold capitalize text-center pb-6 lg:text-4xl lg:text-start">
         {heading}
-      </h1>
+      </h2>
       <div className="grid gap-6 justify-center lg:grid-cols-3">
-        {records.map((item, index) => (
+        {records.map((item) => (
           <VCard
-            key={index}
+            key={item.id}
+            id={item.id}
             title={item.title}
             description={item.description}
             image={item.image}

@@ -1,13 +1,14 @@
-import Intro from "./components/sections/intro";
-import Journey from "./components/sections/journey";
-import Experience from "./components/sections/experience";
-import Contribution from "./components/sections/contribution";
-import Testimonial from "./components/sections/testimonial";
-import Contact from "./components/sections/contact";
+import Intro from "@/app/about/components/sections/intro";
+import Journey from "@/app/about/components/sections/journey";
+import Experience from "@/app/about/components/sections/experience";
+import Contribution from "@/app/about/components/sections/contribution";
+import Testimonial from "@/app/about/components/sections/testimonial";
+import Contact from "@/app/about/components/sections/contact";
 
 export default function About() {
   return (
-    <main>
+    <>
+      <h1 className="sr-only">About Asad Ullah Khalid</h1>
       <section id="intro" className="bg-c-semidark">
         <div className="px-4 lg:h-[93.1vh] lg:max-w-7xl lg:mx-auto">
           <Intro />
@@ -30,6 +31,6 @@ export default function About() {
           <Contact />
         </div>
       </section>
-    </main>
+    </>
   );
 }

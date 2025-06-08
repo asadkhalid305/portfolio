@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 
 //Common
 type Item = {
+  id: string;
   title: string;
   description: string;
   image: {
@@ -60,6 +61,7 @@ export type CardSystemProps = {
 };
 
 export type VCardProps = {
+  id: string;
   title: string;
   description?: string;
   image: {
@@ -83,6 +85,7 @@ export type TimelineProps = {
 };
 
 export type TimelineItemProps = {
+  id: string;
   company: string;
   date: string;
   location: string;
@@ -114,6 +117,7 @@ export type Journey = SectionDefault;
 
 export type Experience = SectionDefault & {
   items: {
+    id: string;
     company: string;
     date: string;
     location: string;
@@ -186,4 +190,9 @@ export type ChatbotFormProps = {
   setUserInput: (value: string) => void;
   isMessageLimitReached: boolean;
   handleSend: (event: React.FormEvent<HTMLFormElement>) => void;
+};
+
+export type TooltipProps = {
+  text: string;
+  children: ReactNode;
 };
