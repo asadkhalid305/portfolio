@@ -18,6 +18,24 @@ export function useActiveNavLink() {
     return () => window.removeEventListener("hashchange", updateHash);
   }, []);
 
+  // Scroll to section on mount if hash is present and not just '#'
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.location.hash &&
+      window.location.hash.length > 1 // Only if there is a real hash
+    ) {
+      const id = window.location.hash.replace("#", "");
+      // Wait for DOM to be ready
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // Delay to ensure DOM is ready
+    }
+  }, []);
+
   const navLinkClass = (isActive: boolean, isDark?: boolean) => {
     let base =
       "focus-visible:ring-2 focus-visible:ring-c-dark focus-visible:ring-offset-2 focus-visible:outline-none block px-3 py-2 rounded-lg transition-colors duration-300 ease-in-out";
