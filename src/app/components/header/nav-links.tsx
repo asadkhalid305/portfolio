@@ -4,17 +4,11 @@ import { HeaderLinksProps } from "@/app/utils/types";
 
 interface NavLinksProps extends HeaderLinksProps {
   menuOpen: boolean;
+  isDark?: boolean;
 }
 
-export function NavLinks({ links, menuOpen }: Readonly<NavLinksProps>) {
-  const { pathname, currentHash } = useActiveNavLink();
-
-  const navLinkClass = (isActive: boolean) =>
-    `focus-visible:ring-2 focus-visible:ring-c-dark focus-visible:ring-offset-2 focus-visible:outline-none block px-3 py-2 rounded-lg transition-colors duration-300 ease-in-out ${
-      isActive
-        ? "bg-c-light text-c-dark font-semibold outline outline-2 outline-c-dark"
-        : "hover:bg-c-light hover:text-c-dark focus:bg-c-light focus:text-c-dark"
-    }`;
+export function NavLinks({ links, menuOpen, isDark }: Readonly<NavLinksProps>) {
+  const { pathname, currentHash, navLinkClass } = useActiveNavLink();
 
   return (
     <ul
@@ -35,7 +29,7 @@ export function NavLinks({ links, menuOpen }: Readonly<NavLinksProps>) {
               <a
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className={navLinkClass(isActive)}
+                className={navLinkClass(isActive, isDark)}
               >
                 {link.name}
               </a>
@@ -44,7 +38,7 @@ export function NavLinks({ links, menuOpen }: Readonly<NavLinksProps>) {
                 <a
                   href={link.href}
                   aria-current={isActive ? "page" : undefined}
-                  className={navLinkClass(isActive)}
+                  className={navLinkClass(isActive, isDark)}
                 >
                   {link.name}
                 </a>
