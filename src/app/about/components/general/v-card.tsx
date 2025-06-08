@@ -25,7 +25,7 @@ export default function VCard({
       <div className="p-5 flex-1 flex flex-col justify-between">
         <div>
           <p className="mb-2 text-sm font-light italic">{date}</p>
-          <h5 className="mb-2 text-2xl font-bold tracking-tight">{title}</h5>
+          <h3 className="mb-2 text-2xl font-bold tracking-tight">{title}</h3>
           <p className="mb-3 font-normal">{description}</p>
         </div>
         <LinkButton

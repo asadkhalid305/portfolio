@@ -10,7 +10,7 @@ const {
 export default function ChatbotHeader({
   toggleChatbot,
   setToggleChatbot,
-}: ChatbotHeaderProps) {
+}: Readonly<ChatbotHeaderProps>) {
   const openInfoModal = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation(); // Prevents the event from bubbling up the DOM tree.
     e.preventDefault(); // Prevents the browser's default action.

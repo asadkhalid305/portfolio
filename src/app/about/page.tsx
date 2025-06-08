@@ -7,7 +7,8 @@ import Contact from "./components/sections/contact";
 
 export default function About() {
   return (
-    <main>
+    <>
+      <h1 className="sr-only">About Asad Ullah Khalid</h1>
       <section id="intro" className="bg-c-semidark">
         <div className="px-4 lg:h-[93.1vh] lg:max-w-7xl lg:mx-auto">
           <Intro />
@@ -30,6 +31,6 @@ export default function About() {
           <Contact />
         </div>
       </section>
-    </main>
+    </>
   );
 }

@@ -16,14 +16,20 @@ export default function TCard({ text, author }: Readonly<TCardProps>) {
           <p className="my-4 text-md font-normal line-clamp-3">{text}</p>
         </Tooltip>
       </blockquote>
-      <a href={link} target="_blank" rel="noopener noreferrer">
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Testimonial by ${name}`}
+        className="focus-visible:outline-2 focus-visible:outline-c-dark focus-visible:outline"
+      >
         <figcaption className="flex items-center justify-center">
           <Image
             className="w-9 h-9 rounded-full"
             width={200}
             height={200}
             src={src}
-            alt={alt}
+            alt={alt || `Photo of ${name}`}
           />
           <div className="ms-3 space-y-0.5 text-left rtl:text-right font-medium">
             <div className="text-md font-medium">{name}</div>

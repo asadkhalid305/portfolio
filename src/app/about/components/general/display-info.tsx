@@ -16,9 +16,9 @@ export default function DisplayInfo({
         "lg:pr-10": paddingRight,
       })}
     >
-      <h1 className="text-center text-5xl font-extrabold pb-6 lg:text-6xl lg:text-left">
+      <h2 className="text-center text-5xl font-extrabold pb-6 lg:text-6xl lg:text-left">
         {heading}
-      </h1>
+      </h2>
       <p
         className="whitespace-pre-wrap leading-relaxed text-xl lg:text-2xl lg:leading-9"
         dangerouslySetInnerHTML={{ __html: description }}

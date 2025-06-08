@@ -20,7 +20,7 @@ export default function ProfileCard({
         <div className="w-full bg-gray-200 px-4 py-2">
           <div className="relative w-24 h-8">
             <Image
-              alt="linkedin logo"
+              alt="LinkedIn logo"
               fill
               sizes="100px"
               src="icons/linkedin-wide.min.svg"
@@ -30,14 +30,14 @@ export default function ProfileCard({
         <div className="flex flex-col p-4">
           <div className="relative w-16 h-16 mb-2">
             <Image
-              alt="personal photo"
+              alt={"Personal photo of " + name}
               className="rounded-full"
               fill
               sizes="100px"
               src="/images/linkedin-profile.webp"
             />
           </div>
-          <h5 className="text-lg font-medium">{name}</h5>
+          <h3 className="text-lg font-medium">{name}</h3>
           <div className="space-y-0.5 mt-1 mb-4 text-sm">
             <p className="font-normal">
               {role}@{company}
@@ -45,10 +45,10 @@ export default function ProfileCard({
             <p className="font-light">{position}</p>
           </div>
           <LinkButton
-            className="bg-c-light text-[#0A66C2] border-2 border-blue-700 rounded-full hover:bg-[#0A66C2] hover:text-c-light"
+            className="bg-c-light text-[#0A66C2] border-2 border-blue-700 rounded-full hover:bg-[#0A66C2] hover:text-c-light focus-visible:outline-2 focus-visible:outline-c-dark focus-visible:outline"
             href={href}
             showIcon={false}
-            text="View Profile"
+            text="View LinkedIn profile"
           />
         </div>
       </div>

@@ -19,7 +19,7 @@ export default function Chatbot() {
   const [toggleChatbot, setToggleChatbot] = useState(true);
 
   return (
-    <div
+    <aside
       className={clsx(
         "flex-col w-96 fixed bottom-0 right-0 m-4 mb-6 bg-gray-100 rounded-t-lg shadow-xl overflow-hidden transition-all duration-700 ease-in-out hidden xl:flex",
         {
@@ -27,6 +27,7 @@ export default function Chatbot() {
           "h-[3.75rem]": !toggleChatbot,
         }
       )}
+      aria-label="AI Chatbot assistant"
     >
       <ChatbotHeader
         toggleChatbot={toggleChatbot}
@@ -39,6 +40,6 @@ export default function Chatbot() {
         setUserInput={setUserInput}
         handleSend={handleSend}
       />
-    </div>
+    </aside>
   );
 }
