@@ -17,7 +17,7 @@ export default function HeaderLinks({ links }: Readonly<HeaderLinksProps>) {
   return (
     <nav aria-label="Main navigation">
       <div className="flex items-center gap-2 md:gap-2 lg:gap-3">
-        <ul className="flex text-md font-medium lg:text-lg">
+        <ul className="hidden lg:flex text-md font-medium lg:text-lg">
           {links.map((link) => {
             const isActive = link.href.startsWith("#")
               ? pathname === link.href
