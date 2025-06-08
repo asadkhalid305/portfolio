@@ -1,6 +1,6 @@
 import { contact } from "@/app/utils/constants";
-import DisplayInfo from "../general/display-info";
-import ProfileCard from "../general/profile-card";
+import DisplayInfo from "@/app/about/components/general/display-info";
+import ProfileCard from "@/app/about/components/general/profile-card";
 
 const {
   heading,

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { ChatbotMessagesProps } from "@/app/utils/types";
-import ChatbotLoading from "./chatbot-loading";
-import ChatbotMessage from "./chatbot-message";
+import ChatbotLoading from "@/app/components/chatbot/chatbot-loading";
+import ChatbotMessage from "@/app/components/chatbot/chatbot-message";
 
 export default function ChatbotMessages({
   messages,

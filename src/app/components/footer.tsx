@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { footer, socials } from "../utils/constants";
+import { footer, socials } from "@/app/utils/constants";
 
 const {
   linkedIn: { name: linkedInName, icon: linkedInIcon, href: linkedInHref },

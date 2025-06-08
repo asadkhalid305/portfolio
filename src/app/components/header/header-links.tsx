@@ -1,9 +1,9 @@
-import { useMenuOpen } from "../../hooks/useMenuOpen";
-import { NavMenuButton } from "./nav-menu-button";
-import { NavLinks } from "./nav-links";
-import LinkButton from "../../about/components/general/link-button";
-import { HeaderLinksProps } from "../../utils/types";
-import { socials } from "../../utils/constants";
+import { useMenuOpen } from "@/app/hooks/useMenuOpen";
+import { NavMenuButton } from "@/app/components/header/nav-menu-button";
+import { NavLinks } from "@/app/components/header/nav-links";
+import LinkButton from "@/app/about/components/general/link-button";
+import { HeaderLinksProps } from "@/app/utils/types";
+import { socials } from "@/app/utils/constants";
 
 const {
   topmateIO: { href },

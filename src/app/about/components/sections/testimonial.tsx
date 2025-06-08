@@ -1,6 +1,6 @@
 import { testimonial } from "@/app/utils/constants";
-import DisplayInfo from "../general/display-info";
-import TCard from "../general/t-card";
+import DisplayInfo from "@/app/about/components/general/display-info";
+import TCard from "@/app/about/components/general/t-card";
 
 const { heading, items } = testimonial;
 

@@ -9,7 +9,7 @@ import {
   Metadata,
   Socials,
   Testimonial,
-} from "./types";
+} from "@/app/utils/types";
 import { v4 as uuidv4 } from "uuid";
 
 const year = new Date().getFullYear();

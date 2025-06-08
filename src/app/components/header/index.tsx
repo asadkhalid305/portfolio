@@ -3,8 +3,8 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { header } from "@/app/utils/constants";
-import useHeader from "../../hooks/useHeader";
-import HeaderLinks from "./header-links";
+import useHeader from "@/app/hooks/useHeader";
+import HeaderLinks from "@/app/components/header/header-links";
 
 const { links } = header;
 

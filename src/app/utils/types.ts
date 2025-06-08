@@ -191,3 +191,8 @@ export type ChatbotFormProps = {
   isMessageLimitReached: boolean;
   handleSend: (event: React.FormEvent<HTMLFormElement>) => void;
 };
+
+export type TooltipProps = {
+  text: string;
+  children: ReactNode;
+};

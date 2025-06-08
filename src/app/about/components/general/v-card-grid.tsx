@@ -1,5 +1,5 @@
 import { CardSystemProps } from "@/app/utils/types";
-import VCard from "./v-card";
+import VCard from "@/app/about/components/general/v-card";
 
 export default function VCardSystem({
   heading,

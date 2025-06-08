@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { VCardProps } from "@/app/utils/types";
-import LinkButton from "./link-button";
+import LinkButton from "@/app/about/components/general/link-button";
 
 export default function VCard({
   title,
@@ -9,7 +9,7 @@ export default function VCard({
   link,
   date,
 }: Readonly<VCardProps>) {
-  const { src = "/images/default.webp", alt = "" } = image || {};
+  const { src = "/images/default.webp", alt = "" } = image ?? {};
   return (
     <div className="w-full max-w-sm border border-gray-200 rounded-lg shadow flex flex-col transition-all duration-300 ease-in-out hover:bg-c-semidark hover:shadow-2xl">
       <div className="relative h-96 w-full">

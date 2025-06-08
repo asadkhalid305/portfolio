@@ -1,9 +1,9 @@
-import Intro from "./components/sections/intro";
-import Journey from "./components/sections/journey";
-import Experience from "./components/sections/experience";
-import Contribution from "./components/sections/contribution";
-import Testimonial from "./components/sections/testimonial";
-import Contact from "./components/sections/contact";
+import Intro from "@/app/about/components/sections/intro";
+import Journey from "@/app/about/components/sections/journey";
+import Experience from "@/app/about/components/sections/experience";
+import Contribution from "@/app/about/components/sections/contribution";
+import Testimonial from "@/app/about/components/sections/testimonial";
+import Contact from "@/app/about/components/sections/contact";
 
 export default function About() {
   return (

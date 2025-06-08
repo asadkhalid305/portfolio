@@ -1,11 +1,7 @@
 "use client";
 
-import { ReactNode, useState } from "react";
-
-interface TooltipProps {
-  text: string;
-  children: ReactNode;
-}
+import { useState } from "react";
+import { TooltipProps } from "@/app/utils/types";
 
 export default function Tooltip({ text, children }: Readonly<TooltipProps>) {
   const [showTooltip, setShowTooltip] = useState(false);
