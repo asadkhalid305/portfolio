@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { intro, socials } from "@/app/utils/constants";
-import DisplayInfo from "../general/display-info";
+import DisplayInfo from "@/app/about/components/general/display-info";
 
 const { heading, description } = intro;
 const {

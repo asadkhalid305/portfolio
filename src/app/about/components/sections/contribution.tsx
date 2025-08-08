@@ -1,6 +1,6 @@
 import { contribution } from "@/app/utils/constants";
-import DisplayInfo from "../general/display-info";
-import VCardGrid from "../general/v-card-grid";
+import DisplayInfo from "@/app/about/components/general/display-info";
+import VCardGrid from "@/app/about/components/general/v-card-grid";
 
 const { heading, description, items } = contribution;
 
@@ -16,9 +16,9 @@ export default function Contribution() {
       </div>
 
       {/* Events & Blogs */}
-      {Object.entries(items).map(([key, value], index) => {
-        const reversedValue = [...value].reverse(); // Create a new array and reverse it
-        return <VCardGrid key={index} heading={key} records={reversedValue} />;
+      {Object.entries(items).map(([key, value]) => {
+        const reversedValue = [...value].reverse();
+        return <VCardGrid key={key} heading={key} records={reversedValue} />;
       })}
     </>
   );

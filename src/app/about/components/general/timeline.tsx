@@ -1,13 +1,14 @@
 import { TimelineProps } from "@/app/utils/types";
-import LinkButton from "./link-button";
-import TimelineItem from "./timeline-item";
+import LinkButton from "@/app/about/components/general/link-button";
+import TimelineItem from "@/app/about/components/general/timeline-item";
 
-export default function Timeline({ record, link }: TimelineProps) {
+export default function Timeline({ record, link }: Readonly<TimelineProps>) {
   return (
-    <ol className="relative border-c-dark max-md:border-l md:flex md:flex-row md:justify-between md:border-t">
-      {record.map((item, index) => (
+    <ol className="relative max-md:border-l border-c-dark md:flex md:flex-row md:justify-between md:border-t">
+      {record.map((item) => (
         <TimelineItem
-          key={index}
+          key={item.id}
+          id={item.id}
           company={item.company}
           date={item.date}
           location={item.location}
@@ -16,7 +17,7 @@ export default function Timeline({ record, link }: TimelineProps) {
       ))}
       <li className="max-md:mb-10 max-md:ml-4 md:self-center">
         <LinkButton
-          className="text-c-light bg-c-dark hover:bg-gray-800"
+          className="bg-c-dark text-c-light hover:bg-gray-800"
           href={link}
           showIcon
           text="Learn more"

@@ -1,5 +1,5 @@
 import { journey } from "@/app/utils/constants";
-import DisplayInfo from "../general/display-info";
+import DisplayInfo from "@/app/about/components/general/display-info";
 
 const { heading, description } = journey;
 

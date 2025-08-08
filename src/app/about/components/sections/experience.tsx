@@ -1,6 +1,6 @@
 import { experience } from "@/app/utils/constants";
-import DisplayInfo from "../general/display-info";
-import Timeline from "../general/timeline";
+import DisplayInfo from "@/app/about/components/general/display-info";
+import Timeline from "@/app/about/components/general/timeline";
 
 const { heading, description, items, linkedInLink } = experience;
 
