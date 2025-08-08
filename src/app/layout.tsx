@@ -17,7 +17,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = { ...metadataContent };
 
-const showChatbot = !!process.env.OPENAI_API_KEY;
+const showChatbot =
+  !!process.env.OPENAI_API_KEY && !process.env.DISABLED_CHATBOT;
 
 export default function RootLayout({ children }: Readonly<LayoutProps>) {
   return (
