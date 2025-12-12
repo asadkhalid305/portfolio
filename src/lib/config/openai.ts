@@ -12,7 +12,7 @@ export const openai = new OpenAI({
   defaultHeaders: useOpenRouter
     ? {
         "HTTP-Referer":
-          process.env.NEXT_PUBLIC_SITE_URL || "https://asadkhalid.com",
+          process.env.NEXT_PUBLIC_SITE_URL || "https://asadullahkhalid.com",
         "X-Title": "Asad Khalid Portfolio Chatbot",
       }
     : undefined,

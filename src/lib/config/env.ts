@@ -4,7 +4,7 @@ const envSchema = z.object({
   OPENAI_API_KEY: z.string().optional(),
   OPENROUTER_API_KEY: z.string().optional(),
   USE_OPENROUTER: z.string().optional(),
-  NEXT_PUBLIC_ENABLE_CHATBOT: z.string().optional(),
+  ENABLE_CHATBOT: z.string().optional(),
   NODE_ENV: z
     .enum(["development", "production", "test"])
     .default("development"),
