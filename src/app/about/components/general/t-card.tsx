@@ -17,8 +17,8 @@ export default function TCard({ text, author }: Readonly<TCardProps>) {
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Testimonial by ${name}`}
         className="focus-visible:outline-2 focus-visible:outline-c-dark focus-visible:outline"
+        aria-label={`View ${name}'s LinkedIn profile`}
       >
         <figcaption className="flex items-center justify-center">
           <Image

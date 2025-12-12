@@ -32,7 +32,7 @@ export default function RootLayout({ children }: Readonly<LayoutProps>) {
       <body className="antialiased text-c-dark scroll-smooth lg:subpixel-antialiased ">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only absolute top-2 left-2 z-50 bg-c-dark text-c-light px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-c-light"
+          className="sr-only focus-visible:not-sr-only absolute top-2 left-2 z-50 bg-c-dark text-c-light px-4 py-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-c-light"
         >
           Skip to main content
         </a>
