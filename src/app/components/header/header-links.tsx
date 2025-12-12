@@ -3,7 +3,7 @@ import { NavMenuButton } from "@/app/components/header/nav-menu-button";
 import { NavLinks } from "@/app/components/header/nav-links";
 import LinkButton from "@/app/about/components/general/link-button";
 import { HeaderLinksProps } from "@/app/utils/types";
-import { socials } from "@/app/utils/constants";
+import { socials } from "@/lib/constants";
 
 const {
   topmateIO: { href },

@@ -1,14 +1,11 @@
 import Image from "next/image";
-import { TCardProps } from "@/app/utils/types";
+import { TCardProps } from "@/lib/utils/types";
 import Tooltip from "@/app/about/components/general/tooltip";
+import { getImageProps } from "@/lib/utils/image-helpers";
 
 export default function TCard({ text, author }: Readonly<TCardProps>) {
-  const {
-    name,
-    image: { src = "/images/default.webp", alt = "" } = {},
-    job,
-    link,
-  } = author ?? {};
+  const { name, image, job, link } = author ?? {};
+  const { src, alt } = getImageProps(image);
   return (
     <figure className="flex flex-col items-center justify-center p-8 text-center bg-c-light border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e transition-all duration-300 ease-in-out hover:bg-c-semidark hover:shadow-2xl">
       <blockquote className="max-w-xl mx-auto mb-4 text-c-dark cursor-pointer lg:mb-8">

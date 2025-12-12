@@ -1,4 +1,4 @@
-import { ChatbotFormProps } from "@/app/utils/types";
+import { ChatbotFormProps } from "@/lib/utils/types";
 
 export default function ChatbotForm({
   userInput,

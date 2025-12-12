@@ -9,25 +9,26 @@ export default function About() {
   return (
     <>
       <h1 className="sr-only">About Asad Ullah Khalid</h1>
+      {/* TODO: Migrate to Section wrapper component for consistency */}
       <section id="intro" className="bg-c-semidark">
-        <div className="px-4 lg:h-[93.1vh] lg:max-w-7xl lg:mx-auto">
+        <div className="container lg:h-[93.1vh]">
           <Intro />
         </div>
       </section>
-      <section id="journey" className="px-4 lg:max-w-7xl lg:mx-auto">
+      <section id="journey" className="container">
         <Journey />
       </section>
-      <section id="experience" className="px-4 lg:max-w-7xl lg:mx-auto">
+      <section id="experience" className="container">
         <Experience />
       </section>
-      <section id="contribution" className="px-4 lg:max-w-7xl lg:mx-auto">
+      <section id="contribution" className="container">
         <Contribution />
       </section>
-      <section id="testimonial" className="px-4 lg:max-w-7xl lg:mx-auto">
+      <section id="testimonial" className="container">
         <Testimonial />
       </section>
       <section id="contact" className="bg-c-semidark">
-        <div className="px-4 lg:max-w-7xl lg:mx-auto">
+        <div className="container">
           <Contact />
         </div>
       </section>

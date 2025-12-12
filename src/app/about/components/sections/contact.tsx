@@ -1,4 +1,4 @@
-import { contact } from "@/app/utils/constants";
+import { contact } from "@/lib/constants";
 import DisplayInfo from "@/app/about/components/general/display-info";
 import ProfileCard from "@/app/about/components/general/profile-card";
 

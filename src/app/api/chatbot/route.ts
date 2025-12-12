@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { chatbot } from "@/app/utils/constants";
+import { chatbot } from "@/lib/constants";
 
 // Initialize the OpenAI API with your API key
 const openai = new OpenAI({
@@ -8,56 +8,83 @@ const openai = new OpenAI({
 
 const { config, dataset, prompt } = chatbot;
 
-// Initialize the messages array with system prompt and default dataset
-const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
-  {
-    role: "system",
-    content: prompt,
-  },
-  {
-    role: "assistant",
-    content: dataset,
-  },
-];
-
 // Define the POST function
 export async function POST(request: Request) {
-  // Parse the request body
-  const body = await request.json();
+  try {
+    // Parse the request body
+    const body = await request.json();
 
-  // If the body does not contain a message, return a custom message to provide a message
-  if (!body.message) {
-    return Response.json({
-      message: {
-        role: "assistant",
-        content: "Please provide a message.",
+    // Validate input
+    if (!body.message || typeof body.message !== "string") {
+      return Response.json(
+        {
+          error: "Please provide a valid message.",
+        },
+        { status: 400 }
+      );
+    }
+
+    const userMessage = body.message.trim();
+    if (!userMessage) {
+      return Response.json(
+        {
+          error: "Message cannot be empty.",
+        },
+        { status: 400 }
+      );
+    }
+
+    // Build messages array for this request only (no shared state)
+    // Client manages conversation history, server is stateless
+    const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
+      {
+        role: "system",
+        content: prompt,
       },
+      {
+        role: "assistant",
+        content: dataset,
+      },
+      {
+        role: "user",
+        content: userMessage,
+      },
+    ];
+
+    // Call the OpenAI API to generate a response
+    const res = await openai.chat.completions.create({
+      model: config.model,
+      temperature: config.temperature,
+      max_tokens: config.maxTokens,
+      messages,
     });
+
+    // Extract the assistant's message from the response
+    const assistantMessage = res.choices[0]?.message;
+
+    if (!assistantMessage?.content) {
+      return Response.json(
+        {
+          error: "Failed to generate response.",
+        },
+        { status: 500 }
+      );
+    }
+
+    const reply: OpenAI.Chat.Completions.ChatCompletionMessageParam = {
+      role: assistantMessage.role,
+      content: assistantMessage.content,
+    };
+
+    // Return the assistant's message in the response
+    return Response.json({ message: reply });
+  } catch (error) {
+    console.error("Chatbot API error:", error);
+    return Response.json(
+      {
+        error: "An error occurred while processing your request.",
+      },
+      { status: 500 }
+    );
   }
-
-  // Add the incoming user's message to the messages array
-  messages.push({
-    role: "user",
-    content: body.message,
-  });
-
-  // Call the OpenAI API to generate a response
-  const res = await openai.chat.completions.create({
-    model: config.model,
-    temperature: config.temperature,
-    max_tokens: config.maxTokens,
-    messages: [...messages],
-  });
-
-  // Extract the assistant's message from the response
-  const reply: OpenAI.Chat.Completions.ChatCompletionMessageParam = {
-    role: res.choices[0].message.role,
-    content: res.choices[0].message.content,
-  };
-
-  // Add the assistant's reply to incoming message to the messages array
-  messages.push(reply);
-
-  // Return the assistant's message in the response
-  return Response.json({ message: reply });
 }

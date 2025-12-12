@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import { DisplayInfoProps } from "@/app/utils/types";
+import DOMPurify from "isomorphic-dompurify";
+import { DisplayInfoProps } from "@/lib/utils/types";
 
 export default function DisplayInfo({
   description = "",
@@ -8,6 +9,12 @@ export default function DisplayInfo({
   paddingTop = false,
   paddingBottom = false,
 }: Readonly<DisplayInfoProps>) {
+  // Sanitize HTML to prevent XSS attacks
+  const sanitizedDescription = DOMPurify.sanitize(description, {
+    ALLOWED_TAGS: ["span", "a", "br", "strong", "em"],
+    ALLOWED_ATTR: ["class", "href", "target", "rel"],
+  });
+
   return (
     <div
       className={clsx({
@@ -21,7 +28,7 @@ export default function DisplayInfo({
       </h2>
       <p
         className="whitespace-pre-wrap leading-relaxed text-xl lg:text-2xl lg:leading-9"
-        dangerouslySetInnerHTML={{ __html: description }}
+        dangerouslySetInnerHTML={{ __html: sanitizedDescription }}
       ></p>
     </div>
   );

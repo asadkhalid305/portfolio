@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Footer from "@/app/components/footer";
-import Header from "@/app/components/header";
-import Chatbot from "@/app/components/chatbot";
-import { LayoutProps } from "@/app/utils/types";
-import { metadata as metadataContent } from "@/app/utils/constants";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import Chatbot from "@/components/chatbot";
+import { LayoutProps } from "@/lib/utils/types";
+import { metadata as metadataContent } from "@/lib/constants";
+import { env } from "@/lib/config/env";
 import "@/app/globals.css";
 
 const poppins = Poppins({
@@ -16,6 +17,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = { ...metadataContent };
+
+// Validate environment on startup
+const _ = env;
 
 const showChatbot =
   !!process.env.OPENAI_API_KEY && !process.env.DISABLED_CHATBOT;

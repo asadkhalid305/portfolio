@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import LinkButton from "@/app/about/components/general/link-button";
-import { socials } from "@/app/utils/constants";
-import { ProfileCardProps } from "@/app/utils/types";
+import { socials } from "@/lib/constants";
+import { ProfileCardProps } from "@/lib/utils/types";
 
 const {
   linkedIn: { href },

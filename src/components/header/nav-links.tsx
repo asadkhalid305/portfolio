@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { useActiveNavLink } from "@/app/hooks/useActiveNavLink";
-import { HeaderLinksProps } from "@/app/utils/types";
+import { useActiveNavLink } from "@/lib/hooks/useActiveNavLink";
+import { HeaderLinksProps } from "@/lib/utils/types";
 
 interface NavLinksProps extends HeaderLinksProps {
   menuOpen: boolean;
@@ -12,10 +12,10 @@ export function NavLinks({ links, menuOpen, isDark }: Readonly<NavLinksProps>) {
 
   return (
     <ul
-      className={`flex-1 ${
+      className={`${
         menuOpen
-          ? "absolute left-0 top-full mt-2 w-56 flex flex-col bg-c-dark text-c-light rounded-lg shadow-lg z-50 border-2 border-c-dark py-2 space-y-1 animate-fade-in lg:static lg:flex-row lg:bg-transparent lg:text-inherit lg:shadow-none lg:border-none lg:space-y-0 lg:space-x-2"
-          : "hidden lg:flex lg:flex-row lg:bg-transparent lg:text-inherit lg:shadow-none lg:border-none lg:space-y-0 lg:space-x-2"
+          ? "absolute left-0 top-full mt-2 w-56 flex flex-col bg-c-dark text-c-light rounded-lg shadow-lg z-50 border-2 border-c-dark py-2 px-3 space-y-1 animate-fade-in lg:static lg:flex-row lg:bg-transparent lg:text-inherit lg:shadow-none lg:border-none lg:space-y-0 lg:gap-4 lg:px-0"
+          : "hidden lg:flex lg:flex-row lg:bg-transparent lg:text-inherit lg:shadow-none lg:border-none lg:space-y-0 lg:gap-4"
       } text-md font-medium lg:text-lg`}
     >
       {links.map((link) => {

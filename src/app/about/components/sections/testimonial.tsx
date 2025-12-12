@@ -1,8 +1,8 @@
-import { testimonial } from "@/app/utils/constants";
 import DisplayInfo from "@/app/about/components/general/display-info";
 import TCard from "@/app/about/components/general/t-card";
+import testimonialData from "@/content/testimonials.json";
 
-const { heading, items } = testimonial;
+const { heading, items } = testimonialData;
 
 export default function Testimonial() {
   return (

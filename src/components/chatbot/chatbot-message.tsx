@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { ChatbotMessageProps } from "@/app/utils/types";
+import { ChatbotMessageProps } from "@/lib/utils/types";
 
 export default function ChatbotMessage({
   message,
