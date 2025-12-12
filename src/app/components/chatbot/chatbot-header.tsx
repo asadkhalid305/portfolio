@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ChatbotHeaderProps } from "@/app/utils/types";
+import { ChatbotHeaderProps } from "@/lib/utils/types";
 import { useState } from "react";
 import { Bot, Info, Minimize2, Maximize2 } from "lucide-react";
 import { chatbot } from "@/lib/constants";

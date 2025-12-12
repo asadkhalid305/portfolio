@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { useActiveNavLink } from "@/app/hooks/useActiveNavLink";
-import { HeaderLinksProps } from "@/app/utils/types";
+import { useActiveNavLink } from "@/lib/hooks/useActiveNavLink";
+import { HeaderLinksProps } from "@/lib/utils/types";
 
 interface NavLinksProps extends HeaderLinksProps {
   menuOpen: boolean;

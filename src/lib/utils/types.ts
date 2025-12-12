@@ -23,9 +23,7 @@ type Link = {
 /**
  * Social media link with icon
  */
-type SocialLink = Link & {
-  icon: string;
-};
+type SocialLink = Link;
 
 /**
  * User profile information

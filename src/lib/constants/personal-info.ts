@@ -27,21 +27,17 @@ export const socials: Socials = {
   linkedIn: {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/asadkhalid305",
-    icon: "/icons/linkedin.min.svg",
   },
   github: {
     name: "GitHub",
     href: "https://github.com/asadkhalid305/",
-    icon: "/icons/github.min.svg",
   },
   topmateIO: {
     name: "Topmate.io",
     href: "https://topmate.io/asadullahkhalid",
-    icon: "",
   },
   mercedesBenzIO: {
     name: "Mercedes-Benz.io",
     href: "https://www.mercedes-benz.io/",
-    icon: "",
   },
 };

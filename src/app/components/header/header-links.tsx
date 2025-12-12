@@ -1,8 +1,8 @@
-import { useMenuOpen } from "@/app/hooks/useMenuOpen";
+import { useMenuOpen } from "@/lib/hooks/useMenuOpen";
 import { NavMenuButton } from "@/app/components/header/nav-menu-button";
 import { NavLinks } from "@/app/components/header/nav-links";
 import LinkButton from "@/app/about/components/general/link-button";
-import { HeaderLinksProps } from "@/app/utils/types";
+import { HeaderLinksProps } from "@/lib/utils/types";
 import { socials } from "@/lib/constants";
 
 const {

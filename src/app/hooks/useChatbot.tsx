@@ -1,7 +1,7 @@
 import { FormEvent, useState, useEffect } from "react";
 import { chatbot } from "@/lib/constants";
-import { getReplyFromChatbot } from "@/app/utils/api";
-import { ChatbotMessage } from "@/app/utils/types";
+import { getReplyFromChatbot } from "@/lib/utils/api";
+import { ChatbotMessage } from "@/lib/utils/types";
 
 const { limit } = chatbot;
 
@@ -56,12 +56,13 @@ export default function useChatbot() {
 
     // Add user message immediately
     const userMessage = { role: "user" as const, content: inputValue };
-    setMessages((prev) => [...prev, userMessage]);
+    const updatedMessages = [...messages, userMessage];
+    setMessages(updatedMessages);
     setUserInput("");
     setLoading(true);
 
     try {
-      const { message } = await getReplyFromChatbot(inputValue);
+      const { message } = await getReplyFromChatbot(updatedMessages);
       setMessages((prev) => [...prev, message]);
     } catch (error) {
       console.error("Failed to get chatbot reply:", error);

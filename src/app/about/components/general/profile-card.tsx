@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { Linkedin } from "lucide-react";
 import LinkButton from "@/app/about/components/general/link-button";
 import { socials } from "@/lib/constants";
 import { ProfileCardProps } from "@/lib/utils/types";
@@ -17,15 +18,8 @@ export default function ProfileCard({
   return (
     <div className="flex-1 flex justify-center lg:justify-end">
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow transition-all duration-300 ease-in-out hover:shadow-2xl">
-        <div className="w-full bg-gray-200 px-4 py-2">
-          <div className="relative w-24 h-8">
-            <Image
-              alt="LinkedIn logo"
-              fill
-              sizes="100px"
-              src="icons/linkedin-wide.min.svg"
-            />
-          </div>
+        <div className="w-full bg-[#0A66C2] px-4 py-2 flex items-center">
+          <Linkedin className="w-8 h-8 text-white" />
         </div>
         <div className="flex flex-col p-4">
           <div className="relative w-16 h-16 mb-2">
