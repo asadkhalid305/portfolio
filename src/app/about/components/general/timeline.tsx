@@ -1,4 +1,4 @@
-import { TimelineProps } from "@/app/utils/types";
+import { TimelineProps } from "@/lib/utils/types";
 import LinkButton from "@/app/about/components/general/link-button";
 import TimelineItem from "@/app/about/components/general/timeline-item";
 
