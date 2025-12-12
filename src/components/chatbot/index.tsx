@@ -21,10 +21,10 @@ export default function Chatbot() {
   return (
     <aside
       className={clsx(
-        "flex-col w-96 fixed bottom-0 right-0 m-4 mb-6 bg-gray-100 rounded-t-lg shadow-xl overflow-hidden transition-all duration-700 ease-in-out hidden xl:flex",
+        "flex-col w-[420px] fixed bottom-0 right-0 m-6 backdrop-blur-xl bg-white dark:bg-gray-950 rounded-2xl shadow-2xl overflow-hidden transition-all duration-500 ease-in-out hidden xl:flex border border-gray-200 dark:border-gray-800",
         {
-          "h-2/5": toggleChatbot,
-          "h-[3.75rem]": !toggleChatbot,
+          "h-[600px]": toggleChatbot,
+          "h-[72px]": !toggleChatbot,
         }
       )}
       aria-label="AI Chatbot assistant"

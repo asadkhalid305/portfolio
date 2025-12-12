@@ -36,9 +36,9 @@ export function ScrollToTop({ hasChatbot = false }: ScrollToTopProps) {
   };
 
   // Position next to chatbot on xl screens when chatbot is present
-  // Chatbot is w-96 (384px) with m-4 (16px) and mb-6 (24px), align button to its bottom
+  // Chatbot is w-[420px] with m-6 (24px), align button to its left
   const positionClass = hasChatbot
-    ? "bottom-8 right-8 xl:bottom-[1.8rem] xl:right-[26rem]"
+    ? "bottom-8 right-8 xl:bottom-8 xl:right-[29rem]"
     : "bottom-8 right-8";
 
   return (
