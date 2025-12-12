@@ -83,21 +83,56 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Chatbot API error:", error);
 
-    // Handle rate limit errors specifically
-    if (error instanceof OpenAI.APIError && error.status === 429) {
+    // Handle OpenAI/OpenRouter API errors
+    if (error instanceof OpenAI.APIError) {
+      // Rate limit errors
+      if (error.status === 429) {
+        return Response.json(
+          {
+            error:
+              "I'm currently out of credits for today. Please check back tomorrow or feel free to contact me directly!",
+          },
+          { status: 429 }
+        );
+      }
+
+      // Model not found or endpoint errors
+      if (error.status === 404) {
+        return Response.json(
+          {
+            error:
+              "The AI service is temporarily unavailable. Please try again later or contact me directly!",
+          },
+          { status: 404 }
+        );
+      }
+
+      // Authentication errors
+      if (error.status === 401 || error.status === 403) {
+        return Response.json(
+          {
+            error:
+              "There's a configuration issue with the AI service. Please contact me directly for assistance!",
+          },
+          { status: error.status }
+        );
+      }
+
+      // Other API errors
       return Response.json(
         {
-          error: useOpenRouter
-            ? "Rate limit reached. Free models have limited requests. Please wait a moment and try again."
-            : "Too many requests. Please wait a moment and try again.",
+          error:
+            "I'm having trouble processing your request right now. Please try again or contact me directly!",
         },
-        { status: 429 }
+        { status: error.status || 500 }
       );
     }
 
+    // Generic errors
     return Response.json(
       {
-        error: "An error occurred while processing your request.",
+        error:
+          "Something went wrong on my end. Please try again or feel free to contact me directly!",
       },
       { status: 500 }
     );

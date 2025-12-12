@@ -6,7 +6,7 @@ export const chatbot: Chatbot = {
   config: {
     // Use free OpenRouter model or OpenAI based on flag
     model: useOpenRouter
-      ? "google/gemma-2-9b-it:free" // Free OpenRouter model with better rate limits
+      ? "meta-llama/llama-3.2-3b-instruct:free" // Free OpenRouter model (updated to available model)
       : "gpt-4o-mini", // OpenAI model
     temperature: 1,
     maxTokens: 150,
@@ -41,14 +41,13 @@ export const chatbot: Chatbot = {
   Question: Is Asad Ullah married?
   Answer: Yes, he is happily married. 
   `,
-  limit: 10,
-  info: `Hello and welcome! I'm Asad Ullah, the creator of this AI Assistant which is powered by the cutting-edge GPT-3 technology. I want to assure you that your privacy is important to me. I don't store your data anywhere except in your local browser storage.
+  info: `Welcome! This AI Assistant is designed to answer questions about my professional background, experience, and journey in tech.
 
-To maintain a balance between user experience and operational costs, I've set a limit of 10 messages per session. While it's possible to bypass this limit by clearing your local storage, I kindly ask you to respect this limit. Each query incurs a cost, and exceeding the limit could lead to unnecessary expenses.
-  
-Feel free to use this AI Assistant to inquire about anything related to me from the details available on the website. It's here to help you get the information you need.
-  
-I trust you understand and will cooperate. Enjoy your conversation with AI Assistant! Thank you for visiting.
+Your privacy matters: All conversations are stored locally in your browser only—I don't collect or store any data on external servers.
+
+Feel free to ask about my experience, projects, or anything else you'd like to know. I'm here to help you get the information you need.
+
+Thank you for visiting!
   `,
   header: {
     heading: "AI Assistant",

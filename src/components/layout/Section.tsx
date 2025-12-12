@@ -9,8 +9,7 @@ interface SectionProps {
 
 /**
  * Section component for consistent section structure
- * TODO: Gradually migrate existing sections to use this component
- * 
+ *
  * Example usage:
  * <Section id="intro" bgColor="semidark">
  *   <Container>

@@ -4,34 +4,43 @@ import Experience from "@/app/about/components/sections/experience";
 import Contribution from "@/app/about/components/sections/contribution";
 import Testimonial from "@/app/about/components/sections/testimonial";
 import Contact from "@/app/about/components/sections/contact";
+import { Section } from "@/components/layout/Section";
+import { Container } from "@/components/layout/Container";
 
 export default function About() {
   return (
     <>
       <h1 className="sr-only">About Asad Ullah Khalid</h1>
-      {/* TODO: Migrate to Section wrapper component for consistency */}
-      <section id="intro" className="bg-c-semidark">
-        <div className="container">
+      <Section id="intro" bgColor="semidark">
+        <Container>
           <Intro />
-        </div>
-      </section>
-      <section id="journey" className="container min-h-[600px]">
-        <Journey />
-      </section>
-      <section id="experience" className="container min-h-[600px]">
-        <Experience />
-      </section>
-      <section id="contribution" className="container">
-        <Contribution />
-      </section>
-      <section id="testimonial" className="container min-h-[600px]">
-        <Testimonial />
-      </section>
-      <section id="contact" className="bg-c-semidark">
-        <div className="container">
+        </Container>
+      </Section>
+      <Section id="journey" className="min-h-[600px]">
+        <Container>
+          <Journey />
+        </Container>
+      </Section>
+      <Section id="experience" className="min-h-[600px]">
+        <Container>
+          <Experience />
+        </Container>
+      </Section>
+      <Section id="contribution">
+        <Container>
+          <Contribution />
+        </Container>
+      </Section>
+      <Section id="testimonial" className="min-h-[600px]">
+        <Container>
+          <Testimonial />
+        </Container>
+      </Section>
+      <Section id="contact" bgColor="semidark">
+        <Container>
           <Contact />
-        </div>
-      </section>
+        </Container>
+      </Section>
     </>
   );
 }

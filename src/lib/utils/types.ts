@@ -192,7 +192,6 @@ export type Chatbot = {
   };
   prompt: string;
   dataset: string;
-  limit: number;
   info: string;
   header: {
     heading: string;
@@ -237,7 +236,6 @@ export type ChatbotMessagesProps = {
 export type ChatbotFormProps = {
   userInput: string;
   setUserInput: (value: string) => void;
-  isMessageLimitReached: boolean;
   handleSend: (event: React.FormEvent<HTMLFormElement>) => void;
 };
 

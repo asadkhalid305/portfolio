@@ -3,12 +3,9 @@ import { chatbot } from "@/lib/constants";
 import { getReplyFromChatbot } from "@/lib/utils/api";
 import { ChatbotMessage } from "@/lib/utils/types";
 
-const { limit } = chatbot;
-
 export default function useChatbot() {
   const [userInput, setUserInput] = useState("");
   const [messages, setMessages] = useState<ChatbotMessage[]>([]);
-  const [isMessageLimitReached, setIsMessageLimitReached] = useState(false);
   const [loading, setLoading] = useState(false);
 
   // Load messages from local storage when the component mounts
@@ -31,16 +28,10 @@ export default function useChatbot() {
 
   // Save messages to local storage whenever they change
   useEffect(() => {
-    // Fix: Correctly count user messages
-    const userMessageCount = messages.filter((m) => m.role === "user").length;
-    setIsMessageLimitReached(userMessageCount >= limit);
-
     // Save to localStorage only in browser environment
     if (typeof window !== "undefined") {
       localStorage.setItem("messages", JSON.stringify(messages));
     }
-    // limit is a constant from constants, not a reactive value
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [messages]);
 
   /**
@@ -67,13 +58,12 @@ export default function useChatbot() {
       setMessages((prev) => [...prev, message]);
     } catch (error) {
       console.warn("Failed to get chatbot reply:", error);
-      // Add user-friendly error message instead of throwing
+
+      // Display the error message from the API or a generic fallback
       const errorMessage =
-        error instanceof Error && error.message.includes("rate limit")
-          ? "I'm a bit busy right now. Please wait a moment and try again."
-          : error instanceof Error && error.message.includes("timeout")
-          ? "The request took too long. Please try again."
-          : "Sorry, I couldn't process that. Please try again.";
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again or contact me directly!";
 
       setMessages((prev) => [
         ...prev,
@@ -90,7 +80,6 @@ export default function useChatbot() {
   return {
     loading,
     messages,
-    isMessageLimitReached,
     userInput,
     setUserInput,
     handleSend,
