@@ -1,8 +1,13 @@
 import { Chatbot } from "@/lib/utils/types";
 
+const useOpenRouter = process.env.USE_OPENROUTER === "true";
+
 export const chatbot: Chatbot = {
   config: {
-    model: "gpt-3.5-turbo",
+    // Use free OpenRouter model or OpenAI based on flag
+    model: useOpenRouter
+      ? "google/gemma-2-9b-it:free" // Free OpenRouter model with better rate limits
+      : "gpt-4o-mini", // OpenAI model
     temperature: 1,
     maxTokens: 150,
   },

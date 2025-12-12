@@ -1,10 +1,11 @@
 import OpenAI from "openai";
 import { chatbot } from "@/lib/constants";
+import { openai, useOpenRouter } from "@/lib/config/openai";
 
-// Initialize the OpenAI API with your API key
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+type Message = {
+  role: "system" | "user" | "assistant";
+  content: string;
+};
 
 const { config, dataset, prompt } = chatbot;
 
@@ -14,29 +15,30 @@ export async function POST(request: Request) {
     // Parse the request body
     const body = await request.json();
 
-    // Validate input
-    if (!body.message || typeof body.message !== "string") {
+    // Validate input - accept messages array for conversation history
+    if (!body.messages || !Array.isArray(body.messages)) {
       return Response.json(
         {
-          error: "Please provide a valid message.",
+          error: "Please provide a valid messages array.",
         },
         { status: 400 }
       );
     }
 
-    const userMessage = body.message.trim();
-    if (!userMessage) {
+    if (body.messages.length === 0) {
       return Response.json(
         {
-          error: "Message cannot be empty.",
+          error: "Messages array cannot be empty.",
         },
         { status: 400 }
       );
     }
 
-    // Build messages array for this request only (no shared state)
-    // Client manages conversation history, server is stateless
-    const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
+    const messages = body.messages as Message[];
+
+    // Build messages array with system prompt + dataset at the beginning for optimal caching
+    // Client sends full conversation history, server is stateless
+    const apiMessages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
       {
         role: "system",
         content: prompt,
@@ -45,18 +47,18 @@ export async function POST(request: Request) {
         role: "assistant",
         content: dataset,
       },
-      {
-        role: "user",
-        content: userMessage,
-      },
+      ...messages, // Add user conversation history
     ];
 
-    // Call the OpenAI API to generate a response
+    // Call the OpenAI/OpenRouter API to generate a response with cost optimizations
     const res = await openai.chat.completions.create({
       model: config.model,
       temperature: config.temperature,
-      max_tokens: config.maxTokens,
-      messages,
+      max_completion_tokens: config.maxTokens, // Updated from deprecated max_tokens
+      messages: apiMessages,
+      // Enable prompt caching for cost reduction (40-80% savings) - OpenAI only
+      // The system prompt + dataset will be cached for repeated requests
+      ...(useOpenRouter ? {} : { store: true }),
     });
 
     // Extract the assistant's message from the response
@@ -80,6 +82,19 @@ export async function POST(request: Request) {
     return Response.json({ message: reply });
   } catch (error) {
     console.error("Chatbot API error:", error);
+
+    // Handle rate limit errors specifically
+    if (error instanceof OpenAI.APIError && error.status === 429) {
+      return Response.json(
+        {
+          error: useOpenRouter
+            ? "Rate limit reached. Free models have limited requests. Please wait a moment and try again."
+            : "Too many requests. Please wait a moment and try again.",
+        },
+        { status: 429 }
+      );
+    }
+
     return Response.json(
       {
         error: "An error occurred while processing your request.",

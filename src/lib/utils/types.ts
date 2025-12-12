@@ -213,7 +213,7 @@ export type ChatbotHeaderProps = {
  * Chatbot message structure
  */
 export type ChatbotMessage = {
-  role: string;
+  role: "user" | "assistant";
   content: string;
 };
 

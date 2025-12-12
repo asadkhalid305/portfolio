@@ -56,21 +56,30 @@ export default function useChatbot() {
 
     // Add user message immediately
     const userMessage = { role: "user" as const, content: inputValue };
-    setMessages((prev) => [...prev, userMessage]);
+    const updatedMessages = [...messages, userMessage];
+    setMessages(updatedMessages);
     setUserInput("");
     setLoading(true);
 
     try {
-      const { message } = await getReplyFromChatbot(inputValue);
+      // Send full conversation history for better context (server adds system prompt + dataset)
+      const { message } = await getReplyFromChatbot(updatedMessages);
       setMessages((prev) => [...prev, message]);
     } catch (error) {
-      console.error("Failed to get chatbot reply:", error);
-      // Add error message
+      console.warn("Failed to get chatbot reply:", error);
+      // Add user-friendly error message instead of throwing
+      const errorMessage =
+        error instanceof Error && error.message.includes("rate limit")
+          ? "I'm a bit busy right now. Please wait a moment and try again."
+          : error instanceof Error && error.message.includes("timeout")
+          ? "The request took too long. Please try again."
+          : "Sorry, I couldn't process that. Please try again.";
+
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content: "Sorry, I encountered an error. Please try again later.",
+          content: errorMessage,
         },
       ]);
     } finally {

@@ -23,7 +23,8 @@ export const metadata: Metadata = { ...metadataContent };
 const _ = env;
 
 const showChatbot =
-  !!process.env.OPENAI_API_KEY && process.env.DISABLED_CHATBOT !== "true";
+  (!!process.env.OPENAI_API_KEY || !!process.env.OPENROUTER_API_KEY) &&
+  process.env.NEXT_PUBLIC_ENABLE_CHATBOT !== "false";
 
 export default function RootLayout({ children }: Readonly<LayoutProps>) {
   return (

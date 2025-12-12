@@ -1,4 +1,6 @@
-export async function getReplyFromChatbot(message: string) {
+export async function getReplyFromChatbot(
+  messages: Array<{ role: "user" | "assistant"; content: string }>
+) {
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
@@ -8,7 +10,7 @@ export async function getReplyFromChatbot(message: string) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ messages }),
       signal: controller.signal,
     });
 
