@@ -1,12 +1,12 @@
-import { testimonial } from "@/app/utils/constants";
 import DisplayInfo from "@/app/about/components/general/display-info";
 import TCard from "@/app/about/components/general/t-card";
+import testimonialData from "@/content/testimonials.json";
 
-const { heading, items } = testimonial;
+const { heading, items } = testimonialData;
 
 export default function Testimonial() {
   return (
-    <div className="flex flex-col pt-20 lg:pt-36">
+    <div className="flex flex-col py-20 lg:py-32">
       <div className="flex-1">
         <DisplayInfo heading={heading} paddingBottom />
       </div>

@@ -1,4 +1,4 @@
-import { LinkButtonProps } from "@/app/utils/types";
+import { LinkButtonProps } from "@/lib/utils/types";
 import clsx from "clsx";
 
 export default function LinkButton({

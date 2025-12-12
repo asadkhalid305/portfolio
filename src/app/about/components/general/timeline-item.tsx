@@ -1,4 +1,4 @@
-import { TimelineItemProps } from "@/app/utils/types";
+import { TimelineItemProps } from "@/lib/utils/types";
 
 export default function TimelineItem({
   company,
