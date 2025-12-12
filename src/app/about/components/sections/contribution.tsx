@@ -7,7 +7,7 @@ const { heading, description, items } = contributionData;
 export default function Contribution() {
   return (
     <>
-      <div className="pt-20 lg:pt-36">
+      <div className="py-20 lg:py-32">
         <DisplayInfo
           description={description}
           heading={heading}

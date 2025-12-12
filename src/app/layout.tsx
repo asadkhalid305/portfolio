@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Chatbot from "@/components/chatbot";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import { LayoutProps } from "@/lib/utils/types";
 import { metadata as metadataContent } from "@/lib/constants";
 import { env } from "@/lib/config/env";
@@ -22,7 +23,7 @@ export const metadata: Metadata = { ...metadataContent };
 const _ = env;
 
 const showChatbot =
-  !!process.env.OPENAI_API_KEY && !process.env.DISABLED_CHATBOT;
+  !!process.env.OPENAI_API_KEY && process.env.DISABLED_CHATBOT !== "true";
 
 export default function RootLayout({ children }: Readonly<LayoutProps>) {
   return (
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: Readonly<LayoutProps>) {
         </main>
         <Footer />
         {showChatbot && <Chatbot />}
+        <ScrollToTop hasChatbot={showChatbot} />
         <Analytics />
         <SpeedInsights />
       </body>

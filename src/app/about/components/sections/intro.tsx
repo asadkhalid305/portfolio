@@ -9,7 +9,7 @@ const {
 
 export default function Intro() {
   return (
-    <div className="flex flex-col h-full py-20 lg:flex-row lg:py-36 lg:items-center">
+    <div className="flex flex-col min-h-[calc(100vh-80px)] justify-center py-20 lg:flex-row lg:items-center">
       <div className="flex-1">
         <div className="lg:pr-10 pb-16 lg:pb-0">
           <DisplayInfo description={description} heading={heading} />

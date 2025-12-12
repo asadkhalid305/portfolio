@@ -10,7 +10,7 @@ const {
 
 export default function Contact() {
   return (
-    <div className="flex flex-col mt-20 py-20 lg:flex-row lg:py-36 lg:items-center">
+    <div className="flex flex-col min-h-[calc(100vh-80px)] justify-center py-20 lg:flex-row lg:items-center">
       <div className="flex-1">
         <DisplayInfo
           description={description}
