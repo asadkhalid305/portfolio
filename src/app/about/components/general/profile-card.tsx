@@ -1,12 +1,7 @@
 import Image from "next/image";
-import React from "react";
 import LinkButton from "@/app/about/components/general/link-button";
-import { socials } from "@/lib/constants";
+import socialsData from "@/content/socials.json";
 import { ProfileCardProps } from "@/lib/utils/types";
-
-const {
-  linkedIn: { href },
-} = socials;
 
 export default function ProfileCard({
   company,
@@ -42,12 +37,12 @@ export default function ProfileCard({
             </p>
             <p className="font-light">{position}</p>
           </div>
-          <LinkButton
-            className="bg-c-dark text-c-light border-2 border-c-dark rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 focus-visible:outline-2 focus-visible:outline-c-dark focus-visible:outline"
-            href={href}
-            showIcon={false}
-            text="View LinkedIn profile"
-          />
+            <LinkButton
+              className="bg-c-dark text-c-light border-2 border-c-dark rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 focus-visible:outline-2 focus-visible:outline-c-dark focus-visible:outline"
+              href={socialsData.linkedIn.href}
+              showIcon={false}
+              text="Connect on LinkedIn"
+            />
         </div>
       </div>
     </div>

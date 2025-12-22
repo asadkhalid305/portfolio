@@ -1,15 +1,16 @@
 import Image from "next/image";
-import { intro, socials } from "@/lib/constants";
+import introData from "@/content/intro.json";
+import socialsData from "@/content/socials.json";
 import DisplayInfo from "@/app/about/components/general/display-info";
 
-const { heading, description } = intro;
+const { heading, description, personalPhoto } = introData;
 const {
   mercedesBenzIO: { href },
-} = socials;
+} = socialsData;
 
 export default function Intro() {
   return (
-    <div className="flex flex-col min-h-[calc(100vh-80px)] justify-center py-20 lg:flex-row lg:items-center">
+    <div className="flex flex-col min-h-[calc(100vh-80px)] justify-center lg:flex-row lg:items-center">
       <div className="flex-1">
         <div className="lg:pr-10 pb-16 lg:pb-0">
           <DisplayInfo description={description} heading={heading} />

@@ -3,11 +3,8 @@ import { NavMenuButton } from "@/components/header/nav-menu-button";
 import { NavLinks } from "@/components/header/nav-links";
 import LinkButton from "@/app/about/components/general/link-button";
 import { HeaderLinksProps } from "@/lib/utils/types";
-import { socials } from "@/lib/constants";
-
-const {
-  topmateIO: { href },
-} = socials;
+import commonData from "@/content/common.json";
+import socialsData from "@/content/socials.json";
 
 export default function HeaderLinks({ links }: Readonly<HeaderLinksProps>) {
   const [menuOpen, setMenuOpen] = useMenuOpen();
@@ -27,9 +24,9 @@ export default function HeaderLinks({ links }: Readonly<HeaderLinksProps>) {
       <NavLinks links={links} menuOpen={menuOpen} />
       <LinkButton
         className="whitespace-nowrap outline outline-2 transition-all duration-300 ease-in-out bg-c-dark text-c-light hover:bg-c-light hover:text-c-dark rounded-md shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-c-dark focus-visible:ring-offset-2 px-4 py-2 ml-auto"
-        href={href}
+        href={socialsData.topmateIO.href}
         showIcon={false}
-        text="Book 1:1 Session"
+        text={commonData.navigation.bookSession}
       />
     </nav>
   );

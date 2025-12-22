@@ -7,7 +7,7 @@ import Header from "@/components/header";
 import Chatbot from "@/components/chatbot";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { LayoutProps } from "@/lib/utils/types";
-import { metadata as metadataContent } from "@/lib/constants";
+import metadataData from "@/content/metadata.json";
 import { env } from "@/lib/config/env";
 import "@/app/globals.css";
 
@@ -17,7 +17,10 @@ const poppins = Poppins({
   display: "swap",
 });
 
-export const metadata: Metadata = { ...metadataContent };
+export const metadata: Metadata = {
+  title: metadataData.title,
+  description: metadataData.description,
+};
 
 // Validate environment on startup
 const _ = env;

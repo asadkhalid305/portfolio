@@ -6,39 +6,50 @@ import Testimonial from "@/app/about/components/sections/testimonial";
 import Contact from "@/app/about/components/sections/contact";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
+import LinkButton from "@/app/about/components/general/link-button";
+
+import contactData from "@/content/contact.json";
 
 export default function About() {
   return (
     <>
       <h1 className="sr-only">About Asad Ullah Khalid</h1>
-      <Section id="intro" bgColor="semidark">
+      <Section id="intro" bgColor="semidark" padding={false}>
         <Container>
           <Intro />
         </Container>
       </Section>
-      <Section id="journey" className="min-h-[600px]">
+      <Section id="journey">
         <Container>
-          <Journey />
+          <Journey isOverview />
         </Container>
       </Section>
-      <Section id="experience" className="min-h-[600px]">
+      <Section id="experience">
         <Container>
-          <Experience />
+          <Experience isOverview />
         </Container>
       </Section>
       <Section id="contribution">
         <Container>
-          <Contribution />
+          <Contribution isOverview />
         </Container>
       </Section>
-      <Section id="testimonial" className="min-h-[600px]">
+      <Section id="testimonial">
         <Container>
-          <Testimonial />
+          <Testimonial isOverview />
         </Container>
       </Section>
       <Section id="contact" bgColor="semidark">
         <Container>
           <Contact />
+          <div className="mt-12 flex justify-center lg:justify-start">
+            <LinkButton
+              href="/contact"
+              showIcon={false}
+              text={contactData.cta}
+              variant="minimal"
+            />
+          </div>
         </Container>
       </Section>
     </>
