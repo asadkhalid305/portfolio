@@ -86,6 +86,7 @@ export type CardSystemProps = {
   heading: string;
   records: VCardProps[];
   isOverview?: boolean;
+  hideLink?: boolean;
 };
 
 /**

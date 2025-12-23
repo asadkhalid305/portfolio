@@ -12,7 +12,7 @@ export default function VCard({
 }: Readonly<VCardProps>) {
   const { src, alt } = getImageProps(image);
   return (
-    <div className="w-full max-w-sm border border-gray-200 rounded-lg shadow flex flex-col transition-all duration-300 ease-in-out hover:bg-c-semidark hover:shadow-2xl">
+    <div className="w-full max-w-sm h-full border border-gray-200 rounded-lg shadow flex flex-col transition-all duration-300 ease-in-out hover:bg-c-semidark hover:shadow-2xl">
       <div className="relative h-96 w-full">
         <Image
           alt={alt}
