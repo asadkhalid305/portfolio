@@ -27,6 +27,7 @@ export default function TCard({ text, author }: Readonly<TCardProps>) {
             height={200}
             src={src}
             alt={alt ?? `Photo of ${name}`}
+            loading="lazy"
           />
           <div className="ms-3 space-y-0.5 text-left rtl:text-right font-medium">
             <div className="text-md font-medium">{name}</div>

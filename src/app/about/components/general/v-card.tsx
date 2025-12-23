@@ -2,6 +2,7 @@ import Image from "next/image";
 import { VCardProps } from "@/lib/utils/types";
 import LinkButton from "@/app/about/components/general/link-button";
 import { getImageProps } from "@/lib/utils/image-helpers";
+import { getShimmerDataUrl } from "@/lib/utils/shimmer";
 
 export default function VCard({
   title,
@@ -19,8 +20,11 @@ export default function VCard({
           className="rounded-t-lg object-cover object-top bg-c-light"
           draggable="false"
           fill
-          sizes="100%"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 384px"
           src={src}
+          placeholder="blur"
+          blurDataURL={getShimmerDataUrl(384, 384)}
+          loading="lazy"
         />
       </div>
       <div className="p-5 flex-1 flex flex-col justify-between">
