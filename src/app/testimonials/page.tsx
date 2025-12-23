@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function TestimonialsPage() {
   return (
     <Section className="min-h-[calc(100vh-80px)]" vCenter>
-      <Container maxWidth="max-w-5xl">
+      <Container>
         <Testimonial />
       </Container>
     </Section>

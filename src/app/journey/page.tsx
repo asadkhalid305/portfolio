@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function JourneyPage() {
   return (
     <Section className="min-h-[calc(100vh-80px)]" vCenter>
-      <Container maxWidth="max-w-5xl">
+      <Container>
         <Journey />
       </Container>
     </Section>

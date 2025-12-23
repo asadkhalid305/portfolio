@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ContributionPage() {
   return (
     <Section className="min-h-[calc(100vh-80px)]" vCenter>
-      <Container maxWidth="max-w-5xl">
+      <Container>
         <Contribution />
       </Container>
     </Section>

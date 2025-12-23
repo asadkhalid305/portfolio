@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <Section className="min-h-[calc(100vh-80px)]" bgColor="semidark" vCenter>
-      <Container maxWidth="max-w-5xl">
+      <Container>
         <Contact />
       </Container>
     </Section>
