@@ -49,7 +49,7 @@ export default function LinkButton({
       rel={isInternal ? undefined : "noopener noreferrer"}
       aria-label={text}
       className={clsx(
-        "inline-flex items-center w-fit text-sm font-medium rounded-lg px-4 py-2 shadow transition-all duration-300 ease-in-out lg:text-md hover:shadow-lg focus-visible:outline-2 focus-visible:outline-c-dark focus-visible:outline",
+        "inline-flex items-center w-fit text-sm font-medium rounded-lg px-5 py-3 shadow transition-all duration-300 ease-in-out lg:text-md hover:shadow-lg focus-visible:outline-2 focus-visible:outline-c-dark focus-visible:outline",
         className
       )}
     >
