@@ -1,16 +1,24 @@
 # Portfolio (Private)
 
-Personal Next.js portfolio with a content-driven site, AI chatbot, and contact form. This README is written for me so I can quickly remember how it works, what services it depends on, and where to update content.
+Personal Next.js portfolio with a content-driven site, AI chatbot, and contact
+form. This README is written for me so I can quickly remember how it works, what
+services it depends on, and where to update content.
 
 ## Stack
 
 - Next.js 15 (App Router), React 19, TypeScript
-- Tailwind CSS, tailwindcss-animate, class-variance-authority, clsx, tailwind-merge
+- Tailwind CSS, tailwindcss-animate, class-variance-authority, clsx,
+  tailwind-merge
 - Radix UI Dialog, Lucide icons
 - OpenAI SDK for chatbot (OpenAI or OpenRouter)
 - Resend for contact form emails
 - Vercel Analytics + Speed Insights
 - Zod env validation, isomorphic-dompurify for safe HTML, Sharp for images
+
+## Documentation
+
+- [Content Management Guide](docs/content-management.md) - Learn how to add new
+  blogs, events, or content categories.
 
 ## Local Development
 
@@ -68,7 +76,8 @@ Use `.env.local` (keep secrets out of git). `.env.example` is the template.
 - `RESEND_API_KEY` - Resend API key for contact emails
 - `NODE_ENV` - standard Node env
 
-Chatbot renders only when a key is present and `ENABLE_CHATBOT !== "false"` (see `src/app/layout.tsx`).
+Chatbot renders only when a key is present and `ENABLE_CHATBOT !== "false"` (see
+`src/app/layout.tsx`).
 
 ## External Services
 
@@ -80,8 +89,10 @@ Chatbot renders only when a key is present and `ENABLE_CHATBOT !== "false"` (see
 
 - Deploys on Vercel (standard Next.js setup)
 - Set the same env vars in Vercel project settings as `.env.local`
-- Ensure `NEXT_PUBLIC_SITE_URL` matches the production domain so OpenRouter referer headers are correct
-- Resend domain `send.asadullahkhalid.com` must remain verified for outbound email
+- Ensure `NEXT_PUBLIC_SITE_URL` matches the production domain so OpenRouter
+  referer headers are correct
+- Resend domain `send.asadullahkhalid.com` must remain verified for outbound
+  email
 
 ## Behavior Notes
 

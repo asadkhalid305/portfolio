@@ -16,11 +16,11 @@ export default function useHeader() {
       }
     );
 
-    const intro = document.getElementById("intro");
-    if (intro) observer.observe(intro);
+    const about = document.getElementById("about");
+    if (about) observer.observe(about);
 
     return () => {
-      if (intro) observer.unobserve(intro);
+      if (about) observer.unobserve(about);
     };
   }, []);
 

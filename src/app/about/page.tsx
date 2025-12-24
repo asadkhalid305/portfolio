@@ -1,4 +1,4 @@
-import Intro from "@/app/about/components/sections/intro";
+import About from "@/app/about/components/sections/about";
 import Journey from "@/app/about/components/sections/journey";
 import Experience from "@/app/about/components/sections/experience";
 import Contribution from "@/app/about/components/sections/contribution";
@@ -7,16 +7,20 @@ import Contact from "@/app/about/components/sections/contact";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import LinkButton from "@/app/about/components/general/link-button";
+import { getAllPosts } from "@/lib/mdx";
 
 import contactData from "@/content/contact.json";
 
-export default function About() {
+export default async function index() {
+  const events = await getAllPosts("events");
+  const blogs = await getAllPosts("blogs");
+
   return (
     <>
       <h1 className="sr-only">About Asad Ullah Khalid</h1>
-      <Section id="intro" bgColor="semidark" padding={false}>
+      <Section id="about" bgColor="semidark" padding={false}>
         <Container>
-          <Intro />
+          <About />
         </Container>
       </Section>
       <Section id="journey">
@@ -31,7 +35,7 @@ export default function About() {
       </Section>
       <Section id="contribution">
         <Container>
-          <Contribution isOverview />
+          <Contribution isOverview events={events} blogs={blogs} />
         </Container>
       </Section>
       <Section id="testimonial">

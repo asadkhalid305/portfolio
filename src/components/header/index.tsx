@@ -11,10 +11,17 @@ export default function Header() {
   const { navigation } = commonData;
 
   const links = [
-    { name: navigation.intro, href: "/#intro" },
+    { name: navigation.about, href: "/#about" },
     { name: navigation.journey, href: "/journey" },
     { name: navigation.experience, href: "/experience" },
-    { name: navigation.contribution, href: "/contribution" },
+    {
+      name: navigation.contribution,
+      href: "/contribution",
+      dropdown: [
+        { name: "Events", href: "/contribution#events" },
+        { name: "Blogs", href: "/contribution#blogs" },
+      ],
+    },
     { name: navigation.testimonial, href: "/testimonials" },
     { name: navigation.contact, href: "/contact" },
   ];
