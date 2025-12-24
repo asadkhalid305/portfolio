@@ -1,4 +1,4 @@
-import Contact from "@/app/about/components/sections/contact";
+import ContactForm from "@/components/contact/contact-form";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { Metadata } from "next";
@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <Section className="min-h-[calc(100vh-80px)]" bgColor="semidark" vCenter>
       <Container>
-        <Contact />
+        <ContactForm />
       </Container>
     </Section>
   );
