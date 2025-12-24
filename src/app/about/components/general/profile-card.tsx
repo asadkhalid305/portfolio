@@ -1,12 +1,8 @@
 import Image from "next/image";
-import React from "react";
 import LinkButton from "@/app/about/components/general/link-button";
-import { socials } from "@/lib/constants";
+import socialsData from "@/content/socials.json";
 import { ProfileCardProps } from "@/lib/utils/types";
-
-const {
-  linkedIn: { href },
-} = socials;
+import { getShimmerDataUrl } from "@/lib/utils/shimmer";
 
 export default function ProfileCard({
   company,
@@ -31,8 +27,11 @@ export default function ProfileCard({
               alt={"Personal photo of " + name}
               className="rounded-full"
               fill
-              sizes="100px"
+              sizes="64px"
               src="/images/linkedin-profile.webp"
+              placeholder="blur"
+              blurDataURL={getShimmerDataUrl(64, 64)}
+              loading="lazy"
             />
           </div>
           <h3 className="text-lg font-medium">{name}</h3>
@@ -43,10 +42,10 @@ export default function ProfileCard({
             <p className="font-light">{position}</p>
           </div>
           <LinkButton
-            className="bg-c-dark text-c-light border-2 border-c-dark rounded-full hover:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 focus-visible:outline-2 focus-visible:outline-c-dark focus-visible:outline"
-            href={href}
+            className="bg-c-dark text-c-light border-2 border-c-dark rounded-full px-4 py-2 hover:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 focus-visible:outline-2 focus-visible:outline-c-dark focus-visible:outline"
+            href={socialsData.linkedIn.href}
             showIcon={false}
-            text="View LinkedIn profile"
+            text="Connect on LinkedIn"
           />
         </div>
       </div>

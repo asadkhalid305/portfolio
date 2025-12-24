@@ -1,10 +1,13 @@
 import { ReactNode } from "react";
+import clsx from "clsx";
 
 interface SectionProps {
   id?: string;
   children: ReactNode;
   className?: string;
   bgColor?: "light" | "dark" | "semidark";
+  padding?: boolean;
+  vCenter?: boolean;
 }
 
 /**
@@ -22,6 +25,8 @@ export function Section({
   children,
   className = "",
   bgColor,
+  padding = true,
+  vCenter = false,
 }: SectionProps) {
   const bgClass = bgColor
     ? bgColor === "dark"
@@ -31,8 +36,14 @@ export function Section({
       : "bg-c-light"
     : "";
 
+  const paddingClass = padding ? "py-20 lg:py-28" : "";
+  const vCenterClass = vCenter ? "flex flex-col justify-center" : "";
+
   return (
-    <section id={id} className={`${bgClass} ${className}`}>
+    <section
+      id={id}
+      className={clsx(bgClass, paddingClass, vCenterClass, className)}
+    >
       {children}
     </section>
   );

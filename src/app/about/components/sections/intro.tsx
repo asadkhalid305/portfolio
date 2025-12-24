@@ -1,15 +1,17 @@
 import Image from "next/image";
-import { intro, socials } from "@/lib/constants";
+import introData from "@/content/intro.json";
+import socialsData from "@/content/socials.json";
 import DisplayInfo from "@/app/about/components/general/display-info";
+import { getShimmerDataUrl } from "@/lib/utils/shimmer";
 
-const { heading, description } = intro;
+const { heading, description, personalPhoto } = introData;
 const {
   mercedesBenzIO: { href },
-} = socials;
+} = socialsData;
 
 export default function Intro() {
   return (
-    <div className="flex flex-col min-h-[calc(100vh-80px)] justify-center py-20 lg:flex-row lg:items-center">
+    <div className="flex flex-col min-h-[calc(100vh-80px)] justify-center lg:flex-row lg:items-center">
       <div className="flex-1">
         <div className="lg:pr-10 pb-16 lg:pb-0">
           <DisplayInfo description={description} heading={heading} />
@@ -26,7 +28,7 @@ export default function Intro() {
             sizes="(max-width: 768px) 90vw, (max-width: 1024px) 400px, 500px"
             src="/images/myself.webp"
             placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+            blurDataURL={getShimmerDataUrl(500, 500)}
           />
         </div>
       </div>

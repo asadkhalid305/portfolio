@@ -1,9 +1,9 @@
-import { socials } from "@/lib/constants";
+import socialsData from "@/content/socials.json";
 
 /**
  * Custom hook to access social links
  * Provides consistent access to social media links across components
  */
-export function useSocials() {
-  return socials;
-}
+export const useSocials = () => {
+  return socialsData;
+};

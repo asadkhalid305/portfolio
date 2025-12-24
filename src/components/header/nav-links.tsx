@@ -19,9 +19,14 @@ export function NavLinks({ links, menuOpen, isDark }: Readonly<NavLinksProps>) {
       } text-md font-medium lg:text-lg`}
     >
       {links.map((link) => {
-        const isAnchor = link.href.startsWith("#");
+        const isAnchor = link.href.startsWith("#") || link.href.startsWith("/#");
+        const hrefHash = link.href.includes("#")
+          ? "#" + link.href.split("#")[1]
+          : "";
+        const hrefPath = link.href.split("#")[0] || "/";
+
         const isActive = isAnchor
-          ? (currentHash || pathname) === link.href
+          ? pathname === hrefPath && (currentHash === hrefHash || (!currentHash && hrefHash === "#intro"))
           : pathname === link.href || pathname === link.href + "/";
         return (
           <li key={link.href}>

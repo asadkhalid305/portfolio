@@ -5,6 +5,7 @@ import { DisplayInfoProps } from "@/lib/utils/types";
 export default function DisplayInfo({
   description = "",
   heading = "",
+  label = "",
   paddingRight = false,
   paddingTop = false,
   paddingBottom = false,
@@ -23,7 +24,12 @@ export default function DisplayInfo({
         "lg:pr-10": paddingRight,
       })}
     >
-      <h2 className="text-center text-5xl font-extrabold pb-6 lg:text-6xl lg:text-left">
+      {label && (
+        <span className="block text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">
+          {label}
+        </span>
+      )}
+      <h2 className="text-5xl font-extrabold pb-6 lg:text-6xl text-left">
         {heading}
       </h2>
       <p
