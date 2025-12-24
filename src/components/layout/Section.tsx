@@ -14,9 +14,9 @@ interface SectionProps {
  * Section component for consistent section structure
  *
  * Example usage:
- * <Section id="intro" bgColor="semidark">
+ * <Section id="about" bgColor="semidark">
  *   <Container>
- *     <IntroContent />
+ *     <AboutContent />
  *   </Container>
  * </Section>
  */

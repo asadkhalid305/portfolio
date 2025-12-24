@@ -161,9 +161,9 @@ export type Contact = {
 };
 
 /**
- * Intro section configuration
+ * About section configuration
  */
-export type Intro = {
+export type About = {
   heading: string;
   description: string;
 };

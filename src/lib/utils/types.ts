@@ -18,6 +18,7 @@ export type ImageType = {
 type Link = {
   name: string;
   href: string;
+  dropdown?: Link[];
 };
 
 /**
@@ -73,6 +74,7 @@ export type LinkButtonProps = {
   showIcon: boolean;
   className?: string;
   variant?: "primary" | "minimal";
+  iconPosition?: "left" | "right";
 };
 
 // ============================================================================
@@ -164,9 +166,9 @@ export type Contact = {
 };
 
 /**
- * Intro section configuration
+ * About section configuration
  */
-export type Intro = {
+export type About = {
   heading: string;
   description: string;
 };

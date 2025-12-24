@@ -1,15 +1,15 @@
 import Image from "next/image";
-import introData from "@/content/intro.json";
+import aboutData from "@/content/about.json";
 import socialsData from "@/content/socials.json";
 import DisplayInfo from "@/app/about/components/general/display-info";
 import { getShimmerDataUrl } from "@/lib/utils/shimmer";
 
-const { heading, description, personalPhoto } = introData;
+const { heading, description, personalPhoto } = aboutData;
 const {
   mercedesBenzIO: { href },
 } = socialsData;
 
-export default function Intro() {
+export default function About() {
   return (
     <div className="flex flex-col min-h-[calc(100vh-80px)] justify-center lg:flex-row lg:items-center">
       <div className="flex-1">
