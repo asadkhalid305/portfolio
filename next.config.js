@@ -9,6 +9,15 @@ const nextConfig = {
         source: "/",
         destination: "/about",
       },
+      // Rewrite to serve external Vercel app under /apps/movie-and-series-picker
+      {
+        source: "/apps/movie-and-series-picker",
+        destination: "https://multi-agent-movie-picker.vercel.app/apps/movie-and-series-picker",
+      },
+      {
+        source: "/apps/movie-and-series-picker/:path*",
+        destination: "https://multi-agent-movie-picker.vercel.app/apps/movie-and-series-picker/:path*",
+      },
     ];
   },
 
