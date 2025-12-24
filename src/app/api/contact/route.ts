@@ -18,24 +18,46 @@ export async function POST(request: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>',
-      to: 'contact@asadullahkhalid.com',
+      from: 'Portfolio <contact@send.asadullahkhalid.com>',
+      to: 'asadkhalid305@gmail.com',
       replyTo: email,
-      subject: `Portfolio: New message from ${name}`,
+      subject: `New Inquiry: ${name}`,
       html: `
-        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
-          <h2 style="color: #0f172a; margin-top: 0;">New Inquiry from Portfolio</h2>
-          <div style="margin-bottom: 20px; padding: 15px; background-color: #f8fafc; border-radius: 6px;">
-            <p style="margin: 0; color: #64748b; font-size: 14px;">From</p>
-            <p style="margin: 4px 0 0 0; color: #0f172a; font-weight: 600;">${name} (${email})</p>
-          </div>
-          <div style="margin-bottom: 20px;">
-            <p style="margin: 0; color: #64748b; font-size: 14px;">Message</p>
-            <p style="margin: 8px 0 0 0; color: #334155; line-height: 1.6; white-space: pre-wrap;">${message}</p>
-          </div>
-          <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
-          <p style="margin: 0; color: #94a3b8; font-size: 12px; text-align: center;">Sent via Portfolio Contact Form</p>
-        </div>
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>
+              @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+            </style>
+          </head>
+          <body style="margin: 0; padding: 0; background-color: #000000; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+            <div style="max-width: 600px; margin: 40px auto; background-color: #000000; border: 1px solid #1a1a1a; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);">
+              <div style="padding: 40px; border-bottom: 1px solid #1a1a1a;">
+                <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 600; letter-spacing: -0.025em;">New Message</h1>
+                <p style="margin: 8px 0 0 0; color: #a1a1aa; font-size: 14px;">Incoming inquiry from your portfolio website.</p>
+              </div>
+              
+              <div style="padding: 40px;">
+                <div style="margin-bottom: 32px;">
+                  <label style="display: block; color: #52525b; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">From</label>
+                  <div style="color: #ffffff; font-size: 16px; font-weight: 500;">${name}</div>
+                  <div style="color: #71717a; font-size: 14px;">${email}</div>
+                </div>
+                
+                <div style="margin-bottom: 32px;">
+                  <label style="display: block; color: #52525b; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Message</label>
+                  <div style="color: #e4e4e7; font-size: 15px; line-height: 1.6; white-space: pre-wrap; background-color: #09090b; padding: 20px; border-radius: 8px; border: 1px solid #1a1a1a;">${message}</div>
+                </div>
+                
+                <a href="mailto:${email}" style="display: inline-block; background-color: #ffffff; color: #000000; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background-color 0.2s;">Reply directly</a>
+              </div>
+              
+              <div style="padding: 24px 40px; background-color: #09090b; border-top: 1px solid #1a1a1a; text-align: center;">
+                <p style="margin: 0; color: #3f3f46; font-size: 12px;">© ${new Date().getFullYear()} asadullahkhalid.com • Sent via Resend</p>
+              </div>
+            </div>
+          </body>
+        </html>
       `,
     });
 
