@@ -2,10 +2,16 @@ import { TimelineProps } from "@/lib/utils/types";
 import LinkButton from "@/app/about/components/general/link-button";
 import TimelineItem from "@/app/about/components/general/timeline-item";
 
-export default function Timeline({ record, link }: Readonly<TimelineProps>) {
+export default function Timeline({
+  record,
+  link,
+  isOverview,
+}: Readonly<TimelineProps>) {
+  const displayRecords = isOverview ? record.slice(0, 3) : record;
+
   return (
     <ol className="relative max-md:border-l border-c-dark md:flex md:flex-row md:justify-between md:border-t">
-      {record.map((item) => (
+      {displayRecords.map((item) => (
         <TimelineItem
           key={item.id}
           id={item.id}
@@ -15,14 +21,16 @@ export default function Timeline({ record, link }: Readonly<TimelineProps>) {
           position={item.position}
         />
       ))}
-      <li className="max-md:mb-10 max-md:ml-4 md:self-center">
-        <LinkButton
-          className="bg-c-dark text-c-light hover:bg-gray-800"
-          href={link}
-          showIcon
-          text="Learn more"
-        />
-      </li>
+      {isOverview && (
+        <li className="max-md:mb-10 max-md:ml-4 md:self-center">
+          <LinkButton
+            href={link}
+            showIcon={false}
+            text="View full timeline"
+            variant="minimal"
+          />
+        </li>
+      )}
     </ol>
   );
 }

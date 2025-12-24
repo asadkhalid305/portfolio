@@ -58,6 +58,7 @@ export type LayoutProps = {
 export type DisplayInfoProps = {
   description?: string;
   heading: string;
+  label?: string;
   paddingRight?: boolean;
   paddingTop?: boolean;
   paddingBottom?: boolean;
@@ -71,6 +72,7 @@ export type LinkButtonProps = {
   text: string;
   showIcon: boolean;
   className?: string;
+  variant?: "primary" | "minimal";
 };
 
 // ============================================================================
@@ -83,6 +85,8 @@ export type LinkButtonProps = {
 export type CardSystemProps = {
   heading: string;
   records: VCardProps[];
+  isOverview?: boolean;
+  hideLink?: boolean;
 };
 
 /**
@@ -120,6 +124,7 @@ export type TCardProps = {
 export type TimelineProps = {
   record: TimelineItemProps[];
   link: string;
+  isOverview?: boolean;
 };
 
 /**

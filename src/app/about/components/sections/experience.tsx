@@ -2,20 +2,25 @@ import DisplayInfo from "@/app/about/components/general/display-info";
 import Timeline from "@/app/about/components/general/timeline";
 import experienceData from "@/content/experience.json";
 
-const { heading, description, items, linkedInLink } = experienceData;
+const { label, heading, description, items, linkedInLink } = experienceData;
 
-export default function Experience() {
+export default function Experience({ isOverview }: { isOverview?: boolean }) {
   return (
-    <div className="flex flex-col py-20 lg:py-32">
-      <div className="flex-1">
+    <div className="flex flex-col">
+      <div className="w-full lg:max-w-4xl">
         <DisplayInfo
           description={description}
           heading={heading}
-          paddingBottom
+          label={label}
+          paddingBottom={false}
         />
       </div>
-      <div className="flex-1 w-full">
-        <Timeline record={items} link={linkedInLink} />
+      <div className="w-full mt-10 lg:mt-16">
+        <Timeline
+          record={items}
+          link="/experience"
+          isOverview={isOverview}
+        />
       </div>
     </div>
   );

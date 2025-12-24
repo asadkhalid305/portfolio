@@ -1,0 +1,26 @@
+{
+  "title": "Asad Ullah Khalid - Portfolio",
+  "description": "This is Asad Ullah Khalid portfolio website",
+  "pages": {
+    "journey": {
+      "title": "Journey | Asad Ullah Khalid",
+      "description": "Explore my professional and personal journey."
+    },
+    "experience": {
+      "title": "Experience | Asad Ullah Khalid",
+      "description": "Detailed professional experience and work history."
+    },
+    "contribution": {
+      "title": "Contribution | Asad Ullah Khalid",
+      "description": "Events, talks, and community contributions."
+    },
+    "testimonials": {
+      "title": "Testimonials | Asad Ullah Khalid",
+      "description": "What people say about my work and impact."
+    },
+    "contact": {
+      "title": "Contact | Asad Ullah Khalid",
+      "description": "Get in touch for collaborations, mentorship, or speaking engagements."
+    }
+  }
+}

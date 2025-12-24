@@ -2,14 +2,22 @@
 
 import clsx from "clsx";
 import Image from "next/image";
-import { header } from "@/lib/constants";
 import useHeader from "@/lib/hooks/useHeader";
 import HeaderLinks from "@/components/header/header-links";
-
-const { links } = header;
+import commonData from "@/content/common.json";
 
 export default function Header() {
   const { isDark } = useHeader();
+  const { navigation } = commonData;
+
+  const links = [
+    { name: navigation.intro, href: "/#intro" },
+    { name: navigation.journey, href: "/journey" },
+    { name: navigation.experience, href: "/experience" },
+    { name: navigation.contribution, href: "/contribution" },
+    { name: navigation.testimonial, href: "/testimonials" },
+    { name: navigation.contact, href: "/contact" },
+  ];
 
   return (
     <header

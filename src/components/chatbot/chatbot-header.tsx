@@ -1,13 +1,10 @@
 import { ChatbotHeaderProps } from "@/lib/utils/types";
 import { useState } from "react";
 import { Bot, Info } from "lucide-react";
-import { chatbot } from "@/lib/constants";
+import commonData from "@/content/common.json";
 import ChatbotInfoModal from "./chatbot-info-modal";
 
-const {
-  info,
-  header: { heading },
-} = chatbot;
+const { chatbot } = commonData;
 
 export default function ChatbotHeader({
   toggleChatbot,
@@ -44,8 +41,8 @@ export default function ChatbotHeader({
               <Bot className="w-5 h-5" />
             </div>
             <div>
-              <p className="font-semibold text-base">{heading}</p>
-              <p className="text-xs text-gray-300">Online</p>
+              <p className="font-semibold text-base">{chatbot.title}</p>
+              <p className="text-xs text-gray-300">{chatbot.status}</p>
             </div>
           </div>
           <button
@@ -60,7 +57,7 @@ export default function ChatbotHeader({
       <ChatbotInfoModal
         isOpen={showInfo}
         onClose={() => setShowInfo(false)}
-        content={info}
+        content={chatbot.info || "AI Assistant trained on Asad's portfolio data."}
       />
     </>
   );
