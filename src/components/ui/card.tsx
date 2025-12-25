@@ -98,7 +98,7 @@ export default function Card({
     return (
       <Link
         href={link}
-        className="group relative block rounded-lg bg-c-semidark overflow-hidden border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl h-full"
+        className="group relative block rounded-lg  overflow-hidden border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:bg-c-semidark hover:shadow-2xl h-full"
       >
         <div className="grid lg:grid-cols-2 gap-6 p-6 lg:p-8 h-full">
           {contentComponent}
@@ -112,7 +112,7 @@ export default function Card({
   return (
     <Link
       href={link}
-      className="group w-full max-w-sm h-full border border-gray-200 dark:border-gray-800 rounded-lg shadow flex flex-col transition-all duration-300 ease-in-out bg-c-semidark hover:shadow-2xl"
+      className="group w-full max-w-sm h-full border border-gray-200 dark:border-gray-800 rounded-lg shadow flex flex-col transition-all duration-300 ease-in-out hover:bg-c-semidark hover:shadow-2xl"
     >
       {imageComponent}
       {contentComponent}

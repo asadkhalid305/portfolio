@@ -14,9 +14,9 @@ export function NavLinks({ links, menuOpen, isDark }: Readonly<NavLinksProps>) {
     <ul
       className={`${
         menuOpen
-          ? "absolute left-0 top-full mt-2 w-56 flex flex-col bg-c-dark text-c-light rounded-lg shadow-lg z-50 border-2 border-c-dark py-2 px-3 space-y-1 animate-fade-in lg:static lg:flex-row lg:bg-transparent lg:text-inherit lg:shadow-none lg:border-none lg:space-y-0 lg:gap-4 lg:px-0"
-          : "hidden lg:flex lg:flex-row lg:bg-transparent lg:text-inherit lg:shadow-none lg:border-none lg:space-y-0 lg:gap-4"
-      } text-md font-medium lg:text-lg`}
+          ? "absolute left-0 top-full mt-2 w-56 flex flex-col bg-c-dark text-c-light rounded-lg shadow-lg z-50 border-2 border-c-dark py-2 px-3 space-y-1 animate-fade-in xl:static xl:flex-row xl:bg-transparent xl:text-inherit xl:shadow-none xl:border-none xl:space-y-0 xl:gap-4 xl:px-0"
+          : "hidden xl:flex xl:flex-row xl:bg-transparent xl:text-inherit xl:shadow-none xl:border-none xl:space-y-0"
+      } text-md font-medium lg:text-base lg:gap-2 xl:text-lg xl:gap-4`}
     >
       {links.map((link) => {
         const isAnchor =
@@ -58,12 +58,12 @@ export function NavLinks({ links, menuOpen, isDark }: Readonly<NavLinksProps>) {
                   />
                 </svg>
               </Link>
-              <ul className="lg:absolute lg:left-0 lg:top-full lg:mt-2 lg:w-48 lg:bg-c-dark lg:text-c-light lg:rounded-lg lg:shadow-xl lg:opacity-0 lg:invisible lg:group-hover:opacity-100 lg:group-hover:visible lg:transition-all lg:duration-200 lg:z-50 lg:p-2 space-y-1 pl-4 lg:pl-2">
+              <ul className="xl:absolute xl:left-0 xl:top-full xl:mt-2 xl:w-48 xl:bg-c-dark xl:text-c-light xl:rounded-lg xl:shadow-xl xl:opacity-0 xl:invisible xl:group-hover:opacity-100 xl:group-hover:visible xl:transition-all xl:duration-200 xl:z-50 xl:p-2 space-y-1 pl-4 xl:pl-2">
                 {link.dropdown.map((dropItem) => (
                   <li key={dropItem.href}>
                     <Link
                       href={dropItem.href}
-                      className="block px-3 py-2 rounded-md hover:bg-white/10 text-sm lg:text-base lg:text-c-light"
+                      className="block px-3 py-2 rounded-md hover:bg-white/10 text-sm lg:text-base xl:text-c-light"
                     >
                       {dropItem.name}
                     </Link>

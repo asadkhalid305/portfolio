@@ -8,7 +8,7 @@ export function useMenuOpen() {
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth >= 1024) {
+      if (window.innerWidth >= 1280) {
         setMenuOpen(false);
       }
     }
