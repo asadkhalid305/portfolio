@@ -4,9 +4,11 @@ import { Container } from "@/components/layout/Container";
 import { Metadata } from "next";
 import { getAllPosts } from "@/lib/mdx";
 
+import metadataContent from "@/content/metadata.json";
+
 export const metadata: Metadata = {
-  title: "Contribution | Asad Ullah Khalid",
-  description: "Events, talks, and community contributions.",
+  title: metadataContent.pages.contribution.title,
+  description: metadataContent.pages.contribution.description,
 };
 
 export default async function ContributionPage() {

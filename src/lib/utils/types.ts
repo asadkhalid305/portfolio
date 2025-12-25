@@ -101,6 +101,9 @@ export type VCardProps = {
   image: ImageType;
   link: string;
   date: string;
+  horizontal?: boolean;
+  badges?: string[];
+  linkText?: string;
 };
 
 /**
@@ -257,3 +260,29 @@ export type TooltipProps = {
   text: string;
   children: ReactNode;
 };
+
+// ============================================================================
+// MDX CONTENT TYPES
+// ============================================================================
+
+export type ContentType = "blogs" | "events" | "projects";
+
+export interface Frontmatter {
+  title: string;
+  description: string;
+  date: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+  link?: string; // Optional external link for legacy support or reference
+  badges?: string[];
+  liveUrl?: string;
+  repoUrl?: string;
+}
+
+export interface Post {
+  slug: string;
+  content: string;
+  frontmatter: Frontmatter;
+}

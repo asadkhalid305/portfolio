@@ -4,5 +4,6 @@
   "personalPhoto": {
     "src": "/images/myself.webp",
     "alt": "personal photo"
-  }
+  },
+  "screenReaderTitle": "About Asad Ullah Khalid"
 }

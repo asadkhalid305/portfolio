@@ -1,5 +1,5 @@
 import { CardSystemProps } from "@/lib/utils/types";
-import VCard from "@/app/about/components/general/v-card";
+import Card from "@/components/ui/card";
 import LinkButton from "@/app/about/components/general/link-button";
 
 export default function VCardSystem({
@@ -31,7 +31,7 @@ export default function VCardSystem({
                 : "block"
             }`}
           >
-            <VCard
+            <Card
               id={item.id}
               title={item.title}
               description={item.description}
