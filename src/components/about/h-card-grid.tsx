@@ -1,6 +1,6 @@
-import { Post } from "@/lib/utils/types";
+import { Post } from "@/utils/types";
 import Card from "@/components/ui/card";
-import projectsData from "@/content/projects.json";
+import projectsData from "@/constants/projects.json";
 
 interface HCardGridProps {
   projects: Post[];

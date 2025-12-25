@@ -1,10 +1,10 @@
-import { useMenuOpen } from "@/lib/hooks/useMenuOpen";
+import { useMenuOpen } from "@/hooks/useMenuOpen";
 import { NavMenuButton } from "@/components/header/nav-menu-button";
 import { NavLinks } from "@/components/header/nav-links";
-import LinkButton from "@/app/about/components/general/link-button";
-import { HeaderLinksProps } from "@/lib/utils/types";
-import commonData from "@/content/common.json";
-import socialsData from "@/content/socials.json";
+import LinkButton from "@/components/ui/link-button";
+import { HeaderLinksProps } from "@/utils/types";
+import commonData from "@/constants/common.json";
+import socialsData from "@/constants/socials.json";
 
 export default function HeaderLinks({ links }: Readonly<HeaderLinksProps>) {
   const [menuOpen, setMenuOpen] = useMenuOpen();

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import aboutData from "@/content/about.json";
-import socialsData from "@/content/socials.json";
-import DisplayInfo from "@/app/about/components/general/display-info";
-import { getShimmerDataUrl } from "@/lib/utils/shimmer";
+import aboutData from "@/constants/about.json";
+import socialsData from "@/constants/socials.json";
+import DisplayInfo from "@/components/about/display-info";
+import { getShimmerDataUrl } from "@/utils/shimmer";
 
 const { heading, description, personalPhoto } = aboutData;
 const {

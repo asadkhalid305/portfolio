@@ -1,8 +1,8 @@
 import Image from "next/image";
-import LinkButton from "@/app/about/components/general/link-button";
-import socialsData from "@/content/socials.json";
-import { ProfileCardProps } from "@/lib/utils/types";
-import { getShimmerDataUrl } from "@/lib/utils/shimmer";
+import LinkButton from "@/components/ui/link-button";
+import socialsData from "@/constants/socials.json";
+import { ProfileCardProps } from "@/utils/types";
+import { getShimmerDataUrl } from "@/utils/shimmer";
 
 export default function ProfileCard({
   company,

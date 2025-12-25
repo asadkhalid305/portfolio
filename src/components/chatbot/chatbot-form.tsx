@@ -1,5 +1,5 @@
-import { ChatbotFormProps } from "@/lib/utils/types";
-import commonData from "@/content/common.json";
+import { ChatbotFormProps } from "@/utils/types";
+import commonData from "@/constants/common.json";
 
 export default function ChatbotForm({
   userInput,

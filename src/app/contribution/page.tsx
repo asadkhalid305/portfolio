@@ -1,10 +1,10 @@
-import Contribution from "@/app/about/components/sections/contribution";
+import Contribution from "@/components/about/contribution";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { Metadata } from "next";
 import { getAllPosts } from "@/lib/mdx";
 
-import metadataContent from "@/content/metadata.json";
+import metadataContent from "@/constants/metadata.json";
 
 export const metadata: Metadata = {
   title: metadataContent.pages.contribution.title,

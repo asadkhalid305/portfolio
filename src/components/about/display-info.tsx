@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import DOMPurify from "isomorphic-dompurify";
-import { DisplayInfoProps } from "@/lib/utils/types";
+import { DisplayInfoProps } from "@/utils/types";
 
 export default function DisplayInfo({
   description = "",

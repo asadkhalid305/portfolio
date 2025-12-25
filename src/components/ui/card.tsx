@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { VCardProps } from "@/lib/utils/types";
-import { getImageProps } from "@/lib/utils/image-helpers";
-import { getShimmerDataUrl } from "@/lib/utils/shimmer";
+import { VCardProps } from "@/utils/types";
+import { getImageProps } from "@/utils/image-helpers";
+import { getShimmerDataUrl } from "@/utils/shimmer";
 import Badge from "./badge";
 
 export default function Card({

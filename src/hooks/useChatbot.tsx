@@ -1,7 +1,7 @@
 import { FormEvent, useState, useEffect } from "react";
-import { chatbot } from "@/lib/constants";
-import { getReplyFromChatbot } from "@/lib/utils/api";
-import { ChatbotMessage } from "@/lib/utils/types";
+import chatbotData from "@/constants/chatbot.json";
+import { getReplyFromChatbot } from "@/utils/api";
+import { ChatbotMessage } from "@/utils/types";
 
 export default function useChatbot() {
   const [userInput, setUserInput] = useState("");

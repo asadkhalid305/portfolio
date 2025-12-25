@@ -1,7 +1,7 @@
-import DisplayInfo from "@/app/about/components/general/display-info";
-import TCard from "@/app/about/components/general/t-card";
-import LinkButton from "@/app/about/components/general/link-button";
-import testimonialData from "@/content/testimonials.json";
+import DisplayInfo from "@/components/about/display-info";
+import TCard from "@/components/about/t-card";
+import LinkButton from "@/components/ui/link-button";
+import testimonialData from "@/constants/testimonials.json";
 
 const { label, heading, items, cta } = testimonialData;
 

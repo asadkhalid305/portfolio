@@ -1,9 +1,9 @@
-import Experience from "@/app/about/components/sections/experience";
+import Experience from "@/components/about/experience";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import { Metadata } from "next";
 
-import metadataContent from "@/content/metadata.json";
+import metadataContent from "@/constants/metadata.json";
 
 export const metadata: Metadata = {
   title: metadataContent.pages.experience.title,

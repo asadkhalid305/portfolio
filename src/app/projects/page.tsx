@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { getAllPosts } from "@/lib/mdx";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
-import HCardGrid from "@/app/about/components/general/h-card-grid";
-import projectsData from "@/content/projects.json";
+import HCardGrid from "@/components/about/h-card-grid";
+import projectsData from "@/constants/projects.json";
 
 export const metadata: Metadata = projectsData.metadata;
 

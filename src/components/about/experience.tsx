@@ -1,6 +1,6 @@
-import DisplayInfo from "@/app/about/components/general/display-info";
-import Timeline from "@/app/about/components/general/timeline";
-import experienceData from "@/content/experience.json";
+import DisplayInfo from "@/components/about/display-info";
+import Timeline from "@/components/about/timeline";
+import experienceData from "@/constants/experience.json";
 
 const { label, heading, description, items, linkedInLink } = experienceData;
 
@@ -16,11 +16,7 @@ export default function Experience({ isOverview }: { isOverview?: boolean }) {
         />
       </div>
       <div className="w-full mt-10 lg:mt-16">
-        <Timeline
-          record={items}
-          link="/experience"
-          isOverview={isOverview}
-        />
+        <Timeline record={items} link="/experience" isOverview={isOverview} />
       </div>
     </div>
   );

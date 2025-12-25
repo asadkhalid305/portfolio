@@ -102,7 +102,7 @@ const project = await getPostBySlug("projects", slug);
 
 Create a matching JSON file for page titles, descriptions, and labels.
 
-- Example: `src/content/projects.json`
+- Example: `src/constants/projects.json` (all content JSON files are now in src/constants/)
 
 #### 5. Update Routing (if part of Contribution)
 
@@ -152,6 +152,6 @@ const projectDropdown = projects.map((project) => ({
 },
 ```
 
-Also add the link labels to `src/content/common.json`. For dynamic dropdowns
+Also add the link labels to `src/constants/common.json`. For dynamic dropdowns
 (like Projects), `src/components/header/index.tsx` can fetch content and pass it
 down to the client header.

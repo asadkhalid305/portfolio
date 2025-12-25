@@ -1,4 +1,4 @@
-import { LinkButtonProps } from "@/lib/utils/types";
+import { LinkButtonProps } from "@/utils/types";
 import clsx from "clsx";
 import Link from "next/link";
 

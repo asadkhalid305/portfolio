@@ -1,6 +1,6 @@
-import { TimelineProps } from "@/lib/utils/types";
-import LinkButton from "@/app/about/components/general/link-button";
-import TimelineItem from "@/app/about/components/general/timeline-item";
+import { TimelineProps } from "@/utils/types";
+import LinkButton from "@/components/ui/link-button";
+import TimelineItem from "@/components/about/timeline-item";
 
 export default function Timeline({
   record,

@@ -1,6 +1,6 @@
-import DisplayInfo from "@/app/about/components/general/display-info";
-import LinkButton from "@/app/about/components/general/link-button";
-import VCardGrid from "@/app/about/components/general/v-card-grid";
+import DisplayInfo from "@/components/about/display-info";
+import LinkButton from "@/components/ui/link-button";
+import VCardGrid from "@/components/about/v-card-grid";
 import { Post } from "@/lib/mdx";
 
 const label = "ACTIVITIES & IMPACT";
