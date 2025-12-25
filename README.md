@@ -38,20 +38,28 @@ npm run test:chatbot
 
 ## Project Structure
 
-- `src/app` app routes (App Router)
-  - `/about` (default route via rewrite)
-  - `/journey`, `/experience`, `/testimonials`, `/contribution`, `/contact`
+- `src/app/` app routes (App Router)
+  - Pages: `/about`, `/journey`, `/experience`, `/testimonials`, `/contribution`, `/contact`, `/projects`
   - API routes: `src/app/api/chatbot/route.ts`, `src/app/api/contact/route.ts`
-- `src/content` JSON content that powers the sections
-- `src/components` UI components and sections
-- `src/lib` hooks, utils, config, and constants
-- `public/images` static assets
+  - Only pages, layouts, and API routes per Next.js best practices
+- `src/components/` organized by feature (about, chatbot, contact, header, ui)
+  - All reusable components outside app/ folder
+  - Feature-based organization with shared ui/ components
+- `src/lib/` library-specific configurations only
+  - `mdx.ts` - MDX content processing
+  - `openai.ts` - OpenAI/OpenRouter client setup
+- `src/utils/` general utility functions
+- `src/hooks/` React custom hooks
+- `src/constants/` JSON configuration files
+- `src/config/` environment validation
+- `src/content/` MDX content (blogs, events, projects)
+- `public/images/` static assets
 
 ## Content Updates
 
-- Main content: `src/content/*.json`
-- Chatbot prompt + dataset + model config: `src/lib/constants/chatbot-config.ts`
-- Metadata: `src/content/metadata.json`
+- Main content: `src/constants/*.json` (about, common, contact, contribution, experience, journey, metadata, projects, socials, testimonials)
+- Chatbot config: `src/constants/chatbot.json` (includes prompt, dataset, model configs)
+- Metadata: `src/constants/metadata.json`
 
 ## API Routes
 

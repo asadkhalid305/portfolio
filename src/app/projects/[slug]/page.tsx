@@ -4,7 +4,7 @@ import { getPostBySlug, getFiles } from "@/lib/mdx";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import projectsData from "@/content/projects.json";
+import projectsData from "@/constants/projects.json";
 import DetailPageHeader from "@/components/ui/detail-page-header";
 import DetailPageImage from "@/components/ui/detail-page-image";
 import ActionsSidebar from "@/components/ui/actions-sidebar";

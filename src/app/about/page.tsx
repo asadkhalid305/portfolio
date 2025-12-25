@@ -1,16 +1,16 @@
-import About from "@/app/about/components/sections/about";
-import Journey from "@/app/about/components/sections/journey";
-import Experience from "@/app/about/components/sections/experience";
-import Contribution from "@/app/about/components/sections/contribution";
-import Testimonial from "@/app/about/components/sections/testimonial";
-import Contact from "@/app/about/components/sections/contact";
+import About from "@/components/about/about";
+import Journey from "@/components/about/journey";
+import Experience from "@/components/about/experience";
+import Contribution from "@/components/about/contribution";
+import Testimonial from "@/components/about/testimonial";
+import Contact from "@/components/about/contact";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
-import LinkButton from "@/app/about/components/general/link-button";
+import LinkButton from "@/components/ui/link-button";
 import { getAllPosts } from "@/lib/mdx";
 
-import contactData from "@/content/contact.json";
-import aboutData from "@/content/about.json";
+import contactData from "@/constants/contact.json";
+import aboutData from "@/constants/about.json";
 
 export default async function index() {
   const events = await getAllPosts("events");

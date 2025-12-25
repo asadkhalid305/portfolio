@@ -1,5 +1,5 @@
-import commonData from "@/content/common.json";
-import socialsData from "@/content/socials.json";
+import commonData from "@/constants/common.json";
+import socialsData from "@/constants/socials.json";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

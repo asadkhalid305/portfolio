@@ -1,6 +1,6 @@
-import { CardSystemProps } from "@/lib/utils/types";
+import { CardSystemProps } from "@/utils/types";
 import Card from "@/components/ui/card";
-import LinkButton from "@/app/about/components/general/link-button";
+import LinkButton from "@/components/ui/link-button";
 
 export default function VCardSystem({
   heading,

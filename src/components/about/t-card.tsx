@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { TCardProps } from "@/lib/utils/types";
-import Tooltip from "@/app/about/components/general/tooltip";
-import { getImageProps } from "@/lib/utils/image-helpers";
+import { TCardProps } from "@/utils/types";
+import Tooltip from "@/components/ui/tooltip";
+import { getImageProps } from "@/utils/image-helpers";
 
 export default function TCard({ text, author }: Readonly<TCardProps>) {
   const { name, image, job, link } = author ?? {};

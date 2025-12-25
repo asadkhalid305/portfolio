@@ -1,4 +1,4 @@
-import LinkButton from "@/app/about/components/general/link-button";
+import LinkButton from "@/components/ui/link-button";
 
 interface DetailPageHeaderProps {
   title: string;

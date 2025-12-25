@@ -4,7 +4,7 @@ import { Section } from "@/components/layout/Section";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import contributionData from "@/content/contribution.json";
+import contributionData from "@/constants/contribution.json";
 import DetailPageHeader from "@/components/ui/detail-page-header";
 import DetailPageImage from "@/components/ui/detail-page-image";
 import ActionsSidebar from "@/components/ui/actions-sidebar";

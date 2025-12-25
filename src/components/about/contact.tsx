@@ -1,6 +1,6 @@
-import contactData from "@/content/contact.json";
-import DisplayInfo from "@/app/about/components/general/display-info";
-import ProfileCard from "@/app/about/components/general/profile-card";
+import contactData from "@/constants/contact.json";
+import DisplayInfo from "@/components/about/display-info";
+import ProfileCard from "@/components/about/profile-card";
 
 const {
   heading,

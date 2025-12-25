@@ -1,4 +1,4 @@
-import { ImageType } from "@/lib/utils/types";
+import { ImageType } from "@/utils/types";
 
 /**
  * Helper function to get image properties with fallback defaults

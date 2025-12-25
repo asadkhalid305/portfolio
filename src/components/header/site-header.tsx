@@ -2,10 +2,10 @@
 
 import clsx from "clsx";
 import Image from "next/image";
-import useHeader from "@/lib/hooks/useHeader";
+import useHeader from "@/hooks/useHeader";
 import HeaderLinks from "@/components/header/header-links";
-import commonData from "@/content/common.json";
-import { Post } from "@/lib/utils/types";
+import commonData from "@/constants/common.json";
+import { Post } from "@/utils/types";
 
 interface HeaderProps {
   projects?: Post[];

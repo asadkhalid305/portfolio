@@ -6,11 +6,11 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Chatbot from "@/components/chatbot";
 import { ScrollToTop } from "@/components/scroll-to-top";
-import { LayoutProps } from "@/lib/utils/types";
-import metadataData from "@/content/metadata.json";
-import { env } from "@/lib/config/env";
+import { LayoutProps } from "@/utils/types";
+import metadataData from "@/constants/metadata.json";
+import { env } from "@/config/env";
 import "@/app/globals.css";
-import commonData from "@/content/common.json";
+import commonData from "@/constants/common.json";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],

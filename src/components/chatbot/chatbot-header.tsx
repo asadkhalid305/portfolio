@@ -1,7 +1,7 @@
-import { ChatbotHeaderProps } from "@/lib/utils/types";
+import { ChatbotHeaderProps } from "@/utils/types";
 import { useState } from "react";
 import { Bot, Info } from "lucide-react";
-import commonData from "@/content/common.json";
+import commonData from "@/constants/common.json";
 import ChatbotInfoModal from "./chatbot-info-modal";
 
 const { chatbot } = commonData;
@@ -57,7 +57,9 @@ export default function ChatbotHeader({
       <ChatbotInfoModal
         isOpen={showInfo}
         onClose={() => setShowInfo(false)}
-        content={chatbot.info || "AI Assistant trained on Asad's portfolio data."}
+        content={
+          chatbot.info || "AI Assistant trained on Asad's portfolio data."
+        }
       />
     </>
   );

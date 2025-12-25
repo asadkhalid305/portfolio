@@ -1,4 +1,4 @@
-import socialsData from "@/content/socials.json";
+import socialsData from "@/constants/socials.json";
 
 /**
  * Custom hook to access social links

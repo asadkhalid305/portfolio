@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-import { ContentType, Frontmatter, Post } from "@/lib/utils/types";
+import { ContentType, Frontmatter, Post } from "@/utils/types";
 
 const root = process.cwd();
 
