@@ -1,0 +1,11 @@
+{
+  "title": "Contribution",
+  "description": "My contributions to the tech community through events and blog posts.",
+  "detail": {
+    "backButton": "Back to Contributions",
+    "aboutHeading": "About This Contribution",
+    "actionsHeading": "Contribution Actions",
+    "visitEventButton": "Visit Event",
+    "visitBlogButton": "Visit Blog"
+  }
+}

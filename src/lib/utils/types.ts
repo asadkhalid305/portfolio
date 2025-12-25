@@ -275,7 +275,7 @@ export interface Frontmatter {
     src: string;
     alt: string;
   };
-  link?: string; // Optional external link for legacy support or reference
+  originalLink?: string; // External link to original blog post or event
   badges?: string[];
   liveUrl?: string;
   repoUrl?: string;
