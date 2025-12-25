@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2025-12-25
+
+### Added
+
+- Dynamic routing for blogs and events with MDX support (`/contribution/[type]/[slug]`)
+- Project detail pages with dynamic routing (`/projects/[slug]`) for comprehensive project showcase
+- External app integration via rewrite rules for `/apps/movie-and-series-picker`
+- Comprehensive release preparation workflow with automated changelog generation
+- Enhanced project documentation and setup instructions
+- Chatbot API test script with various test scenarios
+
+### Changed
+
+- Major code restructuring for improved maintainability and scalability (#52)
+- Enhanced responsive design for header links and navigation components
+- Improved project structure with better file organization
+- Updated chatbot dataset with current portfolio information
+
+### Fixed
+
+- LinkedIn profile aria-label for improved accessibility
+- Enhanced focus styles for better keyboard navigation visibility
+
 ## [1.1.0] - 2024-12-24
 
 ### Added
@@ -63,7 +86,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial beta release
 
-[unreleased]: https://github.com/asadkhalid305/portfolio/compare/v1.1.0...HEAD
+[unreleased]: https://github.com/asadkhalid305/portfolio/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/asadkhalid305/portfolio/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/asadkhalid305/portfolio/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/asadkhalid305/portfolio/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/asadkhalid305/portfolio/compare/v0.1.0...v1.0.0
