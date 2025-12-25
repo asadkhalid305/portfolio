@@ -1,0 +1,9 @@
+{
+  "heading": "Introduction",
+  "description": "Hey, I am <span class=\"font-bold\">Asad Ullah</span>, a Senior Software Engineer at <a class=\"underline focus:decoration-none\" href=\"https://mercedes-benz.io\" target=\"_blank\" rel=\"noopener noreferrer\">Mercedes-Benz.io</a> in Germany. With 6+ years in the field, I have come a long way, learning, networking, and giving back to the community. As a <span class=\"font-bold\">mentor and public speaker</span>, I have helped numerous students and professionals in their career journeys. <br /> <br />If you are seeking guidance or interested in collaborating, <span class=\"font-bold\">reach out to me!</span>",
+  "personalPhoto": {
+    "src": "/images/myself.webp",
+    "alt": "personal photo"
+  },
+  "screenReaderTitle": "About Asad Ullah Khalid"
+}

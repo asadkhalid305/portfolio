@@ -1,13 +1,24 @@
 import OpenAI from "openai";
-import { chatbot } from "@/lib/constants";
-import { openai, useOpenRouter } from "@/lib/config/openai";
+import chatbotData from "@/constants/chatbot.json";
+import { openai, useOpenRouter } from "@/lib/openai";
 
 type Message = {
   role: "system" | "user" | "assistant";
   content: string;
 };
 
-const { config, dataset, prompt } = chatbot;
+// Select the appropriate model based on environment
+const model = useOpenRouter
+  ? chatbotData.config.models.openrouter
+  : chatbotData.config.models.openai;
+
+const config = {
+  model,
+  temperature: chatbotData.config.temperature,
+  maxTokens: chatbotData.config.maxTokens,
+};
+
+const { dataset, prompt } = chatbotData;
 
 // Define the POST function
 export async function POST(request: Request) {

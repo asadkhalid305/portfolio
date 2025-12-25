@@ -1,5 +1,5 @@
-import commonData from "@/content/common.json";
-import socialsData from "@/content/socials.json";
+import commonData from "@/constants/common.json";
+import socialsData from "@/constants/socials.json";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-sm font-light text-gray-400">
-            © {currentYear} Asad Ullah Khalid. {commonData.footer.rights}
+            © {currentYear} {commonData.name}. {commonData.footer.rights}
           </p>
           <div className="flex gap-6">
             {Object.entries(socialsData).map(([key, social]: [string, any]) => (

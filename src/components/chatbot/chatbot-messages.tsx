@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { ChatbotMessagesProps } from "@/lib/utils/types";
+import { ChatbotMessagesProps } from "@/utils/types";
 import ChatbotLoading from "@/components/chatbot/chatbot-loading";
 import ChatbotMessage from "@/components/chatbot/chatbot-message";
 

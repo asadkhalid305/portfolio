@@ -3,7 +3,7 @@
 import ChatbotHeader from "@/components/chatbot/chatbot-header";
 import ChatbotForm from "@/components/chatbot/chatbot-form";
 import ChatbotMessages from "@/components/chatbot/chatbot-messages";
-import useChatbot from "@/lib/hooks/useChatbot";
+import useChatbot from "@/hooks/useChatbot";
 import { useState } from "react";
 import clsx from "clsx";
 

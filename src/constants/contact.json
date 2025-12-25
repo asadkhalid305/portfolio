@@ -1,0 +1,37 @@
+{
+  "heading": "Let's Connect",
+  "description": "Your thoughts and questions are always welcome, so do not hesitate to drop me a message if you need assistance or have something to talk about. I would love to hear from you!",
+  "profile": {
+    "company": "Mercedes-Benz.io",
+    "name": "Asad Ullah Khalid",
+    "position": "Frontend Expertise with Focus on JavaScript",
+    "role": "Senior Software Engineer"
+  },
+  "cta": "Say hello",
+  "form": {
+    "title": "Send a Message",
+    "description": "Have a question or want to work together? Fill out the form below.",
+    "name": {
+      "label": "Full Name",
+      "placeholder": "John Doe"
+    },
+    "email": {
+      "label": "Email Address",
+      "placeholder": "john@example.com"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Tell me about your project..."
+    },
+    "submit": {
+      "default": "Send Message",
+      "sending": "Sending..."
+    },
+    "error": "Oops! Something went wrong. Please try again or email me directly at contact@asadullahkhalid.com"
+  },
+  "success": {
+    "title": "Message Sent!",
+    "description": "Thank you for reaching out. I'll get back to you as soon as possible.",
+    "button": "Send another message"
+  }
+}

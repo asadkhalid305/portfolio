@@ -1,22 +1,27 @@
-import Intro from "@/app/about/components/sections/intro";
-import Journey from "@/app/about/components/sections/journey";
-import Experience from "@/app/about/components/sections/experience";
-import Contribution from "@/app/about/components/sections/contribution";
-import Testimonial from "@/app/about/components/sections/testimonial";
-import Contact from "@/app/about/components/sections/contact";
+import About from "@/components/about/about";
+import Journey from "@/components/about/journey";
+import Experience from "@/components/about/experience";
+import Contribution from "@/components/about/contribution";
+import Testimonial from "@/components/about/testimonial";
+import Contact from "@/components/about/contact";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
-import LinkButton from "@/app/about/components/general/link-button";
+import LinkButton from "@/components/ui/link-button";
+import { getAllPosts } from "@/lib/mdx";
 
-import contactData from "@/content/contact.json";
+import contactData from "@/constants/contact.json";
+import aboutData from "@/constants/about.json";
 
-export default function About() {
+export default async function index() {
+  const events = await getAllPosts("events");
+  const blogs = await getAllPosts("blogs");
+
   return (
     <>
-      <h1 className="sr-only">About Asad Ullah Khalid</h1>
-      <Section id="intro" bgColor="semidark" padding={false}>
+      <h1 className="sr-only">{aboutData.screenReaderTitle}</h1>
+      <Section id="about" bgColor="semidark" padding={false}>
         <Container>
-          <Intro />
+          <About />
         </Container>
       </Section>
       <Section id="journey">
@@ -31,7 +36,7 @@ export default function About() {
       </Section>
       <Section id="contribution">
         <Container>
-          <Contribution isOverview />
+          <Contribution isOverview events={events} blogs={blogs} />
         </Container>
       </Section>
       <Section id="testimonial">
