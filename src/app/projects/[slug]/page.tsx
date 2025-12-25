@@ -2,11 +2,12 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { getPostBySlug, getFiles } from "@/lib/mdx";
 import { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import LinkButton from "@/app/about/components/general/link-button";
 import projectsData from "@/content/projects.json";
+import DetailPageHeader from "@/components/ui/detail-page-header";
+import DetailPageImage from "@/components/ui/detail-page-image";
+import ActionsSidebar from "@/components/ui/actions-sidebar";
 
 interface Props {
   params: Promise<{
@@ -41,32 +42,30 @@ export default async function ProjectPage({ params }: Props) {
     const { slug } = await params;
     const project = await getPostBySlug("projects", slug);
 
+    const actions = project.frontmatter.liveUrl
+      ? [
+          {
+            href: project.frontmatter.liveUrl,
+            label: projectsData.detail.visitButton,
+            external: true,
+          },
+        ]
+      : [];
+
     return (
       <Section className="min-h-[calc(100vh-80px)] py-20">
         <Container>
           <div className="max-w-4xl mx-auto">
-            <LinkButton
-              href="/projects"
-              text={projectsData.detail.backButton}
-              variant="minimal"
-              className="mb-8"
-              showIcon={true}
-              iconPosition="left"
+            <DetailPageHeader
+              title={project.frontmatter.title}
+              backHref="/projects"
+              backText={projectsData.detail.backButton}
             />
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              {project.frontmatter.title}
-            </h1>
-
-            <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-2xl mb-12 border border-gray-200 dark:border-gray-800">
-              <Image
-                src={project.frontmatter.image.src}
-                alt={project.frontmatter.image.alt}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+            <DetailPageImage
+              src={project.frontmatter.image.src}
+              alt={project.frontmatter.image.alt}
+            />
 
             <div className="grid lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2 space-y-6">
@@ -79,24 +78,10 @@ export default async function ProjectPage({ params }: Props) {
               </div>
 
               <div className="lg:col-span-1">
-                {(project.frontmatter.liveUrl ||
-                  project.frontmatter.repoUrl) && (
-                  <div className="bg-c-semidark rounded-2xl p-6 border border-gray-200 dark:border-gray-800 sticky top-24 space-y-4">
-                    <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
-                      {projectsData.detail.actionsHeading}
-                    </h3>
-                    {project.frontmatter.liveUrl && (
-                      <a
-                        href={project.frontmatter.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block w-full py-3 px-4 bg-c-dark hover:bg-gray-800 dark:hover:bg-gray-700 text-white text-center font-medium rounded-xl transition-colors shadow-lg hover:shadow-2xl"
-                      >
-                        {projectsData.detail.visitButton}
-                      </a>
-                    )}
-                  </div>
-                )}
+                <ActionsSidebar
+                  title={projectsData.detail.actionsHeading}
+                  actions={actions}
+                />
               </div>
             </div>
           </div>
