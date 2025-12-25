@@ -1,12 +1,20 @@
 {
+  "name": "Asad Ullah Khalid",
+  "skipToMain": "Skip to main content",
   "navigation": {
     "about": "About",
     "journey": "Journey",
     "experience": "Experience",
     "contribution": "Contribution",
+    "events": "Events",
+    "blogs": "Blogs",
     "testimonial": "Testimonial",
     "contact": "Contact",
-    "bookSession": "Book 1:1 Session"
+    "bookSession": "Book 1:1 Session",
+    "projects": "Projects"
+  },
+  "header": {
+    "logoAlt": "Asad Ullah Khalid brand logo"
   },
   "footer": {
     "rights": "All rights reserved"

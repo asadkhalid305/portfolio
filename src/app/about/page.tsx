@@ -10,6 +10,7 @@ import LinkButton from "@/app/about/components/general/link-button";
 import { getAllPosts } from "@/lib/mdx";
 
 import contactData from "@/content/contact.json";
+import aboutData from "@/content/about.json";
 
 export default async function index() {
   const events = await getAllPosts("events");
@@ -17,7 +18,7 @@ export default async function index() {
 
   return (
     <>
-      <h1 className="sr-only">About Asad Ullah Khalid</h1>
+      <h1 className="sr-only">{aboutData.screenReaderTitle}</h1>
       <Section id="about" bgColor="semidark" padding={false}>
         <Container>
           <About />

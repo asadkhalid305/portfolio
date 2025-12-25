@@ -1,0 +1,27 @@
+import { Metadata } from "next";
+import { getAllPosts } from "@/lib/mdx";
+import { Container } from "@/components/layout/Container";
+import { Section } from "@/components/layout/Section";
+import HCardGrid from "@/app/about/components/general/h-card-grid";
+import projectsData from "@/content/projects.json";
+
+export const metadata: Metadata = projectsData.metadata;
+
+export default async function ProjectsPage() {
+  const projects = await getAllPosts("projects");
+
+  return (
+    <Section className="min-h-[calc(100vh-80px)]" vCenter>
+      <Container>
+        <h1 className="sr-only">{projectsData.metadata.title}</h1>
+        <div className="mb-12">
+          <h2 className="text-4xl font-extrabold mb-4 lg:text-5xl">
+            {projectsData.title}
+          </h2>
+          <p className="text-lg">{projectsData.description}</p>
+        </div>
+        <HCardGrid projects={projects} />
+      </Container>
+    </Section>
+  );
+}

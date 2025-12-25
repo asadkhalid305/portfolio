@@ -1,0 +1,17 @@
+{
+  "title": "Projects",
+  "description": "A selection of production-ready applications and technical experiments.",
+  "metadata": {
+    "title": "Projects | Asad Ullah Khalid",
+    "description": "Showcase of my applications and technical projects."
+  },
+  "card": {
+    "viewProject": "View Project"
+  },
+  "detail": {
+    "backButton": "Back to Projects",
+    "aboutHeading": "About the Application",
+    "actionsHeading": "Project Actions",
+    "visitButton": "Visit Application"
+  }
+}

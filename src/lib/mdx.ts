@@ -2,26 +2,11 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
+import { ContentType, Frontmatter, Post } from "@/lib/utils/types";
+
 const root = process.cwd();
 
-export type ContentType = "blogs" | "events";
-
-export interface Frontmatter {
-  title: string;
-  description: string;
-  date: string;
-  image: {
-    src: string;
-    alt: string;
-  };
-  link?: string; // Optional external link for legacy support or reference
-}
-
-export interface Post {
-  slug: string;
-  content: string;
-  frontmatter: Frontmatter;
-}
+export type { ContentType, Frontmatter, Post };
 
 export async function getFiles(type: ContentType) {
   return fs.readdirSync(path.join(root, "src", "content", type));
