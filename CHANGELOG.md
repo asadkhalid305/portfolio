@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.1] - 2025-12-28
+
+### Changed
+
+- Rebranded "Movie Picker" project to "StreamWise AI" and updated project description
+
 ## [1.2.0] - 2025-12-25
 
 ### Added
