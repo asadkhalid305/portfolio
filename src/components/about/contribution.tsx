@@ -15,20 +15,29 @@ interface ContributionProps {
 }
 
 export default function Contribution({
-  isOverview,
+  isOverview = false,
   events,
   blogs,
 }: ContributionProps) {
   // Map MDX posts to VCard format
   const mapPostToCard = (posts: Post[], type: "events" | "blogs") => {
-    return posts.map((post) => ({
-      id: post.slug,
-      title: post.frontmatter.title,
-      description: post.frontmatter.description,
-      image: post.frontmatter.image,
-      date: post.frontmatter.date,
-      link: `/contribution/${type}/${post.slug}`,
-    }));
+    return posts.map((post) => {
+      const badges = [...(post.frontmatter.badges || [])];
+      if (type === "events") {
+        if (post.frontmatter.type) badges.push(post.frontmatter.type);
+        if (post.frontmatter.event) badges.push(post.frontmatter.event);
+      }
+
+      return {
+        id: post.slug,
+        title: post.frontmatter.title,
+        description: post.frontmatter.description,
+        image: post.frontmatter.image,
+        date: post.frontmatter.date,
+        link: `/contribution/${type}/${post.slug}`,
+        badges: badges,
+      };
+    });
   };
 
   const eventItems = mapPostToCard(events, "events");

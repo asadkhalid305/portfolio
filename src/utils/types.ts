@@ -275,9 +275,12 @@ export interface Frontmatter {
     src: string;
     alt: string;
   };
+  type?: "Conference" | "Mentorship" | "Workshop" | "Panel" | "Community";
+  event?: string;
   originalLink?: string; // External link to original blog post or event
   badges?: string[];
   liveUrl?: string;
+  githubUrl?: string;
   repoUrl?: string;
 }
 

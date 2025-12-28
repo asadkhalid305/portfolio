@@ -76,6 +76,10 @@ export default async function ContributionDetailPage({ params }: Props) {
         ]
       : [];
 
+    const badges = [...(frontmatter.badges || [])];
+    if (frontmatter.type) badges.push(frontmatter.type);
+    if (frontmatter.event) badges.push(frontmatter.event);
+
     return (
       <Section className="min-h-[calc(100vh-80px)] pt-24 pb-12">
         <Container>
@@ -85,6 +89,7 @@ export default async function ContributionDetailPage({ params }: Props) {
               backHref="/contribution"
               backText={contributionData.detail.backButton}
               date={frontmatter.date}
+              badges={badges}
             />
 
             <DetailPageImage

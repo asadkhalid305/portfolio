@@ -42,15 +42,23 @@ export default async function ProjectPage({ params }: Props) {
     const { slug } = await params;
     const project = await getPostBySlug("projects", slug);
 
-    const actions = project.frontmatter.liveUrl
-      ? [
-          {
-            href: project.frontmatter.liveUrl,
-            label: projectsData.detail.visitButton,
-            external: true,
-          },
-        ]
-      : [];
+    const actions = [];
+
+    if (project.frontmatter.liveUrl) {
+      actions.push({
+        href: project.frontmatter.liveUrl,
+        label: projectsData.detail.visitButton,
+        external: true,
+      });
+    }
+
+    if (project.frontmatter.githubUrl) {
+      actions.push({
+        href: project.frontmatter.githubUrl,
+        label: projectsData.detail.githubButton,
+        external: true,
+      });
+    }
 
     return (
       <Section className="min-h-[calc(100vh-80px)] py-20">
@@ -60,6 +68,7 @@ export default async function ProjectPage({ params }: Props) {
               title={project.frontmatter.title}
               backHref="/projects"
               backText={projectsData.detail.backButton}
+              badges={project.frontmatter.badges}
             />
 
             <DetailPageImage
