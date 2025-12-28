@@ -9,14 +9,15 @@ const nextConfig = {
         source: "/",
         destination: "/about",
       },
-      // Rewrite to serve external Vercel app under /apps/movie-and-series-picker
+      // Rewrite to serve external Vercel app under /apps/streamwise-ai
       {
-        source: "/apps/movie-and-series-picker",
-        destination: "https://multi-agent-movie-picker.vercel.app/apps/movie-and-series-picker",
+        source: "/apps/streamwise-ai",
+        destination: "https://streamwise-ai.vercel.app/apps/streamwise-ai",
       },
       {
-        source: "/apps/movie-and-series-picker/:path*",
-        destination: "https://multi-agent-movie-picker.vercel.app/apps/movie-and-series-picker/:path*",
+        source: "/apps/streamwise-ai/:path*",
+        destination:
+          "https://streamwise-ai.vercel.app/apps/streamwise-ai/:path*",
       },
     ];
   },

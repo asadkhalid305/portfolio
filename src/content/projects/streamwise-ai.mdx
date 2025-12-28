@@ -1,0 +1,79 @@
+---
+title: "StreamWise AI"
+description: "Stop scrolling and start watching. StreamWise AI is an intelligent entertainment concierge that eliminates 'choice paralysis' using a multi-agent AI system."
+date: "2024-12-24"
+image:
+  src: "/images/streamwise-ai.webp"
+  alt: "StreamWise AI Application Interface"
+badges: ["Featured"]
+liveUrl: "/apps/streamwise-ai"
+---
+
+**Stop scrolling. Start watching.**
+
+We’ve all been there: dinner is ready, you open Netflix, and then spend the next 45 minutes scrolling through endless tiles until your food is cold.
+
+**StreamWise AI** is the antidote to decision fatigue. It’s an intelligent entertainment concierge that understands exactly what you're in the mood for—even when you can't quite put it into words.
+
+---
+
+### **What It Understands**
+
+Unlike basic search bars that only match keywords, StreamWise AI understands the _context_ of your request. You can mix and match details just like you would when asking a friend:
+
+- **Time:** "Under 90 minutes" or "short episodes" for quick breaks.
+- **Eras:** "From the 80s," "released this year," or "90s classics."
+- **People:** "Starring Florence Pugh" or "directed by Christopher Nolan."
+- **Global:** "Korean dramas," "French cinema," or "British comedies."
+- **Quality:** "Critically acclaimed," "highly rated," or "hidden gems."
+
+---
+
+### **Examples to Try**
+
+- _"I have a 2-hour flight. Find me a highly-rated comedy under 100 minutes."_
+- _"Show me action movies from the 90s starring Tom Cruise."_
+- _"I'm looking for a dark thriller TV show released in the last 5 years."_
+
+The AI scans a live global database (TMDB) and curates a personalized list, explaining exactly **why** each pick fits your specific criteria.
+
+---
+
+### **The Architecture: A Multi-Agent Symphony**
+
+Behind the simple interface lies a sophisticated **Directed Acyclic Graph (DAG) of AI Agents**. Each agent is a specialized micro-service with its own instructions and tools:
+
+1.  **The Orchestrator:** Analyzes intent and routes requests to the right specialist.
+2.  **The Linguist:** Extracts deep semantic data (genres, eras, cast) and handles complex logic branching.
+3.  **The Critic:** Evaluates results against your original "vibe" and generates human-readable explanations.
+4.  **The Gatekeepers:** Strict guardrails that ensure safety and prevent AI "hallucinations."
+
+---
+
+### **Key Technical Features**
+
+- **Next.js 15 & TypeScript:** Built with the latest App Router and React 19 features.
+- **Live TMDB Integration:** Robust service layer with sequential fetching logic to handle rate limits.
+- **Deterministic Tools:** Zod-validated tools for safe, real-world API execution.
+- **Dynamic UI/UX:** Features a "Sticky Metadata" bar for real-time transparency into the AI's thought process.
+
+---
+
+### **Tech Stack**
+
+- **Frontend:** React 19, Next.js 15, Tailwind CSS, Lucide Icons.
+- **AI Orchestration:** OpenAI Agents SDK, OpenAI API (GPT-4.1-mini).
+- **Data & Validation:** TMDB API, Zod (Schema Validation).
+- **Testing:** Jest, Supertest (Unit & Integration testing).
+
+---
+
+### **How to Use**
+
+This is a live, interactive app powered by OpenAI.
+
+1.  **Enter your Request:** Type what you're looking for in the search box.
+2.  **Add Your Key:** To keep this app open to everyone, it requires your own **OpenAI API Key**.
+3.  **Get Recommendations:** Instantly receive a curated grid of movies or shows tailored to your exact mood.
+
+> **Note:** Your key is securely used only for your session and is never stored on my servers.

@@ -7,13 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.1] - 2025-12-28
+
+### Changed
+
+- Rebranded "Movie Picker" project to "StreamWise AI" and updated project description
+
 ## [1.2.0] - 2025-12-25
 
 ### Added
 
 - Dynamic routing for blogs and events with MDX support (`/contribution/[type]/[slug]`)
 - Project detail pages with dynamic routing (`/projects/[slug]`) for comprehensive project showcase
-- External app integration via rewrite rules for `/apps/movie-and-series-picker`
+- External app integration via rewrite rules for `/apps/streamwise-ai`
 - Comprehensive release preparation workflow with automated changelog generation
 - Enhanced project documentation and setup instructions
 - Chatbot API test script with various test scenarios
