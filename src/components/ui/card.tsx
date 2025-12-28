@@ -23,15 +23,25 @@ export default function Card({
       className={`relative overflow-hidden shadow-lg ${
         horizontal
           ? "aspect-video rounded-lg order-1 lg:order-2 h-fit self-center w-full"
-          : "h-96 w-full rounded-t-lg"
+          : "h-96 w-full rounded-t-lg border-b border-gray-100 dark:border-gray-800"
       }`}
     >
+      {/* Blurred background for fixing aspect ratio issues */}
+      <Image
+        src={src}
+        alt=""
+        fill
+        className="object-cover blur-3xl scale-110 opacity-50 dark:opacity-40 transition-opacity duration-500 group-hover:opacity-70"
+        aria-hidden="true"
+      />
+
+      {/* Main image */}
       <Image
         src={src}
         alt={alt}
         fill
-        className={`object-cover transition-transform duration-500 group-hover:scale-105 ${
-          horizontal ? "" : "object-top bg-c-light"
+        className={`object-contain transition-transform duration-500 group-hover:scale-105 ${
+          horizontal ? "" : "p-4"
         }`}
         placeholder="blur"
         blurDataURL={getShimmerDataUrl(
