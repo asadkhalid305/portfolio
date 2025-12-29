@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import chatbotData from "@/constants/chatbot.json";
+import chatbotData from "@/constants/chatbot";
 import { openai, useOpenRouter } from "@/lib/openai";
 
 type Message = {

@@ -117,6 +117,9 @@ export type TCardProps = {
     job: string;
     link: string;
   };
+  source?: "LinkedIn" | "Topmate.io";
+  rating?: number;
+  expanded?: boolean;
 };
 
 // ============================================================================
@@ -265,7 +268,7 @@ export type TooltipProps = {
 // MDX CONTENT TYPES
 // ============================================================================
 
-export type ContentType = "blogs" | "events" | "projects";
+export type ContentType = "blogs" | "events" | "projects" | "book-reviews";
 
 export interface Frontmatter {
   title: string;
@@ -275,10 +278,13 @@ export interface Frontmatter {
     src: string;
     alt: string;
   };
-  originalLink?: string; // External link to original blog post or event
-  badges?: string[];
+  type?: "Conference" | "Mentorship" | "Workshop" | "Panel" | "Community";
+  event?: string;
+  originalLink?: string;
+  githubUrl?: string;
   liveUrl?: string;
-  repoUrl?: string;
+  presentationUrl?: string;
+  badges?: string[];
 }
 
 export interface Post {

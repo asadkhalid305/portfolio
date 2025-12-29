@@ -17,7 +17,7 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const types: ContentType[] = ["events", "blogs"];
+  const types: ContentType[] = ["events", "blogs", "book-reviews"];
   const params: { type: string; slug: string }[] = [];
 
   for (const type of types) {
@@ -35,7 +35,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { type, slug } = await params;
-  if (type !== "events" && type !== "blogs") return {};
+  if (type !== "events" && type !== "blogs" && type !== "book-reviews")
+    return {};
 
   try {
     const { frontmatter } = await getPostBySlug(type as ContentType, slug);
@@ -51,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ContributionDetailPage({ params }: Props) {
   const { type, slug } = await params;
 
-  if (type !== "events" && type !== "blogs") {
+  if (type !== "events" && type !== "blogs" && type !== "book-reviews") {
     notFound();
   }
 
@@ -61,20 +62,42 @@ export default async function ContributionDetailPage({ params }: Props) {
       slug
     );
 
-    const visitButtonText =
-      type === "events"
-        ? contributionData.detail.visitEventButton
-        : contributionData.detail.visitBlogButton;
+    let visitButtonText = contributionData.detail.visitBlogButton;
+    if (type === "events") {
+      visitButtonText = contributionData.detail.visitEventButton;
+    } else if (type === "book-reviews") {
+      visitButtonText = "Visit Review";
+    }
 
-    const actions = frontmatter.originalLink
-      ? [
-          {
-            href: frontmatter.originalLink,
-            label: visitButtonText,
-            external: true,
-          },
-        ]
-      : [];
+    const actions = [];
+
+    if (frontmatter.originalLink) {
+      actions.push({
+        href: frontmatter.originalLink,
+        label: visitButtonText,
+        external: true,
+      });
+    }
+
+    if (frontmatter.githubUrl) {
+      actions.push({
+        href: frontmatter.githubUrl,
+        label: contributionData.detail.githubButton,
+        external: true,
+      });
+    }
+
+    if (frontmatter.presentationUrl) {
+      actions.push({
+        href: frontmatter.presentationUrl,
+        label: contributionData.detail.presentationButton,
+        external: true,
+      });
+    }
+
+    const badges = [...(frontmatter.badges || [])];
+    if (frontmatter.type) badges.push(frontmatter.type);
+    if (frontmatter.event) badges.push(frontmatter.event);
 
     return (
       <Section className="min-h-[calc(100vh-80px)] pt-24 pb-12">
@@ -85,6 +108,7 @@ export default async function ContributionDetailPage({ params }: Props) {
               backHref="/contribution"
               backText={contributionData.detail.backButton}
               date={frontmatter.date}
+              badges={badges}
             />
 
             <DetailPageImage

@@ -15,7 +15,7 @@ export default function VCardSystem({
       <h2 className="text-3xl font-extrabold capitalize text-center pb-6 lg:text-4xl lg:text-start">
         {heading}
       </h2>
-      <div className="grid gap-6 justify-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 justify-center justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {displayRecords.map((item, index) => (
           <div
             key={item.id}
@@ -38,6 +38,7 @@ export default function VCardSystem({
               image={item.image}
               link={item.link}
               date={item.date}
+              badges={item.badges}
             />
           </div>
         ))}

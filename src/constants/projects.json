@@ -11,7 +11,8 @@
   "detail": {
     "backButton": "Back to Projects",
     "aboutHeading": "About the Application",
-    "actionsHeading": "Project Actions",
-    "visitButton": "Visit Application"
+    "actionsHeading": "Quick Resources",
+    "visitButton": "Visit Application",
+    "githubButton": "View on GitHub"
   }
 }
