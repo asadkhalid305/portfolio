@@ -4,6 +4,75 @@
   "cta": "Read more testimonials",
   "items": [
     {
+      "text": "Was explained in detail with proper guidance love it!",
+      "author": {
+        "name": "Shaheer Ahmed",
+        "image": {
+          "src": "/images/default.webp",
+          "alt": "Shaheer Ahmed"
+        },
+        "job": "Mentee",
+        "link": "https://topmate.io/asadullahkhalid"
+      },
+      "source": "Topmate.io",
+      "rating": 5
+    },
+    {
+      "text": "Asad was very friendly and kind. He understood my problems and concerns and guided me on what would be best to do in the situation. Thank you!",
+      "author": {
+        "name": "Anonymous",
+        "image": {
+          "src": "/images/default.webp",
+          "alt": "Anonymous"
+        },
+        "job": "Mentee",
+        "link": "https://topmate.io/asadullahkhalid"
+      },
+      "source": "Topmate.io",
+      "rating": 5
+    },
+    {
+      "text": "First and foremost Very kind person, He explains everything very deeply, had a nice canvo I really got all my doubts cleared and got some insights and thanks for the tips.",
+      "author": {
+        "name": "Sai",
+        "image": {
+          "src": "/images/default.webp",
+          "alt": "Sai"
+        },
+        "job": "Mentee",
+        "link": "https://topmate.io/asadullahkhalid"
+      },
+      "source": "Topmate.io",
+      "rating": 5
+    },
+    {
+      "text": "I had a 15-minute call with Asad, and it was incredibly valuable. He was very kind and shared great advice based on reality. The key feedback I received was thoughtful and truly mattered. In such a short time, the insights were clear and impactful.",
+      "author": {
+        "name": "Anonymous",
+        "image": {
+          "src": "/images/default.webp",
+          "alt": "Anonymous"
+        },
+        "job": "Mentee",
+        "link": "https://topmate.io/asadullahkhalid"
+      },
+      "source": "Topmate.io",
+      "rating": 5
+    },
+    {
+      "text": "I had the pleasure of working alongside Asad for about two years, during which he consistently brought exceptional technical insight and a collaborative spirit to our team. One of his standout contributions was introducing the concept and implementation of a backend-for-frontend (BFF) approach, a transformative addition that greatly enhanced our frontend efficiency and performance. His deep understanding of BFF enabled us to streamline data flow and deliver a more cohesive user experience, meeting high standards of responsiveness and scalability.\n\nIn addition to his technical expertise, Asad shines in his interpersonal skills. He is a highly communicative and open colleague who actively seeks and provides feedback. His openness fosters a team environment where ideas are freely exchanged, and solutions are enriched. This combination of skill and collaborative spirit makes Asad an invaluable asset to any team. I can confidently recommend him to any future employer looking for a forward-thinking, skilled, and supportive developer.",
+      "author": {
+        "name": "Hannes Krengel",
+        "image": {
+          "src": "/images/testimonial-7.webp",
+          "alt": "Hannes Krengel"
+        },
+        "job": "Product Enthusiast at Mercedes-Benz.io",
+        "link": "https://www.linkedin.com/in/hannes-krengel/"
+      },
+      "source": "LinkedIn"
+    },
+    {
       "text": "A fast learner developer, Asad was a very good contributor to the project we worked on together. Within a short time after entering the project, he contributed directly to the codebase with high coding standards and with improvement proposals in maintainability and reusability.",
       "author": {
         "name": "Carlos Cunha",
@@ -13,7 +82,8 @@
         },
         "job": "Senior Software Engineer at GetSafe",
         "link": "https://www.linkedin.com/in/carl0scunha/"
-      }
+      },
+      "source": "LinkedIn"
     },
     {
       "text": "Met with Asad in 2020 at Securiti.ai and now it's around two years of experience working with him.\nHe started his career at the associate level but soon raised himself to work among senior developers.\nHe is the backbone of our front end team now as he always delivers his work on time with full responsibility.",
@@ -25,7 +95,8 @@
         },
         "job": "Technical Lead at Securiti.ai",
         "link": "https://www.linkedin.com/in/abdul-wahab-155a7421/"
-      }
+      },
+      "source": "LinkedIn"
     },
     {
       "text": "- Passion and eagerness to grow: 10\n- Team player: 10\n- Results: 10\n- Communication 10 (+ 10)\n\nWhat else are you looking for?\n\nAsad has always shown tremendous energy and a positive attitude towards work. His active engagements with communities clearly show that how much he loves contributing to Open Source and sharing knowledge with others. \n\nThrow any problem at him and he will come up with a solution. Always ready to outperform his previous self.\n\nStill not convinced? Just connect with him and you will know what an impressive guy he is.",
@@ -37,7 +108,8 @@
         },
         "job": "Senior Full Stack Engineer at Rapyd",
         "link": "https://www.linkedin.com/in/shahnawazalikausar/"
-      }
+      },
+      "source": "LinkedIn"
     },
     {
       "text": "During my time working along side Asad for although what was a brief period of time, I found him to be a good team player, career oriented, pragmatic thinker and someone who possesses valuable experience.\nAs a colleague and a person he is a very polite, approachable and humble individual to work with. Someone who is a good collaborator and acknowledges the importance of it.\nWhen working, I liked his ability to take into view the broader perspective and propose stable and long lasting solutions. I also felt he keeps in touch with the latest development and trends in the industry and is constantly striving to improve himself.\nOverall, I can safely say, Asad is a person who will add a lot of value in any team he is a part of and I am confident he will play his part in fostering a healthy work culture.",
@@ -49,7 +121,8 @@
         },
         "job": "Senior Software Engineer at Phrase",
         "link": "https://www.linkedin.com/in/hassan-ahmed-738816a0/"
-      }
+      },
+      "source": "LinkedIn"
     },
     {
       "text": "Asad is very passionate and has great vision for his work. His focus keeps everything moving smoothly, he makes sure all the deadlines are met, and makes sure that whatever project he is working on meets the highest standards. One of the best things I found in Asad is taking ownership of the project. Kudos",
@@ -61,7 +134,8 @@
         },
         "job": "Senior Software Engineer at Bayzat",
         "link": "https://www.linkedin.com/in/rehman-murad-ali-136254a3/"
-      }
+      },
+      "source": "LinkedIn"
     },
     {
       "text": "I rarely come across real talents who stand out like Asad Ullah. He was dedicated and sincere towards his responsibilities and his ability to handle pressure was exceptional. No matter how much complex tasks was but he accomplished them and his eagerness towards learning and adopting new technologies was there to be appreciated . As a team member, Asad earns my highest respect.",
@@ -73,7 +147,8 @@
         },
         "job": "Senior Software Engineer at Nisum",
         "link": "https://www.linkedin.com/in/syedmsohaib/"
-      }
+      },
+      "source": "LinkedIn"
     }
   ]
 }

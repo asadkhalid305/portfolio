@@ -122,7 +122,7 @@ export default function Card({
   return (
     <Link
       href={link}
-      className="group w-full max-w-sm h-full border border-gray-200 dark:border-gray-800 rounded-lg shadow flex flex-col transition-all duration-300 ease-in-out hover:bg-c-semidark hover:shadow-2xl"
+      className="group w-full max-w-sm mx-auto h-full border border-gray-200 dark:border-gray-800 rounded-lg shadow flex flex-col transition-all duration-300 ease-in-out hover:bg-c-semidark hover:shadow-2xl"
     >
       {imageComponent}
       {contentComponent}

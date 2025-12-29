@@ -1,40 +1,75 @@
 import Image from "next/image";
 import { TCardProps } from "@/utils/types";
-import Tooltip from "@/components/ui/tooltip";
 import { getImageProps } from "@/utils/image-helpers";
 
-export default function TCard({ text, author }: Readonly<TCardProps>) {
+export default function TCard({ text, author, source = "LinkedIn", rating, expanded = false }: Readonly<TCardProps>) {
   const { name, image, job, link } = author ?? {};
   const { src, alt } = getImageProps(image);
+
+  // Helper to render stars
+  const renderStars = (rating: number) => {
+    return (
+      <div className="flex gap-1" aria-label={`Rating: ${rating} out of 5 stars`}>
+        {[...Array(5)].map((_, i) => (
+          <svg
+            key={i}
+            className={`h-3 w-3 ${i < rating ? "text-yellow-400" : "text-gray-200 dark:text-gray-600"}`}
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 22 20"
+          >
+            <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+          </svg>
+        ))}
+      </div>
+    );
+  };
+
   return (
-    <figure className="flex flex-col items-center justify-center p-8 text-center bg-c-light border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e transition-all duration-300 ease-in-out hover:bg-c-semidark hover:shadow-2xl">
-      <blockquote className="max-w-xl mx-auto mb-4 text-c-dark cursor-pointer lg:mb-8">
-        <Tooltip text={text}>
-          <p className="my-4 text-md font-normal line-clamp-3">{text}</p>
-        </Tooltip>
-      </blockquote>
+    <div className="group flex h-full flex-col justify-between rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:bg-c-semidark hover:shadow-2xl dark:border-gray-800 dark:bg-gray-900 relative">
+      <div>
+        <div className="mb-4 flex items-start justify-between">
+          <svg
+            className="h-8 w-8 text-gray-400 opacity-50"
+            fill="currentColor"
+            viewBox="0 0 32 32"
+            aria-hidden="true"
+          >
+            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+          </svg>
+          <div className="flex flex-col items-end gap-1.5">
+             <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${source === "Topmate.io" ? "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300" : "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"}`}>
+              {source}
+            </span>
+            {rating && renderStars(rating)}
+          </div>
+        </div>
+        <p className={`mb-6 text-base font-normal text-gray-600 dark:text-gray-300 ${!expanded ? "line-clamp-4" : ""}`}>
+          {text}
+        </p>
+      </div>
+
       <a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="focus-visible:outline-2 focus-visible:outline-c-dark focus-visible:outline"
-        aria-label={`View ${name}'s LinkedIn profile`}
+        className="group flex items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-c-dark"
+        aria-label={`View ${name}'s ${source} profile`}
       >
-        <figcaption className="flex items-center justify-center">
-          <Image
-            className="w-9 h-9 rounded-full"
-            width={200}
-            height={200}
-            src={src}
-            alt={alt ?? `Photo of ${name}`}
-            loading="lazy"
-          />
-          <div className="ms-3 space-y-0.5 text-left rtl:text-right font-medium">
-            <div className="text-md font-medium">{name}</div>
-            <div className="text-sm font-light">{job}</div>
-          </div>
-        </figcaption>
+        <Image
+          className="h-10 w-10 rounded-full object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
+          width={40}
+          height={40}
+          src={src}
+          alt={alt ?? `Photo of ${name}`}
+          loading="lazy"
+        />
+        <div className="flex flex-col">
+          <div className="text-sm font-semibold text-gray-900 dark:text-white">{name}</div>
+          <div className="text-xs text-gray-500 dark:text-gray-400">{job}</div>
+        </div>
       </a>
-    </figure>
+    </div>
   );
 }

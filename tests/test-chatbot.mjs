@@ -45,7 +45,17 @@ async function testChatbot(testName, messages, expectedBehavior) {
       body: JSON.stringify({ messages }),
     });
 
-    const data = await response.json();
+    const contentType = response.headers.get("content-type");
+    let data;
+
+    if (contentType && contentType.includes("application/json")) {
+      data = await response.json();
+    } else {
+      const text = await response.text();
+      console.log(`${colors.red}✗ Non-JSON Response (${response.status} ${response.statusText}):${colors.reset}`);
+      console.log(text.substring(0, 500) + "..."); // Log first 500 chars
+      return;
+    }
 
     if (response.ok && data.message) {
       console.log(`${colors.green}✓ Response:${colors.reset}`);
@@ -64,6 +74,7 @@ async function testChatbot(testName, messages, expectedBehavior) {
   } catch (error) {
     console.log(`${colors.red}✗ Request Failed:${colors.reset}`);
     console.log(error.message);
+    if (error.cause) console.log("Cause:", error.cause);
   }
 }
 

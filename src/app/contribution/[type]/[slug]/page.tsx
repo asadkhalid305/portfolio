@@ -69,15 +69,31 @@ export default async function ContributionDetailPage({ params }: Props) {
       visitButtonText = "Visit Review";
     }
 
-    const actions = frontmatter.originalLink
-      ? [
-          {
-            href: frontmatter.originalLink,
-            label: visitButtonText,
-            external: true,
-          },
-        ]
-      : [];
+    const actions = [];
+
+    if (frontmatter.originalLink) {
+      actions.push({
+        href: frontmatter.originalLink,
+        label: visitButtonText,
+        external: true,
+      });
+    }
+
+    if (frontmatter.githubUrl) {
+      actions.push({
+        href: frontmatter.githubUrl,
+        label: contributionData.detail.githubButton,
+        external: true,
+      });
+    }
+
+    if (frontmatter.presentationUrl) {
+      actions.push({
+        href: frontmatter.presentationUrl,
+        label: contributionData.detail.presentationButton,
+        external: true,
+      });
+    }
 
     const badges = [...(frontmatter.badges || [])];
     if (frontmatter.type) badges.push(frontmatter.type);
