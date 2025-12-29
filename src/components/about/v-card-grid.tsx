@@ -38,6 +38,7 @@ export default function VCardSystem({
               image={item.image}
               link={item.link}
               date={item.date}
+              badges={item.badges}
             />
           </div>
         ))}

@@ -265,7 +265,7 @@ export type TooltipProps = {
 // MDX CONTENT TYPES
 // ============================================================================
 
-export type ContentType = "blogs" | "events" | "projects";
+export type ContentType = "blogs" | "events" | "projects" | "book-reviews";
 
 export interface Frontmatter {
   title: string;
@@ -275,9 +275,12 @@ export interface Frontmatter {
     src: string;
     alt: string;
   };
+  type?: "Conference" | "Mentorship" | "Workshop" | "Panel" | "Community";
+  event?: string;
   originalLink?: string; // External link to original blog post or event
   badges?: string[];
   liveUrl?: string;
+  githubUrl?: string;
   repoUrl?: string;
 }
 

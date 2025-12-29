@@ -14,11 +14,16 @@ export const metadata: Metadata = {
 export default async function ContributionPage() {
   const events = await getAllPosts("events");
   const blogs = await getAllPosts("blogs");
+  const bookReviews = await getAllPosts("book-reviews");
 
   return (
     <Section className="min-h-[calc(100vh-80px)]" vCenter>
       <Container>
-        <Contribution events={events} blogs={blogs} />
+        <Contribution
+          events={events}
+          blogs={blogs}
+          bookReviews={bookReviews}
+        />
       </Container>
     </Section>
   );

@@ -12,27 +12,42 @@ interface ContributionProps {
   isOverview?: boolean;
   events: Post[];
   blogs: Post[];
+  bookReviews?: Post[];
 }
 
 export default function Contribution({
-  isOverview,
+  isOverview = false,
   events,
   blogs,
+  bookReviews = [],
 }: ContributionProps) {
   // Map MDX posts to VCard format
-  const mapPostToCard = (posts: Post[], type: "events" | "blogs") => {
-    return posts.map((post) => ({
-      id: post.slug,
-      title: post.frontmatter.title,
-      description: post.frontmatter.description,
-      image: post.frontmatter.image,
-      date: post.frontmatter.date,
-      link: `/contribution/${type}/${post.slug}`,
-    }));
+  const mapPostToCard = (
+    posts: Post[],
+    type: "events" | "blogs" | "book-reviews"
+  ) => {
+    return posts.map((post) => {
+      const badges = [...(post.frontmatter.badges || [])];
+      if (type === "events") {
+        if (post.frontmatter.type) badges.push(post.frontmatter.type);
+        if (post.frontmatter.event) badges.push(post.frontmatter.event);
+      }
+
+      return {
+        id: post.slug,
+        title: post.frontmatter.title,
+        description: post.frontmatter.description,
+        image: post.frontmatter.image,
+        date: post.frontmatter.date,
+        link: `/contribution/${type}/${post.slug}`,
+        badges: badges,
+      };
+    });
   };
 
   const eventItems = mapPostToCard(events, "events");
   const blogItems = mapPostToCard(blogs, "blogs");
+  const bookReviewItems = mapPostToCard(bookReviews, "book-reviews");
 
   return (
     <>
@@ -59,6 +74,16 @@ export default function Contribution({
         isOverview={isOverview}
         hideLink={true}
       />
+
+      {/* Book Reviews - Only shown on main page */}
+      {!isOverview && bookReviewItems.length > 0 && (
+        <VCardGrid
+          heading="Book Reviews"
+          records={bookReviewItems}
+          isOverview={isOverview}
+          hideLink={true}
+        />
+      )}
 
       {isOverview && (
         <div className="mt-12 flex justify-center lg:justify-start">

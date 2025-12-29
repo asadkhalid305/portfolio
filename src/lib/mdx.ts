@@ -33,7 +33,7 @@ export async function getPostBySlug(
 export async function getAllPosts(type: ContentType): Promise<Post[]> {
   const files = fs.readdirSync(path.join(root, "src", "content", type));
 
-  return files.reduce((allPosts: Post[], postSlug) => {
+  const posts = files.reduce((allPosts: Post[], postSlug) => {
     const source = fs.readFileSync(
       path.join(root, "src", "content", type, postSlug),
       "utf8"
@@ -49,4 +49,18 @@ export async function getAllPosts(type: ContentType): Promise<Post[]> {
       ...allPosts,
     ];
   }, []);
+
+  // Sort posts by date (descending)
+  return posts.sort((a, b) => {
+    const dateA = new Date(a.frontmatter.date).getTime();
+    const dateB = new Date(b.frontmatter.date).getTime();
+
+    // If both dates are valid, sort descending
+    if (!isNaN(dateA) && !isNaN(dateB)) {
+      return dateB - dateA;
+    }
+
+    // Fallback if one date is invalid
+    return 0;
+  });
 }
