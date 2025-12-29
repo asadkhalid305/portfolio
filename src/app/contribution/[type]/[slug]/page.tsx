@@ -17,7 +17,7 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const types: ContentType[] = ["events", "blogs"];
+  const types: ContentType[] = ["events", "blogs", "book-reviews"];
   const params: { type: string; slug: string }[] = [];
 
   for (const type of types) {
@@ -35,7 +35,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { type, slug } = await params;
-  if (type !== "events" && type !== "blogs") return {};
+  if (type !== "events" && type !== "blogs" && type !== "book-reviews")
+    return {};
 
   try {
     const { frontmatter } = await getPostBySlug(type as ContentType, slug);
@@ -51,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ContributionDetailPage({ params }: Props) {
   const { type, slug } = await params;
 
-  if (type !== "events" && type !== "blogs") {
+  if (type !== "events" && type !== "blogs" && type !== "book-reviews") {
     notFound();
   }
 
@@ -61,10 +62,12 @@ export default async function ContributionDetailPage({ params }: Props) {
       slug
     );
 
-    const visitButtonText =
-      type === "events"
-        ? contributionData.detail.visitEventButton
-        : contributionData.detail.visitBlogButton;
+    let visitButtonText = contributionData.detail.visitBlogButton;
+    if (type === "events") {
+      visitButtonText = contributionData.detail.visitEventButton;
+    } else if (type === "book-reviews") {
+      visitButtonText = "Visit Review";
+    }
 
     const actions = frontmatter.originalLink
       ? [

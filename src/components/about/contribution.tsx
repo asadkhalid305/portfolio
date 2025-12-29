@@ -12,15 +12,20 @@ interface ContributionProps {
   isOverview?: boolean;
   events: Post[];
   blogs: Post[];
+  bookReviews?: Post[];
 }
 
 export default function Contribution({
   isOverview = false,
   events,
   blogs,
+  bookReviews = [],
 }: ContributionProps) {
   // Map MDX posts to VCard format
-  const mapPostToCard = (posts: Post[], type: "events" | "blogs") => {
+  const mapPostToCard = (
+    posts: Post[],
+    type: "events" | "blogs" | "book-reviews"
+  ) => {
     return posts.map((post) => {
       const badges = [...(post.frontmatter.badges || [])];
       if (type === "events") {
@@ -42,6 +47,7 @@ export default function Contribution({
 
   const eventItems = mapPostToCard(events, "events");
   const blogItems = mapPostToCard(blogs, "blogs");
+  const bookReviewItems = mapPostToCard(bookReviews, "book-reviews");
 
   return (
     <>
@@ -68,6 +74,16 @@ export default function Contribution({
         isOverview={isOverview}
         hideLink={true}
       />
+
+      {/* Book Reviews - Only shown on main page */}
+      {!isOverview && bookReviewItems.length > 0 && (
+        <VCardGrid
+          heading="Book Reviews"
+          records={bookReviewItems}
+          isOverview={isOverview}
+          hideLink={true}
+        />
+      )}
 
       {isOverview && (
         <div className="mt-12 flex justify-center lg:justify-start">
