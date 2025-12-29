@@ -11,7 +11,7 @@ const {
 
 export default function About() {
   return (
-    <div className="flex flex-col min-h-[calc(100vh-80px)] justify-center lg:flex-row lg:items-center">
+    <div className="flex flex-col min-h-[calc(100vh-80px)] justify-center lg:flex-row lg:items-center py-20 lg:py-0">
       <div className="flex-1">
         <div className="lg:pr-10 pb-16 lg:pb-0">
           <DisplayInfo description={description} heading={heading} />

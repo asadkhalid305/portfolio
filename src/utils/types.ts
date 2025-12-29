@@ -117,6 +117,9 @@ export type TCardProps = {
     job: string;
     link: string;
   };
+  source?: "LinkedIn" | "Topmate.io";
+  rating?: number;
+  expanded?: boolean;
 };
 
 // ============================================================================
@@ -277,11 +280,11 @@ export interface Frontmatter {
   };
   type?: "Conference" | "Mentorship" | "Workshop" | "Panel" | "Community";
   event?: string;
-  originalLink?: string; // External link to original blog post or event
-  badges?: string[];
-  liveUrl?: string;
+  originalLink?: string;
   githubUrl?: string;
-  repoUrl?: string;
+  liveUrl?: string;
+  presentationUrl?: string;
+  badges?: string[];
 }
 
 export interface Post {

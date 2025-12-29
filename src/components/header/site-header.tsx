@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
 import useHeader from "@/hooks/useHeader";
 import HeaderLinks from "@/components/header/header-links";
 import commonData from "@/constants/common.json";
@@ -21,15 +22,13 @@ export default function SiteHeader({ projects = [] }: Readonly<HeaderProps>) {
   }));
 
   const links = [
-    { name: navigation.about, href: "/#about" },
-    { name: navigation.journey, href: "/journey" },
-    { name: navigation.experience, href: "/experience" },
     {
-      name: navigation.contribution,
-      href: "/contribution",
+      name: navigation.about,
+      href: "/#about",
       dropdown: [
-        { name: navigation.events, href: "/contribution#events" },
-        { name: navigation.blogs, href: "/contribution#blogs" },
+        { name: navigation.journey, href: "/journey" },
+        { name: navigation.experience, href: "/experience" },
+        { name: navigation.testimonial, href: "/testimonials" },
       ],
     },
     {
@@ -37,7 +36,15 @@ export default function SiteHeader({ projects = [] }: Readonly<HeaderProps>) {
       href: "/projects",
       dropdown: projectDropdown.length > 0 ? projectDropdown : undefined,
     },
-    { name: navigation.testimonial, href: "/testimonials" },
+    {
+      name: navigation.contribution,
+      href: "/contribution",
+      dropdown: [
+        { name: navigation.events, href: "/contribution#events" },
+        { name: navigation.blogs, href: "/contribution#blogs" },
+        { name: navigation.bookReviews, href: "/contribution#book-reviews" },
+      ],
+    },
     { name: navigation.contact, href: "/contact" },
   ];
 
@@ -57,7 +64,11 @@ export default function SiteHeader({ projects = [] }: Readonly<HeaderProps>) {
         className="flex justify-between px-4 lg:max-w-7xl lg:mx-auto"
         aria-label="Primary navigation"
       >
-        <div className="flex items-center justify-center">
+        <Link
+          href="/"
+          className="flex items-center justify-center transition-opacity hover:opacity-80"
+          aria-label="Go to home page"
+        >
           <div className="relative w-36 h-8">
             <Image
               alt={commonData.header.logoAlt}
@@ -69,7 +80,7 @@ export default function SiteHeader({ projects = [] }: Readonly<HeaderProps>) {
               }
             />
           </div>
-        </div>
+        </Link>
         <HeaderLinks links={links} />
       </nav>
     </header>

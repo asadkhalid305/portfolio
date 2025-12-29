@@ -6,6 +6,8 @@
     "aboutHeading": "About This Contribution",
     "actionsHeading": "Quick Resources",
     "visitEventButton": "Visit Event",
-    "visitBlogButton": "Visit Blog"
+    "visitBlogButton": "Visit Blog",
+    "githubButton": "View on GitHub",
+    "presentationButton": "View Presentation"
   }
 }
