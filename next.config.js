@@ -19,6 +19,15 @@ const nextConfig = {
         destination:
           "https://streamwise-ai.vercel.app/apps/streamwise-ai/:path*",
       },
+      // Rewrite to serve external Vercel app under /apps/keyfinz
+      {
+        source: "/apps/keyfinz",
+        destination: "https://keyfinz.com",
+      },
+      {
+        source: "/apps/keyfinz/:path*",
+        destination: "https://keyfinz.com/:path*",
+      },
     ];
   },
 
