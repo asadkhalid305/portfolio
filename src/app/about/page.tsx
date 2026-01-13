@@ -4,10 +4,11 @@ import Experience from "@/components/about/experience";
 import Contribution from "@/components/about/contribution";
 import Testimonial from "@/components/about/testimonial";
 import Contact from "@/components/about/contact";
+import Projects from "@/components/about/projects";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import LinkButton from "@/components/ui/link-button";
-import { getAllPosts } from "@/lib/mdx";
+import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 
 import contactData from "@/constants/contact.json";
 import aboutData from "@/constants/about.json";
@@ -15,6 +16,8 @@ import aboutData from "@/constants/about.json";
 export default async function index() {
   const events = await getAllPosts("events");
   const blogs = await getAllPosts("blogs");
+  const keyfinzProject = await getPostBySlug("projects", "keyfinz");
+
 
   return (
     <>
@@ -34,6 +37,13 @@ export default async function index() {
           <Experience isOverview />
         </Container>
       </Section>
+      {keyfinzProject && (
+        <Section id="projects">
+          <Container>
+            <Projects project={keyfinzProject} />
+          </Container>
+        </Section>
+      )}
       <Section id="contribution">
         <Container>
           <Contribution isOverview events={events} blogs={blogs} />
