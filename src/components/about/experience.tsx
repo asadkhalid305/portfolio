@@ -27,7 +27,7 @@ export default function Experience({ isOverview }: { isOverview?: boolean }) {
   if (isOverview) {
     return (
       <div className="flex flex-col">
-        <div className="w-full lg:max-w-4xl">
+        <div className="w-full lg:max-w-6xl">
           <DisplayInfo
             description={description}
             heading={heading}
