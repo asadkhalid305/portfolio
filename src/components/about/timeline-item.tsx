@@ -7,14 +7,34 @@ export default function TimelineItem({
   position,
 }: Readonly<TimelineItemProps>) {
   return (
-    <li className="max-md:mb-10 max-md:ml-4 md:flex-1 md:pr-4">
-      <div className="absolute w-5 h-5 bg-c-dark rounded-full border border-c-dark max-md:-ml-[1.6rem] md:-mt-[0.6rem]"></div>
-      <div className="md:mt-4 md:ml-1">
+    <li className="relative group max-md:mb-10 max-md:ml-4 md:flex-1 md:pr-4">
+      {/* Dot on the timeline */}
+      <div className="absolute w-4 h-4 bg-c-dark dark:bg-white rounded-full 
+        ring-4 ring-gray-100 dark:ring-gray-800 
+        group-hover:ring-c-semidark dark:group-hover:ring-gray-700 
+        group-hover:scale-110 transition-all duration-300
+        max-md:-ml-[1.35rem] md:-mt-[0.55rem] z-10"></div>
+      
+      <div className="md:mt-8 md:ml-1 group-hover:translate-x-1 md:group-hover:translate-x-0 md:group-hover:-translate-y-1 transition-transform duration-300">
         <h2 className="sr-only">Timeline Item</h2>
-        <time className="mb-1 text-md font-normal italic">{date}</time>
-        <h3 className="text-xl font-semibold">{position}</h3>
-        <h4 className="text-lg font-medium">{company}</h4>
-        <p className="max-md:mb-4 text-base font-light">{location}</p>
+        
+        {/* Date */}
+        <time className="mb-2 block text-sm font-bold tracking-widest text-gray-400 dark:text-gray-500 uppercase">
+          {date}
+        </time>
+        
+        {/* Role */}
+        <h3 className="text-xl font-extrabold text-gray-900 dark:text-white mb-1 group-hover:text-c-dark dark:group-hover:text-gray-200">
+          {position}
+        </h3>
+        
+        {/* Company */}
+        <h4 className="text-lg font-semibold text-gray-700 dark:text-gray-300">
+          {company}
+        </h4>
+        
+        {/* Location */}
+        <p className="mt-1 text-sm font-medium text-gray-500">{location}</p>
       </div>
     </li>
   );

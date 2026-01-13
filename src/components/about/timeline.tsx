@@ -10,7 +10,7 @@ export default function Timeline({
   const displayRecords = isOverview ? record.slice(0, 3) : record;
 
   return (
-    <ol className="relative max-md:border-l border-c-dark md:flex md:flex-row md:justify-between md:border-t">
+    <ol className="relative max-md:border-l border-gray-200 dark:border-gray-800 md:flex md:flex-row md:justify-between md:border-t">
       {displayRecords.map((item) => (
         <TimelineItem
           key={item.id}
