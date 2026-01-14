@@ -22,11 +22,11 @@ const nextConfig = {
       // Rewrite to serve external Vercel app under /apps/keyfinz
       {
         source: "/apps/keyfinz",
-        destination: "https://keyfinz.com",
+        destination: "https://www.keyfinz.com",
       },
       {
         source: "/apps/keyfinz/:path*",
-        destination: "https://keyfinz.com/:path*",
+        destination: "https://www.keyfinz.com/:path*",
       },
     ];
   },
