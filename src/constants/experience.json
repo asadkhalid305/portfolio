@@ -3,6 +3,279 @@
   "heading": "Experience",
   "description": "I have always been fascinated by web technologies and how they can transform the way we communicate, learn, and work. My journey as a web developer began in 2016, when I started building pet projects with HTML and CSS as an undergraduate student. This sparked my interest and passion for web development, and helped me land my first internship.",
   "cta": "View full experience",
+  "professionalExperiences": [
+    {
+      "id": "exp-mbio",
+      "company": "Mercedes-Benz.io",
+      "role": "Senior Frontend Developer",
+      "type": "Full-time",
+      "period": "Aug 2023 - Present",
+      "duration": "1 yr 6 mos",
+      "location": "Berlin, Germany",
+      "mode": "Hybrid",
+      "link": "https://mercedes-benz.io",
+      "description": "Creating premium digital services for Mercedes-Benz car owners, leading the implementation of Backend for Frontend (BFF) architecture.",
+      "responsibilities": [
+        "Lead BFF architecture implementation, migrating domains from monolith to microservices with zero frontend downtime",
+        "Develop secure server components and pixel-perfect user interfaces",
+        "Conduct E2E and integration testing, monitoring and resolving issues proactively",
+        "Participate in SAFe PI planning, refinements, and design discussions"
+      ],
+      "achievements": [
+        "Built complete BFF implementation in NuxtJS for B2B project",
+        "Reduced B2B web app loading time by 20x through cache mechanism in BFF",
+        "Led Vue2 to Vue3 migration, improving performance and maintainability",
+        "Selected as sole Mercedes-Benz.io representative for Impact Mentor Training program",
+        "Recognized as Digital Driver for outstanding community contributions"
+      ]
+    },
+    {
+      "id": "exp-labforward",
+      "company": "Labforward",
+      "role": "Frontend Engineer",
+      "type": "Full-time",
+      "period": "Aug 2022 - Aug 2023",
+      "duration": "1 yr 1 mo",
+      "location": "Berlin, Germany",
+      "mode": "Hybrid",
+      "link": "https://www.linkedin.com/company/labforward/about/",
+      "description": "Assisted laboratory teams worldwide in their quest to make groundbreaking discoveries. Took sole ownership of multiple modules across two products.",
+      "responsibilities": [
+        "Participated in sprint planning, retrospectives, pair programming, and team-building",
+        "Implemented Figma designs into JavaScript code using ReactJS and TypeScript",
+        "Wrote unit and E2E test cases with Jest and Cypress",
+        "Provided frequent PR feedback and collaborated to strengthen team bonds"
+      ],
+      "achievements": [
+        "Scaled MVP into reliable SPA by adding API integration layer with RTK",
+        "Developed complex forms using Formik to persist data across multiple screens",
+        "Migrated codebase from JavaScript to TypeScript and fixed anticipating bugs"
+      ]
+    },
+    {
+      "id": "exp-securiti-sde",
+      "company": "Securiti.ai",
+      "role": "Software Development Engineer",
+      "type": "Full-time",
+      "period": "Apr 2021 - Jul 2022",
+      "duration": "1 yr 4 mos",
+      "location": "Karachi, Pakistan",
+      "mode": "On-site",
+      "link": "https://securiti.ai",
+      "description": "Promoted from Associate to mid-level engineer, entrusted with greater responsibility and ownership of complex features and modules.",
+      "responsibilities": [
+        "Owned development of new and complex modules and features",
+        "Wrote clean, scalable, and reusable code following best practices",
+        "Conducted thorough PR reviews",
+        "Drove team-building activities to promote growth and collaboration"
+      ],
+      "achievements": [
+        "Co-led Security domain implementation in Privaci.ai, acquiring clients like Cisco and Microsoft",
+        "Built the Snowflake integration feature, a product highlight",
+        "Developed 4+ modules in Security domain currently used by clients",
+        "Fixed over 500 bugs and raised 1000+ PRs"
+      ]
+    },
+    {
+      "id": "exp-securiti-asde",
+      "company": "Securiti.ai",
+      "role": "Associate Software Development Engineer",
+      "type": "Full-time",
+      "period": "Feb 2020 - Apr 2021",
+      "duration": "1 yr 3 mos",
+      "location": "Karachi, Pakistan",
+      "mode": "On-site",
+      "link": "https://securiti.ai",
+      "description": "Played a pivotal role in building the world's first PrivacyOps platform that automates all major functions needed for privacy compliance.",
+      "responsibilities": [
+        "Designed and implemented new features",
+        "Created components architecture, integrated APIs, and fixed bugs",
+        "Performed agile development in coordination with multiple teams"
+      ],
+      "achievements": [
+        "Delivered 3+ large features used by leading global companies",
+        "Presented work to international teams",
+        "Contributed to fixing 100+ bugs and merging 200+ pull requests"
+      ]
+    },
+    {
+      "id": "exp-salsoft",
+      "company": "Salsoft Technologies",
+      "role": "Jr. WebApp Developer",
+      "type": "Full-time",
+      "period": "Sep 2019 - Feb 2020",
+      "duration": "6 mos",
+      "location": "Karachi, Pakistan",
+      "mode": "On-site",
+      "description": "Integrated HTML/CSS and Back-end APIs into ReactJS and VueJS to create dynamic, robust applications.",
+      "responsibilities": [
+        "Created dynamic applications and websites using ReactJS and VueJS",
+        "Shifted projects from PHP to JavaScript",
+        "Introduced NoSQL databases such as MongoDB Stitch Serverless"
+      ],
+      "achievements": []
+    },
+    {
+      "id": "exp-injaz",
+      "company": "InjazSystems",
+      "role": "MERN Stack Developer",
+      "type": "Full-time",
+      "period": "May 2019 - Jun 2019",
+      "duration": "2 mos",
+      "location": "Pakistan",
+      "mode": "On-site",
+      "description": "Continued development on an ERP system, creating NodeJS APIs with MySQL database integration.",
+      "responsibilities": [
+        "Created NodeJS APIs with MySQL database integration",
+        "Deployed ReactJS application on client's server",
+        "Handled client communications"
+      ],
+      "achievements": []
+    },
+    {
+      "id": "exp-estytic",
+      "company": "Estytic",
+      "role": "Web Developer",
+      "type": "Contract",
+      "period": "Apr 2019 - May 2019",
+      "duration": "2 mos",
+      "location": "Berlin, Germany",
+      "mode": "Remote",
+      "description": "Enhanced performance of an AngularJS application for a software management consultancy firm.",
+      "responsibilities": [
+        "Enhanced AngularJS application performance",
+        "Rewrote application structure and resolved bugs",
+        "Communicated effectively with international clients"
+      ],
+      "achievements": [
+        "First remote work experience with international team"
+      ]
+    },
+    {
+      "id": "exp-edgeon",
+      "company": "Edgeon",
+      "role": "Back End Developer",
+      "type": "Part-time",
+      "period": "Jan 2019 - May 2019",
+      "duration": "5 mos",
+      "location": "Pakistan",
+      "mode": "On-site",
+      "description": "Built the back-end of a large-scale Android and iOS application using Node.js and MongoDB.",
+      "responsibilities": [
+        "Built back-end using Node.js and MongoDB",
+        "Implemented socket programming and deep referencing",
+        "Handled dynamic image hosting and Heroku deployment"
+      ],
+      "achievements": [
+        "Completed project in record time of three months"
+      ]
+    },
+    {
+      "id": "exp-sudofy",
+      "company": "Sudofy",
+      "role": "Frontend Web Developer",
+      "type": "Internship",
+      "period": "Jun 2018 - Sep 2018",
+      "duration": "4 mos",
+      "location": "Karachi, Pakistan",
+      "mode": "On-site",
+      "description": "Honed skills as a Front-end Developer, creating web pages using cutting-edge technologies.",
+      "responsibilities": [
+        "Created 15+ web pages using Sass, JavaScript, and ReactJS",
+        "Completed daily tasks with efficiency and precision"
+      ],
+      "achievements": [
+        "Gained expertise in advanced CSS, SASS, jQuery, ECMAScript6, and Git"
+      ]
+    },
+    {
+      "id": "exp-interns-pakistan",
+      "company": "Interns Pakistan",
+      "role": "Web Developer",
+      "type": "Internship",
+      "period": "Feb 2018 - Apr 2018",
+      "duration": "3 mos",
+      "location": "Pakistan",
+      "mode": "Remote",
+      "description": "First internship that sparked interest in web development, progressing from HTML/CSS to PHP.",
+      "responsibilities": [
+        "Completed basic HTML and CSS tasks",
+        "Progressed to PHP development",
+        "Created a complete portfolio website"
+      ],
+      "achievements": [
+        "Sparked passion for web development"
+      ]
+    }
+  ],
+  "communityExperiences": [
+    {
+      "id": "ieee-chairman",
+      "company": "IEEE UoK Student Branch",
+      "role": "Chairman",
+      "type": "Volunteer",
+      "period": "2017 - 2019",
+      "duration": "2 yrs",
+      "location": "University of Karachi",
+      "mode": "On-site",
+      "link": "https://ieee.org",
+      "description": "Led the IEEE UoK Student Branch to unprecedented success, organizing events across different science fields and introducing new chapters.",
+      "responsibilities": [
+        "Led organization of events in multiple science fields for thousands of students",
+        "Introduced Research and Development chapter for undergraduate research awareness",
+        "Introduced Academia chapter for long-term training programs",
+        "Managed international membership growth"
+      ],
+      "achievements": [
+        "Featured twice in IEEE Region10 magazine among 1200+ student branches from Asia",
+        "Won Best Student Branch Awards in IEEE Islamabad and Karachi Sections",
+        "Awarded Best IEEE Student Branch Chairman in IEEE Karachi Section",
+        "2018 was the most successful year in IEEE UoK history"
+      ]
+    },
+    {
+      "id": "ieee-vice-chairman",
+      "company": "IEEE UoK Student Branch",
+      "role": "Vice Chairman",
+      "type": "Volunteer",
+      "period": "2017",
+      "duration": "3 mos",
+      "location": "University of Karachi",
+      "mode": "On-site",
+      "link": "https://ieee.org",
+      "description": "Promoted to Executive Committee as Vice Chairman, handling bigger responsibilities and introducing new initiatives.",
+      "responsibilities": [
+        "Chaired Program and Membership Committees",
+        "Organized field trips and special events beyond regular programs",
+        "Assisted Branch Chair and performed their functions when needed"
+      ],
+      "achievements": [
+        "Promoted from local to international IEEE member",
+        "Introduced and executed ideas to help students on a bigger platform"
+      ]
+    },
+    {
+      "id": "ieee-member",
+      "company": "IEEE UoK Student Branch",
+      "role": "Member",
+      "type": "Volunteer",
+      "period": "2016 - 2017",
+      "duration": "1 yr",
+      "location": "University of Karachi",
+      "mode": "On-site",
+      "link": "https://ieee.org",
+      "description": "Joined IEEE UoK Student Branch as a local member with passion to help the community through technical and non-technical skill development programs.",
+      "responsibilities": [
+        "Volunteered in dozen+ events in management and content writing teams",
+        "Wrote social media marketing posts, event reports, and proposals",
+        "Built relationships with alumni and professionals"
+      ],
+      "achievements": [
+        "Learned time management with academics and event management",
+        "Developed skills in communication and problem-solving"
+      ]
+    }
+  ],
   "items": [
     {
       "id": "exp-1",
@@ -25,6 +298,5 @@
       "location": "Karachi, Pakistan",
       "position": "Software Development Engineer"
     }
-  ],
-  "linkedInLink": "https://www.linkedin.com/in/asadkhalid305/details/experience/"
+  ]
 }

@@ -1,13 +1,9 @@
 import { getPostBySlug, getFiles, ContentType } from "@/lib/mdx";
-import { Container } from "@/components/layout/Container";
-import { Section } from "@/components/layout/Section";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import contributionData from "@/constants/contribution.json";
-import DetailPageHeader from "@/components/ui/detail-page-header";
-import DetailPageImage from "@/components/ui/detail-page-image";
-import ActionsSidebar from "@/components/ui/actions-sidebar";
+import DetailPageLayout from "@/components/layout/DetailPageLayout";
 
 interface Props {
   params: Promise<{
@@ -100,44 +96,20 @@ export default async function ContributionDetailPage({ params }: Props) {
     if (frontmatter.event) badges.push(frontmatter.event);
 
     return (
-      <Section className="min-h-[calc(100vh-80px)] pt-24 pb-12">
-        <Container>
-          <div className="max-w-4xl mx-auto">
-            <DetailPageHeader
-              title={frontmatter.title}
-              backHref="/contribution"
-              backText={contributionData.detail.backButton}
-              date={frontmatter.date}
-              badges={badges}
-            />
-
-            <DetailPageImage
-              src={frontmatter.image.src}
-              alt={frontmatter.image.alt}
-              className="relative w-full aspect-video mb-12 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-800"
-            />
-
-            <div className="grid lg:grid-cols-3 gap-12">
-              <div className="lg:col-span-2 space-y-6">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                  {contributionData.detail.aboutHeading}
-                </h2>
-
-                <div className="prose prose-lg dark:prose-invert max-w-none">
-                  <MDXRemote source={content} />
-                </div>
-              </div>
-
-              <div className="lg:col-span-1">
-                <ActionsSidebar
-                  title={contributionData.detail.actionsHeading}
-                  actions={actions}
-                />
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <DetailPageLayout
+        title={frontmatter.title}
+        backHref="/contribution"
+        backText={contributionData.detail.backButton}
+        badges={badges}
+        date={frontmatter.date}
+        image={frontmatter.image}
+        actions={actions}
+        aboutHeading={contributionData.detail.aboutHeading}
+        actionsHeading={contributionData.detail.actionsHeading}
+        className="min-h-[calc(100vh-80px)] pt-24 pb-12"
+      >
+        <MDXRemote source={content} />
+      </DetailPageLayout>
     );
   } catch (error) {
     notFound();

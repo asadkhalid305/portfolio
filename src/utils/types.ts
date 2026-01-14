@@ -146,6 +146,25 @@ export type TimelineItemProps = {
   position: string;
 };
 
+/**
+ * Props for detailed experience card
+ */
+export type ExperienceCardProps = {
+  id: string;
+  company: string;
+  role: string;
+  type: "Full-time" | "Part-time" | "Contract" | "Internship" | "Volunteer";
+  period: string;
+  duration: string;
+  location: string;
+  mode: "On-site" | "Hybrid" | "Remote";
+  link?: string;
+  description: string;
+  responsibilities: string[];
+  achievements: string[];
+  expanded?: boolean;
+};
+
 // ============================================================================
 // NAVIGATION & HEADER TYPES
 // ============================================================================
