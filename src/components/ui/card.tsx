@@ -40,9 +40,7 @@ export default function Card({
         src={src}
         alt={alt}
         fill
-        className={`object-contain transition-transform duration-500 group-hover:scale-105 ${
-          horizontal ? "" : "p-4"
-        }`}
+        className="object-fill transition-transform duration-500 group-hover:scale-[1.02]"
         placeholder="blur"
         blurDataURL={getShimmerDataUrl(
           horizontal ? 640 : 384,
