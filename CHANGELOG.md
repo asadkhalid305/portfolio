@@ -3,9 +3,29 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and this project adheres to
+[Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.4.0] - 2026-01-14
+
+### Added
+
+- KeyFinz project with "Coming Soon" badge and detailed content
+- Rewrites for external Vercel app under `/apps/keyfinz`
+- Redesigned Experience page with detailed card layout and section properties
+
+### Changed
+
+- Extracted `DetailPageLayout` for better component reuse
+- Aligned image consistency between Card and DetailPageImage
+- Refined KeyFinz copy for better flow and removed em dashes
+- Fixed comma spacing in content files
+
+### Fixed
+
+- Updated KeyFinz rewrite and temporarily disabled live URL
 
 ## [1.3.0] - 2025-12-29
 
@@ -22,14 +42,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Rebranded "Movie Picker" project to "StreamWise AI" and updated project description
+- Rebranded "Movie Picker" project to "StreamWise AI" and updated project
+  description
 
 ## [1.2.0] - 2025-12-25
 
 ### Added
 
-- Dynamic routing for blogs and events with MDX support (`/contribution/[type]/[slug]`)
-- Project detail pages with dynamic routing (`/projects/[slug]`) for comprehensive project showcase
+- Dynamic routing for blogs and events with MDX support
+  (`/contribution/[type]/[slug]`)
+- Project detail pages with dynamic routing (`/projects/[slug]`) for
+  comprehensive project showcase
 - External app integration via rewrite rules for `/apps/streamwise-ai`
 - Comprehensive release preparation workflow with automated changelog generation
 - Enhanced project documentation and setup instructions
@@ -51,7 +74,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Dedicated section pages for About, Experience, Journey, Contributions, Testimonials, and Contact
+- Dedicated section pages for About, Experience, Journey, Contributions,
+  Testimonials, and Contact
 - Contact form component with API integration for message handling
 - Contact API endpoint for processing user inquiries
 - OpenRouter integration for chatbot with feature flag support
@@ -103,7 +127,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial beta release
 
-[unreleased]: https://github.com/asadkhalid305/portfolio/compare/v1.3.0...HEAD
+[unreleased]: https://github.com/asadkhalid305/portfolio/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/asadkhalid305/portfolio/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/asadkhalid305/portfolio/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/asadkhalid305/portfolio/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/asadkhalid305/portfolio/compare/v1.1.0...v1.2.0
