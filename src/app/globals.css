@@ -55,4 +55,12 @@
   .slide-in-from-bottom-2 {
     animation-name: slide-in-from-bottom-2;
   }
+
+  /* Subtle grid pattern for hero backgrounds */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
 }
