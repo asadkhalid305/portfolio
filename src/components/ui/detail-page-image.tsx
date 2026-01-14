@@ -32,7 +32,7 @@ export default function DetailPageImage({
         src={src}
         alt={alt}
         fill
-        className="object-fill transition-transform duration-500 group-hover:scale-[1.02]"
+        className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.01]"
         priority={priority}
       />
     </div>
