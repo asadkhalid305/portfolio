@@ -94,6 +94,11 @@ Actively building independent SaaS products for end-to-end product learning. Han
 - AI-powered applications using LLMs
 - Planning future RAG and recommendation systems
 
+- **KeyFinz** (Coming Soon): A privacy-first, manual-by-design financial tracker for people with complex financial setups (multi-currency, internal transfers).
+  - Core Philosophy: "Manual entry increases awareness."
+  - Key Features: Conversational AI ("How much did I spend on groceries?"), full control over categories, and no automated bank connections to preserve privacy and reduce noise.
+  - Status: In final preparation for free public beta.
+
 Prefers simple, robust systems over over-engineered solutions. Values shipping, learning, and iterating.
 
 ## AI & LLM Interests
