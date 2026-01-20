@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Pin } from "lucide-react";
 import { VCardProps } from "@/utils/types";
 import { getImageProps } from "@/utils/image-helpers";
 import { getShimmerDataUrl } from "@/utils/shimmer";
@@ -14,6 +15,7 @@ export default function Card({
   horizontal = false,
   badges = [],
   linkText = "Read more",
+  pinned = false,
 }: Readonly<VCardProps>) {
   const { src, alt } = getImageProps(image);
 
@@ -61,6 +63,14 @@ export default function Card({
     </div>
   );
 
+  // Pinned Indicator
+  const pinnedComponent = pinned && (
+    <div className="flex items-center gap-2 mb-3 text-primary dark:text-primary-400 font-medium">
+      <Pin className="w-4 h-4 fill-current" />
+      <span className="text-sm uppercase tracking-wide">Pinned Project</span>
+    </div>
+  );
+
   // Common content component
   const contentComponent = (
     <div
@@ -71,6 +81,7 @@ export default function Card({
       }
     >
       <div className="space-y-3">
+        {pinnedComponent}
         {badgesComponent}
         {date && (
           <p className="text-sm font-light italic text-gray-500 dark:text-gray-400">
