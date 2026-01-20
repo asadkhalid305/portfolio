@@ -300,9 +300,6 @@ export interface Frontmatter {
   };
   type?: "Conference" | "Mentorship" | "Workshop" | "Panel" | "Community";
   event?: string;
-  originalLink?: string;
-  githubUrl?: string;
-  presentationUrl?: string;
   badges?: string[];
   links?: {
     name: string;
