@@ -38,23 +38,12 @@ export default async function ProjectPage({ params }: Props) {
     const { slug } = await params;
     const project = await getPostBySlug("projects", slug);
 
-    const actions = [];
-
-    if (project.frontmatter.liveUrl) {
-      actions.push({
-        href: project.frontmatter.liveUrl,
-        label: projectsData.detail.visitButton,
+    const actions =
+      project.frontmatter.links?.map((link) => ({
+        href: link.url,
+        label: link.name,
         external: true,
-      });
-    }
-
-    if (project.frontmatter.githubUrl) {
-      actions.push({
-        href: project.frontmatter.githubUrl,
-        label: projectsData.detail.githubButton,
-        external: true,
-      });
-    }
+      })) || [];
 
     return (
       <DetailPageLayout

@@ -8,7 +8,13 @@ import projectsData from "@/constants/projects.json";
 export const metadata: Metadata = projectsData.metadata;
 
 export default async function ProjectsPage() {
-  const projects = await getAllPosts("projects");
+  const allProjects = await getAllPosts("projects");
+
+  // Sort: Pinned projects first
+  const pinnedProjects = allProjects.filter((p) => p.frontmatter.isPinned);
+  const otherProjects = allProjects.filter((p) => !p.frontmatter.isPinned);
+
+  const projects = [...pinnedProjects, ...otherProjects];
 
   return (
     <Section className="min-h-[calc(100vh-80px)]" vCenter>
