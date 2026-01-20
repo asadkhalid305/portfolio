@@ -21,6 +21,7 @@ export default function HCardGrid({ projects }: Readonly<HCardGridProps>) {
           horizontal={true}
           badges={project.frontmatter.badges || []}
           linkText={projectsData.card.viewProject}
+          pinned={project.frontmatter.isPinned}
         />
       ))}
     </div>
