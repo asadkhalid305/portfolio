@@ -154,6 +154,10 @@ Link: https://asadkhalid305.medium.com/career-growth-making-the-most-of-company-
 Blog post with tips and insights to get interview calls from European companies.
 Link: https://asadkhalid305.medium.com/tech-jobs-in-europe-insights-and-tips-to-get-interview-calls-a202622cbc99
 
+**"Soft Skills in Tech: The Real Career Multiplier"** (January 2026)
+Blog post about how soft skills are not optional but the multiplier that makes technical skills visible and valuable.
+Link: https://www.mercedes-benz.io/blog/2026-01-20-soft-skills-in-tech-the-real-career-multiplier
+
 ### Technical Book Reviews:
 
 **"Vue.js 3 for Beginners" by Simone Cuomo** (November 2024)
