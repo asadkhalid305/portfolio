@@ -8,6 +8,25 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-01-22
+
+### Added
+
+- OnStage project to portfolio
+- Blog post: "Soft Skills in Tech: The Real Career Multiplier"
+- Event: "Berlin AI Builders Meetup" with "Coming Soon" badge
+- KeyFinz project details to chatbot knowledge base
+- Release strategy workflow documentation
+
+### Changed
+
+- Standardised content links across all pages
+- Improved image rendering (object-contain) to fix regressions
+
+### Fixed
+
+- Header visibility issues
+
 ## [1.4.0] - 2026-01-14
 
 ### Added
@@ -127,7 +146,8 @@ and this project adheres to
 
 - Initial beta release
 
-[unreleased]: https://github.com/asadkhalid305/portfolio/compare/v1.4.0...HEAD
+[unreleased]: https://github.com/asadkhalid305/portfolio/compare/v1.5.0...HEAD
+[1.5.0]: https://github.com/asadkhalid305/portfolio/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/asadkhalid305/portfolio/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/asadkhalid305/portfolio/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/asadkhalid305/portfolio/compare/v1.2.0...v1.2.1
