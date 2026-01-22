@@ -16,16 +16,16 @@ export default function FilterBar<T extends string>({
   className,
 }: Readonly<FilterBarProps<T>>) {
   return (
-    <div className={clsx("flex flex-wrap gap-3", className)}>
+    <div className={clsx("flex flex-wrap gap-2 p-1.5 bg-white/30 backdrop-blur-md border border-white/20 rounded-2xl w-fit dark:bg-gray-900/30 dark:border-white/5", className)}>
       {options.map((option) => (
         <button
           key={option.value}
           onClick={() => onFilterChange(option.value)}
           className={clsx(
-            "rounded-full px-4 py-2 text-sm font-medium transition-all duration-300",
+            "rounded-xl px-6 py-2.5 text-sm font-bold tracking-wide transition-all duration-500",
             activeFilter === option.value
-              ? "bg-c-dark text-white shadow-md dark:bg-white dark:text-c-dark"
-              : "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+              ? "bg-slate-900 text-white shadow-xl scale-[1.02] dark:bg-white dark:text-slate-900"
+              : "text-slate-500 hover:text-slate-900 hover:bg-white/50 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-800/50"
           )}
         >
           {option.label}

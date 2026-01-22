@@ -51,22 +51,19 @@ export default function SiteHeader({ projects = [] }: Readonly<HeaderProps>) {
   return (
     <header
       className={clsx(
-        "transition-colors duration-300 ease-in-out sticky top-0 z-50 py-5",
-        {
-          "bg-c-dark text-c-light": isDark,
-          "bg-c-semidark": !isDark,
-        }
+        "transition-all duration-500 ease-in-out sticky top-0 z-50 py-4",
+        "bg-white/40 backdrop-blur-xl border-b border-white/20 dark:bg-black/40 dark:border-white/5 shadow-sm"
       )}
       role="banner"
       aria-label="Site header"
     >
       <nav
-        className="flex justify-between px-4 lg:max-w-7xl lg:mx-auto"
+        className="flex items-center justify-between px-4 lg:max-w-7xl lg:mx-auto"
         aria-label="Primary navigation"
       >
         <Link
           href="/"
-          className="flex items-center justify-center transition-opacity hover:opacity-80"
+          className="flex items-center justify-center transition-all hover:scale-[1.02] active:scale-95"
           aria-label="Go to home page"
         >
           <div className="relative w-36 h-8">
@@ -74,7 +71,8 @@ export default function SiteHeader({ projects = [] }: Readonly<HeaderProps>) {
               alt={commonData.header.logoAlt}
               draggable="false"
               fill
-              sizes="100%"
+              sizes="144px"
+              className="object-contain"
               src={
                 isDark ? "/images/logo-light.webp" : "/images/logo-dark.webp"
               }

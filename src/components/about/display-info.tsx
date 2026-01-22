@@ -9,7 +9,8 @@ export default function DisplayInfo({
   paddingRight = false,
   paddingTop = false,
   paddingBottom = false,
-}: Readonly<DisplayInfoProps>) {
+  center = false,
+}: Readonly<DisplayInfoProps & { center?: boolean }>) {
   // Sanitize HTML to prevent XSS attacks
   const sanitizedDescription = DOMPurify.sanitize(description, {
     ALLOWED_TAGS: ["span", "a", "br", "strong", "em"],
@@ -22,18 +23,25 @@ export default function DisplayInfo({
         "pb-16": paddingBottom,
         "pt-16": paddingTop,
         "lg:pr-10": paddingRight,
+        "text-center flex flex-col items-center": center,
+        "text-left items-start": !center,
       })}
     >
       {label && (
-        <span className="block text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">
+        <span className="block text-xs font-bold tracking-[0.3em] text-gray-400 uppercase mb-4">
           {label}
         </span>
       )}
-      <h2 className="text-5xl font-extrabold pb-6 lg:text-6xl text-left">
-        {heading}
+      <h2 className="text-4xl font-extrabold pb-8 lg:text-5xl leading-tight">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-slate-600 to-gray-900 animate-gradient-x dark:from-white dark:via-slate-300 dark:to-white">
+          {heading}
+        </span>
       </h2>
       <p
-        className="whitespace-pre-wrap leading-relaxed text-xl lg:text-2xl lg:leading-9"
+        className={clsx(
+          "whitespace-pre-wrap leading-relaxed text-lg lg:text-xl lg:leading-8 text-gray-600 dark:text-gray-300",
+          { "max-w-3xl": center }
+        )}
         dangerouslySetInnerHTML={{ __html: sanitizedDescription }}
       ></p>
     </div>

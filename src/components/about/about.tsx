@@ -12,86 +12,54 @@
 import Image from "next/image";
 import aboutData from "@/constants/about.json";
 import { getShimmerDataUrl } from "@/utils/shimmer";
+import DOMPurify from "isomorphic-dompurify";
 
-const { heading, description, personalPhoto } = aboutData;
+const { heading, description } = aboutData;
 
 export default function About() {
+  const sanitizedDescription = DOMPurify.sanitize(description, {
+    ALLOWED_TAGS: ["span", "a", "br", "strong", "em"],
+    ALLOWED_ATTR: ["class", "href", "target", "rel"],
+  });
+
   return (
-    <div className="relative h-[calc(100vh-80px)] min-h-[600px] bg-grid-pattern overflow-hidden">
-      {/* Content - vertically centered on left (desktop) / top section (mobile) */}
-      <div className="relative z-10 flex flex-col justify-center pt-12 lg:pt-0 h-[55%] lg:h-full w-full lg:w-1/2 pl-6 lg:pl-16 pr-6">
-        {/* Small intro label */}
-        <span className="inline-block text-sm font-semibold tracking-widest text-gray-500 uppercase mb-6">
-          Introduction
-        </span>
-
-        {/* Main heading with name highlighted */}
-        <h2 className="text-5xl lg:text-7xl font-black tracking-tight leading-tight mb-8">
-          <span className="block text-gray-900">Hey, I&apos;m</span>
-          <span className="text-gray-900">Asad Ullah</span>
-        </h2>
-
-        {/* Description */}
-        <p className="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-lg">
-          A Senior Software Engineer at{" "}
-          <a
-            href="https://mercedes-benz.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-gray-900 hover:text-gray-600 transition-colors underline decoration-gray-300 hover:decoration-gray-600"
-          >
-            Mercedes-Benz.io
-          </a>{" "}
-          in Germany. With 6+ years in the field, I&apos;ve been learning,
-          networking, and giving back to the community as a{" "}
-          <span className="font-semibold text-gray-900">
-            mentor and public speaker
-          </span>
-          .
-        </p>
-
-        {/* CTA text */}
-        <p className="mt-6 text-lg text-gray-600">
-          Seeking guidance or want to collaborate?{" "}
-          <span className="font-semibold text-gray-900">
-            Reach out to me!
-          </span>
-        </p>
-      </div>
-
-      {/* Desktop Photo - Absolutely positioned to cover full height on right side */}
-      <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[55%] h-full z-0 pointer-events-none">
-        <div className="relative w-full h-full">
-          <Image
-            alt="Asad Ullah Khalid"
-            className="object-contain object-bottom"
-            draggable="false"
-            fill
-            priority
-            sizes="55vw"
-            src="/images/myself.webp"
-            placeholder="blur"
-            blurDataURL={getShimmerDataUrl(600, 800)}
+    <section className="relative flex flex-col min-h-[calc(100vh-80px)] justify-center items-center py-20 lg:py-0 overflow-hidden">
+      <div className="container flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
+        {/* Text Content */}
+        <div className="flex-1 flex flex-col items-start space-y-8 z-10">
+          <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-c-dark">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-slate-700 to-gray-900 animate-gradient-x">
+              {heading}
+            </span>
+          </h1>
+          <div
+            className="prose prose-lg text-lg lg:text-2xl leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl"
+            dangerouslySetInnerHTML={{ __html: sanitizedDescription }}
           />
         </div>
-      </div>
 
-      {/* Mobile Photo - Fully visible at bottom */}
-      <div className="lg:hidden absolute bottom-0 left-0 right-0 h-[45%] z-0 pointer-events-none">
-         <div className="relative w-full h-full">
-            <Image
-                alt="Asad Ullah Khalid"
-                className="object-contain object-bottom"
-                draggable="false"
+        {/* Image / Visual */}
+        <div className="flex-1 flex justify-center items-center relative z-10">
+          <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] animate-float">
+            {/* Abstract Background Blob behind image */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-gray-200 to-slate-200 rounded-[2rem] transform rotate-6 scale-105 opacity-50 blur-lg dark:from-gray-800 dark:to-slate-800" />
+            
+            {/* Image Container */}
+            <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-black/5 bg-white dark:bg-gray-900">
+              <Image
+                alt="personal photo"
+                className="object-cover"
                 fill
                 priority
-                sizes="100vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 500px, 600px"
                 src="/images/myself.webp"
                 placeholder="blur"
-                blurDataURL={getShimmerDataUrl(300, 380)}
-            />
-         </div>
+                blurDataURL={getShimmerDataUrl(500, 500)}
+              />
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -19,32 +19,32 @@ export default async function index() {
   return (
     <>
       <h1 className="sr-only">{aboutData.screenReaderTitle}</h1>
-      <Section id="about" bgColor="semidark" padding={false}>
+      <Section id="about" bgColor="transparent" padding={false}>
         <Container>
           <About />
         </Container>
       </Section>
-      <Section id="journey">
+      <Section id="journey" bgColor="transparent">
         <Container>
           <Journey isOverview />
         </Container>
       </Section>
-      <Section id="experience">
+      <Section id="experience" bgColor="semidark">
         <Container>
           <Experience isOverview />
         </Container>
       </Section>
-      <Section id="contribution">
+      <Section id="contribution" bgColor="transparent">
         <Container>
           <Contribution isOverview events={events} blogs={blogs} />
         </Container>
       </Section>
-      <Section id="testimonial">
+      <Section id="testimonial" bgColor="semidark">
         <Container>
           <Testimonial isOverview />
         </Container>
       </Section>
-      <Section id="contact" bgColor="semidark">
+      <Section id="contact" bgColor="transparent">
         <Container>
           <Contact />
           <div className="mt-12 flex justify-center lg:justify-start">

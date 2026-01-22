@@ -17,72 +17,62 @@ export default function LinkButton({
     if (iconPosition === "left") {
       return (
         <svg
-          className={className}
           xmlns="http://www.w3.org/2000/svg"
-          fill="none"
+          width="18"
+          height="18"
           viewBox="0 0 24 24"
+          fill="none"
           stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className={clsx("lucide lucide-arrow-left transition-transform duration-500 group-hover:-translate-x-1.5", className)}
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M7 16l-4-4m0 0l4-4m-4 4h18"
-          />
+          <path d="m12 19-7-7 7-7" />
+          <path d="M19 12H5" />
         </svg>
       );
     }
     return (
       <svg
-        className={className}
         xmlns="http://www.w3.org/2000/svg"
-        fill="none"
+        width="18"
+        height="18"
         viewBox="0 0 24 24"
+        fill="none"
         stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={clsx("lucide lucide-arrow-right transition-transform duration-500 group-hover:translate-x-1.5", className)}
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M17 8l4 4m0 0l-4 4m4-4H3"
-        />
+        <path d="M5 12h14" />
+        <path d="m12 5 7 7-7 7" />
       </svg>
     );
   };
 
   const content = (
     <>
-      {iconPosition === "left" && isMinimal && (
-        <ArrowIcon className="w-5 h-5 transition-transform duration-300 ease-in-out group-hover:-translate-x-1" />
+      {iconPosition === "left" && (isMinimal || showIcon) && (
+        <ArrowIcon />
       )}
       <span>{text}</span>
-      {iconPosition === "right" && isMinimal && (
-        <ArrowIcon className="w-5 h-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
-      )}
-      {/* Non-minimal variant icon support can be added if needed, currently only handling minimal for back button */}
-      {!isMinimal && showIcon && iconPosition === "right" && (
-        <svg
-          className="w-3 h-3 ml-2 2xl:m-2"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M1 5h12m0 0L9 1m4 4L9 9"
-          />
-        </svg>
+      {iconPosition === "right" && (isMinimal || showIcon) && (
+        <ArrowIcon />
       )}
     </>
   );
 
-  const commonClasses = isMinimal
-    ? "group inline-flex items-center gap-2 text-lg font-semibold transition-all duration-300 ease-in-out hover:text-gray-600"
-    : "inline-flex items-center w-fit text-sm font-medium rounded-lg px-5 py-3 shadow transition-all duration-300 ease-in-out lg:text-md hover:shadow-lg focus-visible:outline-2 focus-visible:outline-c-dark focus-visible:outline";
+  const commonClasses = clsx(
+    "inline-flex items-center gap-2 transition-all duration-500 font-bold uppercase tracking-widest text-xs",
+    {
+      "group text-slate-900 hover:text-black dark:text-white dark:hover:text-slate-300": isMinimal,
+      "px-8 py-4 rounded-2xl bg-slate-900 text-white shadow-xl hover:shadow-2xl hover:-translate-y-1 active:scale-95 dark:bg-white dark:text-slate-900": variant === "primary",
+      "px-8 py-4 rounded-2xl bg-white/40 backdrop-blur-md border border-white/20 text-slate-900 shadow-lg hover:bg-white/60 hover:-translate-y-1 active:scale-95 dark:bg-gray-900/40 dark:border-white/5 dark:text-white": variant === "secondary",
+    },
+    className
+  );
 
   if (isInternal) {
     return (

@@ -73,7 +73,7 @@ export type LinkButtonProps = {
   text: string;
   showIcon: boolean;
   className?: string;
-  variant?: "primary" | "minimal";
+  variant?: "primary" | "secondary" | "minimal";
   iconPosition?: "left" | "right";
 };
 
