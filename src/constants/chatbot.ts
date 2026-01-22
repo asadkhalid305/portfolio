@@ -116,8 +116,8 @@ Creates educational content with a passion to empower individuals on their caree
 
 ### Speaking Engagements & Events:
 
-**Berlin AI Builders Meetup – Designing Real-World Multi-Agent AI Systems** (January 2026)
-Gave a technical talk at Ojin AixHaus for the GDG Berlin community on designing and implementing multi-agent AI architectures, sharing practical insights and real-world experiences from building production-ready AI systems.
+**Berlin AI Builders Meetup – Designing Real-World Multi-Agent AI Systems** (Upcoming - January 2026)
+Scheduled to give a technical talk at Ojin AixHaus for the GDG Berlin community. I will be breaking down the concepts of multi-agent AI systems, explaining how they work and fit together to form complete systems.
 Link: https://www.linkedin.com/posts/gdgberlin_ai-meetup-ojin-aixhaus-join-us-for-activity-7417490788537819136-dD0F
 
 **Hands-on Workshop – Building Multi-Agent Systems with OpenAI Agents SDK** (December 2025)
