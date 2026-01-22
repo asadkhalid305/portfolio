@@ -116,6 +116,10 @@ Creates educational content with a passion to empower individuals on their caree
 
 ### Speaking Engagements & Events:
 
+**Berlin AI Builders Meetup – Designing Real-World Multi-Agent AI Systems** (Upcoming - January 2026)
+Scheduled to give a technical talk at Ojin AixHaus for the GDG Berlin community. I will be breaking down the concepts of multi-agent AI systems, explaining how they work and fit together to form complete systems.
+Link: https://www.linkedin.com/posts/gdgberlin_ai-meetup-ojin-aixhaus-join-us-for-activity-7417490788537819136-dD0F
+
 **Hands-on Workshop – Building Multi-Agent Systems with OpenAI Agents SDK** (December 2025)
 Led a 2.5-hour technical workshop for the Code with Ahsan community on designing agent-based architectures where multiple specialized agents collaborate, delegate responsibilities, and interact with external tools.
 Link: https://www.linkedin.com/posts/code-with-ahsan_workshop-agent-agenticai-activity-7407380419752456192-JXiB?utm_source=share&utm_medium=member_desktop&rcm=ACoAABxXkv4Bh9IN_OjPjc2afvfJQN_Y_XhaKYo
@@ -153,6 +157,10 @@ Link: https://asadkhalid305.medium.com/career-growth-making-the-most-of-company-
 **"Tech Jobs in Europe"** (December 2023)
 Blog post with tips and insights to get interview calls from European companies.
 Link: https://asadkhalid305.medium.com/tech-jobs-in-europe-insights-and-tips-to-get-interview-calls-a202622cbc99
+
+**"Soft Skills in Tech: The Real Career Multiplier"** (January 2026)
+Blog post about how soft skills are not optional but the multiplier that makes technical skills visible and valuable.
+Link: https://www.mercedes-benz.io/blog/2026-01-20-soft-skills-in-tech-the-real-career-multiplier
 
 ### Technical Book Reviews:
 
