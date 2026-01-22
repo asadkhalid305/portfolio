@@ -28,6 +28,15 @@ const nextConfig = {
         source: "/apps/keyfinz/:path*",
         destination: "https://www.keyfinz.com/:path*",
       },
+      // Rewrite to serve external Vercel app under /apps/onstage
+      {
+        source: "/apps/onstage",
+        destination: "https://onstage-demo.vercel.app/",
+      },
+      {
+        source: "/apps/onstage/:path*",
+        destination: "https://onstage-demo.vercel.app/:path*",
+      },
     ];
   },
 

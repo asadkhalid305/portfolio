@@ -58,38 +58,11 @@ export default async function ContributionDetailPage({ params }: Props) {
       slug
     );
 
-    let visitButtonText = contributionData.detail.visitBlogButton;
-    if (type === "events") {
-      visitButtonText = contributionData.detail.visitEventButton;
-    } else if (type === "book-reviews") {
-      visitButtonText = "Visit Review";
-    }
-
-    const actions = [];
-
-    if (frontmatter.originalLink) {
-      actions.push({
-        href: frontmatter.originalLink,
-        label: visitButtonText,
-        external: true,
-      });
-    }
-
-    if (frontmatter.githubUrl) {
-      actions.push({
-        href: frontmatter.githubUrl,
-        label: contributionData.detail.githubButton,
-        external: true,
-      });
-    }
-
-    if (frontmatter.presentationUrl) {
-      actions.push({
-        href: frontmatter.presentationUrl,
-        label: contributionData.detail.presentationButton,
-        external: true,
-      });
-    }
+    const actions = (frontmatter.links || []).map((link) => ({
+      href: link.url,
+      label: link.name,
+      external: true,
+    }));
 
     const badges = [...(frontmatter.badges || [])];
     if (frontmatter.type) badges.push(frontmatter.type);

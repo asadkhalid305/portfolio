@@ -104,6 +104,7 @@ export type VCardProps = {
   horizontal?: boolean;
   badges?: string[];
   linkText?: string;
+  pinned?: boolean;
 };
 
 /**
@@ -299,11 +300,12 @@ export interface Frontmatter {
   };
   type?: "Conference" | "Mentorship" | "Workshop" | "Panel" | "Community";
   event?: string;
-  originalLink?: string;
-  githubUrl?: string;
-  liveUrl?: string;
-  presentationUrl?: string;
   badges?: string[];
+  links?: {
+    name: string;
+    url: string;
+  }[];
+  isPinned?: boolean;
 }
 
 export interface Post {
