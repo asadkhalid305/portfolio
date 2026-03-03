@@ -1,16 +1,26 @@
 import { NextResponse } from "next/server";
 import { Resend } from 'resend';
+import { isRealisticEmail } from "@/utils/email-validation";
 
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, message } = body;
+    const name = typeof body.name === "string" ? body.name.trim() : "";
+    const email = typeof body.email === "string" ? body.email.trim() : "";
+    const message = typeof body.message === "string" ? body.message.trim() : "";
 
     // Basic validation
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Missing required fields" },
+        { status: 400 }
+      );
+    }
+
+    if (!isRealisticEmail(email)) {
+      return NextResponse.json(
+        { error: "Invalid email address" },
         { status: 400 }
       );
     }
