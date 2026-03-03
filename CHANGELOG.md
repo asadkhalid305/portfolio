@@ -8,6 +8,23 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-03-03
+
+### Added
+
+- Realistic email validation for contact form submissions in both UI and API
+- Email validation test suite with edge-case coverage
+
+### Changed
+
+- Berlin AI Builders Meetup event content updated with talk highlights
+- Dependency updates across framework and tooling stack:
+  - `next`: 15.5.9 -> 16.1.5
+  - `eslint`: 9.32.0 -> 10.0.0
+  - `eslint-config-next`: 15.4.8 -> 16.1.6
+  - `next-mdx-remote`: ^5.0.0 -> ^6.0.0
+  - lockfile updates for `minimatch`, `sucrase`, and `ajv`
+
 ## [1.5.0] - 2026-01-22
 
 ### Added
@@ -146,7 +163,8 @@ and this project adheres to
 
 - Initial beta release
 
-[unreleased]: https://github.com/asadkhalid305/portfolio/compare/v1.5.0...HEAD
+[unreleased]: https://github.com/asadkhalid305/portfolio/compare/v1.6.0...HEAD
+[1.6.0]: https://github.com/asadkhalid305/portfolio/compare/v1.5.0...v1.6.0
 [1.5.0]: https://github.com/asadkhalid305/portfolio/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/asadkhalid305/portfolio/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/asadkhalid305/portfolio/compare/v1.2.1...v1.3.0
