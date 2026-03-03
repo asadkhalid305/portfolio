@@ -3,6 +3,7 @@
 import { useState } from "react";
 import clsx from "clsx";
 import contactData from "@/constants/contact.json";
+import { isRealisticEmail } from "@/utils/email-validation";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<
@@ -13,9 +14,19 @@ export default function ContactForm() {
     email: "",
     message: "",
   });
+  const [emailError, setEmailError] = useState("");
+
+  const isEmailValid = isRealisticEmail(formData.email);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!isEmailValid) {
+      setEmailError("Please enter a valid, real email address.");
+      setStatus("error");
+      return;
+    }
+
     setStatus("loading");
 
     try {
@@ -29,6 +40,7 @@ export default function ContactForm() {
 
       if (response.ok) {
         setStatus("success");
+        setEmailError("");
         setFormData({ name: "", email: "", message: "" });
       } else {
         setStatus("error");
@@ -44,6 +56,18 @@ export default function ContactForm() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+
+    if (name === "email") {
+      if (!value.trim()) {
+        setEmailError("");
+        return;
+      }
+      setEmailError(
+        isRealisticEmail(value)
+          ? ""
+          : "Please enter a valid, real email address."
+      );
+    }
   };
 
   return (
@@ -124,8 +148,10 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder={contactData.form.email.placeholder}
+                aria-invalid={Boolean(emailError)}
                 className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-c-dark dark:focus:ring-c-light transition-all"
               />
+              {emailError && <p className="mt-2 text-red-500 text-sm">{emailError}</p>}
             </div>
           </div>
 
@@ -148,16 +174,24 @@ export default function ContactForm() {
             />
           </div>
 
-          {status === "error" && (
+          {status === "error" && !emailError && (
             <p className="text-red-500 text-sm">{contactData.form.error}</p>
           )}
 
           <button
             type="submit"
-            disabled={status === "loading"}
+            disabled={
+              status === "loading" ||
+              !formData.name.trim() ||
+              !formData.message.trim() ||
+              !isEmailValid
+            }
             className={clsx(
               "w-full py-4 bg-c-dark text-white rounded-xl font-bold text-lg shadow-lg transition-all flex items-center justify-center gap-2",
-              status === "loading"
+              status === "loading" ||
+                !formData.name.trim() ||
+                !formData.message.trim() ||
+                !isEmailValid
                 ? "opacity-70 cursor-not-allowed"
                 : "hover:bg-gray-800 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
             )}
