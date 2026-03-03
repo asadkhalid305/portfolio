@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:chatbot": "node ./tests/test-chatbot.mjs"
+    "test:chatbot": "node ./tests/test-chatbot.mjs",
+    "test:email-validation": "node --no-warnings=MODULE_TYPELESS_PACKAGE_JSON --test --experimental-strip-types ./tests/email-validation.test.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
