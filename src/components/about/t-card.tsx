@@ -35,7 +35,7 @@ export default function TCard({
 
   return (
     <div
-      className={`group relative flex h-full flex-col justify-between rounded-2xl border border-black/10 p-6 transition-all duration-300 hover:shadow-2xl dark:border-gray-800 dark:bg-gray-900 ${featured ? "bg-c-dark text-c-light lg:p-8" : "bg-white hover:bg-c-semidark"}`}
+      className={`group relative flex h-full flex-col justify-between rounded-2xl border border-black/10 p-6 transition-all duration-300 ease-in-out hover:shadow-2xl dark:border-gray-800 dark:bg-gray-900 ${featured ? "bg-c-dark text-c-light lg:p-8" : "bg-white hover:bg-c-semidark"}`}
     >
       <div>
         <div className="mb-4 flex items-start justify-between">

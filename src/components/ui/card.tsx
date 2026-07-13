@@ -47,7 +47,7 @@ export default function Card({
         alt={alt}
         fill
         sizes={imageSizes}
-        className="object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+        className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.01]"
         placeholder="blur"
         blurDataURL={getShimmerDataUrl(
           horizontal ? 640 : 384,
@@ -122,7 +122,7 @@ export default function Card({
     return (
       <Link
         href={link}
-        className="group relative block h-full overflow-hidden rounded-2xl border border-black/10 bg-white transition-all duration-500 ease-out hover:-translate-y-1 hover:border-black/20 hover:shadow-2xl dark:border-gray-800"
+        className="group relative block h-full overflow-hidden rounded-2xl border border-black/10 bg-white transition-all duration-300 ease-in-out hover:bg-c-semidark hover:shadow-2xl dark:border-gray-800"
       >
         <div className="grid h-full gap-8 p-5 sm:p-7 lg:grid-cols-2 lg:p-8">
           {contentComponent}
@@ -136,7 +136,7 @@ export default function Card({
   return (
     <Link
       href={link}
-      className="group mx-auto flex h-full w-full max-w-sm flex-col rounded-2xl border border-black/10 bg-white transition-all duration-500 ease-out hover:-translate-y-1 hover:border-black/20 hover:shadow-xl dark:border-gray-800"
+      className="group mx-auto flex h-full w-full max-w-sm flex-col rounded-2xl border border-black/10 bg-white transition-all duration-300 ease-in-out hover:bg-c-semidark hover:shadow-2xl dark:border-gray-800"
     >
       {imageComponent}
       {contentComponent}
