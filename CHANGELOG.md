@@ -8,6 +8,41 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.7.0] - 2026-07-13
+
+### Added
+
+- Google Antigravity CLI workshop event with GDG Berlin and
+  WeAreDevelopers World Congress 2026 context, workshop resources, photography,
+  and a developer-agent workflow visual
+- Reusable portfolio agent skills for content management, link checking,
+  release preparation, chatbot synchronization, SEO, and validation
+
+### Changed
+
+- Generalized portfolio agent guidance and content-management workflows
+- Updated TypeScript settings for Next.js 16 generated types and the automatic
+  React JSX runtime
+- Updated direct dependencies:
+  - `next`: 16.1.5 -> 16.2.6
+  - `postcss`: 8.5.6 -> 8.5.10
+  - `resend`: ^6.6.0 -> ^6.12.3
+- Refreshed lockfile dependencies including DOMPurify, `ws`, `uuid`,
+  `brace-expansion`, YAML, `picomatch`, and `flatted`
+
+### Fixed
+
+- Replaced the invalid favicon with a Next.js application icon
+
+### Security
+
+- Updated vulnerable transitive Babel, `minimatch`, and `js-yaml` packages to
+  patched versions using the non-breaking npm audit repair
+
+### Removed
+
+- Outdated release workflow documentation superseded by project skills
+
 ## [1.6.0] - 2026-03-03
 
 ### Added
@@ -163,7 +198,8 @@ and this project adheres to
 
 - Initial beta release
 
-[unreleased]: https://github.com/asadkhalid305/portfolio/compare/v1.6.0...HEAD
+[unreleased]: https://github.com/asadkhalid305/portfolio/compare/v1.7.0...HEAD
+[1.7.0]: https://github.com/asadkhalid305/portfolio/compare/v1.6.0...v1.7.0
 [1.6.0]: https://github.com/asadkhalid305/portfolio/compare/v1.5.0...v1.6.0
 [1.5.0]: https://github.com/asadkhalid305/portfolio/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/asadkhalid305/portfolio/compare/v1.3.0...v1.4.0
