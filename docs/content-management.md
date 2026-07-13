@@ -20,11 +20,13 @@ simply need to create a new `.mdx` file.
 ---
 title: "Your Post Title"
 description: "A brief description of the post."
-date: "Dec, 2023"
+date: "December 2023"
 image:
   src: "/images/your-image.webp"
   alt: "Alt text for the image"
-link: "https://external-link.com" # Optional for events/blogs
+links: # Optional
+  - name: "Read Original"
+    url: "https://external-link.com"
 ---
 
 Your content goes here. You can use **Markdown** syntax and standard HTML
@@ -42,8 +44,12 @@ image:
   src: "/images/project.webp"
   alt: "Project preview"
 badges: ["Featured"] # Optional
-liveUrl: "https://example.com" # Optional
-repoUrl: "https://github.com/user/repo" # Optional
+isPinned: true # Optional
+links: # Optional
+  - name: "Visit App"
+    url: "https://example.com"
+  - name: "GitHub"
+    url: "https://github.com/user/repo"
 ---
 ```
 
@@ -74,13 +80,13 @@ Create a new folder in `src/content/` for your new type.
 
 - Example: `src/content/projects/`
 
-#### 2. Update Type Definitions (`src/lib/utils/types.ts`)
+#### 2. Update Type Definitions (`src/utils/types.ts`)
 
 Update the `ContentType` type definition to include your new folder name. Add
 any new frontmatter fields here as needed.
 
 ```typescript
-// src/lib/utils/types.ts
+// src/utils/types.ts
 export type ContentType = "blogs" | "events" | "projects"; // Add "projects"
 ```
 

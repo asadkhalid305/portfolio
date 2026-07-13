@@ -298,7 +298,13 @@ export interface Frontmatter {
     src: string;
     alt: string;
   };
-  type?: "Conference" | "Mentorship" | "Workshop" | "Panel" | "Community";
+  type?:
+    | "Talk"
+    | "Conference"
+    | "Mentorship"
+    | "Workshop"
+    | "Panel"
+    | "Community";
   event?: string;
   badges?: string[];
   links?: {
