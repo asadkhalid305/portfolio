@@ -3,6 +3,19 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  ::selection {
+    background: #000000;
+    color: #ffffff;
+  }
+
   /* Account for sticky header when scrolling to sections */
   section[id] {
     scroll-margin-top: 80px;
@@ -54,5 +67,87 @@
 
   .slide-in-from-bottom-2 {
     animation-name: slide-in-from-bottom-2;
+  }
+}
+
+@layer components {
+  .hero-enter {
+    animation: hero-enter 800ms var(--motion-ease) both;
+  }
+
+  .hero-delay-1 {
+    animation-delay: 80ms;
+  }
+
+  .hero-delay-2 {
+    animation-delay: 150ms;
+  }
+
+  .hero-delay-3 {
+    animation-delay: 230ms;
+  }
+
+  .hero-delay-4 {
+    animation-delay: 310ms;
+  }
+
+  .hero-delay-5 {
+    animation-delay: 390ms;
+  }
+
+  .hero-portrait-frame::before,
+  .hero-portrait-frame::after {
+    border: 1px solid rgb(0 0 0 / 12%);
+    border-radius: 9999px;
+    content: "";
+    inset: 2%;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  .hero-portrait-frame::after {
+    border-color: rgb(0 0 0 / 7%);
+    inset: -3%;
+  }
+
+  .motion-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 700ms var(--motion-ease),
+      transform 700ms var(--motion-ease);
+  }
+
+  .motion-reveal[data-visible="true"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .motion-reveal {
+    opacity: 1;
+    transform: none;
   }
 }

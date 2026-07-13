@@ -10,7 +10,7 @@ import { Post } from "@/lib/mdx";
 const label = "ACTIVITIES & IMPACT";
 const heading = "Contribution";
 const description =
-  "I create educational content with a passion to empower individuals on their career journeys. My own path to success, starting from a challenging educational background and working tirelessly to achieve my goals, fuels my motivation to help others. Through workshops, mentoring, and writing, I aim to assist individuals in navigating their careers effectively. My content is designed for anyone seeking guidance and mentorship, regardless of their educational background or prior experience. I believe that with the right knowledge and support, anyone can achieve their professional aspirations, and I'm dedicated to providing the tools and insights to make that happen.";
+  "I turn hard-earned lessons into workshops, talks, and writing that help people navigate technology careers with more confidence.";
 
 interface ContributionProps {
   isOverview?: boolean;
@@ -83,6 +83,35 @@ export default function Contribution({
           label={label}
           paddingBottom={isOverview}
         />
+
+        {isOverview && (
+          <dl className="grid max-w-3xl grid-cols-3 border-y border-black/10">
+            <div className="py-4 pr-6">
+              <dt className="text-xs font-bold uppercase tracking-[0.18em] text-gray-500">
+                Events
+              </dt>
+              <dd className="mt-1 text-3xl font-semibold tracking-tight">
+                {events.length}
+              </dd>
+            </div>
+            <div className="border-l border-black/10 py-4 pl-6">
+              <dt className="text-xs font-bold uppercase tracking-[0.18em] text-gray-500">
+                Blogs
+              </dt>
+              <dd className="mt-1 text-3xl font-semibold tracking-tight">
+                {blogs.length}
+              </dd>
+            </div>
+            <div className="border-l border-black/10 py-4 pl-6">
+              <dt className="text-xs font-bold uppercase tracking-[0.18em] text-gray-500">
+                Book Reviews
+              </dt>
+              <dd className="mt-1 text-3xl font-semibold tracking-tight">
+                {bookReviews.length}
+              </dd>
+            </div>
+          </dl>
+        )}
         
         {!isOverview && (
           <FilterBar
@@ -98,7 +127,7 @@ export default function Contribution({
       {showEvents && (
         <div className="animate-in fade-in slide-in-from-bottom-2 duration-500">
           <VCardGrid
-            heading="events"
+            heading={isOverview ? "Featured events" : "events"}
             records={eventItems}
             isOverview={isOverview}
             hideLink={true}
@@ -110,7 +139,7 @@ export default function Contribution({
       {showBlogs && (
         <div className="animate-in fade-in slide-in-from-bottom-2 duration-500">
           <VCardGrid
-            heading="blogs"
+            heading={isOverview ? "Latest blogs" : "blogs"}
             records={blogItems}
             isOverview={isOverview}
             hideLink={true}

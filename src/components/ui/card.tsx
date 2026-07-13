@@ -18,14 +18,17 @@ export default function Card({
   pinned = false,
 }: Readonly<VCardProps>) {
   const { src, alt } = getImageProps(image);
+  const imageSizes = horizontal
+    ? "(max-width: 1024px) calc(100vw - 2.5rem), 50vw"
+    : "(max-width: 768px) calc(100vw - 2rem), (max-width: 1024px) 50vw, 384px";
 
   // Common image component
   const imageComponent = (
     <div
-      className={`relative overflow-hidden shadow-lg ${
+      className={`relative overflow-hidden bg-c-semidark ${
         horizontal
-          ? "aspect-video rounded-lg order-1 lg:order-2 h-fit self-center w-full"
-          : "h-96 w-full rounded-t-lg border-b border-gray-100 dark:border-gray-800"
+          ? "aspect-video order-1 h-fit w-full self-center rounded-xl lg:order-2"
+          : "h-96 w-full rounded-t-2xl border-b border-gray-100 dark:border-gray-800"
       }`}
     >
       {/* Blurred background for fixing aspect ratio issues */}
@@ -33,6 +36,7 @@ export default function Card({
         src={src}
         alt=""
         fill
+        sizes={imageSizes}
         className="object-cover blur-3xl scale-110 opacity-50 dark:opacity-40 transition-opacity duration-500 group-hover:opacity-70"
         aria-hidden="true"
       />
@@ -42,7 +46,8 @@ export default function Card({
         src={src}
         alt={alt}
         fill
-        className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.01]"
+        sizes={imageSizes}
+        className="object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-[1.025]"
         placeholder="blur"
         blurDataURL={getShimmerDataUrl(
           horizontal ? 640 : 384,
@@ -84,7 +89,7 @@ export default function Card({
         {pinnedComponent}
         {badgesComponent}
         {date && (
-          <p className="text-sm font-light italic text-gray-500 dark:text-gray-400">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400">
             {date}
           </p>
         )}
@@ -117,9 +122,9 @@ export default function Card({
     return (
       <Link
         href={link}
-        className="group relative block rounded-lg  overflow-hidden border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:bg-c-semidark hover:shadow-2xl h-full"
+        className="group relative block h-full overflow-hidden rounded-2xl border border-black/10 bg-white transition-all duration-500 ease-out hover:-translate-y-1 hover:border-black/20 hover:shadow-2xl dark:border-gray-800"
       >
-        <div className="grid lg:grid-cols-2 gap-6 p-6 lg:p-8 h-full">
+        <div className="grid h-full gap-8 p-5 sm:p-7 lg:grid-cols-2 lg:p-8">
           {contentComponent}
           {imageComponent}
         </div>
@@ -131,7 +136,7 @@ export default function Card({
   return (
     <Link
       href={link}
-      className="group w-full max-w-sm mx-auto h-full border border-gray-200 dark:border-gray-800 rounded-lg shadow flex flex-col transition-all duration-300 ease-in-out hover:bg-c-semidark hover:shadow-2xl"
+      className="group mx-auto flex h-full w-full max-w-sm flex-col rounded-2xl border border-black/10 bg-white transition-all duration-500 ease-out hover:-translate-y-1 hover:border-black/20 hover:shadow-xl dark:border-gray-800"
     >
       {imageComponent}
       {contentComponent}
