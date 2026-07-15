@@ -121,6 +121,7 @@ export type TCardProps = {
   source?: "LinkedIn" | "Topmate.io";
   rating?: number;
   expanded?: boolean;
+  featured?: boolean;
 };
 
 // ============================================================================

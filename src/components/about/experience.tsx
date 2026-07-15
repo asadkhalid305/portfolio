@@ -13,6 +13,7 @@ const {
   label,
   heading,
   description,
+  overviewDescription,
   items,
   professionalExperiences,
   communityExperiences,
@@ -29,7 +30,7 @@ export default function Experience({ isOverview }: { isOverview?: boolean }) {
       <div className="flex flex-col">
         <div className="w-full lg:max-w-6xl">
           <DisplayInfo
-            description={description}
+            description={overviewDescription}
             heading={heading}
             label={label}
             paddingBottom={false}

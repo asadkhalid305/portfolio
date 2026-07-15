@@ -8,6 +8,28 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.8.0] - 2026-07-15
+
+### Added
+
+- Homepage reveal animations with reduced-motion support
+- Contribution statistics for events, blogs, and book reviews
+- Clear homepage calls to action for exploring projects and booking a session
+
+### Changed
+
+- Modernized the homepage hero, section presentation, and card styling
+- Refined homepage copy and featured-content labels
+- Updated KeyFinz positioning across project content and chatbot context
+
+### Fixed
+
+- Standardized hover interactions across testimonial and content cards
+
+### Removed
+
+- Outdated KeyFinz "Coming Soon" badge and public-beta launch messaging
+
 ## [1.7.0] - 2026-07-13
 
 ### Added
@@ -198,7 +220,8 @@ and this project adheres to
 
 - Initial beta release
 
-[unreleased]: https://github.com/asadkhalid305/portfolio/compare/v1.7.0...HEAD
+[unreleased]: https://github.com/asadkhalid305/portfolio/compare/v1.8.0...HEAD
+[1.8.0]: https://github.com/asadkhalid305/portfolio/compare/v1.7.0...v1.8.0
 [1.7.0]: https://github.com/asadkhalid305/portfolio/compare/v1.6.0...v1.7.0
 [1.6.0]: https://github.com/asadkhalid305/portfolio/compare/v1.5.0...v1.6.0
 [1.5.0]: https://github.com/asadkhalid305/portfolio/compare/v1.4.0...v1.5.0

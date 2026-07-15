@@ -35,15 +35,16 @@ export default function Testimonial({ isOverview }: { isOverview?: boolean }) {
           <DisplayInfo heading={heading} label={label} paddingBottom />
         </div>
         <div className="flex-1">
-          <div className="grid grid-cols-1 justify-items-center gap-6 md:grid-cols-2 lg:grid-cols-3 mb-8 md:mb-12">
+          <div className="mb-8 grid grid-cols-1 gap-6 md:mb-12 md:grid-cols-2 lg:grid-cols-[1.35fr_0.825fr_0.825fr]">
             {overviewItems.map((item, index) => (
               <TCard
-                key={index}
+                key={`${item.source}-${item.author.name}`}
                 text={item.text}
                 author={item.author}
                 source={item.source as "LinkedIn" | "Topmate.io"}
                 rating={item.rating}
                 expanded={false}
+                featured={index === 0}
               />
             ))}
           </div>

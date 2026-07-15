@@ -25,15 +25,15 @@ export default function DisplayInfo({
       })}
     >
       {label && (
-        <span className="block text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">
+        <span className="mb-4 block text-xs font-bold uppercase tracking-[0.2em] text-gray-500 sm:text-sm">
           {label}
         </span>
       )}
-      <h2 className="text-5xl font-extrabold pb-6 lg:text-6xl text-left">
+      <h2 className="max-w-4xl pb-6 text-left text-4xl font-bold leading-[1.02] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
         {heading}
       </h2>
       <p
-        className="whitespace-pre-wrap leading-relaxed text-xl lg:text-2xl lg:leading-9"
+        className="max-w-4xl whitespace-pre-wrap text-lg leading-8 text-gray-700 sm:text-xl sm:leading-9"
         dangerouslySetInnerHTML={{ __html: sanitizedDescription }}
       ></p>
     </div>

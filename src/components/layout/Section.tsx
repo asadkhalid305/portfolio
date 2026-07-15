@@ -36,7 +36,7 @@ export function Section({
       : "bg-c-light"
     : "";
 
-  const paddingClass = padding ? "py-20 lg:py-28" : "";
+  const paddingClass = padding ? "py-16 sm:py-20 lg:py-24" : "";
   const vCenterClass = vCenter ? "flex flex-col justify-center" : "";
 
   return (

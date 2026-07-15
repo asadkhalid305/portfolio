@@ -2,7 +2,14 @@ import Image from "next/image";
 import { TCardProps } from "@/utils/types";
 import { getImageProps } from "@/utils/image-helpers";
 
-export default function TCard({ text, author, source = "LinkedIn", rating, expanded = false }: Readonly<TCardProps>) {
+export default function TCard({
+  text,
+  author,
+  source = "LinkedIn",
+  rating,
+  expanded = false,
+  featured = false,
+}: Readonly<TCardProps>) {
   const { name, image, job, link } = author ?? {};
   const { src, alt } = getImageProps(image);
 
@@ -27,11 +34,13 @@ export default function TCard({ text, author, source = "LinkedIn", rating, expan
   };
 
   return (
-    <div className="group flex h-full flex-col justify-between rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:bg-c-semidark hover:shadow-2xl dark:border-gray-800 dark:bg-gray-900 relative">
+    <div
+      className={`group relative flex h-full flex-col justify-between rounded-2xl border border-black/10 p-6 transition-all duration-300 ease-in-out hover:shadow-2xl dark:border-gray-800 dark:bg-gray-900 ${featured ? "bg-c-dark text-c-light lg:p-8" : "bg-white hover:bg-c-semidark"}`}
+    >
       <div>
         <div className="mb-4 flex items-start justify-between">
           <svg
-            className="h-8 w-8 text-gray-400 opacity-50"
+            className={`h-8 w-8 opacity-50 ${featured ? "text-white" : "text-gray-400"}`}
             fill="currentColor"
             viewBox="0 0 32 32"
             aria-hidden="true"
@@ -45,7 +54,7 @@ export default function TCard({ text, author, source = "LinkedIn", rating, expan
             {rating && renderStars(rating)}
           </div>
         </div>
-        <p className={`mb-6 text-base font-normal text-gray-600 dark:text-gray-300 ${!expanded ? "line-clamp-4" : ""}`}>
+        <p className={`mb-6 font-normal leading-7 dark:text-gray-300 ${featured ? "text-lg text-white lg:text-xl lg:leading-8" : "text-base text-gray-600"} ${!expanded ? "line-clamp-4" : ""}`}>
           {text}
         </p>
       </div>
@@ -66,8 +75,8 @@ export default function TCard({ text, author, source = "LinkedIn", rating, expan
           loading="lazy"
         />
         <div className="flex flex-col">
-          <div className="text-sm font-semibold text-gray-900 dark:text-white">{name}</div>
-          <div className="text-xs text-gray-500 dark:text-gray-400">{job}</div>
+          <div className={`text-sm font-semibold dark:text-white ${featured ? "text-white" : "text-gray-900"}`}>{name}</div>
+          <div className={`text-xs dark:text-gray-400 ${featured ? "text-gray-300" : "text-gray-500"}`}>{job}</div>
         </div>
       </a>
     </div>

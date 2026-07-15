@@ -8,20 +8,18 @@ import Projects from "@/components/about/projects";
 import { Section } from "@/components/layout/Section";
 import { Container } from "@/components/layout/Container";
 import LinkButton from "@/components/ui/link-button";
+import MotionReveal from "@/components/ui/motion-reveal";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 
 import contactData from "@/constants/contact.json";
-import aboutData from "@/constants/about.json";
-
 export default async function index() {
   const events = await getAllPosts("events");
   const blogs = await getAllPosts("blogs");
+  const bookReviews = await getAllPosts("book-reviews");
   const keyfinzProject = await getPostBySlug("projects", "keyfinz");
-
 
   return (
     <>
-      <h1 className="sr-only">{aboutData.screenReaderTitle}</h1>
       <Section id="about" bgColor="semidark" padding={false}>
         <Container>
           <About />
@@ -34,37 +32,52 @@ export default async function index() {
       </Section>
       <Section id="experience">
         <Container>
-          <Experience isOverview />
+          <MotionReveal>
+            <Experience isOverview />
+          </MotionReveal>
         </Container>
       </Section>
       {keyfinzProject && (
         <Section id="projects">
           <Container>
-            <Projects project={keyfinzProject} />
+            <MotionReveal>
+              <Projects project={keyfinzProject} />
+            </MotionReveal>
           </Container>
         </Section>
       )}
       <Section id="contribution">
         <Container>
-          <Contribution isOverview events={events} blogs={blogs} />
+          <MotionReveal>
+            <Contribution
+              isOverview
+              events={events}
+              blogs={blogs}
+              bookReviews={bookReviews}
+            />
+          </MotionReveal>
         </Container>
       </Section>
       <Section id="testimonial">
         <Container>
-          <Testimonial isOverview />
+          <MotionReveal>
+            <Testimonial isOverview />
+          </MotionReveal>
         </Container>
       </Section>
       <Section id="contact" bgColor="semidark">
         <Container>
-          <Contact />
-          <div className="mt-12 flex justify-center lg:justify-start">
-            <LinkButton
-              href="/contact"
-              showIcon={false}
-              text={contactData.cta}
-              variant="minimal"
-            />
-          </div>
+          <MotionReveal>
+            <Contact />
+            <div className="mt-12 flex justify-center lg:justify-start">
+              <LinkButton
+                href="/contact"
+                showIcon={false}
+                text={contactData.cta}
+                variant="minimal"
+              />
+            </div>
+          </MotionReveal>
         </Container>
       </Section>
     </>

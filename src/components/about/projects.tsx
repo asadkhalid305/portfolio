@@ -5,7 +5,7 @@ import LinkButton from "@/components/ui/link-button";
 const label = "SOLO VENTURE";
 const heading = "Projects";
 const description =
-  "Beyond my work in industry, I'm building products that solve real problems. Here's what I'm currently working on.";
+  "Independent products shaped by real problems, careful engineering, and a bias toward useful simplicity.";
 
 interface ProjectsProps {
   project: {
@@ -33,11 +33,11 @@ export default function Projects({
           description={description}
           heading={heading}
           label={label}
-          paddingBottom
+          paddingBottom={false}
         />
       </div>
       <div className="flex-1">
-        <div className="mb-8 md:mb-12">
+        <div className="mb-8 mt-10 md:mb-12">
           <Card
             id={slug}
             title={frontmatter.title}
