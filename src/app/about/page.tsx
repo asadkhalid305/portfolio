@@ -16,7 +16,7 @@ export default async function index() {
   const events = await getAllPosts("events");
   const blogs = await getAllPosts("blogs");
   const bookReviews = await getAllPosts("book-reviews");
-  const keyfinzProject = await getPostBySlug("projects", "keyfinz");
+  const langcompassProject = await getPostBySlug("projects", "langcompass");
 
   return (
     <>
@@ -37,11 +37,11 @@ export default async function index() {
           </MotionReveal>
         </Container>
       </Section>
-      {keyfinzProject && (
+      {langcompassProject && (
         <Section id="projects">
           <Container>
             <MotionReveal>
-              <Projects project={keyfinzProject} />
+              <Projects project={langcompassProject} />
             </MotionReveal>
           </Container>
         </Section>

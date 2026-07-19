@@ -83,6 +83,11 @@ More details: https://www.linkedin.com/in/asadkhalid305/details/experience/
 ## SaaS & Product Experience
 
 Actively building independent SaaS products for end-to-end product learning. Hands-on experience includes:
+- **LangCompass**: A free, static-first German learning explorer that connects 40 modules and 120 topics across CEFR A1.1 to B2.2 through themes, grammar, and communication goals.
+  - Optional Learning Tools: On supported desktop Chrome devices, learners can translate content, request explanations and examples, summarize lessons, and check German sentences using on-device Chrome AI capabilities.
+  - Privacy and Architecture: No account, database, AI backend, local model server, or API key is required. The core application uses static JSON data and remains useful without the optional AI tools.
+  - Live Application: https://langcompass.asadullahkhalid.com/
+  - GitHub: https://github.com/asadkhalid305/langcompass
 - **StreamWise AI**: An intelligent entertainment concierge that eliminates \'choice paralysis\' using a multi-agent AI system. Built with Next.js 15, TypeScript, and OpenAI Agents SDK.
   - Live Demo: /apps/streamwise-ai
   - GitHub: https://github.com/asadkhalid305/streamwise-ai
@@ -254,7 +259,7 @@ In November 2025, Asad shared his philosophy on Frontend Engineering in an inter
 - **Backend Awareness:** He advocates for frontend engineers to understand backend systems to design better integrations and improve security and performance.
 - **Traits of Great Engineers:** User empathy, curiosity, and adaptability are the defining traits of top frontend engineers.
 - **On AI:** He views AI as a tool to advance engineering and create better experiences, rather than a threat.",
-  info: "Welcome! This AI Assistant is designed to answer questions about my professional journey, from my early background to my current role as a Senior Software Engineer at Mercedes-Benz.io.\n\nIt is informed about my latest projects (like StreamWise AI), recent interviews, technical book reviews, and community workshops. Feel free to ask about my technical expertise, engineering philosophy, or anything else on this portfolio.\n\n**Privacy:** Your conversations are stored locally in your browser—I don\'t collect or store any data on external servers.",
+  info: "Welcome! This AI Assistant is designed to answer questions about my professional journey, from my early background to my current role as a Senior Software Engineer at Mercedes-Benz.io.\n\nIt is informed about my latest projects (like LangCompass), recent interviews, technical book reviews, and community workshops. Feel free to ask about my technical expertise, engineering philosophy, or anything else on this portfolio.\n\n**Privacy:** Your conversations are stored locally in your browser—I don\'t collect or store any data on external servers.",
   header: {
     heading: "AI Assistant",
   },
