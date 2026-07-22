@@ -1,7 +1,7 @@
 const chatbotData = {
   config: {
     models: {
-      openrouter: "meta-llama/llama-3.2-3b-instruct:free",
+      openrouter: "openai/gpt-oss-20b:free",
       openai: "gpt-4o-mini",
     },
     temperature: 1,
