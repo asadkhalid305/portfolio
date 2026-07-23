@@ -58,7 +58,7 @@ npm run test:chatbot
 ## Content Updates
 
 - Main content: `src/constants/*.json` (about, common, contact, contribution, experience, journey, metadata, projects, socials, testimonials)
-- Chatbot config: `src/constants/chatbot.json` (includes prompt, dataset, model configs)
+- Chatbot config: `src/constants/chatbot.ts` (includes prompt, dataset, model configs)
 - Metadata: `src/constants/metadata.json`
 
 ## API Routes
@@ -67,8 +67,12 @@ npm run test:chatbot
   - Expects `{ messages: [{ role, content }] }` (full conversation)
   - Server injects system prompt + dataset, then calls OpenAI/OpenRouter
   - Stateless; chat history lives in browser localStorage
+- `GET /api/contact`
+  - Creates a signed contact-form start token
 - `POST /api/contact`
   - Sends email via Resend
+  - Applies schema validation, honeypot and timing checks, request limits, and
+    Vercel Firewall rate limiting
   - Uses `from: Portfolio <contact@send.asadullahkhalid.com>`
   - Uses `asadkhalid305@gmail.com` as both the recipient and `replyTo`; the submitted address remains visible in the message body
 
@@ -92,6 +96,7 @@ Chatbot renders only when a key is present and `ENABLE_CHATBOT !== "false"` (see
 
 - OpenAI or OpenRouter for chatbot responses
 - Resend for email delivery (verify `send.asadullahkhalid.com` domain)
+- Vercel Firewall for contact-form rate limiting
 - Vercel Analytics + Speed Insights when deployed on Vercel
 
 ## Deployment (Vercel)
@@ -102,6 +107,9 @@ Chatbot renders only when a key is present and `ENABLE_CHATBOT !== "false"` (see
   referer headers are correct
 - Resend domain `send.asadullahkhalid.com` must remain verified for outbound
   email
+- Configure a Vercel Firewall rate-limit rule with Rate Limit API ID
+  `contact-form`. Production currently allows two submissions per IP every ten
+  minutes.
 
 ## Behavior Notes
 
