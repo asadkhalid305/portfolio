@@ -5,7 +5,6 @@ import DisplayInfo from "@/components/about/display-info";
 import Timeline from "@/components/about/timeline";
 import ExperienceCard from "@/components/about/experience-card";
 import FilterBar from "@/components/ui/filter-bar";
-import LinkButton from "@/components/ui/link-button";
 import experienceData from "@/constants/experience.json";
 import { ExperienceCardProps } from "@/utils/types";
 

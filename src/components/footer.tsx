@@ -12,7 +12,7 @@ export default function Footer() {
             © {currentYear} {commonData.name}. {commonData.footer.rights}
           </p>
           <div className="flex gap-6">
-            {Object.entries(socialsData).map(([key, social]: [string, any]) => (
+            {Object.entries(socialsData).map(([key, social]) => (
               <a
                 key={key}
                 href={social.href}

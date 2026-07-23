@@ -34,32 +34,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ProjectPage({ params }: Props) {
+  let project;
   try {
     const { slug } = await params;
-    const project = await getPostBySlug("projects", slug);
-
-    const actions =
-      project.frontmatter.links?.map((link) => ({
-        href: link.url,
-        label: link.name,
-        external: true,
-      })) || [];
-
-    return (
-      <DetailPageLayout
-        title={project.frontmatter.title}
-        backHref="/projects"
-        backText={projectsData.detail.backButton}
-        badges={project.frontmatter.badges}
-        image={project.frontmatter.image}
-        actions={actions}
-        aboutHeading={projectsData.detail.aboutHeading}
-        actionsHeading={projectsData.detail.actionsHeading}
-      >
-        <MDXRemote source={project.content} />
-      </DetailPageLayout>
-    );
-  } catch (error) {
+    project = await getPostBySlug("projects", slug);
+  } catch {
     notFound();
   }
+
+  const actions =
+    project.frontmatter.links?.map((link) => ({
+      href: link.url,
+      label: link.name,
+      external: true,
+    })) || [];
+
+  return (
+    <DetailPageLayout
+      title={project.frontmatter.title}
+      backHref="/projects"
+      backText={projectsData.detail.backButton}
+      badges={project.frontmatter.badges}
+      image={project.frontmatter.image}
+      actions={actions}
+      aboutHeading={projectsData.detail.aboutHeading}
+      actionsHeading={projectsData.detail.actionsHeading}
+    >
+      <MDXRemote source={project.content} />
+    </DetailPageLayout>
+  );
 }

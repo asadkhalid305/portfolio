@@ -1,38 +1,73 @@
-import { NextResponse } from "next/server";
-import { Resend } from 'resend';
-import { isRealisticEmail } from "@/utils/email-validation";
+import { checkRateLimit } from "@vercel/firewall";
+import { Resend } from "resend";
+import {
+  CONTACT_FORM_RATE_LIMIT_ID,
+  createFormStartToken,
+  escapeHtml,
+  getContactFormSecret,
+  processContactSubmission,
+} from "@/lib/contact";
 
+const MAX_REQUEST_BYTES = 16_384;
+const VERIFIED_SENDER = "Portfolio <contact@send.asadullahkhalid.com>";
+const CONTACT_RECIPIENT = "asadkhalid305@gmail.com";
+
+let resendClient: Resend | undefined;
+
+function getResend() {
+  resendClient ??= new Resend(process.env.RESEND_API_KEY);
+  return resendClient;
+}
+
+export async function GET() {
+  try {
+    const formStartedAt = createFormStartToken(getContactFormSecret());
+
+    return Response.json(
+      { formStartedAt },
+      { headers: { "Cache-Control": "no-store" } }
+    );
+  } catch (error) {
+    console.error("Contact form initialization error:", error);
+    return Response.json(
+      { error: "Unable to initialize the form." },
+      { status: 500 }
+    );
+  }
+}
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const name = typeof body.name === "string" ? body.name.trim() : "";
-    const email = typeof body.email === "string" ? body.email.trim() : "";
-    const message = typeof body.message === "string" ? body.message.trim() : "";
+    const { rateLimited } = await checkRateLimit(CONTACT_FORM_RATE_LIMIT_ID, {
+      request,
+    });
 
-    // Basic validation
-    if (!name || !email || !message) {
-      return NextResponse.json(
-        { error: "Missing required fields" },
-        { status: 400 }
-      );
+    const contentLength = Number(request.headers.get("content-length") ?? 0);
+    let input: unknown;
+
+    if (!rateLimited && contentLength <= MAX_REQUEST_BYTES) {
+      try {
+        input = await request.json();
+      } catch {
+        input = undefined;
+      }
     }
 
-    if (!isRealisticEmail(email)) {
-      return NextResponse.json(
-        { error: "Invalid email address" },
-        { status: 400 }
-      );
-    }
+    const result = await processContactSubmission({
+      input,
+      rateLimited,
+      secret: rateLimited ? "" : getContactFormSecret(),
+      sendEmail: async ({ name, email, message }) => {
+        const safeName = escapeHtml(name);
+        const safeEmail = escapeHtml(email);
+        const safeMessage = escapeHtml(message);
 
-    const resend = new Resend(process.env.RESEND_API_KEY);
-
-    const { data, error } = await resend.emails.send({
-      from: 'Portfolio <contact@send.asadullahkhalid.com>',
-      to: 'asadkhalid305@gmail.com',
-      replyTo: email,
-      subject: `New Inquiry: ${name}`,
-      html: `
+        const { error } = await getResend().emails.send({
+          from: VERIFIED_SENDER,
+          to: CONTACT_RECIPIENT,
+          replyTo: CONTACT_RECIPIENT,
+          subject: "New portfolio inquiry",
+          html: `
         <!DOCTYPE html>
         <html>
           <head>
@@ -50,16 +85,14 @@ export async function POST(request: Request) {
               <div style="padding: 40px;">
                 <div style="margin-bottom: 32px;">
                   <label style="display: block; color: #52525b; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">From</label>
-                  <div style="color: #ffffff; font-size: 16px; font-weight: 500;">${name}</div>
-                  <div style="color: #71717a; font-size: 14px;">${email}</div>
+                  <div style="color: #ffffff; font-size: 16px; font-weight: 500;">${safeName}</div>
+                  <div style="color: #71717a; font-size: 14px;">${safeEmail}</div>
                 </div>
                 
                 <div style="margin-bottom: 32px;">
                   <label style="display: block; color: #52525b; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Message</label>
-                  <div style="color: #e4e4e7; font-size: 15px; line-height: 1.6; white-space: pre-wrap; background-color: #09090b; padding: 20px; border-radius: 8px; border: 1px solid #1a1a1a;">${message}</div>
+                  <div style="color: #e4e4e7; font-size: 15px; line-height: 1.6; white-space: pre-wrap; background-color: #09090b; padding: 20px; border-radius: 8px; border: 1px solid #1a1a1a;">${safeMessage}</div>
                 </div>
-                
-                <a href="mailto:${email}" style="display: inline-block; background-color: #ffffff; color: #000000; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background-color 0.2s;">Reply directly</a>
               </div>
               
               <div style="padding: 24px 40px; background-color: #09090b; border-top: 1px solid #1a1a1a; text-align: center;">
@@ -68,19 +101,21 @@ export async function POST(request: Request) {
             </div>
           </body>
         </html>
-      `,
+          `,
+        });
+
+        if (error) {
+          console.error("Resend error:", error);
+          throw new Error("Email provider rejected the contact message");
+        }
+      },
     });
 
-    if (error) {
-      console.error("Resend error:", error);
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
-
-    return NextResponse.json({ success: true, message: "Email recorded successfully" });
+    return Response.json(result.body, { status: result.status });
   } catch (error) {
     console.error("Contact API error:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
+    return Response.json(
+      { error: "Unable to submit the form." },
       { status: 500 }
     );
   }

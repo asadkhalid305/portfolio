@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 // Validate environment on startup
-const _ = env;
+void env;
 
 const showChatbot =
   (!!process.env.OPENAI_API_KEY || !!process.env.OPENROUTER_API_KEY) &&

@@ -15,7 +15,6 @@ interface ContainerProps {
 export function Container({
   children,
   className = "",
-  center = false,
   maxWidth = "",
 }: ContainerProps) {
   return (

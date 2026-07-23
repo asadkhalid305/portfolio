@@ -70,7 +70,7 @@ npm run test:chatbot
 - `POST /api/contact`
   - Sends email via Resend
   - Uses `from: Portfolio <contact@send.asadullahkhalid.com>`
-  - Sends to `asadkhalid305@gmail.com` with `replyTo` as the sender
+  - Uses `asadkhalid305@gmail.com` as both the recipient and `replyTo`; the submitted address remains visible in the message body
 
 ## Environment Variables (Private)
 
@@ -82,6 +82,7 @@ Use `.env.local` (keep secrets out of git). `.env.example` is the template.
 - `ENABLE_CHATBOT` - set `"false"` to hide chatbot UI even if keys exist
 - `NEXT_PUBLIC_SITE_URL` - required for OpenRouter referer header
 - `RESEND_API_KEY` - Resend API key for contact emails
+- `CONTACT_FORM_SECRET` - Random secret of at least 32 characters used to sign contact form timestamps
 - `NODE_ENV` - standard Node env
 
 Chatbot renders only when a key is present and `ENABLE_CHATBOT !== "false"` (see

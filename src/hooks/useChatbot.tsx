@@ -1,5 +1,4 @@
 import { FormEvent, useState, useEffect } from "react";
-import chatbotData from "@/constants/chatbot";
 import { getReplyFromChatbot } from "@/utils/api";
 import { ChatbotMessage } from "@/utils/types";
 

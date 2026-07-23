@@ -1,9 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import contactData from "@/constants/contact.json";
 import { isRealisticEmail } from "@/utils/email-validation";
+
+async function fetchFormStartedAt() {
+  const response = await fetch("/api/contact", { cache: "no-store" });
+  if (!response.ok) {
+    throw new Error("Unable to initialize the contact form");
+  }
+
+  const data = (await response.json()) as { formStartedAt?: string };
+  if (!data.formStartedAt) {
+    throw new Error("Missing contact form timestamp");
+  }
+
+  return data.formStartedAt;
+}
 
 export default function ContactForm() {
   const [status, setStatus] = useState<
@@ -13,10 +27,51 @@ export default function ContactForm() {
     name: "",
     email: "",
     message: "",
+    website: "",
+    formStartedAt: "",
   });
   const [emailError, setEmailError] = useState("");
 
   const isEmailValid = isRealisticEmail(formData.email);
+
+  useEffect(() => {
+    let active = true;
+
+    void fetchFormStartedAt()
+      .then((formStartedAt) => {
+        if (!active) return;
+        setFormData((previous) => ({
+          ...previous,
+          website: "",
+          formStartedAt,
+        }));
+      })
+      .catch((error) => {
+        if (!active) return;
+        console.error("Error initializing form:", error);
+        setStatus("error");
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const handleRestart = async () => {
+    setStatus("idle");
+
+    try {
+      const formStartedAt = await fetchFormStartedAt();
+      setFormData((previous) => ({
+        ...previous,
+        website: "",
+        formStartedAt,
+      }));
+    } catch (error) {
+      console.error("Error reinitializing form:", error);
+      setStatus("error");
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,7 +96,13 @@ export default function ContactForm() {
       if (response.ok) {
         setStatus("success");
         setEmailError("");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+          website: "",
+          formStartedAt: "",
+        });
       } else {
         setStatus("error");
       }
@@ -106,7 +167,7 @@ export default function ContactForm() {
             {contactData.success.description}
           </p>
           <button
-            onClick={() => setStatus("idle")}
+            onClick={handleRestart}
             className="px-6 py-2 bg-c-dark text-white rounded-xl font-medium transition-all hover:bg-gray-800"
           >
             {contactData.success.button}
@@ -114,6 +175,28 @@ export default function ContactForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
+          <input
+            type="hidden"
+            name="formStartedAt"
+            value={formData.formStartedAt}
+            readOnly
+          />
+          <div
+            className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden"
+            aria-hidden="true"
+          >
+            <label htmlFor="website">Website</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              value={formData.website}
+              onChange={handleChange}
+              autoComplete="off"
+              tabIndex={-1}
+              maxLength={200}
+            />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label
@@ -129,6 +212,7 @@ export default function ContactForm() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
+                maxLength={100}
                 placeholder={contactData.form.name.placeholder}
                 className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-c-dark dark:focus:ring-c-light transition-all"
               />
@@ -147,6 +231,7 @@ export default function ContactForm() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                maxLength={254}
                 placeholder={contactData.form.email.placeholder}
                 aria-invalid={Boolean(emailError)}
                 className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-c-dark dark:focus:ring-c-light transition-all"
@@ -169,6 +254,8 @@ export default function ContactForm() {
               rows={5}
               value={formData.message}
               onChange={handleChange}
+              minLength={20}
+              maxLength={5000}
               placeholder={contactData.form.message.placeholder}
               className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-c-dark dark:focus:ring-c-light transition-all resize-none"
             />
@@ -183,14 +270,16 @@ export default function ContactForm() {
             disabled={
               status === "loading" ||
               !formData.name.trim() ||
-              !formData.message.trim() ||
+              formData.message.trim().length < 20 ||
+              !formData.formStartedAt ||
               !isEmailValid
             }
             className={clsx(
               "w-full py-4 bg-c-dark text-white rounded-xl font-bold text-lg shadow-lg transition-all flex items-center justify-center gap-2",
               status === "loading" ||
                 !formData.name.trim() ||
-                !formData.message.trim() ||
+                formData.message.trim().length < 20 ||
+                !formData.formStartedAt ||
                 !isEmailValid
                 ? "opacity-70 cursor-not-allowed"
                 : "hover:bg-gray-800 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"

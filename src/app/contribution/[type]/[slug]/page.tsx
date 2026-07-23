@@ -52,39 +52,42 @@ export default async function ContributionDetailPage({ params }: Props) {
     notFound();
   }
 
+  let post;
   try {
-    const { content, frontmatter } = await getPostBySlug(
+    post = await getPostBySlug(
       type as ContentType,
       slug
     );
-
-    const actions = (frontmatter.links || []).map((link) => ({
-      href: link.url,
-      label: link.name,
-      external: true,
-    }));
-
-    const badges = [...(frontmatter.badges || [])];
-    if (frontmatter.type) badges.push(frontmatter.type);
-    if (frontmatter.event) badges.push(frontmatter.event);
-
-    return (
-      <DetailPageLayout
-        title={frontmatter.title}
-        backHref="/contribution"
-        backText={contributionData.detail.backButton}
-        badges={badges}
-        date={frontmatter.date}
-        image={frontmatter.image}
-        actions={actions}
-        aboutHeading={contributionData.detail.aboutHeading}
-        actionsHeading={contributionData.detail.actionsHeading}
-        className="min-h-[calc(100vh-80px)] pt-24 pb-12"
-      >
-        <MDXRemote source={content} />
-      </DetailPageLayout>
-    );
-  } catch (error) {
+  } catch {
     notFound();
   }
+
+  const { content, frontmatter } = post;
+
+  const actions = (frontmatter.links || []).map((link) => ({
+    href: link.url,
+    label: link.name,
+    external: true,
+  }));
+
+  const badges = [...(frontmatter.badges || [])];
+  if (frontmatter.type) badges.push(frontmatter.type);
+  if (frontmatter.event) badges.push(frontmatter.event);
+
+  return (
+    <DetailPageLayout
+      title={frontmatter.title}
+      backHref="/contribution"
+      backText={contributionData.detail.backButton}
+      badges={badges}
+      date={frontmatter.date}
+      image={frontmatter.image}
+      actions={actions}
+      aboutHeading={contributionData.detail.aboutHeading}
+      actionsHeading={contributionData.detail.actionsHeading}
+      className="min-h-[calc(100vh-80px)] pt-24 pb-12"
+    >
+      <MDXRemote source={content} />
+    </DetailPageLayout>
+  );
 }

@@ -2,6 +2,31 @@ import { LinkButtonProps } from "@/utils/types";
 import clsx from "clsx";
 import Link from "next/link";
 
+function ArrowIcon({
+  className,
+  direction,
+}: {
+  className?: string;
+  direction: "left" | "right";
+}) {
+  return (
+    <svg
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d={direction === "left" ? "M7 16l-4-4m0 0l4-4m-4 4h18" : "M17 8l4 4m0 0l-4 4m4-4H3"}
+      />
+    </svg>
+  );
+}
+
 export default function LinkButton({
   href,
   text,
@@ -13,51 +38,14 @@ export default function LinkButton({
   const isInternal = href.startsWith("/");
   const isMinimal = variant === "minimal";
 
-  const ArrowIcon = ({ className }: { className?: string }) => {
-    if (iconPosition === "left") {
-      return (
-        <svg
-          className={className}
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M7 16l-4-4m0 0l4-4m-4 4h18"
-          />
-        </svg>
-      );
-    }
-    return (
-      <svg
-        className={className}
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M17 8l4 4m0 0l-4 4m4-4H3"
-        />
-      </svg>
-    );
-  };
-
   const content = (
     <>
       {iconPosition === "left" && isMinimal && (
-        <ArrowIcon className="w-5 h-5 transition-transform duration-300 ease-in-out group-hover:-translate-x-1" />
+        <ArrowIcon direction="left" className="w-5 h-5 transition-transform duration-300 ease-in-out group-hover:-translate-x-1" />
       )}
       <span>{text}</span>
       {iconPosition === "right" && isMinimal && (
-        <ArrowIcon className="w-5 h-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+        <ArrowIcon direction="right" className="w-5 h-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
       )}
       {/* Non-minimal variant icon support can be added if needed, currently only handling minimal for back button */}
       {!isMinimal && showIcon && iconPosition === "right" && (
