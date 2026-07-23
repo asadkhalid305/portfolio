@@ -1,4 +1,4 @@
-import { FormEvent, useState, useEffect } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { getReplyFromChatbot } from "@/utils/api";
 import { ChatbotMessage } from "@/utils/types";
 
@@ -6,29 +6,38 @@ export default function useChatbot() {
   const [userInput, setUserInput] = useState("");
   const [messages, setMessages] = useState<ChatbotMessage[]>([]);
   const [loading, setLoading] = useState(false);
+  const hasLoadedMessages = useRef(false);
 
   // Load messages from local storage when the component mounts
   useEffect(() => {
     // Fix SSR crash: Check if window is defined before accessing localStorage
     if (typeof window === "undefined") return;
 
+    let restoredMessages: ChatbotMessage[] = [];
     const savedMessages = localStorage.getItem("messages");
     if (savedMessages) {
       try {
         const parsed = JSON.parse(savedMessages);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          setMessages(parsed);
+          restoredMessages = parsed;
         }
       } catch (error) {
         console.error("Failed to parse saved messages:", error);
       }
     }
+
+    const animationFrame = requestAnimationFrame(() => {
+      hasLoadedMessages.current = true;
+      setMessages(restoredMessages);
+    });
+
+    return () => cancelAnimationFrame(animationFrame);
   }, []);
 
   // Save messages to local storage whenever they change
   useEffect(() => {
     // Save to localStorage only in browser environment
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && hasLoadedMessages.current) {
       localStorage.setItem("messages", JSON.stringify(messages));
     }
   }, [messages]);

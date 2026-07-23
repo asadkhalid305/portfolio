@@ -16,6 +16,13 @@ Before editing content, inspect the current type in `src/utils/types.ts` and one
 
 Project-specific workflows live in `.agents/skills/`. Use the matching skill when adding or updating portfolio content, synchronizing the chatbot, checking links, updating SEO, or validating the portfolio.
 
+## Branch and release policy
+
+- Never commit or push ordinary work directly to `main`.
+- Work must reach `main` only through the repository's release workflow, unless the user explicitly authorizes a direct `main` operation.
+- A generic request to "commit and push" does not authorize committing or pushing to `main`; use the appropriate non-main branch, normally `develop`.
+- If the current branch is `main` when delivery is requested, switch to or create the appropriate non-main branch before committing. Ask for direction if the intended branch cannot be determined safely.
+
 ## Verification
 
 Run checks proportionate to the change:

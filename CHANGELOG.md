@@ -8,6 +8,43 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.10.0] - 2026-07-23
+
+### Added
+
+- Contact form test suite covering valid submissions, validation failures,
+  honeypot spam, signed timestamps, oversized input, and rate limiting
+- Vercel Firewall integration for contact form rate limiting
+
+### Changed
+
+- Updated the OpenRouter chatbot model to `openai/gpt-oss-20b:free`
+- Migrated linting to ESLint flat configuration with a compatible Next.js
+  toolchain
+- Documented required contact form environment and firewall configuration
+- Added repository guidance requiring ordinary work to reach `main` through
+  the release workflow
+- Updated direct dependencies:
+  - Added `@vercel/firewall` ^1.2.1
+  - `eslint`: 10.0.0 -> 9.39.5
+  - `eslint-config-next`: 16.1.6 -> 16.2.11
+  - `next`: 16.2.6 -> 16.2.11
+  - `sharp`: ^0.34.3 -> ^0.35.3
+- Regenerated the npm lockfile with patched dependency resolutions
+
+### Fixed
+
+- Restored saved chatbot history after hydration without synchronous effect
+  state updates
+
+### Security
+
+- Hardened contact submissions with signed start tokens, honeypot and timing
+  checks, schema and request-size limits, per-IP rate limiting, and escaped
+  email content
+- Overrode Next.js internal PostCSS and Sharp resolutions to patched versions,
+  bringing the production dependency audit to zero known vulnerabilities
+
 ## [1.9.0] - 2026-07-19
 
 ### Added
@@ -237,7 +274,8 @@ and this project adheres to
 
 - Initial beta release
 
-[unreleased]: https://github.com/asadkhalid305/portfolio/compare/v1.9.0...HEAD
+[unreleased]: https://github.com/asadkhalid305/portfolio/compare/v1.10.0...HEAD
+[1.10.0]: https://github.com/asadkhalid305/portfolio/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/asadkhalid305/portfolio/compare/v1.8.0...v1.9.0
 [1.8.0]: https://github.com/asadkhalid305/portfolio/compare/v1.7.0...v1.8.0
 [1.7.0]: https://github.com/asadkhalid305/portfolio/compare/v1.6.0...v1.7.0
