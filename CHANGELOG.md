@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.11.0] - 2026-07-29
+
+### Changed
+
+- Updated the homepage portrait with a new profile photo
+
 ## [1.10.0] - 2026-07-23
 
 ### Added
