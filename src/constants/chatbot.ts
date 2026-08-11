@@ -88,9 +88,20 @@ Actively building independent SaaS products for end-to-end product learning. Han
   - Privacy and Architecture: No account, database, AI backend, local model server, or API key is required. The core application uses static JSON data and remains useful without the optional AI tools.
   - Live Application: https://langcompass.asadullahkhalid.com/
   - GitHub: https://github.com/asadkhalid305/langcompass
+- **Chrome AI and WebMCP Playground**: A teaching-first, local-first React playground built for exploring Chrome Built-in AI and WebMCP through runnable lessons, visual demos, and setup documentation.
+  - Chrome Built-in AI: Seven independently runnable lessons for Translator, Language Detector, Summarizer, Prompt/LanguageModel, plus the experimental Writer, Rewriter, and Proofreader APIs. The UI shows availability, model preparation or download, running, cancellation, success, and error states.
+  - WebMCP: Separate declarative and imperative tool demos show how websites can expose structured, browser-visible actions to agents. The tools can be inspected and called through Chrome DevTools’ Application → WebMCP panel, including status and logs.
+  - Constraints: Availability depends on browser version, device, model preparation, permissions, and experimental programs. WebMCP is separate from on-device inference and is not a production default.
+  - Architecture: Vite, React, TypeScript, Tailwind CSS, Vitest, and Testing Library. There is no application-owned AI backend, API key, cloud-model integration, or local model server.
+  - Live Application: https://chromeai.asadullahkhalid.com/
+  - GitHub: https://github.com/asadkhalid305/chrome-ai
 - **StreamWise AI**: An intelligent entertainment concierge that eliminates \'choice paralysis\' using a multi-agent AI system. Built with Next.js 15, TypeScript, and OpenAI Agents SDK.
   - Live Demo: /apps/streamwise-ai
   - GitHub: https://github.com/asadkhalid305/streamwise-ai
+- **OnStage**: An open-source, customizable onboarding wizard for React applications.
+  - Features: Responsive modal tours, configurable themes and behavior, and an interactive builder for exporting configuration code.
+  - Live Demo: /apps/onstage/
+  - GitHub: https://github.com/asadkhalid305/onstage
 - Anonymous authentication systems
 - Credit-based usage limits and user upgrade flows (anonymous \u2192 registered)
 - Subscription modeling (PLUS/PRO tiers)
@@ -120,9 +131,17 @@ Creates educational content with a passion to empower individuals on their caree
 
 ### Speaking Engagements & Events:
 
-**Berlin AI Builders Meetup – Designing Real-World Multi-Agent AI Systems** (Upcoming - January 2026)
-Scheduled to give a technical talk at Ojin AixHaus for the GDG Berlin community. I will be breaking down the concepts of multi-agent AI systems, explaining how they work and fit together to form complete systems.
+**Berlin AI Builders Meetup – Designing Real-World Multi-Agent AI Systems** (January 2026)
+Delivered a technical talk at Ojin AixHaus for the Berlin AI Builders community on agents, multi-agent architectures, orchestration, coordination patterns, and the tools, memory, context, and orchestration layers that make those systems work.
 Link: https://www.linkedin.com/posts/gdgberlin_ai-meetup-ojin-aixhaus-join-us-for-activity-7417490788537819136-dD0F
+
+**GDG Berlin Workshop – Unlocking Developer Productivity with Google Antigravity CLI** (July 2026)
+Led a hands-on workshop for around 40 developers, engineers, and AI builders at Ojin AixHaus, connected to WeAreDevelopers World Congress 2026. Participants used a purpose-built teaching repository to practice a deliberate agent workflow: context, plan, execute, inspect, verify, add guardrails, and automate.
+Links: https://www.linkedin.com/feed/update/urn:li:share:7476320400415813632/ | https://github.com/asadkhalid305/antigravity-workshop
+
+**Code with Ahsan – Building Local-First AI Experiences with Chrome Built-in AI** (August 2026)
+Delivered a live online talk using the Chrome AI and WebMCP Playground to demonstrate seven Chrome Built-in AI APIs, visual declarative and imperative WebMCP tools, and Chrome DevTools’ Application → WebMCP panel for inspecting and calling tools, reviewing their status, and reading logs.
+Links: https://chromeai.asadullahkhalid.com/ | https://github.com/asadkhalid305/chrome-ai | https://slides.asadullahkhalid.com/talks/building-local-first-ai-experiences/index.html#/
 
 **Hands-on Workshop – Building Multi-Agent Systems with OpenAI Agents SDK** (December 2025)
 Led a 2.5-hour technical workshop for the Code with Ahsan community on designing agent-based architectures where multiple specialized agents collaborate, delegate responsibilities, and interact with external tools.

@@ -32,7 +32,11 @@ const showChatbot =
 
 export default function RootLayout({ children }: Readonly<LayoutProps>) {
   return (
-    <html lang="en" className={poppins.className + " scroll-smooth"}>
+    <html
+      lang="en"
+      className={poppins.className + " scroll-smooth"}
+      data-scroll-behavior="smooth"
+    >
       <body className="antialiased text-c-dark scroll-smooth lg:subpixel-antialiased ">
         <a
           href="#main-content"

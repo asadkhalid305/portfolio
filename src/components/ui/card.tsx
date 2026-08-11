@@ -18,6 +18,7 @@ export default function Card({
   pinned = false,
 }: Readonly<VCardProps>) {
   const { src, alt } = getImageProps(image);
+  const isSquareImage = image.layout === "square";
   const imageSizes = horizontal
     ? "(max-width: 1024px) calc(100vw - 2.5rem), 50vw"
     : "(max-width: 768px) calc(100vw - 2rem), (max-width: 1024px) 50vw, 384px";
@@ -27,7 +28,9 @@ export default function Card({
     <div
       className={`relative overflow-hidden bg-c-semidark ${
         horizontal
-          ? "aspect-video order-1 h-fit w-full self-center rounded-xl lg:order-2"
+          ? isSquareImage
+            ? "aspect-square order-1 w-full self-center rounded-xl lg:order-2 lg:max-w-[22rem] lg:justify-self-end"
+            : "aspect-video order-1 h-fit w-full self-center rounded-xl lg:order-2"
           : "h-96 w-full rounded-t-2xl border-b border-gray-100 dark:border-gray-800"
       }`}
     >
@@ -47,7 +50,9 @@ export default function Card({
         alt={alt}
         fill
         sizes={imageSizes}
-        className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.01]"
+        className={`object-contain transition-transform duration-500 group-hover:scale-[1.01] ${
+          isSquareImage ? "p-0" : "p-4"
+        }`}
         placeholder="blur"
         blurDataURL={getShimmerDataUrl(
           horizontal ? 640 : 384,

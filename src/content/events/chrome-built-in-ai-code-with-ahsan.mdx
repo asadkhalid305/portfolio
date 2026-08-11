@@ -1,0 +1,37 @@
+---
+title: "Building Local-First AI Experiences with Chrome Built-in AI"
+description: "Delivered a live online talk for Code with Ahsan on Chrome Built-in AI, local-first product opportunities, and WebMCP as an emerging interface for agents."
+date: "August 2026"
+type: "Talk"
+event: "Code with Ahsan"
+image:
+  src: "/images/event-10.webp"
+  alt: "Event announcement for Asad Ullah Khalid's Code with Ahsan talk on building local-first AI experiences with Chrome Built-in AI"
+links:
+  - name: "View Event Announcement"
+    url: "https://www.linkedin.com/posts/code-with-ahsan_codewithahsan-googlechrome-ai-activity-7487481245560422400--1ik/"
+  - name: "View Speaker Post"
+    url: "https://www.linkedin.com/posts/asadkhalid305_in-my-recent-post-i-discussed-how-i-integrated-activity-7487809089880899584-lGzf"
+  - name: "Try the Chrome AI Playground"
+    url: "https://chromeai.asadullahkhalid.com/"
+  - name: "View Chrome AI Playground Repository"
+    url: "https://github.com/asadkhalid305/chrome-ai"
+  - name: "View Slides"
+    url: "https://slides.asadullahkhalid.com/talks/building-local-first-ai-experiences/index.html#/"
+---
+
+I delivered a live online talk for the Code with Ahsan community on the emerging Chrome Built-in AI ecosystem and what it could mean for frontend product development.
+
+The session began with a practical comparison of familiar AI integration paths: cloud or backend model calls, self-managed local models, and browser-managed capabilities exposed through Chrome APIs.
+
+I built the **Chrome AI and WebMCP Playground** specifically for this talk. It gave the audience visual, hands-on demonstrations of the Chrome AI APIs covered in the session, alongside declarative and imperative WebMCP examples. The project also includes the documentation and setup guidance developers need to test the APIs for themselves.
+
+From there, I looked at the implementation questions that matter as much as the APIs themselves: capability checks, model preparation, browser and device support, and the fact that this space is still evolving. The aim was not to present browser AI as a universal replacement for cloud models, but to give frontend developers a useful mental model for deciding where it may fit.
+
+## From Browser AI to Agent-Facing Interfaces
+
+The second part of the talk introduced **WebMCP**, which is separate from Chrome's built-in inference APIs. WebMCP lets websites expose structured, browser-visible tools to agents through declarative HTML or imperative JavaScript.
+
+That raises a new frontend design question: how can an application offer the same trusted actions to people through its interface and to agents through well-defined tools? Alongside the visual examples in the Playground, I used Chrome DevTools’ **Application → WebMCP** panel to inspect and call the tools, then review their status and logs. I also covered why validation, permissions, support constraints, and shared business logic need to be considered before treating agent-facing actions as a production default.
+
+The session was an honest look at what developers can explore now, what remains experimental, and why Chrome AI and WebMCP are worth watching as the web platform evolves.
