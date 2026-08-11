@@ -8,6 +8,27 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.12.0] - 2026-08-11
+
+### Added
+
+- Chrome AI and WebMCP Playground project with its live app, repository,
+  slides, dedicated poster, and responsive square-image presentation
+- Code with Ahsan talk, *Building Local-First AI Experiences with Chrome
+  Built-in AI*, with organizer artwork and supporting links
+
+### Changed
+
+- Synchronized chatbot knowledge with the Chrome AI Playground, recent talks,
+  the GDG Berlin Antigravity workshop, and the OnStage project
+- Updated the Berlin AI Builders entry from upcoming to delivered
+- Added responsive image sizing and smooth-scroll metadata for Next.js
+
+### Dependencies
+
+- Updated DOMPurify, PostCSS, Undici, and brace-expansion through merged
+  dependency updates
+
 ## [1.11.0] - 2026-07-29
 
 ### Changed

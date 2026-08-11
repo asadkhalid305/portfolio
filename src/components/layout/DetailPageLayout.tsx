@@ -21,6 +21,7 @@ interface DetailPageLayoutProps {
   image: {
     src: string;
     alt: string;
+    layout?: "square" | "video";
   };
   actions: Action[];
   aboutHeading: string;
@@ -54,7 +55,11 @@ export default function DetailPageLayout({
             date={date}
           />
 
-          <DetailPageImage src={image.src} alt={image.alt} />
+          <DetailPageImage
+            src={image.src}
+            alt={image.alt}
+            layout={image.layout}
+          />
 
           <div
             className={`grid gap-12 ${

@@ -10,6 +10,7 @@ import { ReactNode } from "react";
 export type ImageType = {
   src: string;
   alt: string;
+  layout?: "square" | "video";
 };
 
 /**
@@ -298,6 +299,7 @@ export interface Frontmatter {
   image: {
     src: string;
     alt: string;
+    layout?: "square" | "video";
   };
   type?:
     | "Talk"
