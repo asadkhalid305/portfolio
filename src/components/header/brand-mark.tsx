@@ -11,7 +11,11 @@ export default function BrandMark() {
           as="span"
           className="block text-[0.68rem] font-semibold tracking-[0.22em]"
           flipTextClassName="text-blue-600"
+          rotateDirection="top"
+          staggerDuration={0.03}
+          staggerFrom="first"
           textClassName="text-c-dark"
+          transition={{ type: "spring", damping: 25, stiffness: 160 }}
         >
           ASAD ULLAH
         </Text3DFlip>
@@ -19,7 +23,11 @@ export default function BrandMark() {
           as="span"
           className="mt-1 block text-[0.68rem] font-semibold tracking-[0.34em]"
           flipTextClassName="text-blue-500"
+          rotateDirection="top"
+          staggerDuration={0.03}
+          staggerFrom="first"
           textClassName="text-gray-500"
+          transition={{ type: "spring", damping: 25, stiffness: 160 }}
         >
           KHALID
         </Text3DFlip>
