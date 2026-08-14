@@ -36,22 +36,17 @@ export function useActiveNavLink() {
     }
   }, []);
 
-  const navLinkClass = (isActive: boolean, isDark?: boolean) => {
+  const navLinkClass = (isActive: boolean) => {
     const base =
-      "focus-visible:ring-2 focus-visible:ring-c-dark focus-visible:ring-offset-2 focus-visible:outline-none block px-3 py-2 rounded-lg transition-colors duration-300 ease-in-out";
+      "relative block rounded-md px-2.5 py-2 text-sm font-medium text-current transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:ring-offset-2";
     if (isActive) {
       return (
         base +
-        " bg-c-light text-c-dark font-semibold outline outline-2 outline-c-dark"
+        " font-semibold after:absolute after:inset-x-2.5 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-blue-600"
       );
-    } else {
-      const hover =
-        "hover:bg-c-light hover:text-c-dark focus:bg-c-light focus:text-c-dark";
-      const outline = !isDark
-        ? " outline-c-dark hover:outline hover:outline-2 focus:outline focus:outline-2"
-        : "";
-      return base + " " + hover + outline;
     }
+
+    return base + " opacity-70 hover:opacity-100 focus:opacity-100";
   };
 
   return { pathname, currentHash, navLinkClass };

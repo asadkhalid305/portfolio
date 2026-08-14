@@ -17,14 +17,10 @@ export function NavMenuButton({
       type="button"
       aria-label={menuOpen ? "Close menu" : "Open menu"}
       aria-expanded={menuOpen}
-      className={`${className} ml-3 transition-transform duration-200 hover:scale-110`}
+      className={`${className} ml-3 hover:-translate-y-0.5`}
       onClick={onClick}
     >
-      {menuOpen ? (
-        <X className="w-6 h-6 text-c-light" />
-      ) : (
-        <Menu className="w-6 h-6 text-c-light" />
-      )}
+      {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
     </button>
   );
 }
