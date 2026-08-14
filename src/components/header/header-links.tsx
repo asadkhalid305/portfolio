@@ -9,7 +9,7 @@ import socialsData from "@/constants/socials.json";
 export default function HeaderLinks({ links }: Readonly<HeaderLinksProps>) {
   const [menuOpen, setMenuOpen] = useMenuOpen();
 
-  const menuButtonClassName = `lg:hidden p-2 rounded-md bg-c-dark text-c-light shadow-md transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-c-dark outline outline-2 outline-c-light focus-visible:ring-offset-2`;
+  const menuButtonClassName = `lg:hidden grid h-10 w-10 place-items-center rounded-full border border-slate-900/15 bg-white/80 text-c-dark shadow-sm transition-all duration-300 hover:border-slate-900/30 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-c-dark focus-visible:ring-offset-2`;
 
   return (
     <nav
@@ -24,7 +24,7 @@ export default function HeaderLinks({ links }: Readonly<HeaderLinksProps>) {
       <NavLinks links={links} menuOpen={menuOpen} />
       <div className="hidden lg:block">
         <LinkButton
-          className="whitespace-nowrap outline outline-2 transition-all duration-300 ease-in-out bg-c-dark text-c-light hover:bg-c-light hover:text-c-dark rounded-md shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-c-dark focus-visible:ring-offset-2 px-3 py-2 text-sm lg:px-4 lg:text-base ml-auto"
+          className="ml-auto whitespace-nowrap rounded-full bg-c-dark px-5 py-2.5 text-sm font-semibold text-c-light shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-c-dark focus-visible:ring-offset-4"
           href={socialsData.topmateIO.href}
           showIcon={false}
           text={commonData.navigation.bookSession}
