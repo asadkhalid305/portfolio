@@ -242,11 +242,17 @@ const CharBox = memo(
   }: CharBoxProps) => (
     <span
       className="text-3d-flip-char inline transform-3d"
-      style={{ transform: CONTAINER_TRANSFORMS[rotateDirection] }}
+      style={{
+        transform: CONTAINER_TRANSFORMS[rotateDirection],
+        transformStyle: "preserve-3d",
+      }}
     >
       <span
         className={cn("relative h-[1lh] backface-hidden", textClassName)}
-        style={{ transform: FRONT_FACE_TRANSFORMS[rotateDirection] }}
+        style={{
+          backfaceVisibility: "hidden",
+          transform: FRONT_FACE_TRANSFORMS[rotateDirection],
+        }}
       >
         {char}
       </span>
@@ -255,7 +261,10 @@ const CharBox = memo(
           "absolute top-0 left-0 h-[1lh] backface-hidden",
           flipTextClassName
         )}
-        style={{ transform: SECOND_FACE_TRANSFORMS[rotateDirection] }}
+        style={{
+          backfaceVisibility: "hidden",
+          transform: SECOND_FACE_TRANSFORMS[rotateDirection],
+        }}
       >
         {char}
       </span>
