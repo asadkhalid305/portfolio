@@ -107,7 +107,7 @@ const Text3DFlip = ({
   }, [children])
 
   const characters = useMemo(() => {
-    const words = text.split("")
+    const words = text.split(" ")
     return words.map((word, i) => ({
       characters: splitIntoCharacters(word),
       needsSpace: i !== words.length - 1,
