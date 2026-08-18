@@ -5,6 +5,10 @@
   "chapters": [
     {
       "id": "starting-late",
+      "image": {
+        "src": "/images/default.webp",
+        "alt": "Placeholder for a personal photo from Asad's early education"
+      },
       "marker": "01",
       "label": "Starting late",
       "title": "Formal school began when I was eleven.",
@@ -14,6 +18,10 @@
     },
     {
       "id": "catching-up",
+      "image": {
+        "src": "/images/default.webp",
+        "alt": "Placeholder for a personal photo from Asad's university years"
+      },
       "marker": "02",
       "label": "Catching up",
       "title": "Effort became the advantage I could control.",
@@ -23,6 +31,10 @@
     },
     {
       "id": "giving-back",
+      "image": {
+        "src": "/images/default.webp",
+        "alt": "Placeholder for a personal photo from Asad's community work"
+      },
       "marker": "03",
       "label": "Giving back",
       "title": "Progress felt more meaningful when it helped someone else.",
@@ -32,6 +44,10 @@
     },
     {
       "id": "starting-again",
+      "image": {
+        "src": "/images/default.webp",
+        "alt": "Placeholder for a personal photo from Asad's move to Germany"
+      },
       "marker": "04",
       "label": "Starting again",
       "title": "Moving to Berlin created another reset.",
@@ -41,6 +57,10 @@
     },
     {
       "id": "building-and-sharing",
+      "image": {
+        "src": "/images/default.webp",
+        "alt": "Placeholder for a personal photo from Asad's current work and teaching"
+      },
       "marker": "05",
       "label": "Building and sharing",
       "title": "Today, the work and the teaching belong together.",

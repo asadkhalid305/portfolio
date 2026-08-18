@@ -160,6 +160,7 @@ export type TimelineItemProps = {
  */
 export type JourneyChapter = {
   id: string;
+  image?: ImageType;
   marker: string;
   label: string;
   title: string;
