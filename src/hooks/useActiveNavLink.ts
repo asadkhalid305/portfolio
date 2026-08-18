@@ -39,20 +39,19 @@ export function useActiveNavLink() {
   const navLinkClass = (isActive: boolean, isDark = false) => {
     const base =
       "relative block rounded-md px-2.5 py-2 text-sm font-medium text-current transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2";
+    const interaction = isDark
+      ? " hover:bg-brand-blue hover:text-white focus-visible:ring-offset-c-dark"
+      : " hover:text-brand-blue-hover focus-visible:ring-offset-c-semidark";
+
     if (isActive) {
       return (
         base +
-        " font-semibold after:absolute after:inset-x-2.5 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-brand-blue" +
-        (isDark ? " focus-visible:ring-offset-c-dark" : " focus-visible:ring-offset-c-semidark")
+        interaction +
+        " font-semibold after:absolute after:inset-x-2.5 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-brand-blue"
       );
     }
 
-    return (
-      base +
-      (isDark
-        ? " hover:text-blue-300 focus-visible:ring-offset-c-dark"
-        : " hover:text-brand-blue-hover focus-visible:ring-offset-c-semidark")
-    );
+    return base + interaction;
   };
 
   return { pathname, currentHash, navLinkClass };
