@@ -49,8 +49,9 @@ export function useActiveNavLink() {
 
     return (
       base +
-      " opacity-75 hover:text-brand-blue hover:opacity-100 focus:opacity-100" +
-      (isDark ? " focus-visible:ring-offset-c-dark" : " focus-visible:ring-offset-c-semidark")
+      (isDark
+        ? " hover:text-blue-300 focus-visible:ring-offset-c-dark"
+        : " hover:text-brand-blue-hover focus-visible:ring-offset-c-semidark")
     );
   };
 

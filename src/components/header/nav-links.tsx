@@ -71,19 +71,20 @@ export function NavLinks({
 
         if (link.dropdown) {
           const isDropdownOpen = openDropdown === link.name;
+          const ParentLink = isAnchor ? "a" : Link;
 
           return (
             <li key={link.href} className="relative flex flex-col lg:block">
               {/* Container for Link + Mobile Toggle */}
               <div className="flex items-center justify-between w-full lg:w-auto lg:justify-start lg:gap-1">
-                <Link
+                <ParentLink
                   href={link.href}
                   aria-current={isActive ? "page" : undefined}
                   className={`${navLinkClass(isActive, isDark)} flex-grow lg:flex-grow-0`}
                   onClick={() => setOpenDropdown(null)}
                 >
                   {link.name}
-                </Link>
+                </ParentLink>
 
                 <button
                   type="button"

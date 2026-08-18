@@ -74,12 +74,12 @@ export default function SiteHeader({ projects = [] }: Readonly<HeaderProps>) {
           )}
           aria-label="Go to home page"
         >
-          <span className="relative block h-7 w-32 sm:h-8 sm:w-36">
+          <span className="relative block h-6 w-28 sm:h-7 sm:w-32">
             <Image
               alt={commonData.header.logoAlt}
               draggable="false"
               fill
-              sizes="(max-width: 639px) 128px, 144px"
+              sizes="(max-width: 639px) 112px, 128px"
               src={isDark ? "/images/logo-light.webp" : "/images/logo-dark.webp"}
             />
           </span>
