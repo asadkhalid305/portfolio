@@ -6,6 +6,7 @@ import { getShimmerDataUrl } from "@/utils/shimmer";
 import Badge from "./badge";
 import CardShell from "./card-shell";
 import CardAction from "./card-action";
+import { Lens } from "./lens";
 
 export default function Card({
   title,
@@ -26,15 +27,20 @@ export default function Card({
 
   // Common image component
   const imageComponent = (
-    <div
-      className={`relative overflow-hidden bg-c-semidark ${
+    <Lens
+      ariaLabel={`Zoom into ${alt}`}
+      className={
         horizontal
           ? isSquareImage
             ? "aspect-square order-1 w-full self-center rounded-xl lg:order-2 lg:max-w-[22rem] lg:justify-self-end"
             : "aspect-video order-1 h-fit w-full self-center rounded-xl lg:order-2"
           : "h-96 w-full rounded-t-2xl border-b border-gray-100 dark:border-gray-800"
-      }`}
+      }
+      focusable={false}
+      lensSize={150}
+      zoomFactor={1.18}
     >
+      <div className="relative h-full w-full overflow-hidden bg-c-semidark">
       {/* Blurred background for fixing aspect ratio issues */}
       <Image
         src={src}
@@ -62,7 +68,8 @@ export default function Card({
         loading="lazy"
         draggable="false"
       />
-    </div>
+      </div>
+    </Lens>
   );
 
   // Common badges component
