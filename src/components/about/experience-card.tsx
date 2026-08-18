@@ -33,10 +33,10 @@ export default function ExperienceCard({
         featured
           ? "border-brand-blue/40 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-brand-blue"
           : "border-black/10 dark:border-white/10",
-        compact ? "flex h-full flex-col" : "lg:grid lg:grid-cols-[17rem_1fr] lg:gap-10 lg:p-8"
+        compact ? "flex h-full flex-col" : "xl:grid xl:grid-cols-[17rem_1fr] xl:gap-10 xl:p-8"
       )}
     >
-      <div className={clsx(!compact && "lg:border-r lg:border-black/10 lg:pr-8 dark:lg:border-white/10")}>
+      <div className={clsx(!compact && "xl:border-r xl:border-black/10 xl:pr-8 dark:xl:border-white/10")}>
         <div className="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-gray-500">
           <span className={clsx(featured && "text-brand-blue")}>
             {featured ? "Current role" : period}
@@ -71,7 +71,7 @@ export default function ExperienceCard({
         )}
       </div>
 
-      <div className={clsx("flex flex-col", compact ? "mt-5 flex-1" : "mt-6 lg:mt-0")}>
+      <div className={clsx("flex flex-col", compact ? "mt-5 flex-1" : "mt-6 xl:mt-0")}>
         <p className="text-base leading-7 text-gray-700 dark:text-gray-300 sm:text-lg sm:leading-8">
           {description}
         </p>

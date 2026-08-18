@@ -39,7 +39,7 @@ export default function Experience({ isOverview }: { isOverview?: boolean }) {
             paddingBottom={false}
           />
         </div>
-        <div className="mt-10 grid gap-5 lg:mt-14 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 lg:mt-14 xl:grid-cols-3">
           {recentRoles.map((experience, index) => (
             <ExperienceCard
               key={experience.id}
