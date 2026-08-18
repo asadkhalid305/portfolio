@@ -29,16 +29,28 @@ export default function ExperienceCard({
   return (
     <article
       className={clsx(
-        "relative overflow-hidden rounded-2xl border bg-white/80 p-6 shadow-sm transition-[border-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:border-brand-blue/30 hover:shadow-lg dark:bg-gray-900/80",
+        "group relative overflow-hidden rounded-2xl border border-black/10 p-6 transition-all duration-300 ease-in-out hover:shadow-2xl dark:border-gray-800 dark:bg-gray-900",
         featured
-          ? "border-brand-blue/40 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-brand-blue"
-          : "border-black/10 dark:border-white/10",
+          ? "border-c-dark bg-c-dark text-c-light"
+          : "bg-white hover:bg-c-semidark",
         compact ? "flex h-full flex-col" : "xl:grid xl:grid-cols-[17rem_1fr] xl:gap-10 xl:p-8"
       )}
     >
-      <div className={clsx(!compact && "xl:border-r xl:border-black/10 xl:pr-8 dark:xl:border-white/10")}>
-        <div className="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-gray-500">
-          <span className={clsx(featured && "text-brand-blue")}>
+      <div
+        className={clsx(
+          !compact &&
+            (featured
+              ? "xl:border-r xl:border-white/15 xl:pr-8"
+              : "xl:border-r xl:border-black/10 xl:pr-8 dark:xl:border-white/10")
+        )}
+      >
+        <div
+          className={clsx(
+            "flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-[0.16em]",
+            featured ? "text-gray-300" : "text-gray-500"
+          )}
+        >
+          <span className={clsx(featured && "text-blue-300")}>
             {featured ? "Current role" : period}
           </span>
           {featured && (
@@ -48,48 +60,84 @@ export default function ExperienceCard({
             </>
           )}
         </div>
-        <h3 className="mt-3 text-xl font-bold leading-tight tracking-[-0.025em] text-gray-950 dark:text-white sm:text-2xl">
+        <h3
+          className={clsx(
+            "mt-3 text-xl font-bold leading-tight tracking-[-0.025em] sm:text-2xl",
+            featured ? "text-white" : "text-gray-950 dark:text-white"
+          )}
+        >
           {role}
         </h3>
-        <p className="mt-2 text-base font-semibold text-gray-700 dark:text-gray-300">
+        <p
+          className={clsx(
+            "mt-2 text-base font-semibold",
+            featured ? "text-gray-200" : "text-gray-700 dark:text-gray-300"
+          )}
+        >
           {company}
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {[type, mode].map((item) => (
             <span
               key={item}
-              className="rounded-full bg-black/[0.045] px-3 py-1 text-xs font-semibold text-gray-600 dark:bg-white/10 dark:text-gray-300"
+              className={clsx(
+                "rounded-full px-3 py-1 text-xs font-semibold",
+                featured
+                  ? "bg-white/10 text-gray-200"
+                  : "bg-black/[0.045] text-gray-600 dark:bg-white/10 dark:text-gray-300"
+              )}
             >
               {item}
             </span>
           ))}
         </div>
         {!compact && (
-          <p className="mt-5 text-sm leading-6 text-gray-500 dark:text-gray-400">
+          <p
+            className={clsx(
+              "mt-5 text-sm leading-6",
+              featured ? "text-gray-300" : "text-gray-500 dark:text-gray-400"
+            )}
+          >
             {duration} · {location}
           </p>
         )}
       </div>
 
       <div className={clsx("flex flex-col", compact ? "mt-5 flex-1" : "mt-6 xl:mt-0")}>
-        <p className="text-base leading-7 text-gray-700 dark:text-gray-300 sm:text-lg sm:leading-8">
+        <p
+          className={clsx(
+            "text-base leading-7 sm:text-lg sm:leading-8",
+            featured ? "text-gray-200" : "text-gray-700 dark:text-gray-300"
+          )}
+        >
           {description}
         </p>
 
         {strongestOutcomes.length > 0 && (
           <div className="mt-5">
-            <h4 className="text-xs font-bold uppercase tracking-[0.16em] text-gray-500">
-              {achievements.length > 0 ? "Selected outcomes" : "Key work"}
+            <h4
+              className={clsx(
+                "text-xs font-bold uppercase tracking-[0.16em]",
+                featured ? "text-gray-300" : "text-gray-500"
+              )}
+            >
+              {achievements.length > 0 ? "Selected impact" : "Key work"}
             </h4>
             <ul className="mt-3 space-y-2.5">
               {strongestOutcomes.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-sm leading-6 text-gray-600 dark:text-gray-300"
+                  className={clsx(
+                    "flex items-start gap-3 text-sm leading-6",
+                    featured ? "text-gray-300" : "text-gray-600 dark:text-gray-300"
+                  )}
                 >
                   <span
                     aria-hidden="true"
-                    className="mt-[0.6rem] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-blue"
+                    className={clsx(
+                      "mt-[0.6rem] h-1.5 w-1.5 shrink-0 rounded-full",
+                      featured ? "bg-blue-300" : "bg-brand-blue"
+                    )}
                   />
                   <span>{item}</span>
                 </li>
@@ -101,9 +149,11 @@ export default function ExperienceCard({
         {link && (
           <a
             className={clsx(
-              "mt-6 w-fit rounded-sm text-sm font-bold text-c-dark underline decoration-brand-blue decoration-2 underline-offset-4 dark:text-white",
+              "mt-6 w-fit rounded-sm text-sm font-bold underline decoration-2 underline-offset-4",
+              featured
+                ? "text-white decoration-blue-300 hover:text-blue-200"
+                : "text-c-dark decoration-brand-blue hover:text-brand-blue-hover dark:text-white",
               interactionStyles.colorTransition,
-              interactionStyles.blueText,
               interactionStyles.focusRing
             )}
             href={link}
