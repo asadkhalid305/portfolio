@@ -53,7 +53,7 @@ export default function Experience({ isOverview }: { isOverview?: boolean }) {
           <LinkButton
             className="hover:text-brand-blue-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
             href="/experience"
-            showIcon={false}
+            showIcon
             text={cta}
             variant="minimal"
           />
