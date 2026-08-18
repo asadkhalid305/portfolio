@@ -39,9 +39,9 @@ function Portrait({ compact = false }: { compact?: boolean }) {
 
 export default function About() {
   return (
-    <div className="grid items-center gap-8 py-10 sm:gap-10 sm:py-12 lg:min-h-[calc(100svh-68px)] lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:py-10">
-      <div className="relative z-10 mx-auto max-w-3xl text-center lg:mx-0 lg:text-left">
-        <div className="hero-enter hero-delay-1 mb-7 flex justify-center lg:hidden">
+    <div className="grid items-center gap-8 py-10 sm:gap-10 sm:py-12 xl:min-h-[calc(100svh-68px)] xl:grid-cols-[1.15fr_0.85fr] xl:gap-12 xl:py-10">
+      <div className="relative z-10 mx-auto max-w-3xl text-center xl:mx-0 xl:text-left">
+        <div className="hero-enter hero-delay-1 mb-7 flex justify-center xl:hidden">
           <Portrait compact />
         </div>
 
@@ -49,7 +49,7 @@ export default function About() {
           {heading}
         </h1>
 
-        <p className="hero-enter hero-delay-3 mx-auto mt-7 max-w-2xl text-lg leading-8 text-gray-700 sm:text-xl sm:leading-9 lg:mx-0">
+        <p className="hero-enter hero-delay-3 mx-auto mt-7 max-w-2xl text-lg leading-8 text-gray-700 sm:text-xl sm:leading-9 xl:mx-0">
           {description.split("Mercedes-Benz.io")[0]}
           <a
             href={socialsData.mercedesBenzIO.href}
@@ -66,11 +66,11 @@ export default function About() {
           {description.split("Mercedes-Benz.io")[1]}
         </p>
 
-        <p className="hero-enter hero-delay-3 mx-auto mt-3 max-w-xl text-base leading-7 text-gray-600 lg:mx-0">
+        <p className="hero-enter hero-delay-3 mx-auto mt-3 max-w-xl text-base leading-7 text-gray-600 xl:mx-0">
           {detail}
         </p>
 
-        <div className="hero-enter hero-delay-4 mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+        <div className="hero-enter hero-delay-4 mt-8 flex flex-wrap items-center justify-center gap-3 xl:justify-start">
           <Link
             href={primaryCta.href}
             className={clsx(
@@ -106,7 +106,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="hero-enter hero-delay-3 relative mx-auto hidden w-full max-w-[30rem] items-center justify-center lg:flex lg:justify-end">
+      <div className="hero-enter hero-delay-3 relative mx-auto hidden w-full max-w-[30rem] items-center justify-center xl:flex xl:justify-end">
         <Portrait />
       </div>
     </div>
