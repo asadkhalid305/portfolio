@@ -5,6 +5,7 @@ import { getImageProps } from "@/utils/image-helpers";
 import { getShimmerDataUrl } from "@/utils/shimmer";
 import Badge from "./badge";
 import CardShell from "./card-shell";
+import CardAction from "./card-action";
 
 export default function Card({
   title,
@@ -113,11 +114,8 @@ export default function Card({
           {description}
         </p>
       </div>
-      <div className="pt-5 flex items-center text-base font-semibold">
-        {linkText}{" "}
-        <span className="ml-2 transition-transform group-hover/card:translate-x-1">
-          →
-        </span>
+      <div className="pt-5">
+        <CardAction text={linkText} />
       </div>
     </div>
   );

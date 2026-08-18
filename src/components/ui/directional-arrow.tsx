@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { ArrowDirection } from "@/utils/types";
+import type { ArrowDirection } from "@/utils/types";
 
 const paths: Record<ArrowDirection, string> = {
   left: "M7 16l-4-4m0 0l4-4m-4 4h18",
@@ -15,19 +15,30 @@ const motion: Record<ArrowDirection, string> = {
   "down-right": "group-hover:translate-x-0.5 group-hover:translate-y-0.5",
 };
 
+const cardMotion: Record<ArrowDirection, string> = {
+  left: "group-hover/card:-translate-x-1",
+  right: "group-hover/card:translate-x-1",
+  "up-right":
+    "group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5",
+  "down-right":
+    "group-hover/card:translate-x-0.5 group-hover/card:translate-y-0.5",
+};
+
 export default function DirectionalArrow({
   className,
   direction = "right",
+  hoverGroup = "action",
 }: {
   className?: string;
   direction?: ArrowDirection;
+  hoverGroup?: "action" | "card";
 }) {
   return (
     <svg
       aria-hidden="true"
       className={clsx(
         "h-4 w-4 shrink-0 transition-transform duration-300 ease-out",
-        motion[direction],
+        hoverGroup === "card" ? cardMotion[direction] : motion[direction],
         className
       )}
       xmlns="http://www.w3.org/2000/svg"
