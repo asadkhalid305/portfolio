@@ -1,6 +1,7 @@
 import { ExperienceCardProps } from "@/utils/types";
 import clsx from "clsx";
 import { interactionStyles } from "@/constants/interaction-styles";
+import DirectionalArrow from "@/components/ui/directional-arrow";
 
 type ExperienceCardViewProps = ExperienceCardProps & {
   compact?: boolean;
@@ -29,7 +30,7 @@ export default function ExperienceCard({
   return (
     <article
       className={clsx(
-        "group relative overflow-hidden rounded-2xl border border-black/10 p-6 transition-all duration-300 ease-in-out hover:shadow-2xl dark:border-gray-800 dark:bg-gray-900",
+        "relative overflow-hidden rounded-2xl border border-black/10 p-6 transition-all duration-300 ease-in-out hover:shadow-2xl dark:border-gray-800 dark:bg-gray-900",
         featured
           ? "border-c-dark bg-c-dark text-c-light"
           : "bg-white hover:bg-c-semidark",
@@ -149,7 +150,7 @@ export default function ExperienceCard({
         {link && (
           <a
             className={clsx(
-              "mt-6 w-fit rounded-sm text-sm font-bold underline decoration-2 underline-offset-4",
+              "group mt-6 inline-flex w-fit items-center gap-2 rounded-sm text-sm font-bold underline decoration-2 underline-offset-4",
               featured
                 ? "text-white decoration-blue-300 hover:text-blue-200"
                 : "text-c-dark decoration-brand-blue hover:text-brand-blue-hover dark:text-white",
@@ -161,7 +162,7 @@ export default function ExperienceCard({
             rel="noopener noreferrer"
           >
             Visit {company}
-            <span aria-hidden="true" className="ml-2">↗</span>
+            <DirectionalArrow direction="up-right" />
           </a>
         )}
       </div>
