@@ -2,38 +2,7 @@ import { LinkButtonProps } from "@/utils/types";
 import clsx from "clsx";
 import Link from "next/link";
 import { interactionStyles } from "@/constants/interaction-styles";
-
-function ArrowIcon({
-  className,
-  direction,
-}: {
-  className?: string;
-  direction: NonNullable<LinkButtonProps["arrowDirection"]>;
-}) {
-  const paths = {
-    left: "M7 16l-4-4m0 0l4-4m-4 4h18",
-    right: "M17 8l4 4m0 0l-4 4m4-4H3",
-    "up-right": "M7 17 17 7M7 7h10v10",
-    "down-right": "m7 7 10 10M17 7v10H7",
-  };
-
-  return (
-    <svg
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d={paths[direction]}
-      />
-    </svg>
-  );
-}
+import DirectionalArrow from "@/components/ui/directional-arrow";
 
 export default function LinkButton({
   href,
@@ -49,32 +18,18 @@ export default function LinkButton({
 }: Readonly<LinkButtonProps>) {
   const isInternal = href.startsWith("/");
   const isMinimal = variant === "minimal";
-  const arrowMotion = {
-    left: "group-hover:-translate-x-1",
-    right: "group-hover:translate-x-1",
-    "up-right": "group-hover:translate-x-0.5 group-hover:-translate-y-0.5",
-    "down-right": "group-hover:translate-x-0.5 group-hover:translate-y-0.5",
-  }[arrowDirection];
 
   const content = (
     <>
       {showIcon && iconPosition === "left" && (
-        <ArrowIcon
+        <DirectionalArrow
           direction={arrowDirection}
-          className={clsx(
-            "h-4 w-4 transition-transform duration-300 ease-out",
-            arrowMotion
-          )}
         />
       )}
       <span>{text}</span>
       {showIcon && iconPosition === "right" && (
-        <ArrowIcon
+        <DirectionalArrow
           direction={arrowDirection}
-          className={clsx(
-            "h-4 w-4 transition-transform duration-300 ease-out",
-            arrowMotion
-          )}
         />
       )}
     </>
