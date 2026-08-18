@@ -30,7 +30,7 @@ export default function CardShell({
 
   const cardSurface = featured ? "#000000" : "#ffffff";
   const magicCardClasses = clsx(
-    "h-full w-full border-2",
+    "-m-px h-[calc(100%+2px)] w-[calc(100%+2px)] border-2",
     featured
       ? "[&>div:first-of-type]:bg-c-dark"
       : "[&>div:first-of-type]:bg-white group-hover/card:[&>div:first-of-type]:bg-c-semidark"
