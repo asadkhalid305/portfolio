@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import LinkButton from "@/components/ui/link-button";
 import journeyData from "@/constants/journey.json";
 import { JourneyChapter } from "@/utils/types";
@@ -29,38 +28,51 @@ export default function Journey({
         </p>
       </div>
 
-      <ol className="relative mt-12 space-y-10 before:absolute before:bottom-0 before:left-[0.45rem] before:top-2 before:w-px before:bg-black/10 lg:mt-16 lg:space-y-2 lg:before:left-1/2">
-        {visibleChapters.map((chapter, index) => (
-          <li
-            key={chapter.id}
-            className="relative pl-10 lg:grid lg:min-h-52 lg:grid-cols-2 lg:pl-0"
-          >
-            <span className="absolute left-0 top-1.5 z-10 h-4 w-4 rounded-full bg-brand-blue ring-8 ring-white lg:left-1/2 lg:-translate-x-1/2" />
-            <article
-              className={clsx(
-                "border-t border-black/15 pt-5",
-                index % 2 === 0
-                  ? "lg:mr-14 lg:pr-8"
-                  : "lg:col-start-2 lg:ml-14 lg:pl-8"
-              )}
+      {isOverview ? (
+        <ol className="mt-10 grid gap-8 lg:mt-12 lg:grid-cols-3 lg:gap-6">
+          {visibleChapters.map((chapter) => (
+            <li key={chapter.id} className="border-t border-black/15 pt-5">
+              <article>
+                <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em]">
+                  <span className="text-brand-blue">{chapter.marker}</span>
+                  <span className="text-gray-500">{chapter.label}</span>
+                </div>
+                <h3 className="mt-3 text-2xl font-bold leading-tight tracking-[-0.025em]">
+                  {chapter.title}
+                </h3>
+                <p className="mt-4 text-base leading-7 text-gray-700">
+                  {chapter.summary}
+                </p>
+              </article>
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <ol className="mt-12 divide-y divide-black/10 border-y border-black/10">
+          {visibleChapters.map((chapter) => (
+            <li
+              key={chapter.id}
+              className="grid gap-4 py-8 sm:grid-cols-[9rem_1fr] sm:gap-8 lg:grid-cols-[12rem_1fr] lg:py-10"
             >
-              <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em]">
+              <div className="flex items-center gap-3 self-start text-xs font-bold uppercase tracking-[0.18em] sm:pt-1.5">
                 <span className="text-brand-blue">{chapter.marker}</span>
                 <span className="text-gray-500">{chapter.label}</span>
               </div>
-              <h3 className="mt-3 max-w-xl text-2xl font-bold leading-tight tracking-[-0.025em] sm:text-3xl">
-                {chapter.title}
-              </h3>
-              <p className="mt-4 max-w-xl text-base leading-7 text-gray-700 sm:text-lg sm:leading-8">
-                {isOverview ? chapter.summary : chapter.fullText}
-              </p>
-            </article>
-          </li>
-        ))}
-      </ol>
+              <article className="max-w-3xl">
+                <h3 className="text-2xl font-bold leading-tight tracking-[-0.025em] sm:text-3xl">
+                  {chapter.title}
+                </h3>
+                <p className="mt-4 text-base leading-7 text-gray-700 sm:text-lg sm:leading-8">
+                  {chapter.fullText}
+                </p>
+              </article>
+            </li>
+          ))}
+        </ol>
+      )}
 
       {isOverview && (
-        <div className="mt-10 flex justify-center lg:justify-start">
+        <div className="mt-8 flex justify-center lg:justify-start">
           <LinkButton
             className="hover:text-brand-blue-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
             href="/journey"
