@@ -9,10 +9,15 @@ import commonData from "@/constants/common.json";
 import socialsData from "@/constants/socials.json";
 
 interface NavLinksProps extends HeaderLinksProps {
+  isDark: boolean;
   menuOpen: boolean;
 }
 
-export function NavLinks({ links, menuOpen }: Readonly<NavLinksProps>) {
+export function NavLinks({
+  isDark,
+  links,
+  menuOpen,
+}: Readonly<NavLinksProps>) {
   const { pathname, currentHash, navLinkClass } = useActiveNavLink();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const navRef = useRef<HTMLUListElement>(null);
@@ -48,7 +53,7 @@ export function NavLinks({ links, menuOpen }: Readonly<NavLinksProps>) {
         menuOpen
           ? "absolute right-0 top-full z-50 mt-2 flex w-64 flex-col space-y-1 rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-white shadow-xl animate-fade-in lg:static lg:mt-0 lg:w-auto lg:flex-row lg:gap-5 lg:space-y-0 lg:border-none lg:bg-transparent lg:px-0 lg:py-0 lg:text-inherit lg:shadow-none"
           : "hidden lg:flex lg:flex-row lg:bg-transparent lg:text-inherit lg:shadow-none lg:border-none lg:space-y-0"
-      } text-md font-medium lg:text-base lg:gap-5`}
+      } text-sm font-medium lg:gap-4 xl:gap-5`}
     >
       {links.map((link) => {
         const isAnchor =
@@ -74,7 +79,7 @@ export function NavLinks({ links, menuOpen }: Readonly<NavLinksProps>) {
                 <Link
                   href={link.href}
                   aria-current={isActive ? "page" : undefined}
-                  className={`${navLinkClass(isActive)} flex-grow lg:flex-grow-0`}
+                  className={`${navLinkClass(isActive, isDark)} flex-grow lg:flex-grow-0`}
                   onClick={() => setOpenDropdown(null)}
                 >
                   {link.name}
@@ -87,7 +92,7 @@ export function NavLinks({ links, menuOpen }: Readonly<NavLinksProps>) {
                     e.preventDefault();
                     toggleDropdown(link.name);
                   }}
-                  className="-mr-1 rounded-md p-1.5 text-current opacity-60 transition-all hover:bg-black/5 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current lg:p-1"
+                  className="-mr-1 rounded-md p-1.5 text-current opacity-60 transition-all hover:bg-current/5 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue lg:p-1"
                   aria-expanded={isDropdownOpen}
                   aria-label={`Toggle ${link.name} menu`}
                 >
@@ -104,7 +109,7 @@ export function NavLinks({ links, menuOpen }: Readonly<NavLinksProps>) {
               <ul
                 style={{ backgroundColor: "#020617", color: "#ffffff" }}
                 className={`
-                    lg:absolute lg:right-0 lg:top-full lg:mt-2 lg:w-44 lg:rounded-xl lg:bg-slate-950 lg:text-white lg:shadow-xl lg:p-1.5 lg:z-50
+                    lg:absolute lg:left-0 lg:top-full lg:mt-2 lg:w-44 lg:rounded-xl lg:bg-slate-950 lg:text-white lg:shadow-xl lg:p-1.5 lg:z-50
                     ${
                       isDropdownOpen
                         ? "block animate-in slide-in-from-top-2"
@@ -117,7 +122,7 @@ export function NavLinks({ links, menuOpen }: Readonly<NavLinksProps>) {
                   <li key={dropItem.href}>
                     <Link
                       href={dropItem.href}
-                      className="block rounded-md px-2.5 py-2 text-sm hover:bg-white/10 lg:text-white"
+                      className="block rounded-md px-2.5 py-2 text-sm transition-colors hover:bg-white/10 hover:text-blue-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue lg:text-white"
                       onClick={() => setOpenDropdown(null)}
                     >
                       {dropItem.name}
@@ -135,7 +140,7 @@ export function NavLinks({ links, menuOpen }: Readonly<NavLinksProps>) {
               <a
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className={navLinkClass(isActive)}
+                className={navLinkClass(isActive, isDark)}
               >
                 {link.name}
               </a>
@@ -143,7 +148,7 @@ export function NavLinks({ links, menuOpen }: Readonly<NavLinksProps>) {
               <Link
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className={navLinkClass(isActive)}
+                className={navLinkClass(isActive, isDark)}
               >
                 {link.name}
               </Link>

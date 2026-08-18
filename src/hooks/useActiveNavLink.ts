@@ -36,17 +36,22 @@ export function useActiveNavLink() {
     }
   }, []);
 
-  const navLinkClass = (isActive: boolean) => {
+  const navLinkClass = (isActive: boolean, isDark = false) => {
     const base =
-      "relative block rounded-md px-2.5 py-2 text-sm font-medium text-current transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current focus-visible:ring-offset-2";
+      "relative block rounded-md px-2.5 py-2 text-sm font-medium text-current transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2";
     if (isActive) {
       return (
         base +
-        " font-semibold after:absolute after:inset-x-2.5 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-blue-600"
+        " font-semibold after:absolute after:inset-x-2.5 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-brand-blue" +
+        (isDark ? " focus-visible:ring-offset-c-dark" : " focus-visible:ring-offset-c-semidark")
       );
     }
 
-    return base + " opacity-70 hover:opacity-100 focus:opacity-100";
+    return (
+      base +
+      " opacity-75 hover:text-brand-blue hover:opacity-100 focus:opacity-100" +
+      (isDark ? " focus-visible:ring-offset-c-dark" : " focus-visible:ring-offset-c-semidark")
+    );
   };
 
   return { pathname, currentHash, navLinkClass };

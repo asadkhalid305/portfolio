@@ -17,7 +17,7 @@ export function NavMenuButton({
       type="button"
       aria-label={menuOpen ? "Close menu" : "Open menu"}
       aria-expanded={menuOpen}
-      className={`${className} ml-3 hover:-translate-y-0.5`}
+      className={`${className} ml-3`}
       onClick={onClick}
     >
       {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

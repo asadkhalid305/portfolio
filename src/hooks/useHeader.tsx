@@ -37,5 +37,5 @@ export default function useHeader() {
     return () => observer.disconnect();
   }, [pathname]);
 
-  return { isElevated: pathname !== "/" || hasLeftHero };
+  return { isDark: pathname !== "/" || hasLeftHero };
 }
