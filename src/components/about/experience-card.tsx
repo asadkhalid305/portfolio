@@ -1,8 +1,7 @@
 import { ExperienceCardProps } from "@/utils/types";
 import clsx from "clsx";
-import { interactionStyles } from "@/constants/interaction-styles";
-import DirectionalArrow from "@/components/ui/directional-arrow";
 import CardShell from "@/components/ui/card-shell";
+import CardAction from "@/components/ui/card-action";
 
 type ExperienceCardViewProps = ExperienceCardProps & {
   compact?: boolean;
@@ -147,22 +146,16 @@ export default function ExperienceCard({
         )}
 
         {link && (
-          <a
-            className={clsx(
-              "group mt-6 inline-flex w-fit items-center gap-2 rounded-sm text-sm font-bold underline decoration-2 underline-offset-4",
-              featured
-                ? "text-white decoration-blue-300 hover:text-blue-200"
-                : "text-c-dark decoration-brand-blue hover:text-brand-blue-hover dark:text-white",
-              interactionStyles.colorTransition,
-              interactionStyles.focusRing
-            )}
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visit {company}
-            <DirectionalArrow direction="up-right" />
-          </a>
+          <div className="mt-6">
+            <CardAction
+              direction="up-right"
+              featured={featured}
+              href={link}
+              size="sm"
+              text={`Visit ${company}`}
+              underlined
+            />
+          </div>
         )}
       </div>
     </CardShell>
