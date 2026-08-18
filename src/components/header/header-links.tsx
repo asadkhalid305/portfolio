@@ -63,15 +63,11 @@ export default function HeaderLinks({
       <NavLinks isDark={isDark} links={links} menuOpen={menuOpen} />
       <div className="hidden lg:block">
         <LinkButton
-          className={clsx(
-            "ml-auto whitespace-nowrap rounded-md px-4 py-2.5 text-sm font-semibold shadow-sm hover:bg-brand-blue hover:text-white hover:shadow-lg",
-            interactionStyles.colorTransition,
-            interactionStyles.focusRing,
-            isDark ? "bg-c-light text-c-dark" : "bg-c-dark text-c-light"
-          )}
+          className="ml-auto whitespace-nowrap"
           href={socialsData.topmateIO.href}
-          showIcon={false}
+          size="sm"
           text={commonData.navigation.bookSession}
+          tone={isDark ? "light" : "dark"}
         />
       </div>
     </nav>
