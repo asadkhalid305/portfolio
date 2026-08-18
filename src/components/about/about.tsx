@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 import LinkButton from "@/components/ui/link-button";
+import { Lens } from "@/components/ui/lens";
 import aboutData from "@/constants/about.json";
 import socialsData from "@/constants/socials.json";
 import { interactionStyles } from "@/constants/interaction-styles";
@@ -16,22 +17,29 @@ function Portrait({ compact = false }: { compact?: boolean }) {
         compact ? "w-28 sm:w-32" : "w-[min(88vw,30rem)]"
       )}
     >
-      <div className="absolute inset-[7%] overflow-hidden rounded-full bg-[#e7eef1]">
-        <Image
-          alt={personalPhoto.alt}
-          className="object-cover object-[center_32%] transition-transform duration-700 ease-out hover:scale-[1.015]"
-          draggable="false"
-          fill
-          priority
-          sizes={compact ? "128px" : "(max-width: 1024px) 480px, 544px"}
-          src={personalPhoto.src}
-          placeholder="blur"
-          blurDataURL={getShimmerDataUrl(
-            compact ? 128 : 544,
-            compact ? 128 : 544
-          )}
-        />
-      </div>
+      <Lens
+        ariaLabel={`Zoom into ${personalPhoto.alt}`}
+        className="absolute inset-[7%] rounded-full"
+        lensSize={compact ? 96 : 170}
+        zoomFactor={1.16}
+      >
+        <div className="relative h-full w-full overflow-hidden rounded-full bg-[#e7eef1]">
+          <Image
+            alt={personalPhoto.alt}
+            className="object-cover object-[center_32%] transition-transform duration-700 ease-out hover:scale-[1.015]"
+            draggable="false"
+            fill
+            priority
+            sizes={compact ? "128px" : "(max-width: 1024px) 480px, 544px"}
+            src={personalPhoto.src}
+            placeholder="blur"
+            blurDataURL={getShimmerDataUrl(
+              compact ? 128 : 544,
+              compact ? 128 : 544
+            )}
+          />
+        </div>
+      </Lens>
     </div>
   );
 }
