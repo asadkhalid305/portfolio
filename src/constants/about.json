@@ -1,15 +1,14 @@
 {
-  "eyebrow": "SENIOR SOFTWARE ENGINEER · BERLIN",
-  "heading": "I build digital products and help people grow in tech.",
-  "description": "I’m Asad Ullah, a Senior Software Engineer at Mercedes-Benz.io, mentor, and public speaker.",
-  "detail": "I turn complex ideas into thoughtful digital experiences—and share what I learn along the way.",
+  "heading": "I build products, explore AI, and share what works.",
+  "description": "I’m Asad Ullah, a Senior Frontend Engineer at Mercedes-Benz.io, public speaker, workshop facilitator, and mentor based in Berlin.",
+  "detail": "I turn complex engineering ideas into useful products and practical learning experiences.",
   "primaryCta": {
     "text": "Explore my work",
     "href": "/#projects"
   },
   "personalPhoto": {
     "src": "/images/myself.webp",
-    "alt": "personal photo"
+    "alt": "Portrait of Asad Ullah Khalid"
   },
   "screenReaderTitle": "About Asad Ullah Khalid"
 }
