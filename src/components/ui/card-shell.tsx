@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import clsx from "clsx";
 import { interactionStyles } from "@/constants/interaction-styles";
+import { MagicCard } from "@/components/ui/magic-card";
 
 type CardShellProps = {
   children: ReactNode;
@@ -25,13 +26,26 @@ export default function CardShell({
     className
   );
 
+  const cardContent = (
+    <MagicCard
+      className="h-full w-full border-0 bg-transparent [&>div:first-of-type]:bg-transparent"
+      gradientColor="rgba(10, 102, 194, 0.12)"
+      gradientFrom="#0A66C2"
+      gradientOpacity={0.2}
+      gradientSize={260}
+      gradientTo="#78B7FF"
+    >
+      {children}
+    </MagicCard>
+  );
+
   if (href) {
     return (
       <Link href={href} className={classes}>
-        {children}
+        {cardContent}
       </Link>
     );
   }
 
-  return <article className={classes}>{children}</article>;
+  return <article className={classes}>{cardContent}</article>;
 }
