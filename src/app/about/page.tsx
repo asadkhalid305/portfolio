@@ -72,7 +72,7 @@ export default async function index() {
             <div className="mt-12 flex justify-center lg:justify-start">
               <LinkButton
                 href="/contact"
-                showIcon={false}
+                showIcon
                 text={contactData.cta}
                 variant="minimal"
               />

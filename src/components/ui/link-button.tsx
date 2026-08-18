@@ -1,6 +1,7 @@
 import { LinkButtonProps } from "@/utils/types";
 import clsx from "clsx";
 import Link from "next/link";
+import { interactionStyles } from "@/constants/interaction-styles";
 
 function ArrowIcon({
   className,
@@ -30,47 +31,49 @@ function ArrowIcon({
 export default function LinkButton({
   href,
   text,
-  showIcon,
+  showIcon = false,
   className,
   variant = "primary",
   iconPosition = "right",
+  rounded = "md",
+  size = "md",
+  tone = "dark",
 }: Readonly<LinkButtonProps>) {
   const isInternal = href.startsWith("/");
   const isMinimal = variant === "minimal";
 
   const content = (
     <>
-      {iconPosition === "left" && isMinimal && (
-        <ArrowIcon direction="left" className="w-5 h-5 transition-transform duration-300 ease-in-out group-hover:-translate-x-1" />
+      {showIcon && iconPosition === "left" && (
+        <ArrowIcon
+          direction="left"
+          className="h-4 w-4 transition-transform duration-300 ease-out group-hover:-translate-x-1"
+        />
       )}
       <span>{text}</span>
-      {iconPosition === "right" && isMinimal && (
-        <ArrowIcon direction="right" className="w-5 h-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
-      )}
-      {/* Non-minimal variant icon support can be added if needed, currently only handling minimal for back button */}
-      {!isMinimal && showIcon && iconPosition === "right" && (
-        <svg
-          className="w-3 h-3 ml-2 2xl:m-2"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 14 10"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M1 5h12m0 0L9 1m4 4L9 9"
-          />
-        </svg>
+      {showIcon && iconPosition === "right" && (
+        <ArrowIcon
+          direction="right"
+          className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1"
+        />
       )}
     </>
   );
 
-  const commonClasses = isMinimal
-    ? "group inline-flex items-center gap-2 text-lg font-semibold transition-all duration-300 ease-in-out hover:text-gray-600"
-    : "inline-flex items-center w-fit text-sm font-medium rounded-lg px-5 py-3 shadow transition-all duration-300 ease-in-out lg:text-md hover:shadow-lg focus-visible:outline-2 focus-visible:outline-c-dark focus-visible:outline";
+  const commonClasses = clsx(
+    "group inline-flex w-fit items-center justify-center font-semibold",
+    interactionStyles.focusRing,
+    isMinimal
+      ? "gap-2 rounded-sm text-lg text-c-dark transition-colors duration-200 ease-out hover:text-brand-blue-hover"
+      : [
+          "gap-3 text-sm shadow-lg transition-[color,background-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand-blue hover:text-white hover:shadow-xl active:translate-y-0 active:shadow-md",
+          rounded === "full" ? "rounded-full" : "rounded-md",
+          size === "sm" ? "px-4 py-2.5" : "px-6 py-3.5",
+          tone === "light"
+            ? "bg-c-light text-c-dark"
+            : "bg-c-dark text-c-light",
+        ]
+  );
 
   if (isInternal) {
     return (

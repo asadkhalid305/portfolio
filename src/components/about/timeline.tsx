@@ -25,7 +25,7 @@ export default function Timeline({
         <li className="max-md:mb-10 max-md:ml-4 md:self-center">
           <LinkButton
             href={link}
-            showIcon={false}
+            showIcon
             text="View full timeline"
             variant="minimal"
           />

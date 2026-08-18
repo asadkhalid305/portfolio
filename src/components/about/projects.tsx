@@ -54,7 +54,7 @@ export default function Projects({
         <div className="flex justify-center lg:justify-start">
           <LinkButton
             href="/projects"
-            showIcon={false}
+            showIcon
             text="See all projects"
             variant="minimal"
           />

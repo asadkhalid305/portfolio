@@ -72,10 +72,13 @@ export type DisplayInfoProps = {
 export type LinkButtonProps = {
   href: string;
   text: string;
-  showIcon: boolean;
+  showIcon?: boolean;
   className?: string;
   variant?: "primary" | "minimal";
   iconPosition?: "left" | "right";
+  rounded?: "md" | "full";
+  size?: "sm" | "md";
+  tone?: "dark" | "light";
 };
 
 // ============================================================================
