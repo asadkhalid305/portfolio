@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { useEffect, useRef } from "react";
 import { useMenuOpen } from "@/hooks/useMenuOpen";
 import { NavMenuButton } from "@/components/header/nav-menu-button";
 import { NavLinks } from "@/components/header/nav-links";
@@ -17,6 +18,27 @@ export default function HeaderLinks({
   links,
 }: Readonly<HeaderLinksWithThemeProps>) {
   const [menuOpen, setMenuOpen] = useMenuOpen();
+  const navigationRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const closeWhenOutside = (event: PointerEvent) => {
+      if (!navigationRef.current?.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    document.addEventListener("pointerdown", closeWhenOutside);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeWhenOutside);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [menuOpen, setMenuOpen]);
 
   const menuButtonClassName = clsx(
     "grid h-10 w-10 place-items-center rounded-full border shadow-sm lg:hidden",
@@ -29,6 +51,7 @@ export default function HeaderLinks({
 
   return (
     <nav
+      ref={navigationRef}
       aria-label="Main navigation"
       className="flex items-center gap-3 lg:gap-4 xl:gap-6 relative"
     >
