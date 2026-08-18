@@ -2,6 +2,7 @@ import { ExperienceCardProps } from "@/utils/types";
 import clsx from "clsx";
 import { interactionStyles } from "@/constants/interaction-styles";
 import DirectionalArrow from "@/components/ui/directional-arrow";
+import CardShell from "@/components/ui/card-shell";
 
 type ExperienceCardViewProps = ExperienceCardProps & {
   compact?: boolean;
@@ -28,12 +29,10 @@ export default function ExperienceCard({
   ).slice(0, compact ? 2 : 3);
 
   return (
-    <article
+    <CardShell
+      featured={featured}
       className={clsx(
-        "relative overflow-hidden rounded-2xl border border-black/10 p-6 transition-all duration-300 ease-in-out hover:shadow-2xl dark:border-gray-800 dark:bg-gray-900",
-        featured
-          ? "border-c-dark bg-c-dark text-c-light"
-          : "bg-white hover:bg-c-semidark",
+        "p-6",
         compact ? "flex h-full flex-col" : "xl:grid xl:grid-cols-[17rem_1fr] xl:gap-10 xl:p-8"
       )}
     >
@@ -166,6 +165,6 @@ export default function ExperienceCard({
           </a>
         )}
       </div>
-    </article>
+    </CardShell>
   );
 }
