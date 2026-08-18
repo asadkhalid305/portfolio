@@ -1,3 +1,5 @@
+import clsx from "clsx";
+import { useEffect, useRef } from "react";
 import { useMenuOpen } from "@/hooks/useMenuOpen";
 import { NavMenuButton } from "@/components/header/nav-menu-button";
 import { NavLinks } from "@/components/header/nav-links";
@@ -5,14 +7,51 @@ import LinkButton from "@/components/ui/link-button";
 import { HeaderLinksProps } from "@/utils/types";
 import commonData from "@/constants/common.json";
 import socialsData from "@/constants/socials.json";
+import { interactionStyles } from "@/constants/interaction-styles";
 
-export default function HeaderLinks({ links }: Readonly<HeaderLinksProps>) {
+interface HeaderLinksWithThemeProps extends HeaderLinksProps {
+  isDark: boolean;
+}
+
+export default function HeaderLinks({
+  isDark,
+  links,
+}: Readonly<HeaderLinksWithThemeProps>) {
   const [menuOpen, setMenuOpen] = useMenuOpen();
+  const navigationRef = useRef<HTMLElement>(null);
 
-  const menuButtonClassName = `lg:hidden p-2 rounded-md bg-c-dark text-c-light shadow-md transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-c-dark outline outline-2 outline-c-light focus-visible:ring-offset-2`;
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const closeWhenOutside = (event: PointerEvent) => {
+      if (!navigationRef.current?.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    document.addEventListener("pointerdown", closeWhenOutside);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeWhenOutside);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [menuOpen, setMenuOpen]);
+
+  const menuButtonClassName = clsx(
+    "grid h-10 w-10 place-items-center rounded-full border shadow-sm lg:hidden",
+    interactionStyles.colorTransition,
+    interactionStyles.focusRing,
+    isDark
+      ? "border-white/20 bg-white/10 text-white hover:border-white/40 hover:bg-white/15"
+      : "border-black/15 bg-white/80 text-c-dark hover:border-black/30 hover:bg-white"
+  );
 
   return (
     <nav
+      ref={navigationRef}
       aria-label="Main navigation"
       className="flex items-center gap-3 lg:gap-4 xl:gap-6 relative"
     >
@@ -21,13 +60,16 @@ export default function HeaderLinks({ links }: Readonly<HeaderLinksProps>) {
         onClick={() => setMenuOpen((open) => !open)}
         className={menuButtonClassName}
       />
-      <NavLinks links={links} menuOpen={menuOpen} />
+      <NavLinks isDark={isDark} links={links} menuOpen={menuOpen} />
       <div className="hidden lg:block">
         <LinkButton
-          className="whitespace-nowrap outline outline-2 transition-all duration-300 ease-in-out bg-c-dark text-c-light hover:bg-c-light hover:text-c-dark rounded-md shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-c-dark focus-visible:ring-offset-2 px-3 py-2 text-sm lg:px-4 lg:text-base ml-auto"
+          arrowDirection="up-right"
+          className="ml-auto whitespace-nowrap"
           href={socialsData.topmateIO.href}
-          showIcon={false}
+          showIcon
+          size="sm"
           text={commonData.navigation.bookSession}
+          tone={isDark ? "light" : "dark"}
         />
       </div>
     </nav>
