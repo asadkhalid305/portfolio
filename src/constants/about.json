@@ -7,13 +7,8 @@
     "href": "/#projects"
   },
   "personalPhoto": {
-    "src": "/images/event-9b.webp",
-    "alt": "Asad Ullah Khalid leading a hands-on developer workshop in Berlin"
+    "src": "/images/myself.webp",
+    "alt": "Portrait of Asad Ullah Khalid"
   },
-  "pillars": [
-    { "label": "Build", "text": "Digital products" },
-    { "label": "Explore", "text": "Applied AI systems" },
-    { "label": "Share", "text": "Talks and workshops" }
-  ],
   "screenReaderTitle": "About Asad Ullah Khalid"
 }

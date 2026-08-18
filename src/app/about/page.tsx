@@ -13,12 +13,10 @@ import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 
 import contactData from "@/constants/contact.json";
 export default async function index() {
-  const [events, blogs, bookReviews, langcompassProject] = await Promise.all([
-    getAllPosts("events"),
-    getAllPosts("blogs"),
-    getAllPosts("book-reviews"),
-    getPostBySlug("projects", "langcompass"),
-  ]);
+  const events = await getAllPosts("events");
+  const blogs = await getAllPosts("blogs");
+  const bookReviews = await getAllPosts("book-reviews");
+  const langcompassProject = await getPostBySlug("projects", "langcompass");
 
   return (
     <>
