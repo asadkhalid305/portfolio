@@ -69,13 +69,19 @@ export type DisplayInfoProps = {
 /**
  * Props for LinkButton component
  */
+export type ArrowDirection = "left" | "right" | "up-right" | "down-right";
+
 export type LinkButtonProps = {
   href: string;
   text: string;
-  showIcon: boolean;
+  showIcon?: boolean;
   className?: string;
   variant?: "primary" | "minimal";
   iconPosition?: "left" | "right";
+  arrowDirection?: ArrowDirection;
+  rounded?: "md" | "full";
+  size?: "sm" | "md";
+  tone?: "dark" | "light";
 };
 
 // ============================================================================

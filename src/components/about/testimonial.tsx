@@ -51,7 +51,7 @@ export default function Testimonial({ isOverview }: { isOverview?: boolean }) {
           <div className="flex justify-center lg:justify-start">
             <LinkButton
               href="/testimonials"
-              showIcon={false}
+              showIcon
               text={cta}
               variant="minimal"
             />

@@ -14,7 +14,7 @@ export default function Journey({ isOverview = false }: { isOverview?: boolean }
         <div className="mt-8 flex justify-center lg:justify-start">
           <LinkButton
             href="/journey"
-            showIcon={false}
+            showIcon
             text={cta}
             variant="minimal"
           />

@@ -23,6 +23,11 @@ const config: Config = {
         "c-semidark": "#F1F6F8",
         "c-light": "#FFFFFF",
         linkedin: "#0A66C2",
+        "brand-blue": {
+          DEFAULT: "#0A66C2",
+          hover: "#004182",
+          soft: "#E8F3FF",
+        },
       },
       spacing: {
         "container-sm": "24rem", // 384px - w-96
