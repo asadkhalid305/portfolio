@@ -17,6 +17,7 @@ interface MagicCardBaseProps {
   contentClassName?: string
   backgroundColor?: string
   borderColor?: string
+  borderWidth?: number
   gradientSize?: number
   gradientFrom?: string
   gradientTo?: string
@@ -64,6 +65,7 @@ export function MagicCard(props: MagicCardProps) {
     contentClassName,
     backgroundColor = "var(--color-background, transparent)",
     borderColor = "var(--color-border, transparent)",
+    borderWidth = 1,
     gradientSize = 200,
     gradientColor = "#262626",
     gradientOpacity = 0.8,
@@ -176,6 +178,7 @@ export function MagicCard(props: MagicCardProps) {
       onPointerLeave={() => reset("leave")}
       onPointerEnter={() => reset("enter")}
       style={{
+        borderWidth,
         background: useMotionTemplate`
           linear-gradient(${backgroundColor} 0 0) padding-box,
           radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,
@@ -186,13 +189,17 @@ export function MagicCard(props: MagicCardProps) {
         `,
       }}
     >
-      <div className="bg-oklch(1 0 0) absolute inset-px z-20 rounded-[inherit] dark:bg-oklch(0.145 0 0)" />
+      <div
+        className="bg-oklch(1 0 0) absolute z-20 rounded-[inherit] dark:bg-oklch(0.145 0 0)"
+        style={{ inset: borderWidth }}
+      />
 
       {mode === "gradient" && (
         <motion.div
           suppressHydrationWarning
           className="pointer-events-none absolute inset-px z-30 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           style={{
+            inset: borderWidth,
             background: useMotionTemplate`
               radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,
                 ${gradientColor},

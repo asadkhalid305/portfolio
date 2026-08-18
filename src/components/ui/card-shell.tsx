@@ -30,7 +30,7 @@ export default function CardShell({
 
   const cardSurface = featured ? "#000000" : "#ffffff";
   const magicCardClasses = clsx(
-    "-m-px h-[calc(100%+2px)] w-[calc(100%+2px)] border-2",
+    "-m-px h-[calc(100%+2px)] w-[calc(100%+2px)]",
     featured
       ? "[&>div:first-of-type]:bg-c-dark"
       : "[&>div:first-of-type]:bg-white group-hover/card:[&>div:first-of-type]:bg-c-semidark"
@@ -42,6 +42,7 @@ export default function CardShell({
       contentClassName={contentClassName}
       backgroundColor={cardSurface}
       borderColor="transparent"
+      borderWidth={3}
       gradientColor="rgba(10, 102, 194, 0.12)"
       gradientFrom="#0A66C2"
       gradientOpacity={0.2}
