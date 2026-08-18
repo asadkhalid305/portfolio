@@ -156,6 +156,19 @@ export type TimelineItemProps = {
 };
 
 /**
+ * A reusable chapter in the personal Journey narrative.
+ */
+export type JourneyChapter = {
+  id: string;
+  marker: string;
+  label: string;
+  title: string;
+  summary: string;
+  fullText: string;
+  featured?: boolean;
+};
+
+/**
  * Props for detailed experience card
  */
 export type ExperienceCardProps = {

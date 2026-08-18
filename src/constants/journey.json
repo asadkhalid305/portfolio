@@ -1,7 +1,53 @@
 {
   "label": "MY STORY",
   "heading": "Journey",
-  "description": "I was born in 1997 in Pakistan, and my path hasn't been a typical one. My early years were spent on Islamic studies, and I didn't actually start formal school until I was 11 years old. I remember starting in class 2, much older than everyone else and feeling like I was already miles behind.\n\nBecause of that late start, I had to move fast, jumping through only odd-numbered classes while constantly fighting self-doubt. It took years of intense effort, sometimes working 18 hours a day, to catch up and eventually find my place in the tech world.",
-  "fullStory": "I was born in 1997 in Pakistan, and my path hasn't been a typical one. My early years were spent entirely on Islamic studies, and I didn't actually start formal school until I was 11 years old. I remember starting in class 2, much older than everyone else and feeling like I was already miles behind. Because of that late start, I had to move fast, jumping through only odd-numbered classes while constantly fighting self-doubt and a feeling that I didn't have the same foundation as others.\n\nBut I didn't let that stop me. I eventually got into a good university for Computer Science, even though I struggled a lot at first with confidence and catching up on things everyone else seemed to know. I decided to work harder than anyone else. There were days I spent 18 hours just teaching myself, practicing code, and rebuilding my basics from the ground up.\n\nIn my third year, things finally started to click. I got my first internship, which quickly led to my first real jobs. But as I grew, I realized I wanted to help others who felt the same way I did. I started leading a non-profit, mentoring students, and eventually became a chairman. Helping thousands of students find their way was one of the most rewarding things I've ever done.\n\nAfter I graduated, I kept teaching. I started giving workshops and writing about my experiences to help people from non-traditional backgrounds understand that they can have a career in tech too.\n\nIn 2022, I made a big leap and moved to Germany. Starting over in a new country with a new language was a massive challenge, but it was also a fresh start. After working hard to find my place here, I joined one of the biggest automobile companies in the world as a Senior Software Engineer. Today, I work on systems that millions of people use, and I couldn't be more grateful.\n\nNow, I spend my time at the intersection of building software and helping people. I write about tech careers and relocation because I want to show others that even if you start late or have a difficult path, you can still reach your goals through consistency and hard work. My journey has been full of resets and long nights, but it's taught me that real progress isn't about shortcuts, it's about staying curious and never giving up.\n\nI'm still driven by that same desire to learn and make an impact, both through the code I write and the people I can help along the way.",
+  "intro": "I did not follow a conventional path into technology. Starting late taught me how to catch up, begin again, and make what I learn useful to other people.",
+  "chapters": [
+    {
+      "id": "starting-late",
+      "marker": "01",
+      "label": "Starting late",
+      "title": "Formal school began when I was eleven.",
+      "summary": "I entered class two much older than everyone around me, with years of education to rebuild and a persistent feeling that I was already behind.",
+      "fullText": "I was born in 1997 in Pakistan, and my early years were spent entirely on Islamic studies. I did not begin formal school until I was eleven. Starting in class two, much older than everyone around me, made every gap feel visible. I moved through only odd-numbered classes while rebuilding the foundation other students already had.",
+      "featured": true
+    },
+    {
+      "id": "catching-up",
+      "marker": "02",
+      "label": "Catching up",
+      "title": "Effort became the advantage I could control.",
+      "summary": "Computer Science was another difficult beginning, so I rebuilt the basics through long days of self-study until the work finally started to click.",
+      "fullText": "Getting into a good Computer Science university did not remove the self-doubt. I struggled with concepts that seemed familiar to everyone else and decided to compensate with consistency. Some days meant eighteen hours of teaching myself, practising code, and rebuilding the basics from the ground up. By my third year, that effort began to turn into confidence and real opportunities.",
+      "featured": true
+    },
+    {
+      "id": "giving-back",
+      "marker": "03",
+      "label": "Giving back",
+      "title": "Progress felt more meaningful when it helped someone else.",
+      "summary": "Internships led to professional work, while mentoring, nonprofit leadership, workshops, and writing gave that growth a wider purpose.",
+      "fullText": "My first internship quickly led to professional roles, but work was only part of the story. I began leading a nonprofit, mentoring students, and eventually became a chairman. Helping thousands of students find their way was one of the most rewarding parts of my early career. After graduating, I continued through workshops and writing for people from non-traditional backgrounds.",
+      "featured": false
+    },
+    {
+      "id": "starting-again",
+      "marker": "04",
+      "label": "Starting again",
+      "title": "Moving to Berlin created another reset.",
+      "summary": "A new country, language, and professional environment brought back the discomfort of starting over—and the confidence that I could do it again.",
+      "fullText": "In 2022, I moved to Germany. Starting over in a new country and language was difficult, but it was also a fresh beginning. I worked to find my place in Berlin and eventually joined Mercedes-Benz.io, where I now contribute to digital products used by customers around the world.",
+      "featured": false
+    },
+    {
+      "id": "building-and-sharing",
+      "marker": "05",
+      "label": "Building and sharing",
+      "title": "Today, the work and the teaching belong together.",
+      "summary": "I build digital products, explore applied AI, and turn what works into practical talks, workshops, mentoring, and writing.",
+      "fullText": "Today, I work at the intersection of building software and helping people. I write and speak about engineering, careers, and relocation because I want others to see that a late or difficult start does not define the finish. My journey has been full of resets and long nights, and it continues to shape how I build, learn, and share.",
+      "featured": true
+    }
+  ],
   "cta": "Explore My Full Journey"
 }
