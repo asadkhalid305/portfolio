@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils"
 interface MagicCardBaseProps {
   children?: React.ReactNode
   className?: string
+  contentClassName?: string
   backgroundColor?: string
   borderColor?: string
   gradientSize?: number
@@ -60,6 +61,7 @@ export function MagicCard(props: MagicCardProps) {
   const {
     children,
     className,
+    contentClassName,
     backgroundColor = "var(--color-background, transparent)",
     borderColor = "var(--color-border, transparent)",
     gradientSize = 200,
@@ -224,7 +226,9 @@ export function MagicCard(props: MagicCardProps) {
           }}
         />
       )}
-      <div className="relative z-40">{children}</div>
+      <div className={cn("relative z-40 h-full", contentClassName)}>
+        {children}
+      </div>
     </motion.div>
   )
 }

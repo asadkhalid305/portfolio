@@ -7,6 +7,7 @@ import { MagicCard } from "@/components/ui/magic-card";
 type CardShellProps = {
   children: ReactNode;
   className?: string;
+  contentClassName?: string;
   featured?: boolean;
   href?: string;
 };
@@ -14,6 +15,7 @@ type CardShellProps = {
 export default function CardShell({
   children,
   className,
+  contentClassName,
   featured = false,
   href,
 }: Readonly<CardShellProps>) {
@@ -37,6 +39,7 @@ export default function CardShell({
   const cardContent = (
     <MagicCard
       className={magicCardClasses}
+      contentClassName={contentClassName}
       backgroundColor={cardSurface}
       borderColor="transparent"
       gradientColor="rgba(10, 102, 194, 0.12)"
