@@ -21,8 +21,8 @@
     "rights": "All rights reserved"
   },
   "chatbot": {
-    "title": "AI Assistant",
-    "status": "Online",
+    "title": "Ask about my work",
+    "status": "Portfolio AI",
     "placeholder": "Ask me anything...",
     "send": "Send",
     "info": "Welcome! This AI Assistant is designed to answer questions about my professional background, experience, and journey in tech.\n\nYour privacy matters: All conversations are stored locally in your browser only—I don't collect or store any data on external servers.\n\nFeel free to ask about my experience, projects, or anything else you'd like to know. I'm here to help you get the information you need.\n\nThank you for visiting!"
