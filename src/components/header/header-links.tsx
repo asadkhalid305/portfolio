@@ -63,8 +63,10 @@ export default function HeaderLinks({
       <NavLinks isDark={isDark} links={links} menuOpen={menuOpen} />
       <div className="hidden lg:block">
         <LinkButton
+          arrowDirection="up-right"
           className="ml-auto whitespace-nowrap"
           href={socialsData.topmateIO.href}
+          showIcon
           size="sm"
           text={commonData.navigation.bookSession}
           tone={isDark ? "light" : "dark"}
