@@ -8,8 +8,15 @@ function ArrowIcon({
   direction,
 }: {
   className?: string;
-  direction: "left" | "right";
+  direction: NonNullable<LinkButtonProps["arrowDirection"]>;
 }) {
+  const paths = {
+    left: "M7 16l-4-4m0 0l4-4m-4 4h18",
+    right: "M17 8l4 4m0 0l-4 4m4-4H3",
+    "up-right": "M7 17 17 7M7 7h10v10",
+    "down-right": "m7 7 10 10M17 7v10H7",
+  };
+
   return (
     <svg
       className={className}
@@ -22,7 +29,7 @@ function ArrowIcon({
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d={direction === "left" ? "M7 16l-4-4m0 0l4-4m-4 4h18" : "M17 8l4 4m0 0l-4 4m4-4H3"}
+        d={paths[direction]}
       />
     </svg>
   );
@@ -35,26 +42,39 @@ export default function LinkButton({
   className,
   variant = "primary",
   iconPosition = "right",
+  arrowDirection = iconPosition === "left" ? "left" : "right",
   rounded = "md",
   size = "md",
   tone = "dark",
 }: Readonly<LinkButtonProps>) {
   const isInternal = href.startsWith("/");
   const isMinimal = variant === "minimal";
+  const arrowMotion = {
+    left: "group-hover:-translate-x-1",
+    right: "group-hover:translate-x-1",
+    "up-right": "group-hover:translate-x-0.5 group-hover:-translate-y-0.5",
+    "down-right": "group-hover:translate-x-0.5 group-hover:translate-y-0.5",
+  }[arrowDirection];
 
   const content = (
     <>
       {showIcon && iconPosition === "left" && (
         <ArrowIcon
-          direction="left"
-          className="h-4 w-4 transition-transform duration-300 ease-out group-hover:-translate-x-1"
+          direction={arrowDirection}
+          className={clsx(
+            "h-4 w-4 transition-transform duration-300 ease-out",
+            arrowMotion
+          )}
         />
       )}
       <span>{text}</span>
       {showIcon && iconPosition === "right" && (
         <ArrowIcon
-          direction="right"
-          className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1"
+          direction={arrowDirection}
+          className={clsx(
+            "h-4 w-4 transition-transform duration-300 ease-out",
+            arrowMotion
+          )}
         />
       )}
     </>

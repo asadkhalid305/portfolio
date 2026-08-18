@@ -42,9 +42,10 @@ export default function ProfileCard({
             <p className="font-light">{position}</p>
           </div>
           <LinkButton
+            arrowDirection="up-right"
             href={socialsData.linkedIn.href}
             rounded="full"
-            showIcon={false}
+            showIcon
             size="sm"
             text="Connect on LinkedIn"
           />

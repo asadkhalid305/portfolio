@@ -76,6 +76,7 @@ export type LinkButtonProps = {
   className?: string;
   variant?: "primary" | "minimal";
   iconPosition?: "left" | "right";
+  arrowDirection?: "left" | "right" | "up-right" | "down-right";
   rounded?: "md" | "full";
   size?: "sm" | "md";
   tone?: "dark" | "light";
