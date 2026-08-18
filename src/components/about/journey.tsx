@@ -74,7 +74,6 @@ export default function Journey({
       {isOverview && (
         <div className="mt-8 flex justify-center lg:justify-start">
           <LinkButton
-            className="hover:text-brand-blue-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
             href="/journey"
             showIcon
             text={cta}
