@@ -40,7 +40,7 @@ export function useActiveNavLink() {
     const base =
       "relative block rounded-md px-2.5 py-2 text-sm font-medium text-current transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2";
     const interaction = isDark
-      ? " hover:text-blue-300 focus-visible:ring-offset-c-dark"
+      ? " hover:text-blue-700 focus-visible:ring-offset-c-dark"
       : " hover:text-brand-blue-hover focus-visible:ring-offset-c-semidark";
 
     if (isActive) {
