@@ -17,7 +17,7 @@ export default function CardShell({
   href,
 }: Readonly<CardShellProps>) {
   const classes = clsx(
-    "group/card relative overflow-hidden rounded-2xl border border-black/10 transition-[background-color,border-color,box-shadow,transform] duration-300 ease-in-out hover:shadow-2xl dark:border-gray-800",
+    "group/card relative overflow-hidden rounded-2xl border border-black/10 transition-[background-color,border-color,box-shadow,transform] duration-300 ease-in-out hover:-translate-y-1 hover:shadow-2xl dark:border-gray-800",
     featured
       ? "border-c-dark bg-c-dark text-c-light dark:border-c-dark dark:bg-c-dark"
       : "bg-white hover:bg-c-semidark dark:bg-gray-900 dark:hover:bg-gray-800",
