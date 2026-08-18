@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { TCardProps } from "@/utils/types";
 import { getImageProps } from "@/utils/image-helpers";
+import CardShell from "@/components/ui/card-shell";
 
 export default function TCard({
   text,
@@ -34,8 +35,9 @@ export default function TCard({
   };
 
   return (
-    <div
-      className={`group relative flex h-full flex-col justify-between rounded-2xl border border-black/10 p-6 transition-all duration-300 ease-in-out hover:shadow-2xl dark:border-gray-800 dark:bg-gray-900 ${featured ? "bg-c-dark text-c-light lg:p-8" : "bg-white hover:bg-c-semidark"}`}
+    <CardShell
+      featured={featured}
+      className={`flex h-full flex-col justify-between p-6 ${featured ? "lg:p-8" : ""}`}
     >
       <div>
         <div className="mb-4 flex items-start justify-between">
@@ -79,6 +81,6 @@ export default function TCard({
           <div className={`text-xs dark:text-gray-400 ${featured ? "text-gray-300" : "text-gray-500"}`}>{job}</div>
         </div>
       </a>
-    </div>
+    </CardShell>
   );
 }
