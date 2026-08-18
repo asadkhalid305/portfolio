@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import LinkButton from "@/components/ui/link-button";
 import aboutData from "@/constants/about.json";
 import socialsData from "@/constants/socials.json";
 import { interactionStyles } from "@/constants/interaction-styles";
@@ -71,38 +70,17 @@ export default function About() {
         </p>
 
         <div className="hero-enter hero-delay-4 mt-8 flex flex-wrap items-center justify-center gap-3 xl:justify-start">
-          <Link
+          <LinkButton
             href={primaryCta.href}
-            className={clsx(
-              "group inline-flex items-center gap-3 rounded-full bg-c-dark px-6 py-3.5 text-sm font-semibold text-c-light shadow-lg hover:-translate-y-0.5 hover:bg-brand-blue hover:shadow-xl",
-              interactionStyles.focusRing,
-              interactionStyles.colorTransition,
-              interactionStyles.lift
-            )}
-          >
-            {primaryCta.text}
-            <ArrowDownRight
-              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"
-              aria-hidden="true"
-            />
-          </Link>
-          <a
+            showIcon
+            text={primaryCta.text}
+          />
+          <LinkButton
             href={socialsData.topmateIO.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={clsx(
-              "group inline-flex items-center gap-2 rounded-full px-4 py-3 text-sm font-semibold text-slate-800",
-              interactionStyles.colorTransition,
-              interactionStyles.blueText,
-              interactionStyles.focusRing
-            )}
-          >
-            Book a session
-            <ArrowUpRight
-              className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-              aria-hidden="true"
-            />
-          </a>
+            showIcon
+            text="Book a session"
+            variant="minimal"
+          />
         </div>
       </div>
 
