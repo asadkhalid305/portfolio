@@ -51,7 +51,6 @@ export default function Experience({ isOverview }: { isOverview?: boolean }) {
         </div>
         <div className="mt-10 flex justify-center lg:justify-start">
           <LinkButton
-            className="hover:text-brand-blue-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2"
             href="/experience"
             showIcon
             text={cta}
