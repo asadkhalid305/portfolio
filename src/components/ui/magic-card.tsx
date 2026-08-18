@@ -14,6 +14,8 @@ import { cn } from "@/lib/utils"
 interface MagicCardBaseProps {
   children?: React.ReactNode
   className?: string
+  backgroundColor?: string
+  borderColor?: string
   gradientSize?: number
   gradientFrom?: string
   gradientTo?: string
@@ -58,6 +60,8 @@ export function MagicCard(props: MagicCardProps) {
   const {
     children,
     className,
+    backgroundColor = "var(--color-background, transparent)",
+    borderColor = "var(--color-border, transparent)",
     gradientSize = 200,
     gradientColor = "#262626",
     gradientOpacity = 0.8,
@@ -171,11 +175,11 @@ export function MagicCard(props: MagicCardProps) {
       onPointerEnter={() => reset("enter")}
       style={{
         background: useMotionTemplate`
-          linear-gradient(var(--color-background) 0 0) padding-box,
+          linear-gradient(${backgroundColor} 0 0) padding-box,
           radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,
             ${gradientFrom},
             ${gradientTo},
-            var(--color-border) 100%
+            ${borderColor} 100%
           ) border-box
         `,
       }}

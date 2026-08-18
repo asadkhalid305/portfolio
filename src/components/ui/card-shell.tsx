@@ -26,14 +26,24 @@ export default function CardShell({
     className
   );
 
+  const cardSurface = featured ? "#000000" : "#ffffff";
+  const magicCardClasses = clsx(
+    "h-full w-full border-2",
+    featured
+      ? "[&>div:first-of-type]:bg-c-dark"
+      : "[&>div:first-of-type]:bg-white group-hover/card:[&>div:first-of-type]:bg-c-semidark"
+  );
+
   const cardContent = (
     <MagicCard
-      className="h-full w-full border-0 bg-transparent [&>div:first-of-type]:bg-transparent"
+      className={magicCardClasses}
+      backgroundColor={cardSurface}
+      borderColor="transparent"
       gradientColor="rgba(10, 102, 194, 0.12)"
       gradientFrom="#0A66C2"
       gradientOpacity={0.2}
-      gradientSize={260}
-      gradientTo="#78B7FF"
+      gradientSize={330}
+      gradientTo="#00B7FF"
     >
       {children}
     </MagicCard>
