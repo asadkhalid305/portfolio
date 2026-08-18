@@ -37,7 +37,7 @@ export default function TCard({
   return (
     <CardShell
       featured={featured}
-      className={`flex h-full flex-col justify-between p-6 ${featured ? "lg:p-8" : ""}`}
+      contentClassName={`flex h-full flex-col justify-between p-6 ${featured ? "lg:p-8" : ""}`}
     >
       <div>
         <div className="mb-4 flex items-start justify-between">

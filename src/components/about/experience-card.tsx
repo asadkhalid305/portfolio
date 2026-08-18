@@ -30,7 +30,7 @@ export default function ExperienceCard({
   return (
     <CardShell
       featured={featured}
-      className={clsx(
+      contentClassName={clsx(
         "p-6",
         compact ? "flex h-full flex-col" : "xl:grid xl:grid-cols-[17rem_1fr] xl:gap-10 xl:p-8"
       )}

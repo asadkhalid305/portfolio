@@ -2,10 +2,12 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import clsx from "clsx";
 import { interactionStyles } from "@/constants/interaction-styles";
+import { MagicCard } from "@/components/ui/magic-card";
 
 type CardShellProps = {
   children: ReactNode;
   className?: string;
+  contentClassName?: string;
   featured?: boolean;
   href?: string;
 };
@@ -13,6 +15,7 @@ type CardShellProps = {
 export default function CardShell({
   children,
   className,
+  contentClassName,
   featured = false,
   href,
 }: Readonly<CardShellProps>) {
@@ -25,13 +28,38 @@ export default function CardShell({
     className
   );
 
+  const cardSurface = featured ? "#000000" : "#ffffff";
+  const magicCardClasses = clsx(
+    "-m-px h-[calc(100%+2px)] w-[calc(100%+2px)]",
+    featured
+      ? "[&>div:first-of-type]:bg-c-dark"
+      : "[&>div:first-of-type]:bg-white group-hover/card:[&>div:first-of-type]:bg-c-semidark"
+  );
+
+  const cardContent = (
+    <MagicCard
+      className={magicCardClasses}
+      contentClassName={contentClassName}
+      backgroundColor={cardSurface}
+      borderColor="transparent"
+      borderWidth={3}
+      gradientColor="rgba(10, 102, 194, 0.12)"
+      gradientFrom="#0A66C2"
+      gradientOpacity={0.2}
+      gradientSize={330}
+      gradientTo="#00B7FF"
+    >
+      {children}
+    </MagicCard>
+  );
+
   if (href) {
     return (
       <Link href={href} className={classes}>
-        {children}
+        {cardContent}
       </Link>
     );
   }
 
-  return <article className={classes}>{children}</article>;
+  return <article className={classes}>{cardContent}</article>;
 }
