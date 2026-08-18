@@ -71,11 +71,13 @@ export default function About() {
 
         <div className="hero-enter hero-delay-4 mt-8 flex flex-wrap items-center justify-center gap-3 xl:justify-start">
           <LinkButton
+            arrowDirection="down-right"
             href={primaryCta.href}
             showIcon
             text={primaryCta.text}
           />
           <LinkButton
+            arrowDirection="up-right"
             href={socialsData.topmateIO.href}
             showIcon
             text="Book a session"
