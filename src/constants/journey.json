@@ -6,8 +6,8 @@
     {
       "id": "starting-late",
       "image": {
-        "src": "/images/default.webp",
-        "alt": "Placeholder for a personal photo from Asad's early education"
+        "src": "/images/journey-1.webp",
+        "alt": "Asad as a child wearing glasses and a white shirt"
       },
       "marker": "01",
       "label": "Starting late",
@@ -19,8 +19,8 @@
     {
       "id": "catching-up",
       "image": {
-        "src": "/images/default.webp",
-        "alt": "Placeholder for a personal photo from Asad's university years"
+        "src": "/images/journey-2.webp",
+        "alt": "Asad studying at a table during his university years"
       },
       "marker": "02",
       "label": "Catching up",
@@ -32,8 +32,8 @@
     {
       "id": "giving-back",
       "image": {
-        "src": "/images/default.webp",
-        "alt": "Placeholder for a personal photo from Asad's community work"
+        "src": "/images/journey-3.webp",
+        "alt": "Asad speaking at an IEEE event in Pakistan"
       },
       "marker": "03",
       "label": "Giving back",
@@ -45,8 +45,8 @@
     {
       "id": "starting-again",
       "image": {
-        "src": "/images/default.webp",
-        "alt": "Placeholder for a personal photo from Asad's move to Germany"
+        "src": "/images/journey-4.webp",
+        "alt": "Asad standing in front of Berlin's Brandenburg Gate"
       },
       "marker": "04",
       "label": "Starting again",
@@ -58,8 +58,8 @@
     {
       "id": "building-and-sharing",
       "image": {
-        "src": "/images/default.webp",
-        "alt": "Placeholder for a personal photo from Asad's current work and teaching"
+        "src": "/images/journey-5.webp",
+        "alt": "Asad speaking into a microphone at a public event"
       },
       "marker": "05",
       "label": "Building and sharing",
