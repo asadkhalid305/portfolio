@@ -1,4 +1,5 @@
 import { DottedMap, type Marker } from "@/components/ui/dotted-map";
+import CardShell from "@/components/ui/card-shell";
 
 type JourneyLocation = Marker & {
   label: string;
@@ -24,7 +25,11 @@ const locations: JourneyLocation[] = [
 
 export default function JourneyMap() {
   return (
-    <aside className="grid overflow-hidden rounded-[2rem] bg-c-dark text-white lg:grid-cols-[0.8fr_1.2fr]">
+    <CardShell
+      className="rounded-[2rem]"
+      contentClassName="grid text-white lg:grid-cols-[0.8fr_1.2fr]"
+      featured
+    >
       <div className="flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-10 lg:px-12">
         <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-blue-300">
           <span>2022</span>
@@ -90,6 +95,6 @@ export default function JourneyMap() {
           Relocation from Pakistan to Berlin, Germany in 2022
         </figcaption>
       </figure>
-    </aside>
+    </CardShell>
   );
 }
