@@ -12,7 +12,7 @@ const locations: JourneyLocation[] = [
     lat: 33.6844,
     lng: 73.0479,
     placement: "right",
-    pulse: true,
+    pulse: false,
     size: 2.1,
   },
   {
