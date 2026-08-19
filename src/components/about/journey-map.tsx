@@ -12,6 +12,7 @@ const locations: JourneyLocation[] = [
     lat: 33.6844,
     lng: 73.0479,
     placement: "right",
+    pulse: true,
     size: 2.1,
   },
   {
@@ -19,6 +20,7 @@ const locations: JourneyLocation[] = [
     lat: 52.52,
     lng: 13.405,
     placement: "left",
+    pulse: true,
     size: 2.1,
   },
 ];
@@ -57,9 +59,11 @@ export default function JourneyMap() {
           mapSamples={3200}
           markerColor="#0A66C2"
           markers={locations}
+          pulse
           renderMarkerOverlay={({ marker, r, x, y }) => {
             const labelHeight = 7;
-            const labelWidth = marker.label.length * 2.7 + 9;
+            const labelPadding = 3.5;
+            const labelWidth = marker.label.length * 2.15 + labelPadding * 2;
             const labelX =
               marker.placement === "right"
                 ? x + r + 2.5
@@ -82,7 +86,7 @@ export default function JourneyMap() {
                   fill="white"
                   fontSize={3.1}
                   fontWeight={700}
-                  x={labelX + 4.5}
+                  x={labelX + labelPadding}
                   y={y + 1.05}
                 >
                   {marker.label}
