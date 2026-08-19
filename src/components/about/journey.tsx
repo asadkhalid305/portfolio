@@ -95,6 +95,9 @@ export default function Journey({
                           fill
                           sizes="(min-width: 1024px) 38vw, 100vw"
                           src={imageSrc}
+                          style={{
+                            objectPosition: chapter.image?.objectPosition,
+                          }}
                         />
                         {isPlaceholder ? (
                           <span

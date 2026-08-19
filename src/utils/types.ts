@@ -11,6 +11,7 @@ export type ImageType = {
   src: string;
   alt: string;
   layout?: "square" | "video";
+  objectPosition?: string;
 };
 
 /**

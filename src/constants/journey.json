@@ -7,7 +7,8 @@
       "id": "starting-late",
       "image": {
         "src": "/images/journey-1.webp",
-        "alt": "Asad as a child wearing glasses and a white shirt"
+        "alt": "Asad as a child wearing glasses and a white shirt",
+        "objectPosition": "center 5%"
       },
       "marker": "01",
       "label": "Starting late",
@@ -59,7 +60,8 @@
       "id": "building-and-sharing",
       "image": {
         "src": "/images/journey-5.webp",
-        "alt": "Asad speaking into a microphone at a public event"
+        "alt": "Asad speaking into a microphone at a public event",
+        "objectPosition": "center top"
       },
       "marker": "05",
       "label": "Building and sharing",
