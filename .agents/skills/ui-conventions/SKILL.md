@@ -28,6 +28,11 @@ Use existing shared primitives before creating a visual pattern. Treat an intent
 - Skip Lens for tiny identity avatars, logos, and purely decorative assets.
 - Keep useful alt text. Set a per-image `objectPosition` whenever `object-cover` would crop the subject poorly.
 
+### Forms
+
+- Use `src/components/ui/shine-border.tsx` for a primary, dedicated contact or conversion form when a continuous visual invitation is appropriate; do not apply it to inline filters, search fields, or dense settings forms.
+- Use `src/components/ui/confetti.tsx` only after a confirmed successful user action. Keep the effect brief, non-blocking, and disabled for reduced-motion preferences.
+
 ### Future shared surfaces
 
 - For buttons, links, forms, feedback states, visualizations, or animations, first inspect existing shared components and tokens. Reuse them where they meet the need.
