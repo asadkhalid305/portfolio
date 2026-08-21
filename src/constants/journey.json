@@ -5,6 +5,11 @@
   "chapters": [
     {
       "id": "starting-late",
+      "image": {
+        "src": "/images/journey-1.webp",
+        "alt": "Asad as a child wearing glasses and a white shirt",
+        "objectPosition": "center 5%"
+      },
       "marker": "01",
       "label": "Starting late",
       "title": "Formal school began when I was eleven.",
@@ -14,6 +19,10 @@
     },
     {
       "id": "catching-up",
+      "image": {
+        "src": "/images/journey-2.webp",
+        "alt": "Asad studying at a table during his university years"
+      },
       "marker": "02",
       "label": "Catching up",
       "title": "Effort became the advantage I could control.",
@@ -23,6 +32,10 @@
     },
     {
       "id": "giving-back",
+      "image": {
+        "src": "/images/journey-3.webp",
+        "alt": "Asad speaking at an IEEE event in Pakistan"
+      },
       "marker": "03",
       "label": "Giving back",
       "title": "Progress felt more meaningful when it helped someone else.",
@@ -32,6 +45,10 @@
     },
     {
       "id": "starting-again",
+      "image": {
+        "src": "/images/journey-4.webp",
+        "alt": "Asad standing in front of Berlin's Brandenburg Gate"
+      },
       "marker": "04",
       "label": "Starting again",
       "title": "Moving to Berlin created another reset.",
@@ -41,6 +58,11 @@
     },
     {
       "id": "building-and-sharing",
+      "image": {
+        "src": "/images/journey-5.webp",
+        "alt": "Asad speaking into a microphone at a public event",
+        "objectPosition": "center top"
+      },
       "marker": "05",
       "label": "Building and sharing",
       "title": "Today, the work and the teaching belong together.",

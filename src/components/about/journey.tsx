@@ -1,4 +1,10 @@
+import { Fragment } from "react";
+import Image from "next/image";
+import clsx from "clsx";
 import LinkButton from "@/components/ui/link-button";
+import JourneyMap from "@/components/about/journey-map";
+import CardShell from "@/components/ui/card-shell";
+import { Lens } from "@/components/ui/lens";
 import journeyData from "@/constants/journey.json";
 import { JourneyChapter } from "@/utils/types";
 
@@ -48,26 +54,86 @@ export default function Journey({
           ))}
         </ol>
       ) : (
-        <ol className="mt-12 divide-y divide-black/10 border-y border-black/10">
-          {visibleChapters.map((chapter) => (
-            <li
-              key={chapter.id}
-              className="grid gap-4 py-8 sm:grid-cols-[9rem_1fr] sm:gap-8 lg:grid-cols-[12rem_1fr] lg:py-10"
-            >
-              <div className="flex items-center gap-3 self-start text-xs font-bold uppercase tracking-[0.18em] sm:pt-1.5">
-                <span className="text-brand-blue">{chapter.marker}</span>
-                <span className="text-gray-500">{chapter.label}</span>
-              </div>
-              <article className="max-w-3xl">
-                <h3 className="text-2xl font-bold leading-tight tracking-[-0.025em] sm:text-3xl">
-                  {chapter.title}
-                </h3>
-                <p className="mt-4 text-base leading-7 text-gray-700 sm:text-lg sm:leading-8">
-                  {chapter.fullText}
-                </p>
-              </article>
-            </li>
-          ))}
+        <ol className="mt-12 space-y-5">
+          {visibleChapters.map((chapter, index) => {
+            const imageOnRight = index % 2 === 1;
+            const imageSrc = chapter.image?.src ?? "/images/default.webp";
+            const isPlaceholder = imageSrc === "/images/default.webp";
+
+            return (
+              <Fragment key={chapter.id}>
+                {chapter.id === "starting-again" ? (
+                  <li className="py-5 sm:py-8">
+                    <JourneyMap />
+                  </li>
+                ) : null}
+
+                <li>
+                  <CardShell
+                    className="rounded-[2rem]"
+                    contentClassName="grid items-center gap-7 px-5 py-8 sm:px-8 sm:py-10 lg:grid-cols-12 lg:gap-12 lg:px-10 lg:py-12"
+                    tone={index % 2 === 1 ? "muted" : "default"}
+                  >
+                    <figure
+                      className={clsx(
+                        "relative lg:col-span-5",
+                        imageOnRight ? "lg:order-2" : "lg:order-1"
+                      )}
+                    >
+                      <Lens
+                        ariaLabel={`Explore the image for ${chapter.label}`}
+                        className="aspect-[5/4] rounded-2xl border border-black/10 bg-slate-700 shadow-xl"
+                        focusable={!isPlaceholder}
+                        lensSize={190}
+                        zoomFactor={1.24}
+                      >
+                        <Image
+                          alt={chapter.image?.alt ?? ""}
+                          className="object-cover"
+                          fill
+                          sizes="(min-width: 1024px) 38vw, 100vw"
+                          src={imageSrc}
+                          style={{
+                            objectPosition: chapter.image?.objectPosition,
+                          }}
+                        />
+                        {isPlaceholder ? (
+                          <span
+                            aria-hidden="true"
+                            className="absolute right-5 top-3 text-7xl font-bold tracking-[-0.08em] text-white/10 sm:text-8xl"
+                          >
+                            {chapter.marker}
+                          </span>
+                        ) : null}
+                      </Lens>
+                      <figcaption className="absolute inset-x-0 bottom-0 z-30 rounded-b-2xl bg-gradient-to-t from-slate-950/95 via-slate-950/55 to-transparent px-5 pb-5 pt-12 text-xs font-bold uppercase tracking-[0.16em] text-white/90">
+                        {chapter.label}
+                        {isPlaceholder ? " · photo to be added" : " · personal archive"}
+                      </figcaption>
+                    </figure>
+
+                    <div
+                      className={clsx(
+                        "lg:col-span-7",
+                        imageOnRight ? "lg:order-1" : "lg:order-2"
+                      )}
+                    >
+                      <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em]">
+                        <span className="text-brand-blue">{chapter.marker}</span>
+                        <span className="text-gray-500">{chapter.label}</span>
+                      </div>
+                      <h3 className="mt-4 text-3xl font-bold leading-tight tracking-[-0.035em] sm:text-4xl">
+                        {chapter.title}
+                      </h3>
+                      <p className="mt-5 max-w-3xl text-base leading-7 text-gray-700 sm:text-lg sm:leading-8">
+                        {chapter.fullText}
+                      </p>
+                    </div>
+                  </CardShell>
+                </li>
+              </Fragment>
+            );
+          })}
         </ol>
       )}
 

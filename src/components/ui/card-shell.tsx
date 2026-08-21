@@ -10,6 +10,7 @@ type CardShellProps = {
   contentClassName?: string;
   featured?: boolean;
   href?: string;
+  tone?: "default" | "muted";
 };
 
 export default function CardShell({
@@ -18,21 +19,31 @@ export default function CardShell({
   contentClassName,
   featured = false,
   href,
+  tone = "default",
 }: Readonly<CardShellProps>) {
+  const isMuted = !featured && tone === "muted";
   const classes = clsx(
     "group/card relative overflow-hidden rounded-2xl border border-black/10 transition-[background-color,border-color,box-shadow,transform] duration-300 ease-in-out hover:-translate-y-1 hover:shadow-2xl dark:border-gray-800",
     featured
       ? "border-c-dark bg-c-dark text-c-light dark:border-c-dark dark:bg-c-dark"
+      : isMuted
+      ? "bg-c-semidark hover:bg-c-semidark dark:bg-gray-900 dark:hover:bg-gray-900"
       : "bg-white hover:bg-c-semidark dark:bg-gray-900 dark:hover:bg-gray-800",
     href && interactionStyles.focusRing,
     className
   );
 
-  const cardSurface = featured ? "#000000" : "#ffffff";
+  const cardSurface = featured
+    ? "#000000"
+    : isMuted
+    ? "#F1F6F8"
+    : "#ffffff";
   const magicCardClasses = clsx(
     "-m-px h-[calc(100%+2px)] w-[calc(100%+2px)]",
     featured
       ? "[&>div:first-of-type]:bg-c-dark"
+      : isMuted
+      ? "[&>div:first-of-type]:bg-c-semidark dark:[&>div:first-of-type]:bg-gray-900"
       : "[&>div:first-of-type]:bg-white group-hover/card:[&>div:first-of-type]:bg-c-semidark"
   );
 

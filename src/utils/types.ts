@@ -11,6 +11,7 @@ export type ImageType = {
   src: string;
   alt: string;
   layout?: "square" | "video";
+  objectPosition?: string;
 };
 
 /**
@@ -160,6 +161,7 @@ export type TimelineItemProps = {
  */
 export type JourneyChapter = {
   id: string;
+  image?: ImageType;
   marker: string;
   label: string;
   title: string;
