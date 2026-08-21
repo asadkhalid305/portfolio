@@ -12,7 +12,3 @@ description: Add an event, talk, workshop, mentorship, panel, conference, or com
 5. Create `src/content/events/<slug>.mdx` using the current frontmatter schema. Store all external actions in `links` with meaningful names.
 6. Run the portfolio validator and fix errors caused by the new entry.
 7. Report the created route and image choice. Flag likely chatbot drift without editing the chatbot automatically.
-
-## Shared visual treatment
-
-When this work adds or changes an event card, reuse `src/components/ui/card-shell.tsx`. Assess `src/components/ui/lens.tsx` for meaningful event imagery; skip it for logos or decorative assets. Browser-check the card gradient/focus treatment and image crop at desktop and mobile widths.

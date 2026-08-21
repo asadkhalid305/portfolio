@@ -12,7 +12,3 @@ description: Add a professional or community role to this portfolio's experience
 5. Ask whether the role should appear in the three-item `items` preview. If yes, add it and remove only the oldest preview item required to keep exactly three.
 6. Run the portfolio validator and fix errors caused by the new record.
 7. Summarize both arrays changed. Flag likely chatbot drift without editing the chatbot automatically.
-
-## Shared visual treatment
-
-When this work adds or changes an experience card, reuse `src/components/ui/card-shell.tsx` and preserve its Magic Card gradient, focus treatment, radius, and hover motion. Browser-check the card at desktop and mobile widths.

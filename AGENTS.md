@@ -16,12 +16,6 @@ Before editing content, inspect the current type in `src/utils/types.ts` and one
 
 Project-specific workflows live in `.agents/skills/`. Use the matching skill when adding or updating portfolio content, synchronizing the chatbot, checking links, updating SEO, or validating the portfolio.
 
-## Card and image treatment
-
-- New or materially redesigned content cards must reuse `src/components/ui/card-shell.tsx` so the Magic Card gradient, focus treatment, radius, and hover motion stay consistent. Document a deliberate exception in the PR when a card cannot use it.
-- For meaningful card or story imagery, assess `src/components/ui/lens.tsx`; use it when closer inspection adds value and does not conflict with the interaction. Skip tiny identity avatars, logos, and purely decorative images. Preserve useful alt text and set per-image `objectPosition` when `object-cover` would crop the subject poorly.
-- Browser-check card hover/focus treatment and image cropping at desktop and mobile widths after changing a card or image layout.
-
 ## Branch and release policy
 
 - Never commit or push ordinary work directly to `main`.

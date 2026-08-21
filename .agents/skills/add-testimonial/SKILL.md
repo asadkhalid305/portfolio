@@ -12,7 +12,3 @@ description: Add a LinkedIn or Topmate testimonial to this portfolio. Use when t
 5. Append the new object to `items`. Do not reorder or modify existing testimonials.
 6. Run the portfolio validator and fix errors caused by the new item.
 7. Summarize the addition and flag likely chatbot drift without editing the chatbot automatically.
-
-## Shared visual treatment
-
-When this work adds or changes a testimonial card, reuse `src/components/ui/card-shell.tsx` and preserve its Magic Card gradient, focus treatment, radius, and hover motion. Do not add Lens to a small identity avatar unless the requested layout gives the image a meaningful inspection role. Browser-check the card at desktop and mobile widths.

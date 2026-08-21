@@ -12,7 +12,3 @@ description: Add a blog post to this portfolio's MDX content. Use when the user 
 5. Create `src/content/blogs/<slug>.mdx` using the current frontmatter schema. Put an original URL in `links` with a descriptive name.
 6. Run the portfolio validator. Fix errors caused by the new entry.
 7. Report the created route, image choice, and any likely chatbot dataset drift. Do not update the chatbot unless asked or `sync-chatbot` is also invoked.
-
-## Shared visual treatment
-
-When this work adds or changes a blog card, reuse `src/components/ui/card-shell.tsx`. Assess `src/components/ui/lens.tsx` for meaningful article imagery; skip it for logos or decorative assets. Browser-check the card gradient/focus treatment and image crop at desktop and mobile widths.
