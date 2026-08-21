@@ -3,6 +3,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import LinkButton from "@/components/ui/link-button";
 import JourneyMap from "@/components/about/journey-map";
+import CardShell from "@/components/ui/card-shell";
 import { Lens } from "@/components/ui/lens";
 import journeyData from "@/constants/journey.json";
 import { JourneyChapter } from "@/utils/types";
@@ -67,15 +68,12 @@ export default function Journey({
                   </li>
                 ) : null}
 
-                <li
-                  className={clsx(
-                    "rounded-[2rem] py-8 sm:py-10 lg:py-12",
-                    index % 2 === 1
-                      ? "bg-c-semidark px-5 sm:px-8 lg:px-10"
-                      : "border-y border-black/10"
-                  )}
-                >
-                  <article className="grid items-center gap-7 lg:grid-cols-12 lg:gap-12">
+                <li>
+                  <CardShell
+                    className="rounded-[2rem]"
+                    contentClassName="grid items-center gap-7 px-5 py-8 sm:px-8 sm:py-10 lg:grid-cols-12 lg:gap-12 lg:px-10 lg:py-12"
+                    tone={index % 2 === 1 ? "muted" : "default"}
+                  >
                     <figure
                       className={clsx(
                         "relative lg:col-span-5",
@@ -131,7 +129,7 @@ export default function Journey({
                         {chapter.fullText}
                       </p>
                     </div>
-                  </article>
+                  </CardShell>
                 </li>
               </Fragment>
             );

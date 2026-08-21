@@ -11,3 +11,7 @@ description: Update the short or full personal journey narrative in this portfol
 4. Keep the JSON valid and preserve unrelated fields.
 5. Run the portfolio validator.
 6. Summarize the changed sections and flag likely chatbot drift without editing the chatbot automatically.
+
+## Shared visual treatment
+
+When this work adds or changes Journey cards, reuse `src/components/ui/card-shell.tsx`. Assess `src/components/ui/lens.tsx` for meaningful personal imagery and set per-image `objectPosition` when `object-cover` would crop the subject poorly. Browser-check the card gradient/focus treatment and image crop at desktop and mobile widths.

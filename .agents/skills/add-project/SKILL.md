@@ -12,3 +12,7 @@ description: Add a project to this portfolio's MDX content. Use when the user wa
 5. Create `src/content/projects/<slug>.mdx` using the current frontmatter schema. Use `links` entries rather than legacy `liveUrl` or `repoUrl` fields.
 6. Run the portfolio validator and fix errors caused by the new entry.
 7. Report the created route, pinned state, and image choice. Flag likely chatbot drift without editing the chatbot automatically.
+
+## Shared visual treatment
+
+When this work adds or changes a project card, reuse `src/components/ui/card-shell.tsx`. Assess `src/components/ui/lens.tsx` for meaningful project imagery; skip it for logos or decorative assets. Browser-check the card gradient/focus treatment and image crop at desktop and mobile widths.

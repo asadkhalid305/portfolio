@@ -12,3 +12,7 @@ description: Add a book review to this portfolio's MDX content. Use when the use
 5. Create `src/content/book-reviews/<slug>.mdx` using the current frontmatter schema and `links` array.
 6. Run the portfolio validator and fix errors caused by the new entry.
 7. Report the created route and image choice. Flag likely chatbot drift without editing the chatbot automatically.
+
+## Shared visual treatment
+
+When this work adds or changes a review card, reuse `src/components/ui/card-shell.tsx`. Assess `src/components/ui/lens.tsx` for meaningful cover or editorial imagery; skip it when it adds no value. Browser-check the card gradient/focus treatment and image crop at desktop and mobile widths.
