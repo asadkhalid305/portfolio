@@ -16,6 +16,8 @@ Before editing content, inspect the current type in `src/utils/types.ts` and one
 
 Project-specific workflows live in `.agents/skills/`. Use the matching skill when adding or updating portfolio content, synchronizing the chatbot, checking links, updating SEO, or validating the portfolio.
 
+Before creating or materially modifying a user-facing visual surface, read and follow `.agents/skills/ui-conventions/SKILL.md`. This applies to cards, images, buttons, links, forms, layouts, animations, and responsive behavior; skip it for data-only, API, copy-only, or non-visual changes.
+
 ## Branch and release policy
 
 - Never commit or push ordinary work directly to `main`.
