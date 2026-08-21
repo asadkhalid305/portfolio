@@ -68,6 +68,9 @@
   .slide-in-from-bottom-2 {
     animation-name: slide-in-from-bottom-2;
   }
+  .theme {
+    --animate-shine: shine var(--duration) infinite linear;
+  }
 }
 
 @layer components {
@@ -149,5 +152,19 @@
   .motion-reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+@theme inline {
+  @keyframes shine {
+  0% {
+    background-position: 0% 0%;
+    }
+  50% {
+    background-position: 100% 100%;
+    }
+  to {
+    background-position: 0% 0%;
+    }
   }
 }
