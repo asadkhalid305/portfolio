@@ -159,7 +159,7 @@ export default function ContactForm() {
     <div className="relative mx-auto w-full max-w-2xl overflow-hidden rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900 md:p-8">
       <ShineBorder
         borderWidth={2}
-        duration={18}
+        duration={12}
         shineColor={["#0A66C2", "#4FA3F7", "#0A66C2"]}
       />
 

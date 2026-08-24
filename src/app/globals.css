@@ -68,8 +68,11 @@
   .slide-in-from-bottom-2 {
     animation-name: slide-in-from-bottom-2;
   }
-  .theme {
-    --animate-shine: shine var(--duration) infinite linear;
+}
+
+@layer utilities {
+  .animate-shine-border {
+    animation: shine-border var(--duration) infinite linear;
   }
 }
 
@@ -139,6 +142,18 @@
   }
 }
 
+@keyframes shine-border {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -152,19 +167,5 @@
   .motion-reveal {
     opacity: 1;
     transform: none;
-  }
-}
-
-@theme inline {
-  @keyframes shine {
-  0% {
-    background-position: 0% 0%;
-    }
-  50% {
-    background-position: 100% 100%;
-    }
-  to {
-    background-position: 0% 0%;
-    }
   }
 }
