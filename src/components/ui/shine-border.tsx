@@ -35,15 +35,23 @@ export function ShineBorder({
   style,
   ...props
 }: ShineBorderProps) {
+  const colors = Array.isArray(shineColor) ? shineColor : [shineColor]
+  const shineStops = colors
+    .map((color, index) => {
+      const position =
+        colors.length === 1 ? 50 : 46 + (index / (colors.length - 1)) * 8
+
+      return `${color} ${position}%`
+    })
+    .join(",")
+
   return (
     <div
       style={
         {
           "--border-width": `${borderWidth}px`,
           "--duration": `${duration}s`,
-          backgroundImage: `radial-gradient(transparent,transparent, ${
-            Array.isArray(shineColor) ? shineColor.join(",") : shineColor
-          },transparent,transparent)`,
+          backgroundImage: `radial-gradient(transparent 0%,transparent 42%,${shineStops},transparent 58%,transparent 100%)`,
           backgroundSize: "300%",
           mask: `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
           WebkitMask: `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
