@@ -7,6 +7,9 @@ import { Confetti, type ConfettiRef } from "@/components/ui/confetti";
 import { ShineBorder } from "@/components/ui/shine-border";
 import { isRealisticEmail } from "@/utils/email-validation";
 
+const fieldClassName =
+  "w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 transition-all focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue dark:border-gray-800 dark:bg-gray-800 dark:text-white";
+
 async function fetchFormStartedAt() {
   const response = await fetch("/api/contact", { cache: "no-store" });
   if (!response.ok) {
@@ -253,7 +256,7 @@ export default function ContactForm() {
                 onChange={handleChange}
                 maxLength={100}
                 placeholder={contactData.form.name.placeholder}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-c-dark dark:focus:ring-c-light transition-all"
+                className={fieldClassName}
               />
             </div>
             <div>
@@ -273,7 +276,7 @@ export default function ContactForm() {
                 maxLength={254}
                 placeholder={contactData.form.email.placeholder}
                 aria-invalid={Boolean(emailError)}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-c-dark dark:focus:ring-c-light transition-all"
+                className={fieldClassName}
               />
               {emailError && <p className="mt-2 text-red-500 text-sm">{emailError}</p>}
             </div>
@@ -296,7 +299,7 @@ export default function ContactForm() {
               minLength={20}
               maxLength={5000}
               placeholder={contactData.form.message.placeholder}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-c-dark dark:focus:ring-c-light transition-all resize-none"
+              className={`${fieldClassName} resize-none`}
             />
           </div>
 
