@@ -8,7 +8,7 @@ import { ShineBorder } from "@/components/ui/shine-border";
 import { isRealisticEmail } from "@/utils/email-validation";
 
 const fieldClassName =
-  "w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 transition-all focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue dark:border-gray-800 dark:bg-gray-800 dark:text-white";
+  "w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 transition-all focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue dark:border-gray-800 dark:bg-gray-800 dark:text-white";
 
 async function fetchFormStartedAt() {
   const response = await fetch("/api/contact", { cache: "no-store" });
