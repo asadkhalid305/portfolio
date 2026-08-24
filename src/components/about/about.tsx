@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
+import TechnologyOrbit from "@/components/about/technology-orbit";
 import LinkButton from "@/components/ui/link-button";
 import { Lens } from "@/components/ui/lens";
 import aboutData from "@/constants/about.json";
@@ -13,20 +14,25 @@ function Portrait({ compact = false }: { compact?: boolean }) {
   return (
     <div
       className={clsx(
-        "hero-portrait-frame relative aspect-square",
-        compact ? "w-28 sm:w-32" : "w-[min(88vw,30rem)]"
+        "relative isolate aspect-square",
+        compact
+          ? "w-36 sm:scale-125 md:scale-150 lg:scale-[1.6]"
+          : "w-[min(92vw,34rem)]"
       )}
     >
       <Lens
         ariaLabel={`Zoom into ${personalPhoto.alt}`}
-        className="absolute inset-[7%] rounded-full"
-        lensSize={compact ? 96 : 170}
+        className={clsx(
+          "absolute z-10 rounded-full",
+          compact ? "inset-[20%]" : "inset-[17%]"
+        )}
+        lensSize={compact ? 88 : 170}
         zoomFactor={1.16}
       >
         <div className="relative h-full w-full overflow-hidden rounded-full bg-[#e7eef1]">
           <Image
             alt={personalPhoto.alt}
-            className="object-cover object-[center_32%] transition-transform duration-700 ease-out hover:scale-[1.015]"
+            className="scale-[1.08] object-cover object-[center_31%] transition-transform duration-700 ease-out hover:scale-[1.1]"
             draggable="false"
             fill
             priority
@@ -40,6 +46,7 @@ function Portrait({ compact = false }: { compact?: boolean }) {
           />
         </div>
       </Lens>
+      <TechnologyOrbit compact={compact} />
     </div>
   );
 }
@@ -48,7 +55,7 @@ export default function About() {
   return (
     <div className="grid items-center gap-8 py-10 sm:gap-10 sm:py-12 xl:min-h-[calc(100svh-68px)] xl:grid-cols-[1.15fr_0.85fr] xl:gap-12 xl:py-10">
       <div className="relative z-10 mx-auto max-w-3xl text-center xl:mx-0 xl:text-left">
-        <div className="hero-enter hero-delay-1 mb-7 flex justify-center xl:hidden">
+        <div className="hero-enter hero-delay-1 mb-7 flex justify-center sm:mb-12 md:mb-16 lg:mb-20 lg:mt-4 xl:hidden">
           <Portrait compact />
         </div>
 
@@ -94,7 +101,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="hero-enter hero-delay-3 relative mx-auto hidden w-full max-w-[30rem] items-center justify-center xl:flex xl:justify-end">
+      <div className="hero-enter hero-delay-3 relative mx-auto hidden w-full max-w-[34rem] items-center justify-center xl:flex xl:justify-end">
         <Portrait />
       </div>
     </div>
