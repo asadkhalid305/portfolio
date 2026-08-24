@@ -33,6 +33,11 @@ Use existing shared primitives before creating a visual pattern. Treat an intent
 - Use `src/components/ui/shine-border.tsx` for a primary, dedicated contact or conversion form when a continuous visual invitation is appropriate; do not apply it to inline filters, search fields, or dense settings forms.
 - Use `src/components/ui/confetti.tsx` only after a confirmed successful user action. Keep the effect brief, non-blocking, and disabled for reduced-motion preferences.
 
+### Buttons and links
+
+- Use `src/components/ui/button.tsx` for native actions and `src/components/ui/link-button.tsx` for navigation. Both must consume `src/components/ui/button-styles.ts` so hover, focus, sizing, radius, tone, and disabled behavior stay aligned.
+- Extend the shared style variants when a new button treatment is needed; do not recreate button interaction classes inside a feature component.
+
 ### Future shared surfaces
 
 - For buttons, links, forms, feedback states, visualizations, or animations, first inspect existing shared components and tokens. Reuse them where they meet the need.

@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import clsx from "clsx";
 import contactData from "@/constants/contact.json";
+import Button from "@/components/ui/button";
 import { Confetti, type ConfettiRef } from "@/components/ui/confetti";
 import { ShineBorder } from "@/components/ui/shine-border";
 import { isRealisticEmail } from "@/utils/email-validation";
@@ -207,12 +207,13 @@ export default function ContactForm() {
               <p className="mb-6 text-gray-600 dark:text-gray-400">
                 {contactData.success.description}
               </p>
-              <button
+              <Button
                 onClick={handleRestart}
-                className="rounded-xl bg-c-dark px-6 py-2 font-medium text-white transition-all hover:bg-gray-800"
+                rounded="xl"
+                size="sm"
               >
                 {contactData.success.button}
-              </button>
+              </Button>
             </div>
           </div>
         ) : (
@@ -307,8 +308,11 @@ export default function ContactForm() {
             <p className="text-red-500 text-sm">{contactData.form.error}</p>
           )}
 
-          <button
+          <Button
             type="submit"
+            rounded="xl"
+            size="lg"
+            aria-busy={status === "loading"}
             disabled={
               status === "loading" ||
               !formData.name.trim() ||
@@ -316,16 +320,7 @@ export default function ContactForm() {
               !formData.formStartedAt ||
               !isEmailValid
             }
-            className={clsx(
-              "w-full py-4 bg-c-dark text-white rounded-xl font-bold text-lg shadow-lg transition-all flex items-center justify-center gap-2",
-              status === "loading" ||
-                !formData.name.trim() ||
-                formData.message.trim().length < 20 ||
-                !formData.formStartedAt ||
-                !isEmailValid
-                ? "opacity-70 cursor-not-allowed"
-                : "hover:bg-gray-800 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
-            )}
+            className="w-full text-lg font-bold"
           >
             {status === "loading" ? (
               <>
@@ -354,7 +349,7 @@ export default function ContactForm() {
             ) : (
               contactData.form.submit.default
             )}
-          </button>
+          </Button>
           </form>
         )}
       </div>

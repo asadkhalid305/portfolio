@@ -1,7 +1,6 @@
 import { LinkButtonProps } from "@/utils/types";
-import clsx from "clsx";
 import Link from "next/link";
-import { interactionStyles } from "@/constants/interaction-styles";
+import { buttonStyles } from "@/components/ui/button-styles";
 import DirectionalArrow from "@/components/ui/directional-arrow";
 
 export default function LinkButton({
@@ -17,7 +16,6 @@ export default function LinkButton({
   tone = "dark",
 }: Readonly<LinkButtonProps>) {
   const isInternal = href.startsWith("/");
-  const isMinimal = variant === "minimal";
 
   const content = (
     <>
@@ -35,27 +33,20 @@ export default function LinkButton({
     </>
   );
 
-  const commonClasses = clsx(
-    "group inline-flex w-fit items-center justify-center font-semibold",
-    interactionStyles.focusRing,
-    isMinimal
-      ? "gap-2 rounded-sm text-lg text-c-dark transition-colors duration-200 ease-out hover:text-brand-blue-hover"
-      : [
-          "gap-3 text-sm shadow-lg transition-[color,background-color,box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand-blue hover:text-white hover:shadow-xl active:translate-y-0 active:shadow-md",
-          rounded === "full" ? "rounded-full" : "rounded-md",
-          size === "sm" ? "px-4 py-2.5" : "px-6 py-3.5",
-          tone === "light"
-            ? "bg-c-light text-c-dark"
-            : "bg-c-dark text-c-light",
-        ]
-  );
+  const commonClasses = buttonStyles({
+    className,
+    rounded,
+    size,
+    tone,
+    variant,
+  });
 
   if (isInternal) {
     return (
       <Link
         href={href}
         aria-label={text}
-        className={clsx(commonClasses, className)}
+        className={commonClasses}
       >
         {content}
       </Link>
@@ -68,7 +59,7 @@ export default function LinkButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={text}
-      className={clsx(commonClasses, className)}
+      className={commonClasses}
     >
       {content}
     </a>

@@ -71,18 +71,22 @@ export type DisplayInfoProps = {
  * Props for LinkButton component
  */
 export type ArrowDirection = "left" | "right" | "up-right" | "down-right";
+export type ButtonRounded = "md" | "xl" | "full";
+export type ButtonSize = "sm" | "md" | "lg";
+export type ButtonTone = "dark" | "light";
+export type ButtonVariant = "primary" | "minimal";
 
 export type LinkButtonProps = {
   href: string;
   text: string;
   showIcon?: boolean;
   className?: string;
-  variant?: "primary" | "minimal";
+  variant?: ButtonVariant;
   iconPosition?: "left" | "right";
   arrowDirection?: ArrowDirection;
-  rounded?: "md" | "full";
-  size?: "sm" | "md";
-  tone?: "dark" | "light";
+  rounded?: ButtonRounded;
+  size?: ButtonSize;
+  tone?: ButtonTone;
 };
 
 // ============================================================================
