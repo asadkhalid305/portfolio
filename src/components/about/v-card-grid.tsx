@@ -47,7 +47,7 @@ export default function VCardSystem({
         <div className="mt-8 flex justify-center lg:justify-start">
           <LinkButton
             href="/contribution"
-            showIcon={false}
+            showIcon
             text={`See all ${heading}`}
             variant="minimal"
           />

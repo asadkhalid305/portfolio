@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import DisplayInfo from "@/components/about/display-info";
-import Timeline from "@/components/about/timeline";
 import ExperienceCard from "@/components/about/experience-card";
 import FilterBar from "@/components/ui/filter-bar";
+import LinkButton from "@/components/ui/link-button";
 import experienceData from "@/constants/experience.json";
 import { ExperienceCardProps } from "@/utils/types";
 
@@ -13,7 +13,7 @@ const {
   heading,
   description,
   overviewDescription,
-  items,
+  cta,
   professionalExperiences,
   communityExperiences,
 } = experienceData;
@@ -23,8 +23,12 @@ type FilterType = "All" | "Professional" | "Community";
 export default function Experience({ isOverview }: { isOverview?: boolean }) {
   const [activeFilter, setActiveFilter] = useState<FilterType>("All");
 
-  // Overview mode - render compact timeline for homepage
+  // Overview mode - lead with the three most recent professional chapters.
   if (isOverview) {
+    const recentRoles = (
+      professionalExperiences as ExperienceCardProps[]
+    ).slice(0, 3);
+
     return (
       <div className="flex flex-col">
         <div className="w-full lg:max-w-6xl">
@@ -35,8 +39,23 @@ export default function Experience({ isOverview }: { isOverview?: boolean }) {
             paddingBottom={false}
           />
         </div>
-        <div className="w-full mt-10 lg:mt-16">
-          <Timeline record={items} link="/experience" isOverview={isOverview} />
+        <div className="mt-10 grid gap-5 lg:mt-14 xl:grid-cols-3">
+          {recentRoles.map((experience, index) => (
+            <ExperienceCard
+              key={experience.id}
+              {...experience}
+              compact
+              featured={index === 0}
+            />
+          ))}
+        </div>
+        <div className="mt-10 flex justify-center lg:justify-start">
+          <LinkButton
+            href="/experience"
+            showIcon
+            text={cta}
+            variant="minimal"
+          />
         </div>
       </div>
     );
@@ -71,33 +90,27 @@ export default function Experience({ isOverview }: { isOverview?: boolean }) {
         />
       </div>
 
-      {/* Professional Experience Section */}
       {showProfessional && (
         <div className="mb-12 animate-in fade-in slide-in-from-bottom-2 duration-500">
-          <h3 className="mb-6 text-2xl font-bold uppercase tracking-tight text-c-dark dark:text-white">
+          <h3 className="mb-6 text-xl font-bold tracking-[-0.02em] text-c-dark dark:text-white sm:text-2xl">
             Professional Experience
           </h3>
-          <div className="columns-1 gap-6 space-y-6 lg:columns-2">
-            {(professionalExperiences as ExperienceCardProps[]).map((exp) => (
-              <div key={exp.id} className="break-inside-avoid">
-                <ExperienceCard {...exp} />
-              </div>
+          <div className="space-y-5">
+            {(professionalExperiences as ExperienceCardProps[]).map((exp, index) => (
+              <ExperienceCard key={exp.id} {...exp} featured={index === 0} />
             ))}
           </div>
         </div>
       )}
 
-      {/* Community Impact Section */}
       {showCommunity && communityExperiences.length > 0 && (
         <div className="mb-12 animate-in fade-in slide-in-from-bottom-2 duration-500">
-          <h3 className="mb-6 text-2xl font-bold uppercase tracking-tight text-c-dark dark:text-white">
+          <h3 className="mb-6 text-xl font-bold tracking-[-0.02em] text-c-dark dark:text-white sm:text-2xl">
             Community Impact
           </h3>
-          <div className="columns-1 gap-6 space-y-6 lg:columns-2">
+          <div className="space-y-5">
             {(communityExperiences as ExperienceCardProps[]).map((exp) => (
-              <div key={exp.id} className="break-inside-avoid">
-                <ExperienceCard {...exp} />
-              </div>
+              <ExperienceCard key={exp.id} {...exp} />
             ))}
           </div>
         </div>

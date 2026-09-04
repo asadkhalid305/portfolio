@@ -1,5 +1,6 @@
 import Image from "next/image";
 import LinkButton from "@/components/ui/link-button";
+import CardShell from "@/components/ui/card-shell";
 import socialsData from "@/constants/socials.json";
 import { ProfileCardProps } from "@/utils/types";
 import { getShimmerDataUrl } from "@/utils/shimmer";
@@ -11,8 +12,8 @@ export default function ProfileCard({
   position,
 }: Readonly<ProfileCardProps>) {
   return (
-    <div className="flex-1 flex justify-center lg:justify-end">
-      <div className="w-full max-w-sm bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-700 rounded-lg shadow transition-all duration-300 ease-in-out hover:shadow-2xl">
+    <div className="flex flex-1 justify-center lg:justify-end">
+      <CardShell className="w-full max-w-sm">
         <div className="w-full bg-c-dark px-4 py-3 flex items-center gap-2">
           <span className="text-c-light text-xl font-semibold tracking-tight">
             Linked
@@ -42,13 +43,15 @@ export default function ProfileCard({
             <p className="font-light">{position}</p>
           </div>
           <LinkButton
-            className="bg-c-dark text-c-light border-2 border-c-dark rounded-full px-4 py-2 hover:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95 focus-visible:outline-2 focus-visible:outline-c-dark focus-visible:outline"
+            arrowDirection="up-right"
             href={socialsData.linkedIn.href}
-            showIcon={false}
+            rounded="full"
+            showIcon
+            size="sm"
             text="Connect on LinkedIn"
           />
         </div>
-      </div>
+      </CardShell>
     </div>
   );
 }

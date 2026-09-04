@@ -1,9 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import clsx from "clsx";
+import { useEffect, useRef, useState } from "react";
 import contactData from "@/constants/contact.json";
+import Button from "@/components/ui/button";
+import { Confetti, type ConfettiRef } from "@/components/ui/confetti";
+import { ShineBorder } from "@/components/ui/shine-border";
 import { isRealisticEmail } from "@/utils/email-validation";
+
+const fieldClassName =
+  "w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 transition-all focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue dark:border-gray-800 dark:bg-gray-800 dark:text-white";
 
 async function fetchFormStartedAt() {
   const response = await fetch("/api/contact", { cache: "no-store" });
@@ -20,6 +25,7 @@ async function fetchFormStartedAt() {
 }
 
 export default function ContactForm() {
+  const confettiRef = useRef<ConfettiRef>(null);
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
@@ -56,6 +62,27 @@ export default function ContactForm() {
       active = false;
     };
   }, []);
+
+  useEffect(() => {
+    if (
+      status !== "success" ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      void confettiRef.current?.fire({
+        colors: ["#0A66C2", "#4FA3F7", "#071C36", "#FFFFFF"],
+        particleCount: 72,
+        spread: 62,
+        startVelocity: 28,
+        origin: { x: 0.5, y: 0.38 },
+      });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [status]);
 
   const handleRestart = async () => {
     setStatus("idle");
@@ -132,49 +159,65 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-6 md:p-8 bg-white dark:bg-gray-900 rounded-3xl border border-gray-200 dark:border-gray-800 shadow-sm transition-all duration-300">
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-          {contactData.form.title}
-        </h2>
-        <p className="text-gray-600 dark:text-gray-400">
-          {contactData.form.description}
-        </p>
-      </div>
+    <div className="relative mx-auto w-full max-w-2xl overflow-hidden rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900 md:p-8">
+      <ShineBorder
+        borderWidth={2}
+        duration={12}
+        shineColor={["#0A66C2", "#4FA3F7", "#0A66C2"]}
+      />
 
-      {status === "success" ? (
-        <div className="p-8 text-center bg-green-50 dark:bg-green-900/10 border border-green-100 dark:border-green-900/20 rounded-2xl">
-          <div className="w-16 h-16 bg-green-100 dark:bg-green-900/20 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-          </div>
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-            {contactData.success.title}
-          </h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
-            {contactData.success.description}
+      <div className="relative z-10">
+        <div className="mb-8">
+          <h2 className="mb-2 text-3xl font-bold text-gray-900 dark:text-white">
+            {contactData.form.title}
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400">
+            {contactData.form.description}
           </p>
-          <button
-            onClick={handleRestart}
-            className="px-6 py-2 bg-c-dark text-white rounded-xl font-medium transition-all hover:bg-gray-800"
-          >
-            {contactData.success.button}
-          </button>
         </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-6">
+
+        {status === "success" ? (
+          <div className="relative overflow-hidden rounded-2xl border border-green-100 bg-green-50 p-8 text-center dark:border-green-900/20 dark:bg-green-900/10">
+            <Confetti
+              ref={confettiRef}
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 z-10 size-full"
+              manualstart
+            />
+            <div className="relative z-20">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/20 dark:text-green-400">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">
+                {contactData.success.title}
+              </h3>
+              <p className="mb-6 text-gray-600 dark:text-gray-400">
+                {contactData.success.description}
+              </p>
+              <Button
+                onClick={handleRestart}
+                rounded="xl"
+                size="sm"
+              >
+                {contactData.success.button}
+              </Button>
+            </div>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-6">
           <input
             type="hidden"
             name="formStartedAt"
@@ -214,7 +257,7 @@ export default function ContactForm() {
                 onChange={handleChange}
                 maxLength={100}
                 placeholder={contactData.form.name.placeholder}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-c-dark dark:focus:ring-c-light transition-all"
+                className={fieldClassName}
               />
             </div>
             <div>
@@ -234,7 +277,7 @@ export default function ContactForm() {
                 maxLength={254}
                 placeholder={contactData.form.email.placeholder}
                 aria-invalid={Boolean(emailError)}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-c-dark dark:focus:ring-c-light transition-all"
+                className={fieldClassName}
               />
               {emailError && <p className="mt-2 text-red-500 text-sm">{emailError}</p>}
             </div>
@@ -257,7 +300,7 @@ export default function ContactForm() {
               minLength={20}
               maxLength={5000}
               placeholder={contactData.form.message.placeholder}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-c-dark dark:focus:ring-c-light transition-all resize-none"
+              className={`${fieldClassName} resize-none`}
             />
           </div>
 
@@ -265,8 +308,11 @@ export default function ContactForm() {
             <p className="text-red-500 text-sm">{contactData.form.error}</p>
           )}
 
-          <button
+          <Button
             type="submit"
+            rounded="xl"
+            size="lg"
+            aria-busy={status === "loading"}
             disabled={
               status === "loading" ||
               !formData.name.trim() ||
@@ -274,16 +320,7 @@ export default function ContactForm() {
               !formData.formStartedAt ||
               !isEmailValid
             }
-            className={clsx(
-              "w-full py-4 bg-c-dark text-white rounded-xl font-bold text-lg shadow-lg transition-all flex items-center justify-center gap-2",
-              status === "loading" ||
-                !formData.name.trim() ||
-                formData.message.trim().length < 20 ||
-                !formData.formStartedAt ||
-                !isEmailValid
-                ? "opacity-70 cursor-not-allowed"
-                : "hover:bg-gray-800 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
-            )}
+            className="w-full text-lg font-bold"
           >
             {status === "loading" ? (
               <>
@@ -312,9 +349,10 @@ export default function ContactForm() {
             ) : (
               contactData.form.submit.default
             )}
-          </button>
-        </form>
-      )}
+          </Button>
+          </form>
+        )}
+      </div>
     </div>
   );
 }
