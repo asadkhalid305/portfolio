@@ -163,7 +163,7 @@ export default function Contribution({
         <div className="mt-12 flex justify-center lg:justify-start">
           <LinkButton
             href="/contribution"
-            showIcon={false}
+            showIcon
             text="See all contributions"
             variant="minimal"
           />

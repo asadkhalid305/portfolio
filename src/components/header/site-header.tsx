@@ -6,6 +6,7 @@ import Link from "next/link";
 import useHeader from "@/hooks/useHeader";
 import HeaderLinks from "@/components/header/header-links";
 import commonData from "@/constants/common.json";
+import { interactionStyles } from "@/constants/interaction-styles";
 import { Post } from "@/utils/types";
 
 interface HeaderProps {
@@ -51,37 +52,39 @@ export default function SiteHeader({ projects = [] }: Readonly<HeaderProps>) {
   return (
     <header
       className={clsx(
-        "transition-colors duration-300 ease-in-out sticky top-0 z-50 py-5",
+        "sticky top-0 z-50 py-3.5 transition-colors duration-300 ease-out",
         {
-          "bg-c-dark text-c-light": isDark,
-          "bg-c-semidark": !isDark,
+          "bg-c-dark text-c-light shadow-[0_10px_35px_rgba(0,0,0,0.12)]":
+            isDark,
+          "bg-c-semidark text-c-dark": !isDark,
         }
       )}
       role="banner"
       aria-label="Site header"
     >
       <nav
-        className="flex justify-between px-4 lg:max-w-7xl lg:mx-auto"
+        className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
         aria-label="Primary navigation"
       >
         <Link
           href="/"
-          className="flex items-center justify-center transition-opacity hover:opacity-80"
+          className={clsx(
+            "rounded-md transition-opacity duration-200 hover:opacity-75",
+            interactionStyles.focusRing
+          )}
           aria-label="Go to home page"
         >
-          <div className="relative w-36 h-8">
+          <span className="relative block h-6 w-28 sm:h-7 sm:w-32">
             <Image
               alt={commonData.header.logoAlt}
               draggable="false"
               fill
-              sizes="100%"
-              src={
-                isDark ? "/images/logo-light.webp" : "/images/logo-dark.webp"
-              }
+              sizes="(max-width: 639px) 112px, 128px"
+              src={isDark ? "/images/logo-light.webp" : "/images/logo-dark.webp"}
             />
-          </div>
+          </span>
         </Link>
-        <HeaderLinks links={links} />
+        <HeaderLinks isDark={isDark} links={links} />
       </nav>
     </header>
   );

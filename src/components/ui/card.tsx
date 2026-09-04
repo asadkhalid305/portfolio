@@ -1,10 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Pin } from "lucide-react";
 import { VCardProps } from "@/utils/types";
 import { getImageProps } from "@/utils/image-helpers";
 import { getShimmerDataUrl } from "@/utils/shimmer";
 import Badge from "./badge";
+import CardShell from "./card-shell";
+import CardAction from "./card-action";
+import { Lens } from "./lens";
 
 export default function Card({
   title,
@@ -25,22 +27,27 @@ export default function Card({
 
   // Common image component
   const imageComponent = (
-    <div
-      className={`relative overflow-hidden bg-c-semidark ${
+    <Lens
+      ariaLabel={`Zoom into ${alt}`}
+      className={
         horizontal
           ? isSquareImage
             ? "aspect-square order-1 w-full self-center rounded-xl lg:order-2 lg:max-w-[22rem] lg:justify-self-end"
             : "aspect-video order-1 h-fit w-full self-center rounded-xl lg:order-2"
           : "h-96 w-full rounded-t-2xl border-b border-gray-100 dark:border-gray-800"
-      }`}
+      }
+      focusable={false}
+      lensSize={150}
+      zoomFactor={1.18}
     >
+      <div className="relative h-full w-full overflow-hidden bg-c-semidark">
       {/* Blurred background for fixing aspect ratio issues */}
       <Image
         src={src}
         alt=""
         fill
         sizes={imageSizes}
-        className="object-cover blur-3xl scale-110 opacity-50 dark:opacity-40 transition-opacity duration-500 group-hover:opacity-70"
+        className="object-cover blur-3xl scale-110 opacity-50 dark:opacity-40 transition-opacity duration-500 group-hover/card:opacity-70"
         aria-hidden="true"
       />
 
@@ -50,7 +57,7 @@ export default function Card({
         alt={alt}
         fill
         sizes={imageSizes}
-        className={`object-contain transition-transform duration-500 group-hover:scale-[1.01] ${
+        className={`object-contain transition-transform duration-500 group-hover/card:scale-[1.01] ${
           isSquareImage ? "p-0" : "p-4"
         }`}
         placeholder="blur"
@@ -61,7 +68,8 @@ export default function Card({
         loading="lazy"
         draggable="false"
       />
-    </div>
+      </div>
+    </Lens>
   );
 
   // Common badges component
@@ -113,11 +121,8 @@ export default function Card({
           {description}
         </p>
       </div>
-      <div className="pt-5 flex items-center text-base font-semibold">
-        {linkText}{" "}
-        <span className="ml-2 transition-transform group-hover:translate-x-1">
-          →
-        </span>
+      <div className="pt-5">
+        <CardAction text={linkText} />
       </div>
     </div>
   );
@@ -125,26 +130,26 @@ export default function Card({
   // Horizontal layout
   if (horizontal) {
     return (
-      <Link
+      <CardShell
         href={link}
-        className="group relative block h-full overflow-hidden rounded-2xl border border-black/10 bg-white transition-all duration-300 ease-in-out hover:bg-c-semidark hover:shadow-2xl dark:border-gray-800"
+        className="block h-full"
       >
         <div className="grid h-full gap-8 p-5 sm:p-7 lg:grid-cols-2 lg:p-8">
           {contentComponent}
           {imageComponent}
         </div>
-      </Link>
+      </CardShell>
     );
   }
 
   // Vertical layout
   return (
-    <Link
+    <CardShell
       href={link}
-      className="group mx-auto flex h-full w-full max-w-sm flex-col rounded-2xl border border-black/10 bg-white transition-all duration-300 ease-in-out hover:bg-c-semidark hover:shadow-2xl dark:border-gray-800"
+      className="mx-auto flex h-full w-full max-w-sm flex-col"
     >
       {imageComponent}
       {contentComponent}
-    </Link>
+    </CardShell>
   );
 }

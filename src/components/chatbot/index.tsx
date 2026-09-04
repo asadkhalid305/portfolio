@@ -10,14 +10,14 @@ import clsx from "clsx";
 export default function Chatbot() {
   const { loading, messages, userInput, setUserInput, handleSend } =
     useChatbot();
-  const [toggleChatbot, setToggleChatbot] = useState(true);
+  const [toggleChatbot, setToggleChatbot] = useState(false);
 
   return (
     <aside
       className={clsx(
-        "flex-col w-[420px] fixed bottom-0 right-0 m-6 backdrop-blur-xl bg-white dark:bg-gray-950 rounded-2xl shadow-2xl overflow-hidden transition-all duration-500 ease-in-out hidden xl:flex border border-gray-200 dark:border-gray-800",
+        "fixed bottom-0 right-0 z-40 m-6 hidden w-[390px] flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white/95 shadow-2xl backdrop-blur-xl transition-all duration-500 ease-in-out dark:border-gray-800 dark:bg-gray-950 xl:flex",
         {
-          "h-[600px]": toggleChatbot,
+          "h-[560px]": toggleChatbot,
           "h-[72px]": !toggleChatbot,
         }
       )}
@@ -27,12 +27,16 @@ export default function Chatbot() {
         toggleChatbot={toggleChatbot}
         setToggleChatbot={setToggleChatbot}
       />
-      <ChatbotMessages loading={loading} messages={messages} />
-      <ChatbotForm
-        userInput={userInput}
-        setUserInput={setUserInput}
-        handleSend={handleSend}
-      />
+      {toggleChatbot ? (
+        <>
+          <ChatbotMessages loading={loading} messages={messages} />
+          <ChatbotForm
+            userInput={userInput}
+            setUserInput={setUserInput}
+            handleSend={handleSend}
+          />
+        </>
+      ) : null}
     </aside>
   );
 }

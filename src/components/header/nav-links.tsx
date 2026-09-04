@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Calendar } from "lucide-react";
 import { useActiveNavLink } from "@/hooks/useActiveNavLink";
@@ -9,13 +9,38 @@ import commonData from "@/constants/common.json";
 import socialsData from "@/constants/socials.json";
 
 interface NavLinksProps extends HeaderLinksProps {
+  isDark: boolean;
   menuOpen: boolean;
-  isDark?: boolean;
 }
 
-export function NavLinks({ links, menuOpen, isDark }: Readonly<NavLinksProps>) {
+export function NavLinks({
+  isDark,
+  links,
+  menuOpen,
+}: Readonly<NavLinksProps>) {
   const { pathname, currentHash, navLinkClass } = useActiveNavLink();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const navRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    if (!openDropdown) return;
+
+    const closeWhenOutside = (event: PointerEvent) => {
+      if (!navRef.current?.contains(event.target as Node)) {
+        setOpenDropdown(null);
+      }
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpenDropdown(null);
+    };
+
+    document.addEventListener("pointerdown", closeWhenOutside);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeWhenOutside);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [openDropdown]);
 
   const toggleDropdown = (name: string) => {
     setOpenDropdown((prev) => (prev === name ? null : name));
@@ -23,11 +48,12 @@ export function NavLinks({ links, menuOpen, isDark }: Readonly<NavLinksProps>) {
 
   return (
     <ul
+      ref={navRef}
       className={`${
         menuOpen
-          ? "absolute right-0 top-full mt-2 w-64 flex flex-col bg-c-dark text-c-light rounded-lg shadow-lg z-50 border-2 border-c-dark py-3 px-4 space-y-1 animate-fade-in lg:static lg:flex-row lg:bg-transparent lg:text-inherit lg:shadow-none lg:border-none lg:space-y-0 lg:gap-5 lg:px-0 lg:py-0 lg:w-auto lg:mt-0"
+          ? "absolute right-0 top-full z-50 mt-2 flex w-64 flex-col space-y-1 rounded-xl border border-slate-800 bg-slate-950 px-4 py-3 text-white shadow-xl animate-fade-in lg:static lg:mt-0 lg:w-auto lg:flex-row lg:gap-5 lg:space-y-0 lg:border-none lg:bg-transparent lg:px-0 lg:py-0 lg:text-inherit lg:shadow-none"
           : "hidden lg:flex lg:flex-row lg:bg-transparent lg:text-inherit lg:shadow-none lg:border-none lg:space-y-0"
-      } text-md font-medium lg:text-base lg:gap-5`}
+      } text-sm font-medium lg:gap-4 xl:gap-5`}
     >
       {links.map((link) => {
         const isAnchor =
@@ -45,24 +71,21 @@ export function NavLinks({ links, menuOpen, isDark }: Readonly<NavLinksProps>) {
 
         if (link.dropdown) {
           const isDropdownOpen = openDropdown === link.name;
+          const ParentLink = isAnchor ? "a" : Link;
 
           return (
-            <li key={link.href} className="relative group flex flex-col lg:block">
+            <li key={link.href} className="relative flex flex-col lg:block">
               {/* Container for Link + Mobile Toggle */}
               <div className="flex items-center justify-between w-full lg:w-auto lg:justify-start lg:gap-1">
-                <Link
+                <ParentLink
                   href={link.href}
                   aria-current={isActive ? "page" : undefined}
-                  className={`${navLinkClass(
-                    isActive,
-                    isDark
-                  )} flex-grow lg:flex-grow-0`}
+                  className={`${navLinkClass(isActive, isDark)} flex-grow lg:flex-grow-0`}
                   onClick={() => setOpenDropdown(null)}
                 >
                   {link.name}
-                </Link>
+                </ParentLink>
 
-                {/* Mobile Toggle Button */}
                 <button
                   type="button"
                   onClick={(e) => {
@@ -70,7 +93,7 @@ export function NavLinks({ links, menuOpen, isDark }: Readonly<NavLinksProps>) {
                     e.preventDefault();
                     toggleDropdown(link.name);
                   }}
-                  className="lg:hidden p-2 -mr-2 text-c-light hover:text-white transition-colors"
+                  className="-mr-1 rounded-md p-1.5 text-current opacity-60 transition-all hover:bg-current/5 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue lg:p-1"
                   aria-expanded={isDropdownOpen}
                   aria-label={`Toggle ${link.name} menu`}
                 >
@@ -81,28 +104,26 @@ export function NavLinks({ links, menuOpen, isDark }: Readonly<NavLinksProps>) {
                   />
                 </button>
 
-                {/* Desktop Chevron */}
-                <ChevronDown className="hidden lg:block w-4 h-4 transition-transform group-hover:rotate-180" />
               </div>
 
               {/* Dropdown Menu */}
               <ul
+                style={{ backgroundColor: "#020617", color: "#ffffff" }}
                 className={`
-                    lg:absolute lg:left-0 lg:top-full lg:mt-2 lg:w-48 lg:bg-c-dark lg:text-c-light lg:rounded-lg lg:shadow-xl lg:p-2 lg:z-50
-                    lg:opacity-0 lg:invisible lg:group-hover:opacity-100 lg:group-hover:visible lg:transition-all lg:duration-200
+                    lg:absolute lg:left-0 lg:top-full lg:mt-2 lg:w-44 lg:rounded-xl lg:bg-slate-950 lg:text-white lg:shadow-xl lg:p-1.5 lg:z-50
                     ${
                       isDropdownOpen
                         ? "block animate-in slide-in-from-top-2"
-                        : "hidden lg:block"
+                        : "hidden"
                     }
-                    space-y-1 pl-4 border-l-2 border-white/20 ml-2 mt-1 lg:border-none lg:pl-0 lg:ml-0 lg:mt-2
+                    mt-1 space-y-1 rounded-md bg-white/5 px-2 py-1 lg:mt-2 lg:bg-transparent lg:p-0
                 `}
               >
                 {link.dropdown.map((dropItem) => (
                   <li key={dropItem.href}>
                     <Link
                       href={dropItem.href}
-                      className="block px-3 py-2 rounded-md hover:bg-white/10 text-sm lg:text-base lg:text-c-light"
+                      className="block rounded-md px-2.5 py-2 text-sm transition-colors hover:bg-white/10 hover:text-blue-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue lg:text-white"
                       onClick={() => setOpenDropdown(null)}
                     >
                       {dropItem.name}

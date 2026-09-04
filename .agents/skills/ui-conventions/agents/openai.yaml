@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Conventions"
+  short_description: "Apply shared portfolio UI rules"
+  default_prompt: "Use $ui-conventions before changing a visual portfolio surface."

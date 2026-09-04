@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 export default function useHeader() {
-  const [isHomepageDark, setIsHomepageDark] = useState(false);
+  const [hasLeftHero, setHasLeftHero] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export default function useHeader() {
     const HEADER_HEIGHT = 80;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsHomepageDark(!entry.isIntersecting);
+        setHasLeftHero(!entry.isIntersecting);
       },
       {
         threshold: 0,
@@ -23,7 +23,7 @@ export default function useHeader() {
     const about = document.getElementById("about");
     if (about) {
       const animationFrame = requestAnimationFrame(() => {
-        setIsHomepageDark(about.getBoundingClientRect().top <= HEADER_HEIGHT);
+        setHasLeftHero(about.getBoundingClientRect().bottom <= HEADER_HEIGHT);
       });
       observer.observe(about);
 
@@ -37,5 +37,5 @@ export default function useHeader() {
     return () => observer.disconnect();
   }, [pathname]);
 
-  return { isDark: pathname !== "/" || isHomepageDark };
+  return { isDark: pathname !== "/" || hasLeftHero };
 }

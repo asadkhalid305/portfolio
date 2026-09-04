@@ -11,6 +11,7 @@ export type ImageType = {
   src: string;
   alt: string;
   layout?: "square" | "video";
+  objectPosition?: string;
 };
 
 /**
@@ -69,13 +70,23 @@ export type DisplayInfoProps = {
 /**
  * Props for LinkButton component
  */
+export type ArrowDirection = "left" | "right" | "up-right" | "down-right";
+export type ButtonRounded = "md" | "xl" | "full";
+export type ButtonSize = "sm" | "md" | "lg";
+export type ButtonTone = "dark" | "light";
+export type ButtonVariant = "primary" | "minimal";
+
 export type LinkButtonProps = {
   href: string;
   text: string;
-  showIcon: boolean;
+  showIcon?: boolean;
   className?: string;
-  variant?: "primary" | "minimal";
+  variant?: ButtonVariant;
   iconPosition?: "left" | "right";
+  arrowDirection?: ArrowDirection;
+  rounded?: ButtonRounded;
+  size?: ButtonSize;
+  tone?: ButtonTone;
 };
 
 // ============================================================================
@@ -147,6 +158,20 @@ export type TimelineItemProps = {
   date: string;
   location: string;
   position: string;
+};
+
+/**
+ * A reusable chapter in the personal Journey narrative.
+ */
+export type JourneyChapter = {
+  id: string;
+  image?: ImageType;
+  marker: string;
+  label: string;
+  title: string;
+  summary: string;
+  fullText: string;
+  featured?: boolean;
 };
 
 /**
