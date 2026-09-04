@@ -8,6 +8,37 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.13.0] - 2026-09-04
+
+### Added
+
+- Professional hero portrait with orbiting expertise capsules
+- Editorial Journey chapters with personal photography and a
+  Pakistan-to-Berlin map
+- Magic UI interactions for portfolio images, cards, and the contact form
+- Shared UI conventions for cards, images, buttons, links, forms, animations,
+  and responsive behavior
+
+### Changed
+
+- Restored and refined the original AUK header and personal-brand identity
+- Replaced the Experience timeline with accessible, responsive role cards
+- Standardized buttons, directional arrows, card actions, focus states, and
+  hover motion
+- Refined the chatbot's collapsed presentation and responsive positioning
+- Established Node.js 24 as the supported runtime
+
+### Fixed
+
+- Prevented repeated About navigation from duplicating the URL hash
+- Corrected tablet Experience ordering and hero portrait sizing
+- Aligned contact-field focus rings and LinkedIn card interactions with the
+  shared visual system
+
+### Dependencies
+
+- Added Motion, Canvas Confetti, Next Themes, and SVG Dotted Map
+
 ## [1.12.0] - 2026-08-11
 
 ### Added
